@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE1ABD31-4522-494B-AB12-3F08DE1912EF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Happy_Journey_Airline</RootNamespace>
+    <AssemblyName>Happy Journey Airline</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminBookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminBookings.Designer.cs">
+      <DependentUpon>AdminBookings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFlights.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminFlights.Designer.cs">
+      <DependentUpon>AdminFlights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMessage.Designer.cs">
+      <DependentUpon>AdminMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateService.Designer.cs">
+      <DependentUpon>CreateService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminDashboard.Designer.cs">
+      <DependentUpon>adminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminServices.Designer.cs">
+      <DependentUpon>AdminServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adminSubscriptionsScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminSubscriptionsScreen.Designer.cs">
+      <DependentUpon>adminSubscriptionsScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateFlight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateFlight.Designer.cs">
+      <DependentUpon>CreateFlight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookFlight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookFlight.Designer.cs">
+      <DependentUpon>BookFlight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateSubscription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateSubscription.Designer.cs">
+      <DependentUpon>CreateSubscription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateUser.Designer.cs">
+      <DependentUpon>CreateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteBooking.Designer.cs">
+      <DependentUpon>DeleteBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deleteFlight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteFlight.Designer.cs">
+      <DependentUpon>deleteFlight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteService.Designer.cs">
+      <DependentUpon>DeleteService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteSubscription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteSubscription.Designer.cs">
+      <DependentUpon>DeleteSubscription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteUser.Designer.cs">
+      <DependentUpon>DeleteUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="logincs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="logincs.Designer.cs">
+      <DependentUpon>logincs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentScreen.Designer.cs">
+      <DependentUpon>PaymentScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateBooking.Designer.cs">
+      <DependentUpon>UpdateBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateSubscription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateSubscription.Designer.cs">
+      <DependentUpon>UpdateSubscription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserMessage.Designer.cs">
+      <DependentUpon>UserMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserRegister.Designer.cs">
+      <DependentUpon>UserRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserSubscriptionScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSubscriptionScreen.Designer.cs">
+      <DependentUpon>UserSubscriptionScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateService.Designer.cs">
+      <DependentUpon>UpdateService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateFlightcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateFlightcs.Designer.cs">
+      <DependentUpon>UpdateFlightcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateUser.Designer.cs">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewUsersScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewUsersScreen.Designer.cs">
+      <DependentUpon>viewUsersScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeScreen.Designer.cs">
+      <DependentUpon>WelcomeScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminBookings.resx">
+      <DependentUpon>AdminBookings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminFlights.resx">
+      <DependentUpon>AdminFlights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminMessage.resx">
+      <DependentUpon>AdminMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateService.resx">
+      <DependentUpon>CreateService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminDashboard.resx">
+      <DependentUpon>adminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminServices.resx">
+      <DependentUpon>AdminServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminSubscriptionsScreen.resx">
+      <DependentUpon>adminSubscriptionsScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookFlight.resx">
+      <DependentUpon>BookFlight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateFlight.resx">
+      <DependentUpon>CreateFlight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateSubscription.resx">
+      <DependentUpon>CreateSubscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateUser.resx">
+      <DependentUpon>CreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteBooking.resx">
+      <DependentUpon>DeleteBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteFlight.resx">
+      <DependentUpon>deleteFlight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteService.resx">
+      <DependentUpon>DeleteService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteSubscription.resx">
+      <DependentUpon>DeleteSubscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteUser.resx">
+      <DependentUpon>DeleteUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="logincs.resx">
+      <DependentUpon>logincs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentScreen.resx">
+      <DependentUpon>PaymentScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateBooking.resx">
+      <DependentUpon>UpdateBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateSubscription.resx">
+      <DependentUpon>UpdateSubscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserMessage.resx">
+      <DependentUpon>UserMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserRegister.resx">
+      <DependentUpon>UserRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSubscriptionScreen.resx">
+      <DependentUpon>UserSubscriptionScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateService.resx">
+      <DependentUpon>UpdateService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UpdateFlightcs.resx">
+      <DependentUpon>UpdateFlightcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateUser.resx">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewUsersScreen.resx">
+      <DependentUpon>viewUsersScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeScreen.resx">
+      <DependentUpon>WelcomeScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoo11.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
