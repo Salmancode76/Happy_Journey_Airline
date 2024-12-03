@@ -31,5 +31,10 @@ namespace Happy_Journey_Airline
         {
 
         }
+
+        private void UserRegister_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

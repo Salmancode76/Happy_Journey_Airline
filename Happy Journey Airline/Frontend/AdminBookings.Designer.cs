@@ -28,19 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminBookings));
             this.lblFl = new System.Windows.Forms.Label();
             this.btncreate = new System.Windows.Forms.Button();
             this.btndel = new System.Windows.Forms.Button();
             this.btnupdateFlight = new System.Windows.Forms.Button();
             this.gridBookings = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gridBookings)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFl
@@ -72,7 +71,7 @@
             this.btndel.Name = "btndel";
             this.btndel.Size = new System.Drawing.Size(157, 32);
             this.btndel.TabIndex = 87;
-            this.btndel.Text = "Delete Booking\'";
+            this.btndel.Text = "Delete Booking";
             this.btndel.UseVisualStyleBackColor = false;
             // 
             // btnupdateFlight
@@ -83,7 +82,7 @@
             this.btnupdateFlight.Name = "btnupdateFlight";
             this.btnupdateFlight.Size = new System.Drawing.Size(157, 32);
             this.btnupdateFlight.TabIndex = 86;
-            this.btnupdateFlight.Text = "Update Booking\'";
+            this.btnupdateFlight.Text = "Update Booking";
             this.btnupdateFlight.UseVisualStyleBackColor = false;
             // 
             // gridBookings
@@ -97,7 +96,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lblWelcome);
             this.panel1.Controls.Add(this.button1);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -106,24 +104,12 @@
             this.panel1.Size = new System.Drawing.Size(889, 62);
             this.panel1.TabIndex = 91;
             // 
-            // pictureBox1
-            // 
-            /*
-            this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.logoo11;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(46, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            */
-            // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblWelcome.Location = new System.Drawing.Point(55, -1);
+            this.lblWelcome.Location = new System.Drawing.Point(3, 0);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(237, 58);
             this.lblWelcome.TabIndex = 3;
@@ -132,8 +118,8 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(760, 13);
+            this.button1.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(670, 13);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 33);
             this.button1.TabIndex = 25;
@@ -154,7 +140,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(885, 450);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblFl);
@@ -162,12 +148,12 @@
             this.Controls.Add(this.btndel);
             this.Controls.Add(this.btnupdateFlight);
             this.Controls.Add(this.gridBookings);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminBookings";
             this.Text = "AdminBookings";
             ((System.ComponentModel.ISupportInitialize)(this.gridBookings)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,7 +166,6 @@
         private System.Windows.Forms.Button btnupdateFlight;
         private System.Windows.Forms.DataGridView gridBookings;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
