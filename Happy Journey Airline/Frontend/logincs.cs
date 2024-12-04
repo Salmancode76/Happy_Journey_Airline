@@ -21,16 +21,31 @@ namespace Happy_Journey_Airline
 
         private void loginbtn_Click(object sender, EventArgs e)
         {
+            User ur = new User();
 
+         User ul =  ur.login(ustxt.Text, passtxt.Text,this);
+
+            if ( ul == null ){
+
+                messagelbl.Text = "Invalid username or password!"; 
+                messagelbl.ForeColor = System.Drawing.Color.Red;
+            }
+
+            Console.WriteLine(ul);
         }
 
         private void Register_Click(object sender, EventArgs e)
         {
-            UserRegister ur = new UserRegister();
-            ur.Show(); // Show the new form
-
+         
             this.Hide(); // Hide the current form
 
+            new  WelcomeScreen().Show();
+
+        }
+
+        private void logincs_Load(object sender, EventArgs e)
+        {
+            messagelbl.Text = string.Empty;
         }
     }
 }

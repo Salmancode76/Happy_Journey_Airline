@@ -31,5 +31,17 @@ namespace Happy_Journey_Airline
         {
 
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new UserRegister().Show();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new logincs().Show();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -121,12 +122,11 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public User login(string username1, string password)
+        public User login(string username1, string password, Form currentForm)
         {
             try
             {
-                string query = "SELECT * FROM Users WHERE username1 = @username AND password = @password";
-
+                string query = "SELECT * FROM [dbo].[User] WHERE username = @username AND password = @password";
                 SqlCommand cmd = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
 
                 cmd.Parameters.AddWithValue("@username", username1);
@@ -136,9 +136,19 @@ namespace Happy_Journey_Airline
 
                 if (reader.Read())
                 {
-                    User u1 = new User(this.userId, this.firstName, this.lastName, this.age, this.email, this.username = reader["username1"].ToString(), this.password = reader["password"].ToString(), role = userRole(username1), this.phoneNo, this.gender, this.dob, this.balance);
+                    User u1 = new User(this.userId, this.firstName, this.lastName, this.age, this.email, this.username = reader["username"].ToString(), this.password = reader["password"].ToString(), role = userRole(username1), this.phoneNo, this.gender, this.dob, this.balance);
+
+                    currentForm.Hide();
+
+                    // Show the BookFlight form
+                    new BookFlight().Show();
+
+                    // Close the database connection
+                    DBManager.getInstance("").CloseConnection();
+
                     return u1;
-                } 
+                }
+              
             }
             catch (SqlException sqlEx)
             {
@@ -146,14 +156,16 @@ namespace Happy_Journey_Airline
             }
             catch (Exception ex)
             {
-                throw new Exception("An unexpected error occured. Please try again later. " + ex.Message);
+                throw new Exception("An unexpected error occurred. Please try again later. " + ex.Message);
             }
             finally
             {
+                // Ensure the connection is closed in case of an error
                 DBManager.getInstance("").CloseConnection();
             }
             return null;
         }
+
 
         public static List<User> getUsers()
         {
@@ -164,6 +176,32 @@ namespace Happy_Journey_Airline
                 usersList.Add(user);
             }
             return usersList;
+        }
+        public void Register(string firstName, string lastName, int age, string email, string username, string password, string role, string phoneNo, string gender, string dob)
+        {
+
+            string stmt = "INSERT INTO [dbo].[User] (name, age, dob, email, gender, username, password, phone_no, role) " +
+                            "VALUES (@Name, @Age, @Dob, @Email, @Gender, @Username, @Password, @PhoneNo, @Role)";
+
+
+
+
+            SqlCommand cmd = new SqlCommand(stmt, DBManager.getInstance("").OpenConnection());
+
+
+            cmd.Parameters.AddWithValue("@Name", firstName + " " + lastName);
+            cmd.Parameters.AddWithValue("@Age", age);
+            cmd.Parameters.AddWithValue("@Dob", dob);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Gender", gender);
+            cmd.Parameters.AddWithValue("@Username", username);
+            cmd.Parameters.AddWithValue("@Password", password);
+            cmd.Parameters.AddWithValue("@PhoneNo", phoneNo);
+            cmd.Parameters.AddWithValue("@Role", role);
+
+            cmd.ExecuteNonQuery();
+
+ 
         }
 
         public static bool Exists(string username)
@@ -221,5 +259,9 @@ namespace Happy_Journey_Airline
             }
             return users1;
         }
+
+      
     }
+
+
 }

@@ -16,5 +16,10 @@ namespace Happy_Journey_Airline
         {
             InitializeComponent();
         }
+
+        private void AdminBookings_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
