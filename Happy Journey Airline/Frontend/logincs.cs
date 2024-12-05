@@ -30,6 +30,11 @@ namespace Happy_Journey_Airline
                 messagelbl.Text = "Invalid username or password!"; 
                 messagelbl.ForeColor = System.Drawing.Color.Red;
             }
+            else
+            {
+                new BookFlight().Show();
+
+            }
 
             Console.WriteLine(ul);
         }

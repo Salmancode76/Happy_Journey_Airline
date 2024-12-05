@@ -16,5 +16,10 @@ namespace Happy_Journey_Airline
         {
             InitializeComponent();
         }
+
+        private void gridFlight_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

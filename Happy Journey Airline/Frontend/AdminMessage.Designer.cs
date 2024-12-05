@@ -29,29 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.messlbl = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMessage));
             this.txtMessage = new System.Windows.Forms.TextBox();
-            this.messtxt = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.sendbtn = new System.Windows.Forms.Button();
+            this.lblEnterMessage = new System.Windows.Forms.Label();
+            this.lblRecieve = new System.Windows.Forms.Label();
+            this.btnSend = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtReciever = new System.Windows.Forms.TextBox();
+            this.lblRecieved = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.backbtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // messlbl
-            // 
-            this.messlbl.AutoSize = true;
-            this.messlbl.Font = new System.Drawing.Font("Modern No. 20", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messlbl.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.messlbl.Location = new System.Drawing.Point(300, 9);
-            this.messlbl.Name = "messlbl";
-            this.messlbl.Size = new System.Drawing.Size(162, 41);
-            this.messlbl.TabIndex = 14;
-            this.messlbl.Text = "Messages";
             // 
             // txtMessage
             // 
@@ -62,53 +57,53 @@
             this.txtMessage.TabIndex = 15;
             this.txtMessage.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // messtxt
+            // lblEnterMessage
             // 
-            this.messtxt.AutoSize = true;
-            this.messtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messtxt.Location = new System.Drawing.Point(44, 139);
-            this.messtxt.Name = "messtxt";
-            this.messtxt.Size = new System.Drawing.Size(142, 24);
-            this.messtxt.TabIndex = 88;
-            this.messtxt.Text = "Enter Message:";
+            this.lblEnterMessage.AutoSize = true;
+            this.lblEnterMessage.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnterMessage.Location = new System.Drawing.Point(44, 139);
+            this.lblEnterMessage.Name = "lblEnterMessage";
+            this.lblEnterMessage.Size = new System.Drawing.Size(149, 28);
+            this.lblEnterMessage.TabIndex = 88;
+            this.lblEnterMessage.Text = "Enter Message:";
             // 
-            // label1
+            // lblRecieve
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 88);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 24);
-            this.label1.TabIndex = 89;
-            this.label1.Text = "Reciever:";
+            this.lblRecieve.AutoSize = true;
+            this.lblRecieve.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecieve.Location = new System.Drawing.Point(44, 88);
+            this.lblRecieve.Name = "lblRecieve";
+            this.lblRecieve.Size = new System.Drawing.Size(96, 28);
+            this.lblRecieve.TabIndex = 89;
+            this.lblRecieve.Text = "Reciever:";
             // 
-            // sendbtn
+            // btnSend
             // 
-            this.sendbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.sendbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sendbtn.Location = new System.Drawing.Point(445, 219);
-            this.sendbtn.Name = "sendbtn";
-            this.sendbtn.Size = new System.Drawing.Size(110, 32);
-            this.sendbtn.TabIndex = 91;
-            this.sendbtn.Text = "Send";
-            this.sendbtn.UseVisualStyleBackColor = false;
+            this.btnSend.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSend.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSend.Location = new System.Drawing.Point(445, 219);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(110, 32);
+            this.btnSend.TabIndex = 91;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // txtReciever
             // 
-            this.textBox1.Location = new System.Drawing.Point(216, 93);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(339, 20);
-            this.textBox1.TabIndex = 92;
+            this.txtReciever.Location = new System.Drawing.Point(216, 93);
+            this.txtReciever.Name = "txtReciever";
+            this.txtReciever.Size = new System.Drawing.Size(339, 20);
+            this.txtReciever.TabIndex = 92;
             // 
-            // label2
+            // lblRecieved
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 279);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(186, 24);
-            this.label2.TabIndex = 93;
-            this.label2.Text = "Recieved Messages:";
+            this.lblRecieved.AutoSize = true;
+            this.lblRecieved.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecieved.Location = new System.Drawing.Point(44, 279);
+            this.lblRecieved.Name = "lblRecieved";
+            this.lblRecieved.Size = new System.Drawing.Size(187, 28);
+            this.lblRecieved.TabIndex = 93;
+            this.lblRecieved.Text = "Recieved Messages:";
             // 
             // dataGridView1
             // 
@@ -118,16 +113,57 @@
             this.dataGridView1.Size = new System.Drawing.Size(320, 150);
             this.dataGridView1.TabIndex = 94;
             // 
-            // backbtn
+            // panel1
             // 
-            this.backbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.backbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backbtn.Location = new System.Drawing.Point(681, 17);
-            this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(107, 33);
-            this.backbtn.TabIndex = 95;
-            this.backbtn.Text = "Back";
-            this.backbtn.UseVisualStyleBackColor = false;
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.lblMessage);
+            this.panel1.Controls.Add(this.btnBack);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel1.Location = new System.Drawing.Point(0, -2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(803, 61);
+            this.panel1.TabIndex = 96;
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblMessage.Location = new System.Drawing.Point(3, 0);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(204, 58);
+            this.lblMessage.TabIndex = 3;
+            this.lblMessage.Text = "Messages";
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(670, 13);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(107, 33);
+            this.btnBack.TabIndex = 25;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel2.Location = new System.Drawing.Point(0, 441);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(805, 13);
+            this.panel2.TabIndex = 97;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
+            this.pictureBox1.Location = new System.Drawing.Point(266, 107);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 244);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 98;
+            this.pictureBox1.TabStop = false;
             // 
             // AdminMessage
             // 
@@ -135,34 +171,41 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.backbtn);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.sendbtn);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.messtxt);
+            this.Controls.Add(this.lblRecieved);
+            this.Controls.Add(this.txtReciever);
+            this.Controls.Add(this.btnSend);
+            this.Controls.Add(this.lblRecieve);
+            this.Controls.Add(this.lblEnterMessage);
             this.Controls.Add(this.txtMessage);
-            this.Controls.Add(this.messlbl);
+            this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminMessage";
             this.Text = "AdminMessage";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label messlbl;
         private System.Windows.Forms.TextBox txtMessage;
-        private System.Windows.Forms.Label messtxt;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button sendbtn;
+        private System.Windows.Forms.Label lblEnterMessage;
+        private System.Windows.Forms.Label lblRecieve;
+        private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtReciever;
+        private System.Windows.Forms.Label lblRecieved;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button backbtn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

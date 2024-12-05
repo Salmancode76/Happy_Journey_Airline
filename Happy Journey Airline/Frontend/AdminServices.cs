@@ -8,5 +8,10 @@ namespace Happy_Journey_Airline
         {
             InitializeComponent();
         }
+
+        private void Deletebtn_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

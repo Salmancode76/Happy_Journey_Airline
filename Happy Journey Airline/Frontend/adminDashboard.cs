@@ -16,5 +16,20 @@ namespace Happy_Journey_Airline
         {
             InitializeComponent();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void adminDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bookingbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

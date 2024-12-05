@@ -30,16 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminDashboard));
             this.desclbl = new System.Windows.Forms.Label();
-            this.viewuserbtn = new System.Windows.Forms.Button();
-            this.viewsubbtn = new System.Windows.Forms.Button();
-            this.flightbtn = new System.Windows.Forms.Button();
-            this.msgsbtn = new System.Windows.Forms.Button();
-            this.bookingbtn = new System.Windows.Forms.Button();
-            this.servicesbtn = new System.Windows.Forms.Button();
+            this.btnusers = new System.Windows.Forms.Button();
+            this.btnSub = new System.Windows.Forms.Button();
+            this.btnFlights = new System.Windows.Forms.Button();
+            this.btnmessage = new System.Windows.Forms.Button();
+            this.btnbooking = new System.Windows.Forms.Button();
+            this.btnservices = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblWelcome = new System.Windows.Forms.Label();
+            this.lblDashboard = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,80 +51,81 @@
             this.desclbl.Font = new System.Drawing.Font("Sitka Text", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.desclbl.Location = new System.Drawing.Point(47, 78);
             this.desclbl.Name = "desclbl";
-            this.desclbl.Size = new System.Drawing.Size(322, 35);
+            this.desclbl.Size = new System.Drawing.Size(325, 35);
             this.desclbl.TabIndex = 49;
-            this.desclbl.Text = "Welcome to the dashboard.";
+            this.desclbl.Text = "Welcome to the Dashboard.";
             // 
-            // viewuserbtn
+            // btnusers
             // 
-            this.viewuserbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.viewuserbtn.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewuserbtn.Location = new System.Drawing.Point(53, 167);
-            this.viewuserbtn.Name = "viewuserbtn";
-            this.viewuserbtn.Size = new System.Drawing.Size(157, 32);
-            this.viewuserbtn.TabIndex = 68;
-            this.viewuserbtn.Text = "View Users";
-            this.viewuserbtn.UseVisualStyleBackColor = false;
+            this.btnusers.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnusers.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnusers.Location = new System.Drawing.Point(53, 167);
+            this.btnusers.Name = "btnusers";
+            this.btnusers.Size = new System.Drawing.Size(157, 32);
+            this.btnusers.TabIndex = 68;
+            this.btnusers.Text = "View Users";
+            this.btnusers.UseVisualStyleBackColor = false;
             // 
-            // viewsubbtn
+            // btnSub
             // 
-            this.viewsubbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.viewsubbtn.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewsubbtn.Location = new System.Drawing.Point(306, 167);
-            this.viewsubbtn.Name = "viewsubbtn";
-            this.viewsubbtn.Size = new System.Drawing.Size(157, 32);
-            this.viewsubbtn.TabIndex = 69;
-            this.viewsubbtn.Text = "View Subscriptions";
-            this.viewsubbtn.UseVisualStyleBackColor = false;
+            this.btnSub.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSub.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSub.Location = new System.Drawing.Point(306, 167);
+            this.btnSub.Name = "btnSub";
+            this.btnSub.Size = new System.Drawing.Size(157, 32);
+            this.btnSub.TabIndex = 69;
+            this.btnSub.Text = "View Subscriptions";
+            this.btnSub.UseVisualStyleBackColor = false;
             // 
-            // flightbtn
+            // btnFlights
             // 
-            this.flightbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.flightbtn.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flightbtn.Location = new System.Drawing.Point(306, 259);
-            this.flightbtn.Name = "flightbtn";
-            this.flightbtn.Size = new System.Drawing.Size(157, 32);
-            this.flightbtn.TabIndex = 70;
-            this.flightbtn.Text = "View Flights";
-            this.flightbtn.UseVisualStyleBackColor = false;
+            this.btnFlights.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnFlights.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFlights.Location = new System.Drawing.Point(306, 259);
+            this.btnFlights.Name = "btnFlights";
+            this.btnFlights.Size = new System.Drawing.Size(157, 32);
+            this.btnFlights.TabIndex = 70;
+            this.btnFlights.Text = "View Flights";
+            this.btnFlights.UseVisualStyleBackColor = false;
             // 
-            // msgsbtn
+            // btnmessage
             // 
-            this.msgsbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.msgsbtn.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msgsbtn.Location = new System.Drawing.Point(53, 259);
-            this.msgsbtn.Name = "msgsbtn";
-            this.msgsbtn.Size = new System.Drawing.Size(157, 32);
-            this.msgsbtn.TabIndex = 71;
-            this.msgsbtn.Text = "View Messages";
-            this.msgsbtn.UseVisualStyleBackColor = false;
+            this.btnmessage.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnmessage.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmessage.Location = new System.Drawing.Point(53, 259);
+            this.btnmessage.Name = "btnmessage";
+            this.btnmessage.Size = new System.Drawing.Size(157, 32);
+            this.btnmessage.TabIndex = 71;
+            this.btnmessage.Text = "View Messages";
+            this.btnmessage.UseVisualStyleBackColor = false;
             // 
-            // bookingbtn
+            // btnbooking
             // 
-            this.bookingbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.bookingbtn.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookingbtn.Location = new System.Drawing.Point(547, 259);
-            this.bookingbtn.Name = "bookingbtn";
-            this.bookingbtn.Size = new System.Drawing.Size(157, 32);
-            this.bookingbtn.TabIndex = 72;
-            this.bookingbtn.Text = "View Bookings";
-            this.bookingbtn.UseVisualStyleBackColor = false;
+            this.btnbooking.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnbooking.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbooking.Location = new System.Drawing.Point(547, 259);
+            this.btnbooking.Name = "btnbooking";
+            this.btnbooking.Size = new System.Drawing.Size(157, 32);
+            this.btnbooking.TabIndex = 72;
+            this.btnbooking.Text = "View Bookings";
+            this.btnbooking.UseVisualStyleBackColor = false;
+            this.btnbooking.Click += new System.EventHandler(this.bookingbtn_Click);
             // 
-            // servicesbtn
+            // btnservices
             // 
-            this.servicesbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.servicesbtn.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.servicesbtn.Location = new System.Drawing.Point(547, 167);
-            this.servicesbtn.Name = "servicesbtn";
-            this.servicesbtn.Size = new System.Drawing.Size(157, 32);
-            this.servicesbtn.TabIndex = 73;
-            this.servicesbtn.Text = "View Services";
-            this.servicesbtn.UseVisualStyleBackColor = false;
+            this.btnservices.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnservices.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnservices.Location = new System.Drawing.Point(547, 167);
+            this.btnservices.Name = "btnservices";
+            this.btnservices.Size = new System.Drawing.Size(157, 32);
+            this.btnservices.TabIndex = 73;
+            this.btnservices.Text = "View Services";
+            this.btnservices.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panel1.Controls.Add(this.lblWelcome);
+            this.panel1.Controls.Add(this.lblDashboard);
             this.panel1.Controls.Add(this.button1);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(-2, -1);
@@ -131,16 +133,16 @@
             this.panel1.Size = new System.Drawing.Size(803, 60);
             this.panel1.TabIndex = 92;
             // 
-            // lblWelcome
+            // lblDashboard
             // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblWelcome.Location = new System.Drawing.Point(3, 0);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(225, 58);
-            this.lblWelcome.TabIndex = 3;
-            this.lblWelcome.Text = "Dashboard";
+            this.lblDashboard.AutoSize = true;
+            this.lblDashboard.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDashboard.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblDashboard.Location = new System.Drawing.Point(3, 0);
+            this.lblDashboard.Name = "lblDashboard";
+            this.lblDashboard.Size = new System.Drawing.Size(225, 58);
+            this.lblDashboard.TabIndex = 3;
+            this.lblDashboard.Text = "Dashboard";
             // 
             // button1
             // 
@@ -163,24 +165,35 @@
             this.pictureBox1.TabIndex = 93;
             this.pictureBox1.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel2.Location = new System.Drawing.Point(-2, 440);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(805, 10);
+            this.panel2.TabIndex = 94;
+            // 
             // adminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.servicesbtn);
-            this.Controls.Add(this.bookingbtn);
-            this.Controls.Add(this.msgsbtn);
-            this.Controls.Add(this.flightbtn);
-            this.Controls.Add(this.viewsubbtn);
-            this.Controls.Add(this.viewuserbtn);
+            this.Controls.Add(this.btnservices);
+            this.Controls.Add(this.btnbooking);
+            this.Controls.Add(this.btnmessage);
+            this.Controls.Add(this.btnFlights);
+            this.Controls.Add(this.btnSub);
+            this.Controls.Add(this.btnusers);
             this.Controls.Add(this.desclbl);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "adminDashboard";
             this.Text = "adminDashboard";
+            this.Load += new System.EventHandler(this.adminDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -191,15 +204,16 @@
 
         #endregion
         private System.Windows.Forms.Label desclbl;
-        private System.Windows.Forms.Button viewuserbtn;
-        private System.Windows.Forms.Button viewsubbtn;
-        private System.Windows.Forms.Button flightbtn;
-        private System.Windows.Forms.Button msgsbtn;
-        private System.Windows.Forms.Button bookingbtn;
-        private System.Windows.Forms.Button servicesbtn;
+        private System.Windows.Forms.Button btnusers;
+        private System.Windows.Forms.Button btnSub;
+        private System.Windows.Forms.Button btnmessage;
+        private System.Windows.Forms.Button btnbooking;
+        private System.Windows.Forms.Button btnservices;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Label lblDashboard;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnFlights;
     }
 }

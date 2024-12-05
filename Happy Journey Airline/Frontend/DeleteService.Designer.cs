@@ -28,25 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Deltitlelbl = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteService));
             this.dataGridService = new System.Windows.Forms.DataGridView();
-            this.delbtn = new System.Windows.Forms.Button();
-            this.DelServicecmb = new System.Windows.Forms.ComboBox();
-            this.servicelbl = new System.Windows.Forms.Label();
-            this.backbtn = new System.Windows.Forms.Button();
+            this.btndel = new System.Windows.Forms.Button();
+            this.cmbDel = new System.Windows.Forms.ComboBox();
+            this.lblService = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnback = new System.Windows.Forms.Button();
+            this.lblDelFlight = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridService)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Deltitlelbl
-            // 
-            this.Deltitlelbl.AutoSize = true;
-            this.Deltitlelbl.Font = new System.Drawing.Font("Modern No. 20", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Deltitlelbl.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.Deltitlelbl.Location = new System.Drawing.Point(283, 9);
-            this.Deltitlelbl.Name = "Deltitlelbl";
-            this.Deltitlelbl.Size = new System.Drawing.Size(245, 41);
-            this.Deltitlelbl.TabIndex = 13;
-            this.Deltitlelbl.Text = "Delete Service";
             // 
             // dataGridService
             // 
@@ -56,45 +49,76 @@
             this.dataGridService.Size = new System.Drawing.Size(355, 150);
             this.dataGridService.TabIndex = 90;
             // 
-            // delbtn
+            // btndel
             // 
-            this.delbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.delbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delbtn.Location = new System.Drawing.Point(325, 353);
-            this.delbtn.Name = "delbtn";
-            this.delbtn.Size = new System.Drawing.Size(157, 32);
-            this.delbtn.TabIndex = 89;
-            this.delbtn.Text = "Delete";
-            this.delbtn.UseVisualStyleBackColor = false;
+            this.btndel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btndel.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndel.Location = new System.Drawing.Point(325, 353);
+            this.btndel.Name = "btndel";
+            this.btndel.Size = new System.Drawing.Size(157, 32);
+            this.btndel.TabIndex = 89;
+            this.btndel.Text = "Delete";
+            this.btndel.UseVisualStyleBackColor = false;
             // 
-            // DelServicecmb
+            // cmbDel
             // 
-            this.DelServicecmb.FormattingEnabled = true;
-            this.DelServicecmb.Location = new System.Drawing.Point(312, 116);
-            this.DelServicecmb.Name = "DelServicecmb";
-            this.DelServicecmb.Size = new System.Drawing.Size(199, 21);
-            this.DelServicecmb.TabIndex = 88;
+            this.cmbDel.FormattingEnabled = true;
+            this.cmbDel.Location = new System.Drawing.Point(312, 116);
+            this.cmbDel.Name = "cmbDel";
+            this.cmbDel.Size = new System.Drawing.Size(199, 21);
+            this.cmbDel.TabIndex = 88;
             // 
-            // servicelbl
+            // lblService
             // 
-            this.servicelbl.AutoSize = true;
-            this.servicelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.servicelbl.Location = new System.Drawing.Point(21, 111);
-            this.servicelbl.Name = "servicelbl";
-            this.servicelbl.Size = new System.Drawing.Size(149, 24);
-            this.servicelbl.TabIndex = 87;
-            this.servicelbl.Text = "Choose Service:";
+            this.lblService.AutoSize = true;
+            this.lblService.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblService.Location = new System.Drawing.Point(21, 111);
+            this.lblService.Name = "lblService";
+            this.lblService.Size = new System.Drawing.Size(153, 28);
+            this.lblService.TabIndex = 87;
+            this.lblService.Text = "Choose Service:";
             // 
-            // backbtn
+            // panel1
             // 
-            this.backbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.backbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backbtn.Location = new System.Drawing.Point(672, 12);
-            this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(107, 33);
-            this.backbtn.TabIndex = 91;
-            this.backbtn.Text = "Back";
-            this.backbtn.UseVisualStyleBackColor = false;
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.btnback);
+            this.panel1.Controls.Add(this.lblDelFlight);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel1.Location = new System.Drawing.Point(-2, -3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(813, 61);
+            this.panel1.TabIndex = 101;
+            // 
+            // btnback
+            // 
+            this.btnback.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnback.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnback.Location = new System.Drawing.Point(682, 15);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(107, 33);
+            this.btnback.TabIndex = 26;
+            this.btnback.Text = "Back";
+            this.btnback.UseVisualStyleBackColor = false;
+            // 
+            // lblDelFlight
+            // 
+            this.lblDelFlight.AutoSize = true;
+            this.lblDelFlight.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDelFlight.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblDelFlight.Location = new System.Drawing.Point(3, 0);
+            this.lblDelFlight.Name = "lblDelFlight";
+            this.lblDelFlight.Size = new System.Drawing.Size(292, 58);
+            this.lblDelFlight.TabIndex = 3;
+            this.lblDelFlight.Text = "Delete Service";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel2.Location = new System.Drawing.Point(-2, 440);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(805, 10);
+            this.panel2.TabIndex = 106;
             // 
             // DeleteService
             // 
@@ -102,27 +126,31 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.backbtn);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridService);
-            this.Controls.Add(this.delbtn);
-            this.Controls.Add(this.DelServicecmb);
-            this.Controls.Add(this.servicelbl);
-            this.Controls.Add(this.Deltitlelbl);
+            this.Controls.Add(this.btndel);
+            this.Controls.Add(this.cmbDel);
+            this.Controls.Add(this.lblService);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DeleteService";
             this.Text = "DeleteService";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridService)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label Deltitlelbl;
         private System.Windows.Forms.DataGridView dataGridService;
-        private System.Windows.Forms.Button delbtn;
-        private System.Windows.Forms.ComboBox DelServicecmb;
-        private System.Windows.Forms.Label servicelbl;
-        private System.Windows.Forms.Button backbtn;
+        private System.Windows.Forms.Button btndel;
+        private System.Windows.Forms.ComboBox cmbDel;
+        private System.Windows.Forms.Label lblService;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnback;
+        private System.Windows.Forms.Label lblDelFlight;
+        private System.Windows.Forms.Panel panel2;
     }
 }

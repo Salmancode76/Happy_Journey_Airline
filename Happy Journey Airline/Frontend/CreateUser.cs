@@ -21,5 +21,20 @@ namespace Happy_Journey_Airline
         {
 
         }
+
+        private void emaillbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void passlbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateUser_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

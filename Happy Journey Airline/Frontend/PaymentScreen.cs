@@ -26,5 +26,10 @@ namespace Happy_Journey_Airline
         {
 
         }
+
+        private void acctxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

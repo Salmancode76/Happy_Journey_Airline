@@ -28,103 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBack = new System.Windows.Forms.Button();
-            this.gridRecMessage = new System.Windows.Forms.DataGridView();
-            this.lblRecievedMessage = new System.Windows.Forms.Label();
-            this.txtReciever = new System.Windows.Forms.TextBox();
-            this.btnSend = new System.Windows.Forms.Button();
-            this.lblReciever = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserMessage));
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lblMessage = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblrecievedMessage = new System.Windows.Forms.Label();
+            this.txtreciever = new System.Windows.Forms.TextBox();
+            this.btnsend = new System.Windows.Forms.Button();
+            this.lblreciever = new System.Windows.Forms.Label();
+            this.lblEnter = new System.Windows.Forms.Label();
             this.txtMessage = new System.Windows.Forms.TextBox();
-            this.lblMess = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.gridRecMessage)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnBack
+            // panel2
             // 
-            this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(665, 23);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(107, 33);
-            this.btnBack.TabIndex = 104;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = false;
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel2.Location = new System.Drawing.Point(-2, 440);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(805, 13);
+            this.panel2.TabIndex = 107;
             // 
-            // gridRecMessage
+            // panel1
             // 
-            this.gridRecMessage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridRecMessage.Location = new System.Drawing.Point(219, 285);
-            this.gridRecMessage.Name = "gridRecMessage";
-            this.gridRecMessage.Size = new System.Drawing.Size(320, 150);
-            this.gridRecMessage.TabIndex = 103;
-            // 
-            // lblRecievedMessage
-            // 
-            this.lblRecievedMessage.AutoSize = true;
-            this.lblRecievedMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecievedMessage.Location = new System.Drawing.Point(28, 285);
-            this.lblRecievedMessage.Name = "lblRecievedMessage";
-            this.lblRecievedMessage.Size = new System.Drawing.Size(186, 24);
-            this.lblRecievedMessage.TabIndex = 102;
-            this.lblRecievedMessage.Text = "Recieved Messages:";
-            // 
-            // txtReciever
-            // 
-            this.txtReciever.Location = new System.Drawing.Point(200, 99);
-            this.txtReciever.Name = "txtReciever";
-            this.txtReciever.Size = new System.Drawing.Size(339, 20);
-            this.txtReciever.TabIndex = 101;
-            // 
-            // btnSend
-            // 
-            this.btnSend.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSend.Location = new System.Drawing.Point(429, 225);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(110, 32);
-            this.btnSend.TabIndex = 100;
-            this.btnSend.Text = "Send";
-            this.btnSend.UseVisualStyleBackColor = false;
-            // 
-            // lblReciever
-            // 
-            this.lblReciever.AutoSize = true;
-            this.lblReciever.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReciever.Location = new System.Drawing.Point(28, 94);
-            this.lblReciever.Name = "lblReciever";
-            this.lblReciever.Size = new System.Drawing.Size(90, 24);
-            this.lblReciever.TabIndex = 99;
-            this.lblReciever.Text = "Reciever:";
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.lblMessage);
+            this.panel1.Controls.Add(this.btnBack);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel1.Location = new System.Drawing.Point(-2, -3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(803, 61);
+            this.panel1.TabIndex = 106;
             // 
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessage.Location = new System.Drawing.Point(28, 145);
+            this.lblMessage.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblMessage.Location = new System.Drawing.Point(3, 0);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(142, 24);
-            this.lblMessage.TabIndex = 98;
-            this.lblMessage.Text = "Enter Message:";
+            this.lblMessage.Size = new System.Drawing.Size(204, 58);
+            this.lblMessage.TabIndex = 3;
+            this.lblMessage.Text = "Messages";
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(670, 13);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(107, 33);
+            this.btnBack.TabIndex = 25;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(233, 278);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(320, 150);
+            this.dataGridView1.TabIndex = 105;
+            // 
+            // lblrecievedMessage
+            // 
+            this.lblrecievedMessage.AutoSize = true;
+            this.lblrecievedMessage.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblrecievedMessage.Location = new System.Drawing.Point(42, 278);
+            this.lblrecievedMessage.Name = "lblrecievedMessage";
+            this.lblrecievedMessage.Size = new System.Drawing.Size(187, 28);
+            this.lblrecievedMessage.TabIndex = 104;
+            this.lblrecievedMessage.Text = "Recieved Messages:";
+            // 
+            // txtreciever
+            // 
+            this.txtreciever.Location = new System.Drawing.Point(214, 92);
+            this.txtreciever.Name = "txtreciever";
+            this.txtreciever.Size = new System.Drawing.Size(339, 20);
+            this.txtreciever.TabIndex = 103;
+            // 
+            // btnsend
+            // 
+            this.btnsend.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnsend.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsend.Location = new System.Drawing.Point(443, 218);
+            this.btnsend.Name = "btnsend";
+            this.btnsend.Size = new System.Drawing.Size(110, 32);
+            this.btnsend.TabIndex = 102;
+            this.btnsend.Text = "Send";
+            this.btnsend.UseVisualStyleBackColor = false;
+            // 
+            // lblreciever
+            // 
+            this.lblreciever.AutoSize = true;
+            this.lblreciever.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblreciever.Location = new System.Drawing.Point(42, 87);
+            this.lblreciever.Name = "lblreciever";
+            this.lblreciever.Size = new System.Drawing.Size(96, 28);
+            this.lblreciever.TabIndex = 101;
+            this.lblreciever.Text = "Reciever:";
+            // 
+            // lblEnter
+            // 
+            this.lblEnter.AutoSize = true;
+            this.lblEnter.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnter.Location = new System.Drawing.Point(42, 138);
+            this.lblEnter.Name = "lblEnter";
+            this.lblEnter.Size = new System.Drawing.Size(149, 28);
+            this.lblEnter.TabIndex = 100;
+            this.lblEnter.Text = "Enter Message:";
             // 
             // txtMessage
             // 
-            this.txtMessage.Location = new System.Drawing.Point(200, 145);
+            this.txtMessage.Location = new System.Drawing.Point(214, 138);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(339, 74);
-            this.txtMessage.TabIndex = 97;
+            this.txtMessage.TabIndex = 99;
             // 
-            // lblMess
+            // pictureBox1
             // 
-            this.lblMess.AutoSize = true;
-            this.lblMess.Font = new System.Drawing.Font("Modern No. 20", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMess.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblMess.Location = new System.Drawing.Point(284, 15);
-            this.lblMess.Name = "lblMess";
-            this.lblMess.Size = new System.Drawing.Size(162, 41);
-            this.lblMess.TabIndex = 96;
-            this.lblMess.Text = "Messages";
+            this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
+            this.pictureBox1.Location = new System.Drawing.Point(264, 106);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 244);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 108;
+            this.pictureBox1.TabStop = false;
             // 
             // UserMessage
             // 
@@ -132,18 +168,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.gridRecMessage);
-            this.Controls.Add(this.lblRecievedMessage);
-            this.Controls.Add(this.txtReciever);
-            this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.lblReciever);
-            this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lblrecievedMessage);
+            this.Controls.Add(this.txtreciever);
+            this.Controls.Add(this.btnsend);
+            this.Controls.Add(this.lblreciever);
+            this.Controls.Add(this.lblEnter);
             this.Controls.Add(this.txtMessage);
-            this.Controls.Add(this.lblMess);
+            this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserMessage";
             this.Text = "UserMessage";
-            ((System.ComponentModel.ISupportInitialize)(this.gridRecMessage)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,14 +192,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.DataGridView gridRecMessage;
-        private System.Windows.Forms.Label lblRecievedMessage;
-        private System.Windows.Forms.TextBox txtReciever;
-        private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.Label lblReciever;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblrecievedMessage;
+        private System.Windows.Forms.TextBox txtreciever;
+        private System.Windows.Forms.Button btnsend;
+        private System.Windows.Forms.Label lblreciever;
+        private System.Windows.Forms.Label lblEnter;
         private System.Windows.Forms.TextBox txtMessage;
-        private System.Windows.Forms.Label lblMess;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

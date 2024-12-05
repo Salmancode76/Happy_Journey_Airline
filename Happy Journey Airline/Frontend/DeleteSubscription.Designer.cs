@@ -28,74 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.deluserlbl = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteSubscription));
             this.dataGridSubs = new System.Windows.Forms.DataGridView();
-            this.delbtn = new System.Windows.Forms.Button();
-            this.DelSubmb = new System.Windows.Forms.ComboBox();
-            this.desclbl = new System.Windows.Forms.Label();
-            this.backbtn = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.cmbDelSub = new System.Windows.Forms.ComboBox();
+            this.lbldesc = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnback = new System.Windows.Forms.Button();
+            this.lblDelSub = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSubs)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // deluserlbl
-            // 
-            this.deluserlbl.AutoSize = true;
-            this.deluserlbl.Font = new System.Drawing.Font("Modern No. 20", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deluserlbl.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.deluserlbl.Location = new System.Drawing.Point(229, 9);
-            this.deluserlbl.Name = "deluserlbl";
-            this.deluserlbl.Size = new System.Drawing.Size(333, 41);
-            this.deluserlbl.TabIndex = 12;
-            this.deluserlbl.Text = "Delete Subscription";
             // 
             // dataGridSubs
             // 
             this.dataGridSubs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridSubs.Location = new System.Drawing.Point(217, 150);
+            this.dataGridSubs.Location = new System.Drawing.Point(228, 174);
             this.dataGridSubs.Name = "dataGridSubs";
-            this.dataGridSubs.Size = new System.Drawing.Size(355, 150);
+            this.dataGridSubs.Size = new System.Drawing.Size(367, 150);
             this.dataGridSubs.TabIndex = 86;
             // 
-            // delbtn
+            // btnDel
             // 
-            this.delbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.delbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delbtn.Location = new System.Drawing.Point(303, 341);
-            this.delbtn.Name = "delbtn";
-            this.delbtn.Size = new System.Drawing.Size(157, 32);
-            this.delbtn.TabIndex = 85;
-            this.delbtn.Text = "Delete";
-            this.delbtn.UseVisualStyleBackColor = false;
+            this.btnDel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDel.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.Location = new System.Drawing.Point(334, 353);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(157, 32);
+            this.btnDel.TabIndex = 85;
+            this.btnDel.Text = "Delete";
+            this.btnDel.UseVisualStyleBackColor = false;
             // 
-            // DelSubmb
+            // cmbDelSub
             // 
-            this.DelSubmb.FormattingEnabled = true;
-            this.DelSubmb.Location = new System.Drawing.Point(303, 98);
-            this.DelSubmb.Name = "DelSubmb";
-            this.DelSubmb.Size = new System.Drawing.Size(199, 21);
-            this.DelSubmb.TabIndex = 84;
+            this.cmbDelSub.FormattingEnabled = true;
+            this.cmbDelSub.Location = new System.Drawing.Point(306, 122);
+            this.cmbDelSub.Name = "cmbDelSub";
+            this.cmbDelSub.Size = new System.Drawing.Size(199, 21);
+            this.cmbDelSub.TabIndex = 84;
             // 
-            // desclbl
+            // lbldesc
             // 
-            this.desclbl.AutoSize = true;
-            this.desclbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.desclbl.Location = new System.Drawing.Point(12, 93);
-            this.desclbl.Name = "desclbl";
-            this.desclbl.Size = new System.Drawing.Size(231, 24);
-            this.desclbl.TabIndex = 83;
-            this.desclbl.Text = "Choose Subscription offer:";
-            this.desclbl.Click += new System.EventHandler(this.desclbl_Click);
+            this.lbldesc.AutoSize = true;
+            this.lbldesc.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldesc.Location = new System.Drawing.Point(23, 115);
+            this.lbldesc.Name = "lbldesc";
+            this.lbldesc.Size = new System.Drawing.Size(250, 28);
+            this.lbldesc.TabIndex = 83;
+            this.lbldesc.Text = "Choose Subscription offer:";
+            this.lbldesc.Click += new System.EventHandler(this.desclbl_Click);
             // 
-            // backbtn
+            // panel1
             // 
-            this.backbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.backbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backbtn.Location = new System.Drawing.Point(681, 17);
-            this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(107, 33);
-            this.backbtn.TabIndex = 87;
-            this.backbtn.Text = "Back";
-            this.backbtn.UseVisualStyleBackColor = false;
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.btnback);
+            this.panel1.Controls.Add(this.lblDelSub);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel1.Location = new System.Drawing.Point(1, -5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(813, 67);
+            this.panel1.TabIndex = 102;
+            // 
+            // btnback
+            // 
+            this.btnback.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnback.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnback.Location = new System.Drawing.Point(680, 17);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(107, 33);
+            this.btnback.TabIndex = 26;
+            this.btnback.Text = "Back";
+            this.btnback.UseVisualStyleBackColor = false;
+            // 
+            // lblDelSub
+            // 
+            this.lblDelSub.AutoSize = true;
+            this.lblDelSub.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDelSub.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblDelSub.Location = new System.Drawing.Point(3, 9);
+            this.lblDelSub.Name = "lblDelSub";
+            this.lblDelSub.Size = new System.Drawing.Size(390, 58);
+            this.lblDelSub.TabIndex = 3;
+            this.lblDelSub.Text = "Delete Subscription";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel2.Location = new System.Drawing.Point(1, 441);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(805, 13);
+            this.panel2.TabIndex = 107;
             // 
             // DeleteSubscription
             // 
@@ -103,27 +127,31 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.backbtn);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridSubs);
-            this.Controls.Add(this.delbtn);
-            this.Controls.Add(this.DelSubmb);
-            this.Controls.Add(this.desclbl);
-            this.Controls.Add(this.deluserlbl);
+            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.cmbDelSub);
+            this.Controls.Add(this.lbldesc);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DeleteSubscription";
             this.Text = "DeleteSubscription";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSubs)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label deluserlbl;
         private System.Windows.Forms.DataGridView dataGridSubs;
-        private System.Windows.Forms.Button delbtn;
-        private System.Windows.Forms.ComboBox DelSubmb;
-        private System.Windows.Forms.Label desclbl;
-        private System.Windows.Forms.Button backbtn;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.ComboBox cmbDelSub;
+        private System.Windows.Forms.Label lbldesc;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnback;
+        private System.Windows.Forms.Label lblDelSub;
+        private System.Windows.Forms.Panel panel2;
     }
 }

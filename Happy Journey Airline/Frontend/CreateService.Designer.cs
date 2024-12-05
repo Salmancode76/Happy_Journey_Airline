@@ -28,48 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.servicelbl = new System.Windows.Forms.Label();
-            this.backbtn = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateService));
+            this.lblService = new System.Windows.Forms.Label();
             this.servicetxt = new System.Windows.Forms.TextBox();
-            this.pricelbl = new System.Windows.Forms.Label();
-            this.deslbl = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblDesc = new System.Windows.Forms.Label();
             this.descriptiontxt = new System.Windows.Forms.TextBox();
             this.pricetxt = new System.Windows.Forms.TextBox();
-            this.createbtn = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.lblCreatetService = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblService
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(270, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(244, 41);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Create Service";
-            // 
-            // servicelbl
-            // 
-            this.servicelbl.AutoSize = true;
-            this.servicelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.servicelbl.Location = new System.Drawing.Point(22, 97);
-            this.servicelbl.Name = "servicelbl";
-            this.servicelbl.Size = new System.Drawing.Size(134, 24);
-            this.servicelbl.TabIndex = 3;
-            this.servicelbl.Text = "Service Name:";
-            // 
-            // backbtn
-            // 
-            this.backbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.backbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backbtn.Location = new System.Drawing.Point(681, 12);
-            this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(107, 33);
-            this.backbtn.TabIndex = 26;
-            this.backbtn.Text = "Back";
-            this.backbtn.UseVisualStyleBackColor = false;
+            this.lblService.AutoSize = true;
+            this.lblService.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblService.Location = new System.Drawing.Point(22, 97);
+            this.lblService.Name = "lblService";
+            this.lblService.Size = new System.Drawing.Size(141, 28);
+            this.lblService.TabIndex = 3;
+            this.lblService.Text = "Service Name:";
             // 
             // servicetxt
             // 
@@ -79,25 +63,25 @@
             this.servicetxt.TabIndex = 27;
             this.servicetxt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // pricelbl
+            // lblPrice
             // 
-            this.pricelbl.AutoSize = true;
-            this.pricelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pricelbl.Location = new System.Drawing.Point(22, 163);
-            this.pricelbl.Name = "pricelbl";
-            this.pricelbl.Size = new System.Drawing.Size(58, 24);
-            this.pricelbl.TabIndex = 28;
-            this.pricelbl.Text = "Price:";
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(22, 163);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(64, 28);
+            this.lblPrice.TabIndex = 28;
+            this.lblPrice.Text = "Price:";
             // 
-            // deslbl
+            // lblDesc
             // 
-            this.deslbl.AutoSize = true;
-            this.deslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deslbl.Location = new System.Drawing.Point(22, 228);
-            this.deslbl.Name = "deslbl";
-            this.deslbl.Size = new System.Drawing.Size(109, 24);
-            this.deslbl.TabIndex = 29;
-            this.deslbl.Text = "Description:";
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesc.Location = new System.Drawing.Point(22, 228);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(122, 28);
+            this.lblDesc.TabIndex = 29;
+            this.lblDesc.Text = "Description:";
             // 
             // descriptiontxt
             // 
@@ -114,50 +98,109 @@
             this.pricetxt.Size = new System.Drawing.Size(197, 20);
             this.pricetxt.TabIndex = 31;
             // 
-            // createbtn
+            // btnCreate
             // 
-            this.createbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.createbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createbtn.Location = new System.Drawing.Point(659, 389);
-            this.createbtn.Name = "createbtn";
-            this.createbtn.Size = new System.Drawing.Size(129, 38);
-            this.createbtn.TabIndex = 32;
-            this.createbtn.Text = "Create";
-            this.createbtn.UseVisualStyleBackColor = false;
+            this.btnCreate.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCreate.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Location = new System.Drawing.Point(659, 389);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(129, 38);
+            this.btnCreate.TabIndex = 32;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = false;
             // 
-            // AddService
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.btnBack);
+            this.panel1.Controls.Add(this.lblCreatetService);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel1.Location = new System.Drawing.Point(-2, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(804, 64);
+            this.panel1.TabIndex = 71;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(682, 15);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(107, 33);
+            this.btnBack.TabIndex = 26;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            // 
+            // lblCreatetService
+            // 
+            this.lblCreatetService.AutoSize = true;
+            this.lblCreatetService.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreatetService.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCreatetService.Location = new System.Drawing.Point(3, 0);
+            this.lblCreatetService.Name = "lblCreatetService";
+            this.lblCreatetService.Size = new System.Drawing.Size(294, 58);
+            this.lblCreatetService.TabIndex = 3;
+            this.lblCreatetService.Text = "Create Service";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel2.Location = new System.Drawing.Point(-2, 441);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(805, 10);
+            this.panel2.TabIndex = 99;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
+            this.pictureBox1.Location = new System.Drawing.Point(272, 103);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 244);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 101;
+            this.pictureBox1.TabStop = false;
+            // 
+            // CreateService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.createbtn);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.pricetxt);
             this.Controls.Add(this.descriptiontxt);
-            this.Controls.Add(this.deslbl);
-            this.Controls.Add(this.pricelbl);
+            this.Controls.Add(this.lblDesc);
+            this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.servicetxt);
-            this.Controls.Add(this.backbtn);
-            this.Controls.Add(this.servicelbl);
-            this.Controls.Add(this.label1);
-            this.Name = "AddService";
+            this.Controls.Add(this.lblService);
+            this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "CreateService";
             this.Text = "AddService";
             this.Load += new System.EventHandler(this.AddService_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label servicelbl;
-        private System.Windows.Forms.Button backbtn;
+        private System.Windows.Forms.Label lblService;
         private System.Windows.Forms.TextBox servicetxt;
-        private System.Windows.Forms.Label pricelbl;
-        private System.Windows.Forms.Label deslbl;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.TextBox descriptiontxt;
         private System.Windows.Forms.TextBox pricetxt;
-        private System.Windows.Forms.Button createbtn;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label lblCreatetService;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -72,6 +72,13 @@
     <Compile Include="Backend\Employer.cs" />
     <Compile Include="Backend\Flight.cs" />
     <Compile Include="Backend\FlightClass.cs" />
+    <Compile Include="Backend\Message.cs" />
+    <Compile Include="Backend\Payment.cs" />
+    <Compile Include="Backend\Program.cs" />
+    <Compile Include="Backend\Service.cs" />
+    <Compile Include="Backend\Subscription.cs" />
+    <Compile Include="Backend\TravelerObserver.cs" />
+    <Compile Include="Backend\User.cs" />
     <Compile Include="Frontend\AdminBookings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,13 +175,6 @@
     <Compile Include="Frontend\DeleteUser.Designer.cs">
       <DependentUpon>DeleteUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Backend\Message.cs" />
-    <Compile Include="Backend\Payment.cs" />
-    <Compile Include="Backend\Program.cs" />
-    <Compile Include="Backend\Service.cs" />
-    <Compile Include="Backend\Subscription.cs" />
-    <Compile Include="Backend\TravelerObserver.cs" />
-    <Compile Include="Backend\User.cs" />
     <Compile Include="Frontend\logincs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -343,6 +343,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Backend\App.config" />
+    <None Include="Frontend\App.config" />
+    <None Include="Frontend\Happy Journey Airline.csproj" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -379,5 +381,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

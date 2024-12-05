@@ -28,292 +28,361 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.createutxt = new System.Windows.Forms.Label();
-            this.uNamelbl = new System.Windows.Forms.Label();
-            this.nametxt = new System.Windows.Forms.TextBox();
-            this.usernamelbl = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateUser));
+            this.lblfname = new System.Windows.Forms.Label();
+            this.txtfname = new System.Windows.Forms.TextBox();
+            this.lblusername = new System.Windows.Forms.Label();
             this.usertxt = new System.Windows.Forms.TextBox();
-            this.passlbl = new System.Windows.Forms.Label();
+            this.lblpass = new System.Windows.Forms.Label();
             this.passtxt = new System.Windows.Forms.TextBox();
-            this.emaillbl = new System.Windows.Forms.Label();
+            this.lblemail = new System.Windows.Forms.Label();
             this.emailtxt = new System.Windows.Forms.TextBox();
-            this.Genderlbl = new System.Windows.Forms.Label();
-            this.Malerb = new System.Windows.Forms.RadioButton();
-            this.Femalerb = new System.Windows.Forms.RadioButton();
-            this.phonetxt = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.rolecmb = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.createbtn = new System.Windows.Forms.Button();
-            this.backbtn = new System.Windows.Forms.Button();
-            this.balancelbl = new System.Windows.Forms.Label();
-            this.balancetxt = new System.Windows.Forms.TextBox();
+            this.lblgender = new System.Windows.Forms.Label();
+            this.rbmale = new System.Windows.Forms.RadioButton();
+            this.rbfemale = new System.Windows.Forms.RadioButton();
+            this.lblphone = new System.Windows.Forms.Label();
+            this.txtphone = new System.Windows.Forms.TextBox();
+            this.lblrole = new System.Windows.Forms.Label();
+            this.cmbrole = new System.Windows.Forms.ComboBox();
+            this.lblbirthdate = new System.Windows.Forms.Label();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.btncreate = new System.Windows.Forms.Button();
+            this.lblbalance = new System.Windows.Forms.Label();
+            this.txtbalance = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnback = new System.Windows.Forms.Button();
+            this.lblcreate = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtlname = new System.Windows.Forms.TextBox();
+            this.lbllname = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // createutxt
+            // lblfname
             // 
-            this.createutxt.AutoSize = true;
-            this.createutxt.Font = new System.Drawing.Font("Modern No. 20", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createutxt.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.createutxt.Location = new System.Drawing.Point(300, 12);
-            this.createutxt.Name = "createutxt";
-            this.createutxt.Size = new System.Drawing.Size(203, 41);
-            this.createutxt.TabIndex = 4;
-            this.createutxt.Text = "Create User";
+            this.lblfname.AutoSize = true;
+            this.lblfname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfname.Location = new System.Drawing.Point(46, 105);
+            this.lblfname.Name = "lblfname";
+            this.lblfname.Size = new System.Drawing.Size(106, 24);
+            this.lblfname.TabIndex = 5;
+            this.lblfname.Text = "First Name:";
             // 
-            // uNamelbl
+            // txtfname
             // 
-            this.uNamelbl.AutoSize = true;
-            this.uNamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uNamelbl.Location = new System.Drawing.Point(43, 73);
-            this.uNamelbl.Name = "uNamelbl";
-            this.uNamelbl.Size = new System.Drawing.Size(66, 24);
-            this.uNamelbl.TabIndex = 5;
-            this.uNamelbl.Text = "Name:";
+            this.txtfname.Location = new System.Drawing.Point(168, 109);
+            this.txtfname.Name = "txtfname";
+            this.txtfname.Size = new System.Drawing.Size(178, 20);
+            this.txtfname.TabIndex = 29;
             // 
-            // nametxt
+            // lblusername
             // 
-            this.nametxt.Location = new System.Drawing.Point(154, 77);
-            this.nametxt.Name = "nametxt";
-            this.nametxt.Size = new System.Drawing.Size(178, 20);
-            this.nametxt.TabIndex = 29;
-            // 
-            // usernamelbl
-            // 
-            this.usernamelbl.AutoSize = true;
-            this.usernamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernamelbl.Location = new System.Drawing.Point(38, 124);
-            this.usernamelbl.Name = "usernamelbl";
-            this.usernamelbl.Size = new System.Drawing.Size(102, 24);
-            this.usernamelbl.TabIndex = 30;
-            this.usernamelbl.Text = "Username:";
+            this.lblusername.AutoSize = true;
+            this.lblusername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusername.Location = new System.Drawing.Point(46, 206);
+            this.lblusername.Name = "lblusername";
+            this.lblusername.Size = new System.Drawing.Size(102, 24);
+            this.lblusername.TabIndex = 30;
+            this.lblusername.Text = "Username:";
             // 
             // usertxt
             // 
-            this.usertxt.Location = new System.Drawing.Point(154, 124);
+            this.usertxt.Location = new System.Drawing.Point(168, 211);
             this.usertxt.Name = "usertxt";
             this.usertxt.Size = new System.Drawing.Size(178, 20);
             this.usertxt.TabIndex = 31;
             // 
-            // passlbl
+            // lblpass
             // 
-            this.passlbl.AutoSize = true;
-            this.passlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passlbl.Location = new System.Drawing.Point(43, 173);
-            this.passlbl.Name = "passlbl";
-            this.passlbl.Size = new System.Drawing.Size(97, 24);
-            this.passlbl.TabIndex = 32;
-            this.passlbl.Text = "Password:";
+            this.lblpass.AutoSize = true;
+            this.lblpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpass.Location = new System.Drawing.Point(46, 261);
+            this.lblpass.Name = "lblpass";
+            this.lblpass.Size = new System.Drawing.Size(97, 24);
+            this.lblpass.TabIndex = 32;
+            this.lblpass.Text = "Password:";
+            this.lblpass.Click += new System.EventHandler(this.passlbl_Click);
             // 
             // passtxt
             // 
-            this.passtxt.Location = new System.Drawing.Point(154, 179);
+            this.passtxt.Location = new System.Drawing.Point(168, 261);
             this.passtxt.Name = "passtxt";
             this.passtxt.Size = new System.Drawing.Size(178, 20);
             this.passtxt.TabIndex = 33;
             // 
-            // emaillbl
+            // lblemail
             // 
-            this.emaillbl.AutoSize = true;
-            this.emaillbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emaillbl.Location = new System.Drawing.Point(47, 221);
-            this.emaillbl.Name = "emaillbl";
-            this.emaillbl.Size = new System.Drawing.Size(62, 24);
-            this.emaillbl.TabIndex = 34;
-            this.emaillbl.Text = "Email:";
+            this.lblemail.AutoSize = true;
+            this.lblemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblemail.Location = new System.Drawing.Point(46, 307);
+            this.lblemail.Name = "lblemail";
+            this.lblemail.Size = new System.Drawing.Size(62, 24);
+            this.lblemail.TabIndex = 34;
+            this.lblemail.Text = "Email:";
+            this.lblemail.Click += new System.EventHandler(this.emaillbl_Click);
             // 
             // emailtxt
             // 
-            this.emailtxt.Location = new System.Drawing.Point(154, 225);
+            this.emailtxt.Location = new System.Drawing.Point(168, 311);
             this.emailtxt.Name = "emailtxt";
             this.emailtxt.Size = new System.Drawing.Size(178, 20);
             this.emailtxt.TabIndex = 35;
             // 
-            // Genderlbl
+            // lblgender
             // 
-            this.Genderlbl.AutoSize = true;
-            this.Genderlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Genderlbl.Location = new System.Drawing.Point(47, 273);
-            this.Genderlbl.Name = "Genderlbl";
-            this.Genderlbl.Size = new System.Drawing.Size(79, 24);
-            this.Genderlbl.TabIndex = 36;
-            this.Genderlbl.Text = "Gender:";
+            this.lblgender.AutoSize = true;
+            this.lblgender.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblgender.Location = new System.Drawing.Point(423, 311);
+            this.lblgender.Name = "lblgender";
+            this.lblgender.Size = new System.Drawing.Size(79, 24);
+            this.lblgender.TabIndex = 36;
+            this.lblgender.Text = "Gender:";
             // 
-            // Malerb
+            // rbmale
             // 
-            this.Malerb.AutoSize = true;
-            this.Malerb.Location = new System.Drawing.Point(154, 273);
-            this.Malerb.Name = "Malerb";
-            this.Malerb.Size = new System.Drawing.Size(48, 17);
-            this.Malerb.TabIndex = 37;
-            this.Malerb.TabStop = true;
-            this.Malerb.Text = "Male";
-            this.Malerb.UseVisualStyleBackColor = true;
+            this.rbmale.AutoSize = true;
+            this.rbmale.Location = new System.Drawing.Point(527, 318);
+            this.rbmale.Name = "rbmale";
+            this.rbmale.Size = new System.Drawing.Size(48, 17);
+            this.rbmale.TabIndex = 37;
+            this.rbmale.TabStop = true;
+            this.rbmale.Text = "Male";
+            this.rbmale.UseVisualStyleBackColor = true;
             // 
-            // Femalerb
+            // rbfemale
             // 
-            this.Femalerb.AutoSize = true;
-            this.Femalerb.Location = new System.Drawing.Point(237, 273);
-            this.Femalerb.Name = "Femalerb";
-            this.Femalerb.Size = new System.Drawing.Size(59, 17);
-            this.Femalerb.TabIndex = 38;
-            this.Femalerb.TabStop = true;
-            this.Femalerb.Text = "Female";
-            this.Femalerb.UseVisualStyleBackColor = true;
+            this.rbfemale.AutoSize = true;
+            this.rbfemale.Location = new System.Drawing.Point(610, 318);
+            this.rbfemale.Name = "rbfemale";
+            this.rbfemale.Size = new System.Drawing.Size(59, 17);
+            this.rbfemale.TabIndex = 38;
+            this.rbfemale.TabStop = true;
+            this.rbfemale.Text = "Female";
+            this.rbfemale.UseVisualStyleBackColor = true;
             // 
-            // phonetxt
+            // lblphone
             // 
-            this.phonetxt.AutoSize = true;
-            this.phonetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phonetxt.Location = new System.Drawing.Point(420, 72);
-            this.phonetxt.Name = "phonetxt";
-            this.phonetxt.Size = new System.Drawing.Size(71, 24);
-            this.phonetxt.TabIndex = 39;
-            this.phonetxt.Text = "Phone:";
+            this.lblphone.AutoSize = true;
+            this.lblphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblphone.Location = new System.Drawing.Point(423, 103);
+            this.lblphone.Name = "lblphone";
+            this.lblphone.Size = new System.Drawing.Size(71, 24);
+            this.lblphone.TabIndex = 39;
+            this.lblphone.Text = "Phone:";
             // 
-            // textBox1
+            // txtphone
             // 
-            this.textBox1.Location = new System.Drawing.Point(516, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 20);
-            this.textBox1.TabIndex = 40;
+            this.txtphone.Location = new System.Drawing.Point(530, 104);
+            this.txtphone.Name = "txtphone";
+            this.txtphone.Size = new System.Drawing.Size(178, 20);
+            this.txtphone.TabIndex = 40;
             // 
-            // label1
+            // lblrole
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(420, 124);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 24);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Role:";
+            this.lblrole.AutoSize = true;
+            this.lblrole.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblrole.Location = new System.Drawing.Point(423, 155);
+            this.lblrole.Name = "lblrole";
+            this.lblrole.Size = new System.Drawing.Size(54, 24);
+            this.lblrole.TabIndex = 41;
+            this.lblrole.Text = "Role:";
             // 
-            // rolecmb
+            // cmbrole
             // 
-            this.rolecmb.FormattingEnabled = true;
-            this.rolecmb.Location = new System.Drawing.Point(516, 123);
-            this.rolecmb.Name = "rolecmb";
-            this.rolecmb.Size = new System.Drawing.Size(178, 21);
-            this.rolecmb.TabIndex = 42;
-            this.rolecmb.Text = "select";
+            this.cmbrole.FormattingEnabled = true;
+            this.cmbrole.Location = new System.Drawing.Point(530, 155);
+            this.cmbrole.Name = "cmbrole";
+            this.cmbrole.Size = new System.Drawing.Size(178, 21);
+            this.cmbrole.TabIndex = 42;
+            this.cmbrole.Text = "select";
             // 
-            // label2
+            // lblbirthdate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(420, 230);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 24);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "Birth Date:";
+            this.lblbirthdate.AutoSize = true;
+            this.lblbirthdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbirthdate.Location = new System.Drawing.Point(423, 261);
+            this.lblbirthdate.Name = "lblbirthdate";
+            this.lblbirthdate.Size = new System.Drawing.Size(95, 24);
+            this.lblbirthdate.TabIndex = 43;
+            this.lblbirthdate.Text = "Birth Date:";
             // 
-            // dateTimePicker1
+            // dateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(516, 232);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(178, 20);
-            this.dateTimePicker1.TabIndex = 44;
+            this.dateTimePicker.Location = new System.Drawing.Point(530, 261);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(178, 20);
+            this.dateTimePicker.TabIndex = 44;
             // 
-            // createbtn
+            // btncreate
             // 
-            this.createbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.createbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createbtn.Location = new System.Drawing.Point(726, 387);
-            this.createbtn.Name = "createbtn";
-            this.createbtn.Size = new System.Drawing.Size(129, 38);
-            this.createbtn.TabIndex = 45;
-            this.createbtn.Text = "Create";
-            this.createbtn.UseVisualStyleBackColor = false;
-            this.createbtn.Click += new System.EventHandler(this.createbtn_Click);
+            this.btncreate.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btncreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncreate.Location = new System.Drawing.Point(630, 388);
+            this.btncreate.Name = "btncreate";
+            this.btncreate.Size = new System.Drawing.Size(129, 38);
+            this.btncreate.TabIndex = 45;
+            this.btncreate.Text = "Create";
+            this.btncreate.UseVisualStyleBackColor = false;
+            this.btncreate.Click += new System.EventHandler(this.createbtn_Click);
             // 
-            // backbtn
+            // lblbalance
             // 
-            this.backbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.backbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backbtn.Location = new System.Drawing.Point(748, 12);
-            this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(107, 33);
-            this.backbtn.TabIndex = 46;
-            this.backbtn.Text = "Back";
-            this.backbtn.UseVisualStyleBackColor = false;
+            this.lblbalance.AutoSize = true;
+            this.lblbalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbalance.Location = new System.Drawing.Point(423, 206);
+            this.lblbalance.Name = "lblbalance";
+            this.lblbalance.Size = new System.Drawing.Size(83, 24);
+            this.lblbalance.TabIndex = 66;
+            this.lblbalance.Text = "Balance:";
             // 
-            // balancelbl
+            // txtbalance
             // 
-            this.balancelbl.AutoSize = true;
-            this.balancelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.balancelbl.Location = new System.Drawing.Point(420, 175);
-            this.balancelbl.Name = "balancelbl";
-            this.balancelbl.Size = new System.Drawing.Size(83, 24);
-            this.balancelbl.TabIndex = 66;
-            this.balancelbl.Text = "Balance:";
+            this.txtbalance.Location = new System.Drawing.Point(530, 210);
+            this.txtbalance.Name = "txtbalance";
+            this.txtbalance.Size = new System.Drawing.Size(178, 20);
+            this.txtbalance.TabIndex = 67;
             // 
-            // balancetxt
+            // panel1
             // 
-            this.balancetxt.Location = new System.Drawing.Point(516, 180);
-            this.balancetxt.Name = "balancetxt";
-            this.balancetxt.Size = new System.Drawing.Size(178, 20);
-            this.balancetxt.TabIndex = 67;
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.btnback);
+            this.panel1.Controls.Add(this.lblcreate);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel1.Location = new System.Drawing.Point(-3, -4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(809, 65);
+            this.panel1.TabIndex = 98;
+            // 
+            // btnback
+            // 
+            this.btnback.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnback.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnback.Location = new System.Drawing.Point(682, 15);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(107, 33);
+            this.btnback.TabIndex = 26;
+            this.btnback.Text = "Back";
+            this.btnback.UseVisualStyleBackColor = false;
+            // 
+            // lblcreate
+            // 
+            this.lblcreate.AutoSize = true;
+            this.lblcreate.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcreate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblcreate.Location = new System.Drawing.Point(3, 0);
+            this.lblcreate.Name = "lblcreate";
+            this.lblcreate.Size = new System.Drawing.Size(243, 58);
+            this.lblcreate.TabIndex = 3;
+            this.lblcreate.Text = "Create User";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel2.Location = new System.Drawing.Point(-2, 441);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(808, 13);
+            this.panel2.TabIndex = 104;
+            // 
+            // txtlname
+            // 
+            this.txtlname.Location = new System.Drawing.Point(168, 159);
+            this.txtlname.Name = "txtlname";
+            this.txtlname.Size = new System.Drawing.Size(178, 20);
+            this.txtlname.TabIndex = 106;
+            // 
+            // lbllname
+            // 
+            this.lbllname.AutoSize = true;
+            this.lbllname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbllname.Location = new System.Drawing.Point(46, 155);
+            this.lbllname.Name = "lbllname";
+            this.lbllname.Size = new System.Drawing.Size(104, 24);
+            this.lbllname.TabIndex = 105;
+            this.lbllname.Text = "Last Name:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
+            this.pictureBox1.Location = new System.Drawing.Point(272, 103);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 244);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 107;
+            this.pictureBox1.TabStop = false;
             // 
             // CreateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(867, 450);
-            this.Controls.Add(this.balancetxt);
-            this.Controls.Add(this.balancelbl);
-            this.Controls.Add(this.backbtn);
-            this.Controls.Add(this.createbtn);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.rolecmb);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.phonetxt);
-            this.Controls.Add(this.Femalerb);
-            this.Controls.Add(this.Malerb);
-            this.Controls.Add(this.Genderlbl);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtlname);
+            this.Controls.Add(this.lbllname);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txtbalance);
+            this.Controls.Add(this.lblbalance);
+            this.Controls.Add(this.btncreate);
+            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.lblbirthdate);
+            this.Controls.Add(this.cmbrole);
+            this.Controls.Add(this.lblrole);
+            this.Controls.Add(this.txtphone);
+            this.Controls.Add(this.lblphone);
+            this.Controls.Add(this.rbfemale);
+            this.Controls.Add(this.rbmale);
+            this.Controls.Add(this.lblgender);
             this.Controls.Add(this.emailtxt);
-            this.Controls.Add(this.emaillbl);
+            this.Controls.Add(this.lblemail);
             this.Controls.Add(this.passtxt);
-            this.Controls.Add(this.passlbl);
+            this.Controls.Add(this.lblpass);
             this.Controls.Add(this.usertxt);
-            this.Controls.Add(this.usernamelbl);
-            this.Controls.Add(this.nametxt);
-            this.Controls.Add(this.uNamelbl);
-            this.Controls.Add(this.createutxt);
+            this.Controls.Add(this.lblusername);
+            this.Controls.Add(this.txtfname);
+            this.Controls.Add(this.lblfname);
+            this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateUser";
             this.Text = "CreateUser";
+            this.Load += new System.EventHandler(this.CreateUser_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label createutxt;
-        private System.Windows.Forms.Label uNamelbl;
-        private System.Windows.Forms.TextBox nametxt;
-        private System.Windows.Forms.Label usernamelbl;
+        private System.Windows.Forms.Label lblfname;
+        private System.Windows.Forms.TextBox txtfname;
+        private System.Windows.Forms.Label lblusername;
         private System.Windows.Forms.TextBox usertxt;
-        private System.Windows.Forms.Label passlbl;
+        private System.Windows.Forms.Label lblpass;
         private System.Windows.Forms.TextBox passtxt;
-        private System.Windows.Forms.Label emaillbl;
+        private System.Windows.Forms.Label lblemail;
         private System.Windows.Forms.TextBox emailtxt;
-        private System.Windows.Forms.Label Genderlbl;
-        private System.Windows.Forms.RadioButton Malerb;
-        private System.Windows.Forms.RadioButton Femalerb;
-        private System.Windows.Forms.Label phonetxt;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox rolecmb;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button createbtn;
-        private System.Windows.Forms.Button backbtn;
-        private System.Windows.Forms.Label balancelbl;
-        private System.Windows.Forms.TextBox balancetxt;
+        private System.Windows.Forms.Label lblgender;
+        private System.Windows.Forms.RadioButton rbmale;
+        private System.Windows.Forms.RadioButton rbfemale;
+        private System.Windows.Forms.Label lblphone;
+        private System.Windows.Forms.Label lblrole;
+        private System.Windows.Forms.ComboBox cmbrole;
+        private System.Windows.Forms.Label lblbirthdate;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Button btncreate;
+        private System.Windows.Forms.Label lblbalance;
+        private System.Windows.Forms.TextBox txtbalance;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnback;
+        private System.Windows.Forms.Label lblcreate;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtlname;
+        private System.Windows.Forms.Label lbllname;
+        private System.Windows.Forms.TextBox txtphone;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

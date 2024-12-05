@@ -28,36 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.sublbl = new System.Windows.Forms.Label();
-            this.desclbl = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminSubscriptionsScreen));
+            this.lbldesc = new System.Windows.Forms.Label();
             this.SubGridView = new System.Windows.Forms.DataGridView();
-            this.createbtn = new System.Windows.Forms.Button();
-            this.Deletebtn = new System.Windows.Forms.Button();
-            this.updateuserbtn = new System.Windows.Forms.Button();
-            this.backbtn = new System.Windows.Forms.Button();
+            this.btncreate = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSubscriptionOffers = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.SubGridView)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // sublbl
+            // lbldesc
             // 
-            this.sublbl.AutoSize = true;
-            this.sublbl.Font = new System.Drawing.Font("Modern No. 20", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sublbl.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.sublbl.Location = new System.Drawing.Point(220, 9);
-            this.sublbl.Name = "sublbl";
-            this.sublbl.Size = new System.Drawing.Size(330, 41);
-            this.sublbl.TabIndex = 8;
-            this.sublbl.Text = "Subscription Offers";
-            // 
-            // desclbl
-            // 
-            this.desclbl.AutoSize = true;
-            this.desclbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.desclbl.Location = new System.Drawing.Point(24, 88);
-            this.desclbl.Name = "desclbl";
-            this.desclbl.Size = new System.Drawing.Size(131, 24);
-            this.desclbl.TabIndex = 78;
-            this.desclbl.Text = "Current Offers:";
+            this.lbldesc.AutoSize = true;
+            this.lbldesc.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldesc.Location = new System.Drawing.Point(24, 88);
+            this.lbldesc.Name = "lbldesc";
+            this.lbldesc.Size = new System.Drawing.Size(149, 28);
+            this.lbldesc.TabIndex = 78;
+            this.lbldesc.Text = "Current Offers:";
             // 
             // SubGridView
             // 
@@ -67,49 +60,80 @@
             this.SubGridView.Size = new System.Drawing.Size(510, 261);
             this.SubGridView.TabIndex = 79;
             // 
-            // createbtn
+            // btncreate
             // 
-            this.createbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.createbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createbtn.Location = new System.Drawing.Point(568, 115);
-            this.createbtn.Name = "createbtn";
-            this.createbtn.Size = new System.Drawing.Size(157, 32);
-            this.createbtn.TabIndex = 82;
-            this.createbtn.Text = "Create Subscription";
-            this.createbtn.UseVisualStyleBackColor = false;
+            this.btncreate.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btncreate.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncreate.Location = new System.Drawing.Point(568, 115);
+            this.btncreate.Name = "btncreate";
+            this.btncreate.Size = new System.Drawing.Size(157, 32);
+            this.btncreate.TabIndex = 82;
+            this.btncreate.Text = "Create Subscription";
+            this.btncreate.UseVisualStyleBackColor = false;
             // 
-            // Deletebtn
+            // btnDel
             // 
-            this.Deletebtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Deletebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Deletebtn.Location = new System.Drawing.Point(568, 233);
-            this.Deletebtn.Name = "Deletebtn";
-            this.Deletebtn.Size = new System.Drawing.Size(157, 32);
-            this.Deletebtn.TabIndex = 81;
-            this.Deletebtn.Text = "Delete Subscription";
-            this.Deletebtn.UseVisualStyleBackColor = false;
+            this.btnDel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDel.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.Location = new System.Drawing.Point(568, 233);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(157, 32);
+            this.btnDel.TabIndex = 81;
+            this.btnDel.Text = "Delete Subscription";
+            this.btnDel.UseVisualStyleBackColor = false;
             // 
-            // updateuserbtn
+            // btnUpdate
             // 
-            this.updateuserbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.updateuserbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateuserbtn.Location = new System.Drawing.Point(568, 344);
-            this.updateuserbtn.Name = "updateuserbtn";
-            this.updateuserbtn.Size = new System.Drawing.Size(157, 32);
-            this.updateuserbtn.TabIndex = 80;
-            this.updateuserbtn.Text = "Update Subscription";
-            this.updateuserbtn.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnUpdate.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(568, 344);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(157, 32);
+            this.btnUpdate.TabIndex = 80;
+            this.btnUpdate.Text = "Update Subscription";
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
-            // backbtn
+            // panel1
             // 
-            this.backbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.backbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backbtn.Location = new System.Drawing.Point(681, 9);
-            this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(107, 33);
-            this.backbtn.TabIndex = 83;
-            this.backbtn.Text = "Back";
-            this.backbtn.UseVisualStyleBackColor = false;
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.lblSubscriptionOffers);
+            this.panel1.Controls.Add(this.btnBack);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(803, 62);
+            this.panel1.TabIndex = 97;
+            // 
+            // lblSubscriptionOffers
+            // 
+            this.lblSubscriptionOffers.AutoSize = true;
+            this.lblSubscriptionOffers.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubscriptionOffers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblSubscriptionOffers.Location = new System.Drawing.Point(3, 0);
+            this.lblSubscriptionOffers.Name = "lblSubscriptionOffers";
+            this.lblSubscriptionOffers.Size = new System.Drawing.Size(387, 58);
+            this.lblSubscriptionOffers.TabIndex = 3;
+            this.lblSubscriptionOffers.Text = "Subscription Offers";
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(670, 13);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(107, 33);
+            this.btnBack.TabIndex = 25;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel2.Location = new System.Drawing.Point(1, 440);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(805, 10);
+            this.panel2.TabIndex = 98;
             // 
             // adminSubscriptionsScreen
             // 
@@ -117,29 +141,34 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.backbtn);
-            this.Controls.Add(this.createbtn);
-            this.Controls.Add(this.Deletebtn);
-            this.Controls.Add(this.updateuserbtn);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btncreate);
+            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.SubGridView);
-            this.Controls.Add(this.desclbl);
-            this.Controls.Add(this.sublbl);
+            this.Controls.Add(this.lbldesc);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "adminSubscriptionsScreen";
             this.Text = "adminSubscriptionsScreen";
+            this.Load += new System.EventHandler(this.adminSubscriptionsScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SubGridView)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label sublbl;
-        private System.Windows.Forms.Label desclbl;
+        private System.Windows.Forms.Label lbldesc;
         private System.Windows.Forms.DataGridView SubGridView;
-        private System.Windows.Forms.Button createbtn;
-        private System.Windows.Forms.Button Deletebtn;
-        private System.Windows.Forms.Button updateuserbtn;
-        private System.Windows.Forms.Button backbtn;
+        private System.Windows.Forms.Button btncreate;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblSubscriptionOffers;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -28,73 +28,109 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteBooking));
             this.gridBooking = new System.Windows.Forms.DataGridView();
-            this.backbtn = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
-            this.DelBookingcmb = new System.Windows.Forms.ComboBox();
+            this.cmbDelBooking = new System.Windows.Forms.ComboBox();
             this.lbldes = new System.Windows.Forms.Label();
-            this.lblDel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnback = new System.Windows.Forms.Button();
+            this.lblDelBooking = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridBooking)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridBooking
             // 
             this.gridBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridBooking.Location = new System.Drawing.Point(219, 161);
+            this.gridBooking.Location = new System.Drawing.Point(219, 182);
             this.gridBooking.Name = "gridBooking";
-            this.gridBooking.Size = new System.Drawing.Size(355, 150);
+            this.gridBooking.Size = new System.Drawing.Size(361, 150);
             this.gridBooking.TabIndex = 88;
-            // 
-            // backbtn
-            // 
-            this.backbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.backbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backbtn.Location = new System.Drawing.Point(675, 9);
-            this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(107, 33);
-            this.backbtn.TabIndex = 87;
-            this.backbtn.Text = "Back";
-            this.backbtn.UseVisualStyleBackColor = false;
             // 
             // btnDel
             // 
             this.btnDel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDel.Location = new System.Drawing.Point(305, 352);
+            this.btnDel.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.Location = new System.Drawing.Point(320, 366);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(157, 32);
             this.btnDel.TabIndex = 86;
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = false;
             // 
-            // DelBookingcmb
+            // cmbDelBooking
             // 
-            this.DelBookingcmb.FormattingEnabled = true;
-            this.DelBookingcmb.Location = new System.Drawing.Point(290, 104);
-            this.DelBookingcmb.Name = "DelBookingcmb";
-            this.DelBookingcmb.Size = new System.Drawing.Size(199, 21);
-            this.DelBookingcmb.TabIndex = 85;
+            this.cmbDelBooking.FormattingEnabled = true;
+            this.cmbDelBooking.Location = new System.Drawing.Point(258, 117);
+            this.cmbDelBooking.Name = "cmbDelBooking";
+            this.cmbDelBooking.Size = new System.Drawing.Size(272, 21);
+            this.cmbDelBooking.TabIndex = 85;
             // 
             // lbldes
             // 
             this.lbldes.AutoSize = true;
-            this.lbldes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldes.Location = new System.Drawing.Point(25, 101);
+            this.lbldes.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldes.Location = new System.Drawing.Point(31, 109);
             this.lbldes.Name = "lbldes";
-            this.lbldes.Size = new System.Drawing.Size(155, 24);
+            this.lbldes.Size = new System.Drawing.Size(161, 28);
             this.lbldes.TabIndex = 84;
             this.lbldes.Text = "Choose Booking:";
             // 
-            // lblDel
+            // panel1
             // 
-            this.lblDel.AutoSize = true;
-            this.lblDel.Font = new System.Drawing.Font("Modern No. 20", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDel.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblDel.Location = new System.Drawing.Point(268, 9);
-            this.lblDel.Name = "lblDel";
-            this.lblDel.Size = new System.Drawing.Size(266, 41);
-            this.lblDel.TabIndex = 83;
-            this.lblDel.Text = "Delete Booking";
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.btnback);
+            this.panel1.Controls.Add(this.lblDelBooking);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(809, 62);
+            this.panel1.TabIndex = 99;
+            // 
+            // btnback
+            // 
+            this.btnback.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnback.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnback.Location = new System.Drawing.Point(682, 15);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(107, 33);
+            this.btnback.TabIndex = 26;
+            this.btnback.Text = "Back";
+            this.btnback.UseVisualStyleBackColor = false;
+            // 
+            // lblDelBooking
+            // 
+            this.lblDelBooking.AutoSize = true;
+            this.lblDelBooking.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDelBooking.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblDelBooking.Location = new System.Drawing.Point(3, 0);
+            this.lblDelBooking.Name = "lblDelBooking";
+            this.lblDelBooking.Size = new System.Drawing.Size(305, 58);
+            this.lblDelBooking.TabIndex = 3;
+            this.lblDelBooking.Text = "Delete Booking";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel2.Location = new System.Drawing.Point(0, 441);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(805, 10);
+            this.panel2.TabIndex = 104;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
+            this.pictureBox1.Location = new System.Drawing.Point(272, 103);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 244);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 108;
+            this.pictureBox1.TabStop = false;
             // 
             // DeleteBooking
             // 
@@ -102,15 +138,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.gridBooking);
-            this.Controls.Add(this.backbtn);
             this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.DelBookingcmb);
+            this.Controls.Add(this.cmbDelBooking);
             this.Controls.Add(this.lbldes);
-            this.Controls.Add(this.lblDel);
+            this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DeleteBooking";
             this.Text = "DeleteBooking";
             ((System.ComponentModel.ISupportInitialize)(this.gridBooking)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,10 +160,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView gridBooking;
-        private System.Windows.Forms.Button backbtn;
         private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.ComboBox DelBookingcmb;
+        private System.Windows.Forms.ComboBox cmbDelBooking;
         private System.Windows.Forms.Label lbldes;
-        private System.Windows.Forms.Label lblDel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnback;
+        private System.Windows.Forms.Label lblDelBooking;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

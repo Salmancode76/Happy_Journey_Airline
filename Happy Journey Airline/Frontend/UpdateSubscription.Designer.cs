@@ -28,120 +28,156 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.sublbl = new System.Windows.Forms.Label();
-            this.desclbl = new System.Windows.Forms.Label();
-            this.FlightNotxt = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.Updatebtn = new System.Windows.Forms.Button();
-            this.backbtn = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateSubscription));
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblUpdate = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.destxt = new System.Windows.Forms.TextBox();
+            this.deslbl = new System.Windows.Forms.Label();
+            this.subPricetxt = new System.Windows.Forms.TextBox();
+            this.subPricelbl = new System.Windows.Forms.Label();
+            this.sernametxt = new System.Windows.Forms.TextBox();
+            this.sernamelbl = new System.Windows.Forms.Label();
+            this.subNametxt = new System.Windows.Forms.TextBox();
+            this.subnamelbl = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // sublbl
+            // panel2
             // 
-            this.sublbl.AutoSize = true;
-            this.sublbl.Font = new System.Drawing.Font("Modern No. 20", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sublbl.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.sublbl.Location = new System.Drawing.Point(216, 9);
-            this.sublbl.Name = "sublbl";
-            this.sublbl.Size = new System.Drawing.Size(345, 41);
-            this.sublbl.TabIndex = 9;
-            this.sublbl.Text = "Update Subscription";
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel2.Location = new System.Drawing.Point(-2, 441);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(805, 10);
+            this.panel2.TabIndex = 115;
             // 
-            // desclbl
+            // panel1
             // 
-            this.desclbl.AutoSize = true;
-            this.desclbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.desclbl.Location = new System.Drawing.Point(29, 92);
-            this.desclbl.Name = "desclbl";
-            this.desclbl.Size = new System.Drawing.Size(175, 24);
-            this.desclbl.TabIndex = 79;
-            this.desclbl.Text = "Subscription Name:";
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.lblUpdate);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel1.Location = new System.Drawing.Point(-2, -1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(804, 64);
+            this.panel1.TabIndex = 113;
             // 
-            // FlightNotxt
+            // button1
             // 
-            this.FlightNotxt.Location = new System.Drawing.Point(223, 97);
-            this.FlightNotxt.Name = "FlightNotxt";
-            this.FlightNotxt.Size = new System.Drawing.Size(197, 20);
-            this.FlightNotxt.TabIndex = 80;
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(682, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 33);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // lblUpdate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 153);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 24);
-            this.label1.TabIndex = 81;
-            this.label1.Text = "Service Name:";
+            this.lblUpdate.AutoSize = true;
+            this.lblUpdate.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblUpdate.Location = new System.Drawing.Point(3, 0);
+            this.lblUpdate.Name = "lblUpdate";
+            this.lblUpdate.Size = new System.Drawing.Size(404, 58);
+            this.lblUpdate.TabIndex = 3;
+            this.lblUpdate.Text = "Update Subscription";
             // 
-            // textBox1
+            // btnSave
             // 
-            this.textBox1.Location = new System.Drawing.Point(223, 158);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 20);
-            this.textBox1.TabIndex = 82;
+            this.btnSave.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSave.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(636, 386);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(129, 38);
+            this.btnSave.TabIndex = 112;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // destxt
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 217);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 24);
-            this.label2.TabIndex = 83;
-            this.label2.Text = "Subscription Price:";
+            this.destxt.Location = new System.Drawing.Point(228, 278);
+            this.destxt.Multiline = true;
+            this.destxt.Name = "destxt";
+            this.destxt.Size = new System.Drawing.Size(325, 107);
+            this.destxt.TabIndex = 111;
             // 
-            // textBox2
+            // deslbl
             // 
-            this.textBox2.Location = new System.Drawing.Point(223, 222);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(197, 20);
-            this.textBox2.TabIndex = 84;
+            this.deslbl.AutoSize = true;
+            this.deslbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deslbl.Location = new System.Drawing.Point(34, 273);
+            this.deslbl.Name = "deslbl";
+            this.deslbl.Size = new System.Drawing.Size(122, 28);
+            this.deslbl.TabIndex = 110;
+            this.deslbl.Text = "Description:";
             // 
-            // label3
+            // subPricetxt
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(29, 276);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 24);
-            this.label3.TabIndex = 85;
-            this.label3.Text = "Description:";
+            this.subPricetxt.Location = new System.Drawing.Point(228, 219);
+            this.subPricetxt.Name = "subPricetxt";
+            this.subPricetxt.Size = new System.Drawing.Size(197, 20);
+            this.subPricetxt.TabIndex = 109;
             // 
-            // textBox3
+            // subPricelbl
             // 
-            this.textBox3.Location = new System.Drawing.Point(223, 281);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(325, 107);
-            this.textBox3.TabIndex = 86;
+            this.subPricelbl.AutoSize = true;
+            this.subPricelbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subPricelbl.Location = new System.Drawing.Point(34, 214);
+            this.subPricelbl.Name = "subPricelbl";
+            this.subPricelbl.Size = new System.Drawing.Size(182, 28);
+            this.subPricelbl.TabIndex = 108;
+            this.subPricelbl.Text = "Subscription Price:";
             // 
-            // Updatebtn
+            // sernametxt
             // 
-            this.Updatebtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Updatebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Updatebtn.Location = new System.Drawing.Point(638, 390);
-            this.Updatebtn.Name = "Updatebtn";
-            this.Updatebtn.Size = new System.Drawing.Size(129, 38);
-            this.Updatebtn.TabIndex = 87;
-            this.Updatebtn.Text = "Update";
-            this.Updatebtn.UseVisualStyleBackColor = false;
+            this.sernametxt.Location = new System.Drawing.Point(228, 155);
+            this.sernametxt.Name = "sernametxt";
+            this.sernametxt.Size = new System.Drawing.Size(197, 20);
+            this.sernametxt.TabIndex = 107;
             // 
-            // backbtn
+            // sernamelbl
             // 
-            this.backbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.backbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backbtn.Location = new System.Drawing.Point(660, 17);
-            this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(107, 33);
-            this.backbtn.TabIndex = 88;
-            this.backbtn.Text = "Back";
-            this.backbtn.UseVisualStyleBackColor = false;
+            this.sernamelbl.AutoSize = true;
+            this.sernamelbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sernamelbl.Location = new System.Drawing.Point(34, 150);
+            this.sernamelbl.Name = "sernamelbl";
+            this.sernamelbl.Size = new System.Drawing.Size(141, 28);
+            this.sernamelbl.TabIndex = 106;
+            this.sernamelbl.Text = "Service Name:";
+            // 
+            // subNametxt
+            // 
+            this.subNametxt.Location = new System.Drawing.Point(228, 94);
+            this.subNametxt.Name = "subNametxt";
+            this.subNametxt.Size = new System.Drawing.Size(197, 20);
+            this.subNametxt.TabIndex = 105;
+            // 
+            // subnamelbl
+            // 
+            this.subnamelbl.AutoSize = true;
+            this.subnamelbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subnamelbl.Location = new System.Drawing.Point(34, 90);
+            this.subnamelbl.Name = "subnamelbl";
+            this.subnamelbl.Size = new System.Drawing.Size(189, 28);
+            this.subnamelbl.TabIndex = 104;
+            this.subnamelbl.Text = "Subscription Name:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
+            this.pictureBox1.Location = new System.Drawing.Point(264, 90);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 244);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 114;
+            this.pictureBox1.TabStop = false;
             // 
             // UpdateSubscription
             // 
@@ -149,19 +185,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.backbtn);
-            this.Controls.Add(this.Updatebtn);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.FlightNotxt);
-            this.Controls.Add(this.desclbl);
-            this.Controls.Add(this.sublbl);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.destxt);
+            this.Controls.Add(this.deslbl);
+            this.Controls.Add(this.subPricetxt);
+            this.Controls.Add(this.subPricelbl);
+            this.Controls.Add(this.sernametxt);
+            this.Controls.Add(this.sernamelbl);
+            this.Controls.Add(this.subNametxt);
+            this.Controls.Add(this.subnamelbl);
+            this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UpdateSubscription";
             this.Text = "UpdateSubscription";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,16 +210,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Label sublbl;
-        private System.Windows.Forms.Label desclbl;
-        private System.Windows.Forms.TextBox FlightNotxt;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button Updatebtn;
-        private System.Windows.Forms.Button backbtn;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblUpdate;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox destxt;
+        private System.Windows.Forms.Label deslbl;
+        private System.Windows.Forms.TextBox subPricetxt;
+        private System.Windows.Forms.Label subPricelbl;
+        private System.Windows.Forms.TextBox sernametxt;
+        private System.Windows.Forms.Label sernamelbl;
+        private System.Windows.Forms.TextBox subNametxt;
+        private System.Windows.Forms.Label subnamelbl;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
