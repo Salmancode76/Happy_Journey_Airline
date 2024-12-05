@@ -122,7 +122,7 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public User login(string username1, string password, Form currentForm)
+        public User login(string username1, string password)
         {
             try
             {
@@ -137,17 +137,25 @@ namespace Happy_Journey_Airline
                 if (reader.Read())
                 {
                     User u1 = new User(this.userId, this.firstName, this.lastName, this.age, this.email, this.username = reader["username"].ToString(), this.password = reader["password"].ToString(), role = userRole(username1), this.phoneNo, this.gender, this.dob, this.balance);
+               
+                    if (u1.role == "Admin")
+                    {
+                        new adminDashboard().Show();
+                    } else if (u1.role == "Employer")
+                    {
+                        new BookFlight().Show();
 
-                    currentForm.Hide();
+                    }
+                    else
+                    {
+                        new BookFlight().Show();
 
-                    // Show the BookFlight form
-                    new BookFlight().Show();
 
-                    // Close the database connection
-                    DBManager.getInstance("").CloseConnection();
+                    }
 
                     return u1;
                 }
+           
               
             }
             catch (SqlException sqlEx)
@@ -179,15 +187,11 @@ namespace Happy_Journey_Airline
         }
         public void Register(string firstName, string lastName, int age, string email, string username, string password, string role, string phoneNo, string gender, string dob)
         {
-
             string stmt = "INSERT INTO [dbo].[User] (name, age, dob, email, gender, username, password, phone_no, role) " +
-                            "VALUES (@Name, @Age, @Dob, @Email, @Gender, @Username, @Password, @PhoneNo, @Role)";
-
-
-
+                          "VALUES (@Name, @Age, @Dob, @Email, @Gender, @Username, @Password, @PhoneNo, @Role); " +
+                          "SELECT SCOPE_IDENTITY();"; // Return the inserted ID
 
             SqlCommand cmd = new SqlCommand(stmt, DBManager.getInstance("").OpenConnection());
-
 
             cmd.Parameters.AddWithValue("@Name", firstName + " " + lastName);
             cmd.Parameters.AddWithValue("@Age", age);
@@ -199,9 +203,90 @@ namespace Happy_Journey_Airline
             cmd.Parameters.AddWithValue("@PhoneNo", phoneNo);
             cmd.Parameters.AddWithValue("@Role", role);
 
-            cmd.ExecuteNonQuery();
+            object insertedId = cmd.ExecuteScalar(); // Get the inserted ID
 
- 
+            if (insertedId != null)
+            {
+                Console.WriteLine("Inserted User ID: " + insertedId.ToString());
+            }
+
+            int userId = Convert.ToInt32(insertedId); // Convert to the appropriate type
+
+            if (role == "Employer")
+            {
+                try
+                {
+                    Console.WriteLine("Inserting into Employer table...");
+
+                    // Prepare SQL statement to insert into Employer table
+                    string employerStmt = "INSERT INTO [dbo].[Employer] ([user_id]) VALUES (@UserID)";
+                    SqlCommand employerCmd = new SqlCommand(employerStmt, DBManager.getInstance("").OpenConnection());
+
+                    // Add the parameter for the user_id
+                    employerCmd.Parameters.AddWithValue("@UserID", userId);
+
+                    // Execute the SQL query to insert into Employer table
+                    employerCmd.ExecuteNonQuery();
+
+                    Console.WriteLine("Inserted Employer for User ID: " + userId);
+                }
+                catch (Exception ex)
+                {
+                    // Log or show the error for debugging
+                    Console.WriteLine("Error inserting into Employer table: " + ex.Message);
+                }
+            } else if (role == "Admin")
+            {
+                try
+                {
+                    Console.WriteLine("Inserting into Admin table...");
+
+                    // Prepare SQL statement to insert into Employer table
+                    string adminstmt = "INSERT INTO [dbo].[Administrator] ([user_id]) VALUES (@UserID)";
+                    SqlCommand adminCmd = new SqlCommand(adminstmt, DBManager.getInstance("").OpenConnection());
+
+                    // Add the parameter for the user_id
+                    adminCmd.Parameters.AddWithValue("@UserID", userId);
+
+                    // Execute the SQL query to insert into Employer table
+                    adminCmd.ExecuteNonQuery();
+
+                    Console.WriteLine("Inserted admin for User ID: " + userId);
+                }
+                catch (Exception ex)
+                {
+                    // Log or show the error for debugging
+                    Console.WriteLine("Error inserting into Employer table: " + ex.Message);
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    Console.WriteLine("Inserting into traveller table...");
+
+                    // Prepare SQL statement to insert into Employer table
+                    string adminstmt = "INSERT INTO [dbo].[Traveler] ([user_id]) VALUES (@UserID)";
+                    SqlCommand adminCmd = new SqlCommand(adminstmt, DBManager.getInstance("").OpenConnection());
+
+                    // Add the parameter for the user_id
+                    adminCmd.Parameters.AddWithValue("@UserID", userId);
+
+                    // Execute the SQL query to insert into Employer table
+                    adminCmd.ExecuteNonQuery();
+
+                    Console.WriteLine("Inserted traveller for User ID: " + userId);
+                }
+                catch (Exception ex)
+                {
+                    // Log or show the error for debugging
+                    Console.WriteLine("Error inserting into Employer table: " + ex.Message);
+                }
+            }
+
+            // Close the connection
+            DBManager.getInstance("").CloseConnection();
         }
 
         public static bool Exists(string username)

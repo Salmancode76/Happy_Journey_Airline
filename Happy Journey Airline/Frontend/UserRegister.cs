@@ -79,7 +79,7 @@ namespace Happy_Journey_Airline
 
             String phone = phontxt.Text;
 
-            String role = RoleCB.Text;
+            string role = RoleCB.SelectedItem?.ToString() ?? ""; // Safely handles null if nothing is selected
 
             string pass = txtPass.Text;
 
@@ -95,6 +95,9 @@ namespace Happy_Journey_Airline
             }
 
             Console.WriteLine(phone);
+
+            Console.WriteLine("THE ROLLE " + role);
+
 
 
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,9 +12,9 @@ namespace Happy_Journey_Airline
     {
         private static DBManager instance;
         private SqlConnection connection;
-   //     private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database.mdf;Integrated Security=True";
 
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\salma\\OneDrive\\Desktop\\Codes\\C#\\Happy Journey Airline\\Happy Journey Airline\\Happy Journey Airline\\Backend\\Database.mdf\";Integrated Security=True";
+
+         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\salma\\OneDrive\\Desktop\\Codes\\C#\\Happy Journey Airline\\Happy Journey Airline\\Happy Journey Airline\\Backend\\Database.mdf\";Integrated Security=True";
         private DBManager()
         {
             connection = new SqlConnection(connectionString);

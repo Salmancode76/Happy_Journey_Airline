@@ -14,9 +14,12 @@ namespace Happy_Journey_Airline
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WelcomeScreen());
+
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new WelcomeScreen());
+            }
         }
     }
 }

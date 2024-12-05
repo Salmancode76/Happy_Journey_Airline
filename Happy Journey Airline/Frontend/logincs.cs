@@ -23,7 +23,7 @@ namespace Happy_Journey_Airline
         {
             User ur = new User();
 
-         User ul =  ur.login(ustxt.Text, passtxt.Text,this);
+         User ul =  ur.login(ustxt.Text, passtxt.Text);
 
             if ( ul == null ){
 
@@ -32,11 +32,11 @@ namespace Happy_Journey_Airline
             }
             else
             {
-                new BookFlight().Show();
+                //   this.Hide(); // Hide the current form
+                this.Hide();
 
             }
 
-            Console.WriteLine(ul);
         }
 
         private void Register_Click(object sender, EventArgs e)
