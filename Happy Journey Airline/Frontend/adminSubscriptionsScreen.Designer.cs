@@ -70,6 +70,7 @@
             this.btncreate.TabIndex = 82;
             this.btncreate.Text = "Create Subscription";
             this.btncreate.UseVisualStyleBackColor = false;
+            this.btncreate.Click += new System.EventHandler(this.btncreate_Click);
             // 
             // btnDel
             // 
@@ -81,6 +82,7 @@
             this.btnDel.TabIndex = 81;
             this.btnDel.Text = "Delete Subscription";
             this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnUpdate
             // 
@@ -92,6 +94,7 @@
             this.btnUpdate.TabIndex = 80;
             this.btnUpdate.Text = "Update Subscription";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // panel1
             // 
@@ -125,6 +128,7 @@
             this.btnBack.TabIndex = 25;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // panel2
             // 

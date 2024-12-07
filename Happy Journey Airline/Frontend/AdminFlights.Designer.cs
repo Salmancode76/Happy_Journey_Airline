@@ -62,6 +62,7 @@
             this.btncreate.TabIndex = 81;
             this.btncreate.Text = "Create Flight";
             this.btncreate.UseVisualStyleBackColor = false;
+            this.btncreate.Click += new System.EventHandler(this.btncreate_Click);
             // 
             // btndel
             // 
@@ -73,6 +74,7 @@
             this.btndel.TabIndex = 80;
             this.btndel.Text = "Delete Flight";
             this.btndel.UseVisualStyleBackColor = false;
+            this.btndel.Click += new System.EventHandler(this.btndel_Click);
             // 
             // btnupdateFlight
             // 
@@ -84,6 +86,7 @@
             this.btnupdateFlight.TabIndex = 79;
             this.btnupdateFlight.Text = "Update Flight";
             this.btnupdateFlight.UseVisualStyleBackColor = false;
+            this.btnupdateFlight.Click += new System.EventHandler(this.btnupdateFlight_Click);
             // 
             // gridFlight
             // 

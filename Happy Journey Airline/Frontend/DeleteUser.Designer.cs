@@ -60,6 +60,7 @@
             this.btnDel.TabIndex = 80;
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // DelUsercmb
             // 
@@ -99,6 +100,7 @@
             this.btnback.TabIndex = 26;
             this.btnback.Text = "Back";
             this.btnback.UseVisualStyleBackColor = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
             // lblDelUser
             // 

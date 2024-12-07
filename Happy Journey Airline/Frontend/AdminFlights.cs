@@ -19,7 +19,26 @@ namespace Happy_Journey_Airline
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            new adminDashboard().Show();
+        }
 
+        private void btncreate_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new CreateFlight().Show();
+        }
+
+        private void btndel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new deleteFlight().Show();
+        }
+
+        private void btnupdateFlight_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new UpdateFlightcs().Show();
         }
     }
 }

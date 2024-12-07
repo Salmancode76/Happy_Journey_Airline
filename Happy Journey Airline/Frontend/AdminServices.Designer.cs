@@ -62,6 +62,7 @@
             this.btncreate.TabIndex = 86;
             this.btncreate.Text = "Create Service";
             this.btncreate.UseVisualStyleBackColor = false;
+            this.btncreate.Click += new System.EventHandler(this.btncreate_Click);
             // 
             // btnDel
             // 
@@ -85,6 +86,7 @@
             this.btnUpdate.TabIndex = 84;
             this.btnUpdate.Text = "Update Service";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // SubGridView
             // 
@@ -126,6 +128,7 @@
             this.btnBack.TabIndex = 25;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // panel2
             // 

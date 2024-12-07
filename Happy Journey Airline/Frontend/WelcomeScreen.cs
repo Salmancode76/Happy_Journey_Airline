@@ -43,5 +43,10 @@ namespace Happy_Journey_Airline
             this.Hide();
             new logincs().Show();
         }
+
+        private void WelcomeScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

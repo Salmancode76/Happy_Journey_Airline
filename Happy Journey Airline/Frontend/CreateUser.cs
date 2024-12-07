@@ -19,7 +19,8 @@ namespace Happy_Journey_Airline
 
         private void createbtn_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new viewUsersScreen().Show();
         }
 
         private void emaillbl_Click(object sender, EventArgs e)
@@ -35,6 +36,12 @@ namespace Happy_Journey_Airline
         private void CreateUser_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new viewUsersScreen().Show();
         }
     }
 }

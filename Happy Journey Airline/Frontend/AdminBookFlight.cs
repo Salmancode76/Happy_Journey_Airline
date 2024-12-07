@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Happy_Journey_Airline
 {
-    public partial class CreateSubscription : Form
+    public partial class AdminBookFlight : Form
     {
-        public CreateSubscription()
+        public AdminBookFlight()
         {
             InitializeComponent();
         }
 
-        private void sublbl_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -25,13 +25,12 @@ namespace Happy_Journey_Airline
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new adminSubscriptionsScreen().Show();
+            new AdminBookings().Show();
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        private void btnBook_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new adminSubscriptionsScreen().Show();
+
         }
     }
 }

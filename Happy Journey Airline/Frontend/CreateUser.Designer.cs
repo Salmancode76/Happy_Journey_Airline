@@ -265,6 +265,7 @@
             this.btnback.TabIndex = 26;
             this.btnback.Text = "Back";
             this.btnback.UseVisualStyleBackColor = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
             // lblcreate
             // 

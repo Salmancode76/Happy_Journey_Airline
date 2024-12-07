@@ -38,7 +38,7 @@
             this.btnservices = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblDashboard = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -65,6 +65,7 @@
             this.btnusers.TabIndex = 68;
             this.btnusers.Text = "View Users";
             this.btnusers.UseVisualStyleBackColor = false;
+            this.btnusers.Click += new System.EventHandler(this.btnusers_Click);
             // 
             // btnSub
             // 
@@ -76,6 +77,7 @@
             this.btnSub.TabIndex = 69;
             this.btnSub.Text = "View Subscriptions";
             this.btnSub.UseVisualStyleBackColor = false;
+            this.btnSub.Click += new System.EventHandler(this.btnSub_Click);
             // 
             // btnFlights
             // 
@@ -87,6 +89,7 @@
             this.btnFlights.TabIndex = 70;
             this.btnFlights.Text = "View Flights";
             this.btnFlights.UseVisualStyleBackColor = false;
+            this.btnFlights.Click += new System.EventHandler(this.btnFlights_Click);
             // 
             // btnmessage
             // 
@@ -98,6 +101,7 @@
             this.btnmessage.TabIndex = 71;
             this.btnmessage.Text = "View Messages";
             this.btnmessage.UseVisualStyleBackColor = false;
+            this.btnmessage.Click += new System.EventHandler(this.btnmessage_Click);
             // 
             // btnbooking
             // 
@@ -121,12 +125,13 @@
             this.btnservices.TabIndex = 73;
             this.btnservices.Text = "View Services";
             this.btnservices.UseVisualStyleBackColor = false;
+            this.btnservices.Click += new System.EventHandler(this.btnservices_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel1.Controls.Add(this.lblDashboard);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(-2, -1);
             this.panel1.Name = "panel1";
@@ -144,16 +149,17 @@
             this.lblDashboard.TabIndex = 3;
             this.lblDashboard.Text = "Dashboard";
             // 
-            // button1
+            // btnLogout
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(670, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 33);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnLogout.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnLogout.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(670, 13);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(107, 33);
+            this.btnLogout.TabIndex = 25;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -211,7 +217,7 @@
         private System.Windows.Forms.Button btnservices;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblDashboard;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnFlights;

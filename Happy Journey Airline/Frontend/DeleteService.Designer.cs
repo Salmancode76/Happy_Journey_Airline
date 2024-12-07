@@ -59,6 +59,7 @@
             this.btndel.TabIndex = 89;
             this.btndel.Text = "Delete";
             this.btndel.UseVisualStyleBackColor = false;
+            this.btndel.Click += new System.EventHandler(this.btndel_Click);
             // 
             // cmbDel
             // 
@@ -99,6 +100,7 @@
             this.btnback.TabIndex = 26;
             this.btnback.Text = "Back";
             this.btnback.UseVisualStyleBackColor = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
             // lblDelFlight
             // 

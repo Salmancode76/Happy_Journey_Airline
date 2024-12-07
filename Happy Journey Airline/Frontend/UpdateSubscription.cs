@@ -16,5 +16,17 @@ namespace Happy_Journey_Airline
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new adminSubscriptionsScreen().Show();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new adminSubscriptionsScreen().Show();
+        }
     }
 }

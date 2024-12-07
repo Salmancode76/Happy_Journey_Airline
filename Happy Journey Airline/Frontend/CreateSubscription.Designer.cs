@@ -126,6 +126,7 @@
             this.btnCreate.TabIndex = 95;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // panel1
             // 
@@ -148,6 +149,7 @@
             this.btnBack.TabIndex = 26;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblCreateSub
             // 

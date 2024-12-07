@@ -59,6 +59,7 @@
             this.btnUpdate.TabIndex = 74;
             this.btnUpdate.Text = "Update User";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDel
             // 
@@ -70,6 +71,7 @@
             this.btnDel.TabIndex = 75;
             this.btnDel.Text = "Delete User";
             this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btncreate
             // 
@@ -81,6 +83,7 @@
             this.btncreate.TabIndex = 76;
             this.btncreate.Text = "Create User";
             this.btncreate.UseVisualStyleBackColor = false;
+            this.btncreate.Click += new System.EventHandler(this.btncreate_Click);
             // 
             // lbldesc
             // 
@@ -124,6 +127,7 @@
             this.backbtn.TabIndex = 87;
             this.backbtn.Text = "Back";
             this.backbtn.UseVisualStyleBackColor = false;
+            this.backbtn.Click += new System.EventHandler(this.backbtn_Click);
             // 
             // viewUsersScreen
             // 

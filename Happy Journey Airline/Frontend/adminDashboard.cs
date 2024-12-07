@@ -29,7 +29,44 @@ namespace Happy_Journey_Airline
 
         private void bookingbtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            new AdminBookings().Show();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new logincs().Show();
+        }
+
+        private void btnusers_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new viewUsersScreen().Show();
+        }
+
+        private void btnmessage_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminMessage().Show();
+        }
+
+        private void btnSub_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new adminSubscriptionsScreen().Show();
+        }
+
+        private void btnFlights_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminFlights().Show(); 
+        }
+
+        private void btnservices_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminServices().Show();
         }
     }
 }

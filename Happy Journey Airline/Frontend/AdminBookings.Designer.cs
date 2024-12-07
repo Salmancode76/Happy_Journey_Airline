@@ -35,7 +35,7 @@
             this.btnupdateFlight = new System.Windows.Forms.Button();
             this.gridBookings = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblBokflight = new System.Windows.Forms.Label();
+            this.lblBookings = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gridBookings)).BeginInit();
@@ -62,6 +62,7 @@
             this.btncreate.TabIndex = 88;
             this.btncreate.Text = "Create Booking";
             this.btncreate.UseVisualStyleBackColor = false;
+            this.btncreate.Click += new System.EventHandler(this.btncreate_Click);
             // 
             // btndel
             // 
@@ -73,6 +74,7 @@
             this.btndel.TabIndex = 87;
             this.btndel.Text = "Delete Booking";
             this.btndel.UseVisualStyleBackColor = false;
+            this.btndel.Click += new System.EventHandler(this.btndel_Click);
             // 
             // btnupdateFlight
             // 
@@ -84,6 +86,7 @@
             this.btnupdateFlight.TabIndex = 86;
             this.btnupdateFlight.Text = "Update Booking";
             this.btnupdateFlight.UseVisualStyleBackColor = false;
+            this.btnupdateFlight.Click += new System.EventHandler(this.btnupdateFlight_Click);
             // 
             // gridBookings
             // 
@@ -96,7 +99,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panel1.Controls.Add(this.lblBokflight);
+            this.panel1.Controls.Add(this.lblBookings);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(-4, -1);
@@ -104,16 +107,17 @@
             this.panel1.Size = new System.Drawing.Size(889, 62);
             this.panel1.TabIndex = 91;
             // 
-            // lblBokflight
+            // lblBookings
             // 
-            this.lblBokflight.AutoSize = true;
-            this.lblBokflight.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBokflight.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblBokflight.Location = new System.Drawing.Point(3, 0);
-            this.lblBokflight.Name = "lblBokflight";
-            this.lblBokflight.Size = new System.Drawing.Size(237, 58);
-            this.lblBokflight.TabIndex = 3;
-            this.lblBokflight.Text = "Book Flight";
+            this.lblBookings.AutoSize = true;
+            this.lblBookings.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookings.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblBookings.Location = new System.Drawing.Point(3, 0);
+            this.lblBookings.Name = "lblBookings";
+            this.lblBookings.Size = new System.Drawing.Size(194, 58);
+            this.lblBookings.TabIndex = 3;
+            this.lblBookings.Text = "Bookings";
+            this.lblBookings.Click += new System.EventHandler(this.lblBokflight_Click);
             // 
             // btnBack
             // 
@@ -125,6 +129,7 @@
             this.btnBack.TabIndex = 25;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // panel2
             // 
@@ -166,7 +171,7 @@
         private System.Windows.Forms.Button btnupdateFlight;
         private System.Windows.Forms.DataGridView gridBookings;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblBokflight;
+        private System.Windows.Forms.Label lblBookings;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Panel panel2;
     }

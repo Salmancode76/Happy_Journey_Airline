@@ -21,5 +21,17 @@ namespace Happy_Journey_Airline
         {
 
         }
+
+        private void btnbsck_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminBookings().Show();
+        }
+
+        private void btnBook_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminBookings().Show();
+        }
     }
 }

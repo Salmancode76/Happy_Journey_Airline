@@ -46,5 +46,22 @@ namespace Happy_Journey_Airline
         {
 
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new UserHomeScreen().Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBook_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new PaymentScreen().Show();
+        }
     }
 }

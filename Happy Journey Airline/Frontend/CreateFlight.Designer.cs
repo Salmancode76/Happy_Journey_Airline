@@ -125,6 +125,7 @@
             this.btnCreate.TabIndex = 25;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // label2
             // 
@@ -207,6 +208,7 @@
             this.btnBack.TabIndex = 26;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblCreateFlight
             // 

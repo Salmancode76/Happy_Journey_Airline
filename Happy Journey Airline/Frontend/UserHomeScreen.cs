@@ -10,28 +10,29 @@ using System.Windows.Forms;
 
 namespace Happy_Journey_Airline
 {
-    public partial class CreateSubscription : Form
+    public partial class UserHomeScreen : Form
     {
-        public CreateSubscription()
+        public UserHomeScreen()
         {
             InitializeComponent();
         }
 
-        private void sublbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
+        private void btnback_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new adminSubscriptionsScreen().Show();
+            new logincs().Show();
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        private void btnBookFlight_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new adminSubscriptionsScreen().Show();
+            new BookFlight().Show();
+        }
+
+        private void btnSubscribe_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new UserSubscriptionScreen().Show();
         }
     }
 }

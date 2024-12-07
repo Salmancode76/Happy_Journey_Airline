@@ -24,12 +24,19 @@ namespace Happy_Journey_Airline
 
         private void paybtn_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new UserHomeScreen().Show();
         }
 
         private void acctxt_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new BookFlight().Show();
         }
     }
 }

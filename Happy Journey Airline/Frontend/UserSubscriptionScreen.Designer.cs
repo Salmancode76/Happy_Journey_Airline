@@ -68,6 +68,7 @@
             this.paybtn.TabIndex = 67;
             this.paybtn.Text = "Subscribe";
             this.paybtn.UseVisualStyleBackColor = false;
+            this.paybtn.Click += new System.EventHandler(this.paybtn_Click);
             // 
             // panel1
             // 
@@ -101,6 +102,7 @@
             this.backbtn.TabIndex = 87;
             this.backbtn.Text = "Back";
             this.backbtn.UseVisualStyleBackColor = false;
+            this.backbtn.Click += new System.EventHandler(this.backbtn_Click);
             // 
             // panel2
             // 

@@ -37,10 +37,8 @@
             this.btnback = new System.Windows.Forms.Button();
             this.lblDelFlight = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridFlight)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridFlight
@@ -62,6 +60,7 @@
             this.btnDel.TabIndex = 86;
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // cmbDelFlight
             // 
@@ -102,6 +101,7 @@
             this.btnback.TabIndex = 26;
             this.btnback.Text = "Back";
             this.btnback.UseVisualStyleBackColor = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
             // lblDelFlight
             // 
@@ -123,16 +123,6 @@
             this.panel2.Size = new System.Drawing.Size(805, 11);
             this.panel2.TabIndex = 105;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
-            this.pictureBox1.Location = new System.Drawing.Point(272, 103);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(256, 244);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 109;
-            this.pictureBox1.TabStop = false;
-            // 
             // deleteFlight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,14 +135,12 @@
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.cmbDelFlight);
             this.Controls.Add(this.lbldelFlights);
-            this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "deleteFlight";
             this.Text = "deleteFlight";
             ((System.ComponentModel.ISupportInitialize)(this.gridFlight)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,6 +156,5 @@
         private System.Windows.Forms.Button btnback;
         private System.Windows.Forms.Label lblDelFlight;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -34,14 +34,13 @@ namespace Happy_Journey_Airline
             {
                 //   this.Hide(); // Hide the current form
                 this.Hide();
-
+                new UserHomeScreen().Show();
             }
 
         }
 
         private void Register_Click(object sender, EventArgs e)
         {
-         
             this.Hide(); // Hide the current form
 
             new  WelcomeScreen().Show();

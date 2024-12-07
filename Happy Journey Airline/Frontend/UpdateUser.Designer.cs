@@ -37,7 +37,7 @@
             this.lblcreate = new System.Windows.Forms.Label();
             this.txtbalance = new System.Windows.Forms.TextBox();
             this.lblbalance = new System.Windows.Forms.Label();
-            this.btncreate = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.lblbirthdate = new System.Windows.Forms.Label();
             this.cmbrole = new System.Windows.Forms.ComboBox();
@@ -107,6 +107,7 @@
             this.btnback.TabIndex = 26;
             this.btnback.Text = "Back";
             this.btnback.UseVisualStyleBackColor = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
             // lblcreate
             // 
@@ -136,16 +137,17 @@
             this.lblbalance.TabIndex = 126;
             this.lblbalance.Text = "Balance:";
             // 
-            // btncreate
+            // btnSave
             // 
-            this.btncreate.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btncreate.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncreate.Location = new System.Drawing.Point(648, 388);
-            this.btncreate.Name = "btncreate";
-            this.btncreate.Size = new System.Drawing.Size(129, 38);
-            this.btncreate.TabIndex = 125;
-            this.btncreate.Text = "Create";
-            this.btncreate.UseVisualStyleBackColor = false;
+            this.btnSave.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSave.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(648, 388);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(129, 38);
+            this.btnSave.TabIndex = 125;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btncreate_Click);
             // 
             // dateTimePicker
             // 
@@ -324,7 +326,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtbalance);
             this.Controls.Add(this.lblbalance);
-            this.Controls.Add(this.btncreate);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.lblbirthdate);
             this.Controls.Add(this.cmbrole);
@@ -364,7 +366,7 @@
         private System.Windows.Forms.Label lblcreate;
         private System.Windows.Forms.TextBox txtbalance;
         private System.Windows.Forms.Label lblbalance;
-        private System.Windows.Forms.Button btncreate;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Label lblbirthdate;
         private System.Windows.Forms.ComboBox cmbrole;

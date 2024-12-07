@@ -40,7 +40,7 @@
             this.txtSeat = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.lblFlightClass = new System.Windows.Forms.Label();
             this.cmbFlightClass = new System.Windows.Forms.ComboBox();
             this.lbltraveler = new System.Windows.Forms.Label();
@@ -74,6 +74,7 @@
             this.btnBook.TabIndex = 1;
             this.btnBook.Text = "Book";
             this.btnBook.UseVisualStyleBackColor = false;
+            this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
             // 
             // lblDes
             // 
@@ -165,17 +166,19 @@
             this.btnSearch.TabIndex = 24;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // btnLogout
+            // btnBack
             // 
-            this.btnLogout.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnLogout.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(681, 12);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(107, 33);
-            this.btnLogout.TabIndex = 25;
-            this.btnLogout.Text = "Log Out";
-            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(681, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(107, 33);
+            this.btnBack.TabIndex = 25;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblFlightClass
             // 
@@ -268,7 +271,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel1.Controls.Add(this.lblBook);
-            this.panel1.Controls.Add(this.btnLogout);
+            this.panel1.Controls.Add(this.btnBack);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(-4, 0);
             this.panel1.Name = "panel1";
@@ -372,7 +375,7 @@
         private System.Windows.Forms.TextBox txtSeat;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblFlightClass;
         private System.Windows.Forms.ComboBox cmbFlightClass;
         private System.Windows.Forms.Label lbltraveler;
