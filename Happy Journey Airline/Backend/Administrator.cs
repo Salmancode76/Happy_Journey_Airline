@@ -48,7 +48,7 @@ namespace Happy_Journey_Airline
                 string query = "INSERT INTO Booking (destination, duration, flight_class_id, flight_id, flight_no, payment_id, seat_no, status, subscription_id, traveler_id) " +
                                "OUTPUT INSERTED.booking_id VALUES (@Destination, @Duration, @FlightClassId, @FlightId, @FlightNo, @PaymentId, @SeatNo, @Status, @SubscriptionId, @TravelerId)";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@destination", booking.Destination);
                 command.Parameters.AddWithValue("@duration", booking.Duration);
@@ -71,7 +71,7 @@ namespace Happy_Journey_Airline
                     {
                         string serviceQuery = "INSERT INTO BookingService (booking_id, service_id) VALUES (@bookingId, @serviceId)";
 
-                        SqlCommand cmd = new SqlCommand(serviceQuery, DBManager.getInstance("").OpenConnection());
+                        SqlCommand cmd = new SqlCommand(serviceQuery, DBManager.getInstance().OpenConnection());
 
                         cmd.Parameters.AddWithValue("@booking_id", bookingId);
                         cmd.Parameters.AddWithValue("@service_id", service.ServiceId);
@@ -87,7 +87,7 @@ namespace Happy_Journey_Airline
             finally
             {
                 //Ensure the database connection is closed
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -100,7 +100,7 @@ namespace Happy_Journey_Airline
                 //SQL Query to insert the service
                 string query = "INSERT INTO Service (service_name, description, price) VALUES (@serviceName, @description, @price)";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@service_name", service.ServiceName);
                 command.Parameters.AddWithValue("@description", service.Description);
@@ -116,7 +116,7 @@ namespace Happy_Journey_Airline
             finally
             {
                 //Ensure the database connection is closed
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -129,7 +129,7 @@ namespace Happy_Journey_Airline
                 //SQL tquery to insert the flight
                 string query = "INSERT INTO Flight (flight_no, capacity, departure, destination, departureTime, arrivalTime, price) VALUES (@flightNo, @capacity, @departure, @destination, @departureTime, @arrivalTime, @price)";
                 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
                 
                 command.Parameters.AddWithValue("@flight_no", flight.FlightNo);
                 command.Parameters.AddWithValue("@capacity", flight.Capacity);
@@ -150,7 +150,7 @@ namespace Happy_Journey_Airline
             finally
             {
                 //Ensure the database connection is closed
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -166,7 +166,7 @@ namespace Happy_Journey_Airline
                 //SQL query to insert to User table
                 string query = "INSERT INTO User (name, age, email, username, password, role, phone_no, gender, dob, balance) VALUES ()";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@first_name", user.FirstName);
                 command.Parameters.AddWithValue("@last_name", user.LastName);
@@ -190,7 +190,7 @@ namespace Happy_Journey_Airline
             finally
             {
                 //Ensure the database connection is closed
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -215,7 +215,7 @@ namespace Happy_Journey_Airline
                 //SQL query to insert into Airport
                 string query = "INSERT INTO Airport (airport_code, airport_name) VALUES (@airportCode, @airportName)";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 //Add parameters to the command
                 command.Parameters.AddWithValue("@airport_code", airport.AirportCode);
@@ -231,7 +231,7 @@ namespace Happy_Journey_Airline
             finally
             {
                 //Ensure the database connection is closed
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -251,7 +251,7 @@ namespace Happy_Journey_Airline
                 //SQL query to insert into City table
                 string query = "INSERT INTO City (city_name) VALUES (@cityName)";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 //Add parameters to the command
                 command.Parameters.AddWithValue("@city_name", city.CityName);
@@ -266,7 +266,7 @@ namespace Happy_Journey_Airline
             finally
             {
                 //Ensure the database connection is closed
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -291,7 +291,7 @@ namespace Happy_Journey_Airline
                 //SQL query to insert into country table
                 string query = "INSERT INTO Country (country_name, region) VALUES (@countryName, @region)";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 //Add parameters to the command
                 command.Parameters.AddWithValue("@country_name", country.CountryName);
@@ -307,7 +307,7 @@ namespace Happy_Journey_Airline
             finally
             {
                 //Ensure the database connection is closed
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -375,7 +375,7 @@ namespace Happy_Journey_Airline
             {
                 string query = "DELETE FROM User WHERE user_id = @userId";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@userId", userId);
 
@@ -398,7 +398,7 @@ namespace Happy_Journey_Airline
             finally
             {
                 //Ensure the database connection is closed
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -483,7 +483,7 @@ namespace Happy_Journey_Airline
             {
                 string query = "UPDATE Users SET FirstName = @FirstName, LastName = @LastName, Age = @Age, Email = @Email, Username = @Username, Password = @Password, Role = @Role, PhoneNo = @PhoneNo, Gender = @Gender, DOB = @DOB, Balance = @Balance WHERE UserId = @User Id";
 
-                using (SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection()))
+                using (SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection()))
                 {
                     command.Parameters.AddWithValue("@User Id", userId);
                     command.Parameters.AddWithValue("@FirstName", firstName);
@@ -512,7 +512,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -540,7 +540,7 @@ namespace Happy_Journey_Airline
             {
                 string query = "UPDATE Services SET service_name = @serviceName, description = @description, price = @price WHERE service_id = @serviceId";
 
-                using (SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection()))
+                using (SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection()))
                 {
                     command.Parameters.AddWithValue("@service_id", serviceId);
                     command.Parameters.AddWithValue("@service_name", serviceName);
@@ -561,7 +561,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -612,7 +612,7 @@ namespace Happy_Journey_Airline
             {
                 string query = "UPDATE Flights SET flight_no = @flightNo, capacity = @capacity, status = @status, departure = @departure, destination = @destination, departure_time = @departureTime, arrivale_time = @arrivalTime, price = @price WHERE flight_id = @flightId";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
                 
                     command.Parameters.AddWithValue("@flight_id", flightId);
                     command.Parameters.AddWithValue("@flight_no", flightNo);
@@ -637,7 +637,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
         
@@ -710,7 +710,7 @@ namespace Happy_Journey_Airline
                 //Update the booking details
                 string query = "UPDATE Booking SET destination = @destination, duration = @duration, seat_no = @seatNo, status = @status, flight_class_id = @flightClassId, flight_id = @flightId, payment_id = @paymentId, subscription_id = @subscriptionId, traveler_id = @travelerId WHERE booking_id = @bookingId";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@booking_id", bookingId);
                 command.Parameters.AddWithValue("@destination", destination);
@@ -733,7 +733,7 @@ namespace Happy_Journey_Airline
                 //Update the booking service table
                 string deleteQuery = "DELETE FROM BookingService WHERE booking_id = @bookingId";
 
-                SqlCommand deleteCommand = new SqlCommand(deleteQuery, DBManager.getInstance("").OpenConnection());
+                SqlCommand deleteCommand = new SqlCommand(deleteQuery, DBManager.getInstance().OpenConnection());
 
                 deleteCommand.Parameters.AddWithValue("@booking_id", bookingId);
 
@@ -746,7 +746,7 @@ namespace Happy_Journey_Airline
                 foreach (Service service in services)
                 {
 
-                    SqlCommand insertCommand = new SqlCommand(insertQuery, DBManager.getInstance("").OpenConnection());
+                    SqlCommand insertCommand = new SqlCommand(insertQuery, DBManager.getInstance().OpenConnection());
 
                     insertCommand.Parameters.AddWithValue("@booking_id", bookingId);
                     insertCommand.Parameters.AddWithValue("@service_id", service.ServiceId);
@@ -760,7 +760,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -786,7 +786,7 @@ namespace Happy_Journey_Airline
                 //SQL query to update the airport details
                 string query = "UPDATE Airport SET airport_name = @airportName, airport_code = @airportCode WHERE airport_id = @airportId";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@airport_id", airportId);
                 command.Parameters.AddWithValue("@airport_code", airportCode);
@@ -801,7 +801,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -823,7 +823,7 @@ namespace Happy_Journey_Airline
                 //SQL query for updating city details
                 string query = "UPDATE City SET city_name = @cityName WHERE city_id = @cityId";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@city_id", cityId);
                 command.Parameters.AddWithValue("@city_name", cityName);
@@ -837,7 +837,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -864,7 +864,7 @@ namespace Happy_Journey_Airline
                 //SQL query to update the country details
                 string query = "UPDATE Country SET country_name = @countryName, region = @region WHERE country_id = @countryId";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 //command.Parameters.AddWithValue("@country_id", countryId);
                 command.Parameters.AddWithValue("@country_name", countryName);
@@ -879,7 +879,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -890,7 +890,7 @@ namespace Happy_Journey_Airline
                 //SQL query for deleting an airport
                 string query = "DELETE FROM Airport WHERE airport_id = @aiportId";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@airport_id", airportId);
 
@@ -903,7 +903,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -913,7 +913,7 @@ namespace Happy_Journey_Airline
             {
                 string query = "DELETE FROM Service WHERE service_id = @serviceId";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@service_id", serviceId);
 
@@ -926,7 +926,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -936,7 +936,7 @@ namespace Happy_Journey_Airline
             {
                 string query = "DELETE FROM Flight WHERE flight_id = @flightId";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@flight_id", flightId);
 
@@ -949,7 +949,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -959,7 +959,7 @@ namespace Happy_Journey_Airline
             {
                 string query = "DELETE FROM Booking WHERE booking_id = @bookingId";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@booking_id", bookingId);
 
@@ -972,7 +972,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -985,7 +985,7 @@ namespace Happy_Journey_Airline
                 //Fetch upcoming flights from the database
                 string query = "SELECT flight_id, flight_no, departure, destination, departure_time, arrival_time FROM Flight WHERE departure_time > @CurrentTime";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@CurrentTime", DateTime.Now);
 
@@ -1004,7 +1004,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection() ;
+                DBManager.getInstance().CloseConnection() ;
             }
         }
 
@@ -1015,7 +1015,7 @@ namespace Happy_Journey_Airline
             {                                    //keep the actual database name
                 string query = $"BACKUP DATABASE [DATABASE NAME] TO DISK = @backupFilePath WITH FORMAT, INIT";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@backupFilePath", backupFilePath);
 
@@ -1029,7 +1029,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -1048,7 +1048,7 @@ namespace Happy_Journey_Airline
                     //Add new service
                     string query = "INSERT INTO Service (service_name, description, price) VALUES (@serviceName, @description, @price)";
 
-                    SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                    SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                     command.Parameters.AddWithValue("@service_name", serviceName);
                     command.Parameters.AddWithValue("@description", description);
@@ -1070,7 +1070,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -1086,7 +1086,7 @@ namespace Happy_Journey_Airline
                 {
                     string query = "UPDATE Service SET service_name = @serviceName, description = @description, price = @price WHERE service_id = @serviceId";
 
-                    SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                    SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                     command.Parameters.AddWithValue("@service_name", serviceName);
                     command.Parameters.AddWithValue("@description", description);
@@ -1105,7 +1105,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -1115,7 +1115,7 @@ namespace Happy_Journey_Airline
             {
                 string query = "DELETE FROM Service WHERE service_id = @serviceId";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@service_id", serviceId);
 
@@ -1128,7 +1128,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
     }

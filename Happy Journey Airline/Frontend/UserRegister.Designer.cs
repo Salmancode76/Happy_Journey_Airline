@@ -49,12 +49,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Lnamelbl = new System.Windows.Forms.Label();
             this.Lnametxt = new System.Windows.Forms.TextBox();
             this.RoleLbl = new System.Windows.Forms.Label();
             this.RoleCB = new System.Windows.Forms.ComboBox();
             this.messagtxt = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -92,6 +92,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(236, 22);
             this.dateTimePicker1.TabIndex = 85;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label2
             // 
@@ -103,6 +104,7 @@
             this.label2.Size = new System.Drawing.Size(139, 35);
             this.label2.TabIndex = 84;
             this.label2.Text = "Birth Date:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // phontxt
             // 
@@ -111,6 +113,7 @@
             this.phontxt.Name = "phontxt";
             this.phontxt.Size = new System.Drawing.Size(236, 22);
             this.phontxt.TabIndex = 81;
+            this.phontxt.TextChanged += new System.EventHandler(this.phontxt_TextChanged);
             // 
             // phonetxt
             // 
@@ -150,6 +153,7 @@
             this.Malerb.TabStop = true;
             this.Malerb.Text = "Male";
             this.Malerb.UseVisualStyleBackColor = true;
+            this.Malerb.CheckedChanged += new System.EventHandler(this.Malerb_CheckedChanged);
             // 
             // Genderlbl
             // 
@@ -170,6 +174,7 @@
             this.emailtxt.Name = "emailtxt";
             this.emailtxt.Size = new System.Drawing.Size(236, 22);
             this.emailtxt.TabIndex = 76;
+            this.emailtxt.TextChanged += new System.EventHandler(this.emailtxt_TextChanged);
             // 
             // lblEmail
             // 
@@ -181,6 +186,7 @@
             this.lblEmail.Size = new System.Drawing.Size(89, 35);
             this.lblEmail.TabIndex = 75;
             this.lblEmail.Text = "Email:";
+            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
             // txtPass
             // 
@@ -189,6 +195,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(236, 22);
             this.txtPass.TabIndex = 74;
+            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
             // lblPass
             // 
@@ -200,6 +207,7 @@
             this.lblPass.Size = new System.Drawing.Size(129, 35);
             this.lblPass.TabIndex = 73;
             this.lblPass.Text = "Password:";
+            this.lblPass.Click += new System.EventHandler(this.lblPass_Click);
             // 
             // usertxt
             // 
@@ -208,6 +216,7 @@
             this.usertxt.Name = "usertxt";
             this.usertxt.Size = new System.Drawing.Size(236, 22);
             this.usertxt.TabIndex = 72;
+            this.usertxt.TextChanged += new System.EventHandler(this.usertxt_TextChanged);
             // 
             // usernamelbl
             // 
@@ -219,6 +228,7 @@
             this.usernamelbl.Size = new System.Drawing.Size(139, 35);
             this.usernamelbl.TabIndex = 71;
             this.usernamelbl.Text = "Username:";
+            this.usernamelbl.Click += new System.EventHandler(this.usernamelbl_Click);
             // 
             // Fnametxt
             // 
@@ -227,6 +237,7 @@
             this.Fnametxt.Name = "Fnametxt";
             this.Fnametxt.Size = new System.Drawing.Size(236, 22);
             this.Fnametxt.TabIndex = 70;
+            this.Fnametxt.TextChanged += new System.EventHandler(this.Fnametxt_TextChanged);
             // 
             // uNamelbl
             // 
@@ -273,17 +284,6 @@
             this.panel2.Size = new System.Drawing.Size(970, 12);
             this.panel2.TabIndex = 89;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
-            this.pictureBox1.Location = new System.Drawing.Point(344, 129);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(256, 244);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 90;
-            this.pictureBox1.TabStop = false;
-            // 
             // Lnamelbl
             // 
             this.Lnamelbl.AutoSize = true;
@@ -294,6 +294,7 @@
             this.Lnamelbl.Size = new System.Drawing.Size(142, 35);
             this.Lnamelbl.TabIndex = 91;
             this.Lnamelbl.Text = "Last Name:";
+            this.Lnamelbl.Click += new System.EventHandler(this.Lnamelbl_Click);
             // 
             // Lnametxt
             // 
@@ -302,6 +303,7 @@
             this.Lnametxt.Name = "Lnametxt";
             this.Lnametxt.Size = new System.Drawing.Size(236, 22);
             this.Lnametxt.TabIndex = 92;
+            this.Lnametxt.TextChanged += new System.EventHandler(this.Lnametxt_TextChanged);
             // 
             // RoleLbl
             // 
@@ -313,6 +315,7 @@
             this.RoleLbl.Size = new System.Drawing.Size(73, 35);
             this.RoleLbl.TabIndex = 93;
             this.RoleLbl.Text = "Role:";
+            this.RoleLbl.Click += new System.EventHandler(this.RoleLbl_Click);
             // 
             // RoleCB
             // 
@@ -332,6 +335,17 @@
             this.messagtxt.TabIndex = 95;
             this.messagtxt.Text = "Message";
             this.messagtxt.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
+            this.pictureBox1.Location = new System.Drawing.Point(344, 129);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 244);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 90;
+            this.pictureBox1.TabStop = false;
             // 
             // UserRegister
             // 

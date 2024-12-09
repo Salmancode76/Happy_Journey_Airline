@@ -76,7 +76,7 @@ namespace Happy_Journey_Airline
             {
                 string query = "INSERT INTO Message (content, dender_id, receiver_id, timestamp) VALUES (@content, @senderId, @receiverId, @timestamp)";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@content", content);
                 command.Parameters.AddWithValue("@sender_id", senderId);
@@ -91,7 +91,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 
@@ -105,7 +105,7 @@ namespace Happy_Journey_Airline
             {
                 string query = "SELECT * FROM Message WHERE receiver_id = @userId";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@user_id", userId);
 
@@ -119,7 +119,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
             return table;
         }

@@ -37,7 +37,7 @@ namespace Happy_Journey_Airline
                 //Fetch the user balance
                 string query = "SELECT balance FROM User WHERE user_id = @userId";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 command.Parameters.AddWithValue("@userId", userId);
 
@@ -68,7 +68,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
     }

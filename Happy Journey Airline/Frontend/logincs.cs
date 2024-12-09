@@ -34,7 +34,6 @@ namespace Happy_Journey_Airline
             {
                 //   this.Hide(); // Hide the current form
                 this.Hide();
-                new UserHomeScreen().Show();
             }
 
         }

@@ -20,7 +20,7 @@ namespace Happy_Journey_Airline
             connection = new SqlConnection(connectionString);
         }
 
-        public static DBManager getInstance(string cc)
+        public static DBManager getInstance()
         {
             if (instance == null)
             {

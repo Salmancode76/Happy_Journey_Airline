@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Happy_Journey_Airline
@@ -48,7 +50,7 @@ namespace Happy_Journey_Airline
 
         public int UserId { get; set; }
 
-        public string FirstName { 
+        public string FirstName {
             get { return firstName; }
             set { firstName = value; }
         }
@@ -58,18 +60,17 @@ namespace Happy_Journey_Airline
             get { return lastName; }
             set
             {
-                if (lastName.Length >= 3)
-                {
+                
                     this.lastName = value;
-                }
+                
             }
         }
 
-        public int Age { 
+        public int Age {
             get { return age; }
-            set 
+            set
             {
-                if ( age > 0 )
+                if (age > 0)
                 {
                     this.age = value;
                 }
@@ -90,11 +91,11 @@ namespace Happy_Journey_Airline
 
         public string Role { get; set; }
 
-        public double Balance { 
-            get { return  balance; }
-            set 
+        public double Balance {
+            get { return balance; }
+            set
             {
-                if ( balance > 0 )
+                if (balance > 0)
                 {
                     this.balance = value;
                 }
@@ -110,7 +111,7 @@ namespace Happy_Journey_Airline
 
             if (username.StartsWith("a", StringComparison.OrdinalIgnoreCase))
             {
-                return this.role = "Admin"; 
+                return this.role = "Admin";
             }
             else if (username.StartsWith("e", StringComparison.OrdinalIgnoreCase))
             {
@@ -127,7 +128,7 @@ namespace Happy_Journey_Airline
             try
             {
                 string query = "SELECT * FROM [dbo].[User] WHERE username = @username AND password = @password";
-                SqlCommand cmd = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand cmd = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 cmd.Parameters.AddWithValue("@username", username1);
                 cmd.Parameters.AddWithValue("@password", password);
@@ -136,27 +137,26 @@ namespace Happy_Journey_Airline
 
                 if (reader.Read())
                 {
-                    User u1 = new User(this.userId, this.firstName, this.lastName, this.age, this.email, this.username = reader["username"].ToString(), this.password = reader["password"].ToString(), role = userRole(username1), this.phoneNo, this.gender, this.dob, this.balance);
-               
+                    User u1 = new User(this.userId, this.firstName, this.lastName, this.age, this.email, this.username = reader["username"].ToString(), this.password = reader["password"].ToString(), role = reader["role"].ToString(), this.phoneNo, this.gender, this.dob, this.balance);
+                    Console.WriteLine(u1.role);
+                    Console.WriteLine(u1.username);
                     if (u1.role == "Admin")
                     {
                         new adminDashboard().Show();
-                    } else if (u1.role == "Employer")
+                    }
+                    else if (u1.role == "Employer")
                     {
                         new BookFlight().Show();
-
                     }
                     else
                     {
-                        new BookFlight().Show();
-
-
+                        new BookFlight().Show();  // Assuming Traveler also goes to BookFlight page
                     }
 
                     return u1;
                 }
-           
-              
+
+
             }
             catch (SqlException sqlEx)
             {
@@ -169,7 +169,7 @@ namespace Happy_Journey_Airline
             finally
             {
                 // Ensure the connection is closed in case of an error
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
             return null;
         }
@@ -187,11 +187,26 @@ namespace Happy_Journey_Airline
         }
         public void Register(string firstName, string lastName, int age, string email, string username, string password, string role, string phoneNo, string gender, string dob)
         {
+            if (string.IsNullOrEmpty(firstName) ||
+    string.IsNullOrEmpty(lastName) ||
+    age <= 0 ||
+    string.IsNullOrEmpty(email) ||
+    string.IsNullOrEmpty(username) ||
+    string.IsNullOrEmpty(password) ||
+    string.IsNullOrEmpty(role) ||
+    string.IsNullOrEmpty(phoneNo) ||
+    string.IsNullOrEmpty(gender) ||
+    string.IsNullOrEmpty(dob))
+            {
+                Console.WriteLine("One or more fields are empty or invalid.");
+                return;
+            }
+
             string stmt = "INSERT INTO [dbo].[User] (name, age, dob, email, gender, username, password, phone_no, role) " +
                           "VALUES (@Name, @Age, @Dob, @Email, @Gender, @Username, @Password, @PhoneNo, @Role); " +
                           "SELECT SCOPE_IDENTITY();"; // Return the inserted ID
 
-            SqlCommand cmd = new SqlCommand(stmt, DBManager.getInstance("").OpenConnection());
+            SqlCommand cmd = new SqlCommand(stmt, DBManager.getInstance().OpenConnection());
 
             cmd.Parameters.AddWithValue("@Name", firstName + " " + lastName);
             cmd.Parameters.AddWithValue("@Age", age);
@@ -211,7 +226,6 @@ namespace Happy_Journey_Airline
             }
 
             int userId = Convert.ToInt32(insertedId); // Convert to the appropriate type
-
             if (role == "Employer")
             {
                 try
@@ -220,7 +234,7 @@ namespace Happy_Journey_Airline
 
                     // Prepare SQL statement to insert into Employer table
                     string employerStmt = "INSERT INTO [dbo].[Employer] ([user_id]) VALUES (@UserID)";
-                    SqlCommand employerCmd = new SqlCommand(employerStmt, DBManager.getInstance("").OpenConnection());
+                    SqlCommand employerCmd = new SqlCommand(employerStmt, DBManager.getInstance().OpenConnection());
 
                     // Add the parameter for the user_id
                     employerCmd.Parameters.AddWithValue("@UserID", userId);
@@ -235,6 +249,7 @@ namespace Happy_Journey_Airline
                     // Log or show the error for debugging
                     Console.WriteLine("Error inserting into Employer table: " + ex.Message);
                 }
+
             } else if (role == "Admin")
             {
                 try
@@ -243,7 +258,7 @@ namespace Happy_Journey_Airline
 
                     // Prepare SQL statement to insert into Employer table
                     string adminstmt = "INSERT INTO [dbo].[Administrator] ([user_id]) VALUES (@UserID)";
-                    SqlCommand adminCmd = new SqlCommand(adminstmt, DBManager.getInstance("").OpenConnection());
+                    SqlCommand adminCmd = new SqlCommand(adminstmt, DBManager.getInstance().OpenConnection());
 
                     // Add the parameter for the user_id
                     adminCmd.Parameters.AddWithValue("@UserID", userId);
@@ -268,7 +283,7 @@ namespace Happy_Journey_Airline
 
                     // Prepare SQL statement to insert into Employer table
                     string adminstmt = "INSERT INTO [dbo].[Traveler] ([user_id]) VALUES (@UserID)";
-                    SqlCommand adminCmd = new SqlCommand(adminstmt, DBManager.getInstance("").OpenConnection());
+                    SqlCommand adminCmd = new SqlCommand(adminstmt, DBManager.getInstance().OpenConnection());
 
                     // Add the parameter for the user_id
                     adminCmd.Parameters.AddWithValue("@UserID", userId);
@@ -286,7 +301,7 @@ namespace Happy_Journey_Airline
             }
 
             // Close the connection
-            DBManager.getInstance("").CloseConnection();
+            DBManager.getInstance().CloseConnection();
         }
 
         public static bool Exists(string username)
@@ -300,22 +315,207 @@ namespace Happy_Journey_Airline
                     return true;
                 }
             }
-           return false;
+            return false;
+        }
+        public static User GetUserById(int userId)
+        {
+            var users = User.GetAllUsers(); 
+
+            foreach (var user in users)
+            {
+              
+           
+                if ((long)user.UserId == (long)userId)  
+                {
+                    return user; 
+                }
+
+
+
+            }
+
+            return null; // Return null if no user is found
         }
 
-        public static User getUserById(int userId)
-        {
-            List<User> u1 = User.GetAvailableUsers();
 
-            foreach (User user1 in u1)
+
+        public static DataTable FillUserGrid()
+        {
+            List<User> users1 = new List<User>();
+            DataTable dt = new DataTable();
+
+
+            try
             {
-                if (user1.userId == userId)
+                string query = "SELECT * FROM [dbo].[User];";
+
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+
+                SqlDataAdapter da = new SqlDataAdapter(command);
+
+
+                da.Fill(dt);
+
+            }
+          
+            finally
+            {
+                DBManager.getInstance().CloseConnection();
+            }
+            return dt;
+
+
+        }
+
+        public void DeleteUser(int userId, string role)
+        {
+            if (role == "Traveler")
+            {
+                // Create the SqlConnection instance (open the connection once)
+                SqlConnection conn = DBManager.getInstance().OpenConnection();
+
+                // Start a transaction to ensure both deletes happen together
+                SqlTransaction transaction = conn.BeginTransaction();
+                try
                 {
-                    return user1;
+                    // Delete from Traveler table
+                    string stmt1 = "DELETE FROM [dbo].[Traveler] WHERE user_id = @user_id;";
+                    SqlCommand cmd1 = new SqlCommand(stmt1, conn, transaction);
+                    cmd1.Parameters.AddWithValue("@user_id", userId);
+                    cmd1.ExecuteNonQuery();
+
+                    string stmt2 = "DELETE FROM [dbo].[User] WHERE user_id = @user_id;";
+                    SqlCommand cmd2 = new SqlCommand(stmt2, conn, transaction);
+                    cmd2.Parameters.AddWithValue("@user_id", userId);
+                    cmd2.ExecuteNonQuery();
+
+                    // Commit the transaction
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    // If there's an error, roll back the transaction
+                    transaction.Rollback();
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+                finally
+                {
+                    // Close the connection
+                    conn.Close();
                 }
             }
-            return null;
+            else if (role == "Admin")
+            {
+                // Create the SqlConnection instance (open the connection once)
+                SqlConnection conn = DBManager.getInstance().OpenConnection();
+
+                // Start a transaction to ensure both deletes happen together
+                SqlTransaction transaction = conn.BeginTransaction();
+                try
+                {
+                    // Delete from Traveler table
+                    string stmt1 = "DELETE FROM [dbo].[Administrator] WHERE user_id = @user_id;";
+                    SqlCommand cmd1 = new SqlCommand(stmt1, conn, transaction);
+                    cmd1.Parameters.AddWithValue("@user_id", userId);
+                    cmd1.ExecuteNonQuery();
+
+                    string stmt2 = "DELETE FROM [dbo].[User] WHERE user_id = @user_id;";
+                    SqlCommand cmd2 = new SqlCommand(stmt2, conn, transaction);
+                    cmd2.Parameters.AddWithValue("@user_id", userId);
+                    cmd2.ExecuteNonQuery();
+
+                    // Commit the transaction
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    // If there's an error, roll back the transaction
+                    transaction.Rollback();
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+                finally
+                {
+                    // Close the connection
+                    conn.Close();
+                }
+            }
+            else if (role == "Employer")
+            {
+                // Create the SqlConnection instance (open the connection once)
+                SqlConnection conn = DBManager.getInstance().OpenConnection();
+
+                // Start a transaction to ensure both deletes happen together
+                SqlTransaction transaction = conn.BeginTransaction();
+                try
+                {
+                    // Delete from Traveler table
+                    string stmt1 = "DELETE FROM [dbo].[Employer] WHERE user_id = @user_id;";
+                    SqlCommand cmd1 = new SqlCommand(stmt1, conn, transaction);
+                    cmd1.Parameters.AddWithValue("@user_id", userId);
+                    cmd1.ExecuteNonQuery();
+
+                    string stmt2 = "DELETE FROM [dbo].[User] WHERE user_id = @user_id;";
+                    SqlCommand cmd2 = new SqlCommand(stmt2, conn, transaction);
+                    cmd2.Parameters.AddWithValue("@user_id", userId);
+                    cmd2.ExecuteNonQuery();
+
+                    // Commit the transaction
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    // If there's an error, roll back the transaction
+                    transaction.Rollback();
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+                finally
+                {
+                    // Close the connection
+                    conn.Close();
+                }
+            }
         }
+
+     
+           public static List<User> GetAllUsers()
+            {
+                List<User> users = new List<User>();
+
+                string stmt = "SELECT * FROM [dbo].[User]";
+                SqlConnection connection = DBManager.getInstance().OpenConnection();
+                SqlCommand cmd = new SqlCommand(stmt, connection);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                string [] name = reader.GetString(1).Split(' ');
+    
+                    User user = new User
+                    {
+                        UserId = reader.GetInt32(0),  // user_id
+
+                        FirstName = name[0],  // name (FirstName)
+                        LastName = name[1],
+                        Age =  reader.GetInt32(2),  // age
+                        Dob =  reader.GetDateTime(3).ToString("yyyy-MM-dd"),
+                        Email =  reader.GetString(4),  // email
+                        Gender =  reader.GetString(5),  // gender
+                        Username = reader.GetString(6),  // username
+                        Password = reader.GetString(7),  // password
+                        PhoneNo =  reader.GetInt32(8).ToString(),  // phone_no
+                        Role =  reader.GetString(9),  // role
+                    };
+
+                    users.Add(user);
+                }
+
+                connection.Close();
+
+                return users;
+            }
+
 
         public static List<User> GetAvailableUsers()
         {
@@ -325,7 +525,7 @@ namespace Happy_Journey_Airline
             {
                 string query = "SELECT * FROM User";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -340,13 +540,39 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
             return users1;
         }
 
-      
-    }
+        public void UpdateUser(int userId, string firstName, string lastName, int age, string email, string username, string password, string role, string phoneNo, string gender, string dob)
+        {
+            String name = firstName + " " + lastName;
 
+            string stmt = "UPDATE [dbo].[User] SET [name] = @name, [age] = @age, [dob] = @dob, [email] = @email, [gender] = @gender, [username] = @username, [password] = @password, [phone_no] = @phoneNo, [role] = @role WHERE [user_id] = @userId";
+            SqlCommand cmd = new SqlCommand(stmt, DBManager.getInstance().OpenConnection() );
+
+            cmd.Parameters.AddWithValue("@name",name);
+            cmd.Parameters.AddWithValue("@age", age);
+            cmd.Parameters.AddWithValue("@dob", DateTime.Parse(dob)); // Assuming dob is a string in yyyy-MM-dd format
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@gender", gender);
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);  // Assuming you store the password as plain text (consider hashing)
+            cmd.Parameters.AddWithValue("@phoneNo", phoneNo);
+            cmd.Parameters.AddWithValue("@role", role);
+            cmd.Parameters.AddWithValue("@userId", userId); // Ensure the parameter name is @userId, as in the query
+
+            cmd.ExecuteNonQuery();
+            DBManager.getInstance().CloseConnection();
+
+
+        }
+
+
+    }
+   
 
 }
+
+

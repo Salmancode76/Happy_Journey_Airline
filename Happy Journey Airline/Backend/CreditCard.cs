@@ -37,7 +37,7 @@ namespace Happy_Journey_Airline
 
         public override void makePayment(double amount, int userId)
         {
-            User user = User.getUserById(userId);
+            User user = User.GetUserById(userId);
 
             if (userId != user.UserId)
             {

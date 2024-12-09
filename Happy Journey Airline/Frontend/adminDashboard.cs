@@ -35,6 +35,7 @@ namespace Happy_Journey_Airline
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             this.Hide();
             new logincs().Show();
         }

@@ -100,7 +100,12 @@ namespace Happy_Journey_Airline
 
 
 
-
+            if (string.IsNullOrWhiteSpace(fname) || string.IsNullOrWhiteSpace(lname) || string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(pass) || string.IsNullOrWhiteSpace(role) || age  <= 0)
+            {
+                messagtxt.Text = "Please fill in all required fields.";
+                messagtxt.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
 
 
 
@@ -146,6 +151,76 @@ namespace Happy_Journey_Airline
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Fnametxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lnametxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lnamelbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usertxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usernamelbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Malerb_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void emailtxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void phontxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPass_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RoleLbl_Click(object sender, EventArgs e)
         {
 
         }

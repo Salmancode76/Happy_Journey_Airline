@@ -73,7 +73,7 @@ namespace Happy_Journey_Airline
                 {
                     string query = "SELECT * FROM Flight WHERE flight_no = @flightNo OR destination = @destination OR departure = @departure Or price = @price";
 
-                    SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                    SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                     command.Parameters.AddWithValue("@flight_no", f.FlightNo);
                     command.Parameters.AddWithValue("@destination", f.Destination);
@@ -102,7 +102,7 @@ namespace Happy_Journey_Airline
                 }
                 finally
                 {
-                    DBManager.getInstance("").CloseConnection();
+                    DBManager.getInstance().CloseConnection();
                 }
             }
         }
@@ -133,7 +133,7 @@ namespace Happy_Journey_Airline
                 {
                     string query = "SELECT * FROM Flight WHERE flight_no = @flightNo OR destination = @destination OR departure = @departure Or price = @price";
 
-                    SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                    SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                     command.Parameters.AddWithValue("@flight_no", f1.FlightNo);
                     command.Parameters.AddWithValue("@destination", f1.Destination);
@@ -161,7 +161,7 @@ namespace Happy_Journey_Airline
                 }
                 finally
                 {
-                    DBManager.getInstance("").CloseConnection();
+                    DBManager.getInstance().CloseConnection();
                 }
             }
         }

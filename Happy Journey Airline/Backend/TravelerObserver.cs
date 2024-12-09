@@ -178,7 +178,7 @@ namespace Happy_Journey_Airline
                 {
                     string query = "SELECT * FROM Flight WHERE flight_no = @flightNo OR destination = @destination OR departure = @departure Or price = @price";
 
-                    SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                    SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                     command.Parameters.AddWithValue("@flight_no", f1.FlightNo);
                     command.Parameters.AddWithValue("@destination", f1.Destination);
@@ -207,7 +207,7 @@ namespace Happy_Journey_Airline
                 }
                 finally
                 {
-                    DBManager.getInstance("").CloseConnection();
+                    DBManager.getInstance().CloseConnection();
                 }
             }
         }
@@ -229,7 +229,7 @@ namespace Happy_Journey_Airline
                 //SQL query to insert into Traveler table
                 string query = "INSERT INTO Travelers (first_name, last_name, age, email, passport_no, username, password, role, phoneNo, gender, dob, balance) VALUES (@firstName, @lastName, @age, @email, @passportNo, @username, @password, @role, @phoneNo, @gender, @dob, @balance)";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 //Add parameters to the command
                 command.Parameters.Add(new SqlParameter("@first_name", traveler.firstName));
@@ -255,7 +255,7 @@ namespace Happy_Journey_Airline
             finally 
             {
                 //Ensure the database connection is closed
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
         }
 

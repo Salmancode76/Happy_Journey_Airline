@@ -61,7 +61,7 @@ namespace Happy_Journey_Airline
             {
                 string query = "SELECT flight_class_id, flight_class_name FROM FlightClass";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance("").OpenConnection());
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -78,7 +78,7 @@ namespace Happy_Journey_Airline
             }
             finally
             {
-                DBManager.getInstance("").CloseConnection();
+                DBManager.getInstance().CloseConnection();
             }
             return flights;
         }
