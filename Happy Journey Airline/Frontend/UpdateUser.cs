@@ -42,7 +42,7 @@ namespace Happy_Journey_Airline
             emailtxt.Text = user.Email;
             phontxt.Text = user.PhoneNo;
 
-            passtxt.Text = user.Password;
+           // passtxt.Text = user.Password;
 
             if (user.Role == "Admin")
             {
@@ -96,9 +96,21 @@ namespace Happy_Journey_Airline
 
 
 
-            u.UpdateUser(userID, Fnametxt.Text, Lnametxt.Text, age, emailtxt.Text, usertxt.Text, passtxt.Text, RoleCB.SelectedItem.ToString(), phontxt.Text, gender, dateTimePicker1.Text);
+           bool state = u.UpdateUser(userID, Fnametxt.Text, Lnametxt.Text, age, emailtxt.Text, usertxt.Text, passtxt.Text, RoleCB.SelectedItem.ToString(), phontxt.Text, gender, dateTimePicker1.Text);
+
+            if (!state)
+            {
+                messagtxt.Text = "Failed to update";
+                messagtxt.ForeColor = System.Drawing.Color.Red;
+
+            }
+            else
+            {
+                messagtxt.Text = "Updated";
+                messagtxt.ForeColor = System.Drawing.Color.Green;
 
 
+            }
 
 
 

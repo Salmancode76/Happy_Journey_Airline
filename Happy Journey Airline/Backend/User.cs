@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using BCrypt.Net;
 
 namespace Happy_Journey_Airline
 {
@@ -127,17 +128,36 @@ namespace Happy_Journey_Airline
         {
             try
             {
-                string query = "SELECT * FROM [dbo].[User] WHERE username = @username AND password = @password";
+
+                string query = "SELECT * FROM [dbo].[User] WHERE username = @username";
                 SqlCommand cmd = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 cmd.Parameters.AddWithValue("@username", username1);
-                cmd.Parameters.AddWithValue("@password", password);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    User u1 = new User(this.userId, this.firstName, this.lastName, this.age, this.email, this.username = reader["username"].ToString(), this.password = reader["password"].ToString(), role = reader["role"].ToString(), this.phoneNo, this.gender, this.dob, this.balance);
+                    string storedHashedPassword = reader["password"].ToString();
+
+
+                    Console.WriteLine(storedHashedPassword);
+
+                    Console.WriteLine(password);
+                    User u1;
+
+                    // Verify the entered password against the stored hashed password
+                    bool isPasswordValid = BCrypt.Net.BCrypt.Verify(password, storedHashedPassword);
+                    if (!isPasswordValid)
+                    {
+                        return u1=null;
+
+
+                    }
+
+                    Console.Write("pass");
+                    
+                     u1 = new User(this.userId, this.firstName, this.lastName, this.age, this.email, this.username = reader["username"].ToString(), this.password = reader["password"].ToString(), role = reader["role"].ToString(), this.phoneNo, this.gender, this.dob, this.balance);
                     Console.WriteLine(u1.role);
                     Console.WriteLine(u1.username);
                     if (u1.role == "Admin")
@@ -162,10 +182,7 @@ namespace Happy_Journey_Airline
             {
                 throw new Exception("An error occurred while trying to log in. Please try again later. " + sqlEx.Message);
             }
-            catch (Exception ex)
-            {
-                throw new Exception("An unexpected error occurred. Please try again later. " + ex.Message);
-            }
+        
             finally
             {
                 // Ensure the connection is closed in case of an error
@@ -208,13 +225,21 @@ namespace Happy_Journey_Airline
 
             SqlCommand cmd = new SqlCommand(stmt, DBManager.getInstance().OpenConnection());
 
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password); // Do not truncate
+
+
+
             cmd.Parameters.AddWithValue("@Name", firstName + " " + lastName);
             cmd.Parameters.AddWithValue("@Age", age);
             cmd.Parameters.AddWithValue("@Dob", dob);
             cmd.Parameters.AddWithValue("@Email", email);
             cmd.Parameters.AddWithValue("@Gender", gender);
             cmd.Parameters.AddWithValue("@Username", username);
-            cmd.Parameters.AddWithValue("@Password", password);
+            cmd.Parameters.AddWithValue("@Password", hashedPassword);
+            Console.WriteLine("Executing SQL Command...");
+
+            Console.WriteLine(hashedPassword);
+
             cmd.Parameters.AddWithValue("@PhoneNo", phoneNo);
             cmd.Parameters.AddWithValue("@Role", role);
 
@@ -491,24 +516,26 @@ namespace Happy_Journey_Airline
                 {
 
                 string [] name = reader.GetString(1).Split(' ');
-    
-                    User user = new User
-                    {
-                        UserId = reader.GetInt32(0),  // user_id
 
-                        FirstName = name[0],  // name (FirstName)
-                        LastName = name[1],
-                        Age =  reader.GetInt32(2),  // age
-                        Dob =  reader.GetDateTime(3).ToString("yyyy-MM-dd"),
-                        Email =  reader.GetString(4),  // email
-                        Gender =  reader.GetString(5),  // gender
-                        Username = reader.GetString(6),  // username
-                        Password = reader.GetString(7),  // password
-                        PhoneNo =  reader.GetInt32(8).ToString(),  // phone_no
-                        Role =  reader.GetString(9),  // role
-                    };
+                User user = new User
+                {
+                    UserId = reader["user_id"] != DBNull.Value ? Convert.ToInt32(reader["user_id"]) : 0,
+                    FirstName = reader["name"] != DBNull.Value ? reader["name"].ToString().Split(' ')[0] : string.Empty,
+                    LastName = reader["name"] != DBNull.Value && reader["name"].ToString().Contains(' ')
+                      ? reader["name"].ToString().Split(' ')[1]
+                      : string.Empty,
+                    Age = reader["age"] != DBNull.Value ? Convert.ToInt32(reader["age"]) : 0,
+                    Dob = reader["dob"] != DBNull.Value ? Convert.ToDateTime(reader["dob"]).ToString("yyyy-MM-dd") : string.Empty,
+                    Email = reader["email"] != DBNull.Value ? reader["email"].ToString() : string.Empty,
+                    Gender = reader["gender"] != DBNull.Value ? reader["gender"].ToString() : string.Empty,
+                    Username = reader["username"] != DBNull.Value ? reader["username"].ToString() : string.Empty,
 
-                    users.Add(user);
+                    PhoneNo = reader["phone_no"] != DBNull.Value ? reader["phone_no"].ToString() : string.Empty,
+                    Role = reader["role"] != DBNull.Value ? reader["role"].ToString() : string.Empty
+                };
+
+
+                users.Add(user);
                 }
 
                 connection.Close();
@@ -545,27 +572,38 @@ namespace Happy_Journey_Airline
             return users1;
         }
 
-        public void UpdateUser(int userId, string firstName, string lastName, int age, string email, string username, string password, string role, string phoneNo, string gender, string dob)
+        public bool UpdateUser(int userId, string firstName, string lastName, int age, string email, string username, string password, string role, string phoneNo, string gender, string dob)
         {
             String name = firstName + " " + lastName;
 
             string stmt = "UPDATE [dbo].[User] SET [name] = @name, [age] = @age, [dob] = @dob, [email] = @email, [gender] = @gender, [username] = @username, [password] = @password, [phone_no] = @phoneNo, [role] = @role WHERE [user_id] = @userId";
-            SqlCommand cmd = new SqlCommand(stmt, DBManager.getInstance().OpenConnection() );
+            try
+            {
 
-            cmd.Parameters.AddWithValue("@name",name);
-            cmd.Parameters.AddWithValue("@age", age);
-            cmd.Parameters.AddWithValue("@dob", DateTime.Parse(dob)); // Assuming dob is a string in yyyy-MM-dd format
-            cmd.Parameters.AddWithValue("@email", email);
-            cmd.Parameters.AddWithValue("@gender", gender);
-            cmd.Parameters.AddWithValue("@username", username);
-            cmd.Parameters.AddWithValue("@password", password);  // Assuming you store the password as plain text (consider hashing)
-            cmd.Parameters.AddWithValue("@phoneNo", phoneNo);
-            cmd.Parameters.AddWithValue("@role", role);
-            cmd.Parameters.AddWithValue("@userId", userId); // Ensure the parameter name is @userId, as in the query
+                SqlCommand cmd = new SqlCommand(stmt, DBManager.getInstance().OpenConnection());
 
-            cmd.ExecuteNonQuery();
-            DBManager.getInstance().CloseConnection();
 
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+
+                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@age", age);
+                cmd.Parameters.AddWithValue("@dob", DateTime.Parse(dob)); // Assuming dob is a string in yyyy-MM-dd format
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@gender", gender);
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@password", hashedPassword);  // Assuming you store the password as plain text (consider hashing)
+                cmd.Parameters.AddWithValue("@phoneNo", phoneNo);
+                cmd.Parameters.AddWithValue("@role", role);
+                cmd.Parameters.AddWithValue("@userId", userId); // Ensure the parameter name is @userId, as in the query
+
+                cmd.ExecuteNonQuery();
+                DBManager.getInstance().CloseConnection();
+                return true;
+            }
+            catch (Exception ex)
+            {   
+                return false;
+            }
 
         }
 

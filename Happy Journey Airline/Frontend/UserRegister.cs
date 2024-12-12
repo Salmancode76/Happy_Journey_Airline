@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -115,20 +116,24 @@ namespace Happy_Journey_Airline
             {
                 u.Register(fname, lname, age, Email, username, pass, role, phone, Gender, Dob);
 
-            }
-            catch
-            {
                 messagtxt.Text = string.Empty;
+                messagtxt.ForeColor = System.Drawing.Color.Green;
+                messagtxt.Text = "YOUR ACCOUNT HAS BEEN CREATED SCUSSFULLY!!!!!!";
+
+
+            }
+            catch (SqlException sqlEx)
+            {
+                messagtxt.Text = "Database error: " + sqlEx.Message;
                 messagtxt.ForeColor = System.Drawing.Color.Red;
-
-                messagtxt.Text = "INVALID DATA!!!!!!!!!!!";
-
+            }
+            catch (Exception ex)
+            {
+                messagtxt.Text = "An error occurred: " + ex.Message;
+                messagtxt.ForeColor = System.Drawing.Color.Red;
             }
 
 
-            messagtxt.Text = string.Empty;
-            messagtxt.ForeColor = System.Drawing.Color.Green;
-            messagtxt.Text = "YOUR ACCOUNT HAS BEEN CREATED SCUSSFULLY!!!!!!";
         }
 
         private void uNamelbl_Click(object sender, EventArgs e)
