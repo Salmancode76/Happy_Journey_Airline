@@ -156,7 +156,6 @@ namespace Happy_Journey_Airline
 
                     }
 
-                    Console.Write("pass");
                     
                      u1 = new User(this.userId, this.firstName, this.lastName, this.age, this.email, this.username = reader["username"].ToString(), this.password = reader["password"].ToString(), role = reader["role"].ToString(), this.phoneNo, this.gender, this.dob, this.balance);
                     Console.WriteLine(u1.role);
