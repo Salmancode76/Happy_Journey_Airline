@@ -203,21 +203,7 @@ namespace Happy_Journey_Airline
         }
         public void Register(string firstName, string lastName, int age, string email, string username, string password, string role, string phoneNo, string gender, string dob)
         {
-            if (string.IsNullOrEmpty(firstName) ||
-    string.IsNullOrEmpty(lastName) ||
-    age <= 0 ||
-    string.IsNullOrEmpty(email) ||
-    string.IsNullOrEmpty(username) ||
-    string.IsNullOrEmpty(password) ||
-    string.IsNullOrEmpty(role) ||
-    string.IsNullOrEmpty(phoneNo) ||
-    string.IsNullOrEmpty(gender) ||
-    string.IsNullOrEmpty(dob))
-            {
-                Console.WriteLine("One or more fields are empty or invalid.");
-                return;
-            }
-
+    
         
 
             string stmt = "INSERT INTO [dbo].[User] (name, age, dob, email, gender, username, password, phone_no, role) " +
@@ -226,8 +212,11 @@ namespace Happy_Journey_Airline
 
             SqlCommand cmd = new SqlCommand(stmt, DBManager.getInstance().OpenConnection());
 
+            Console.WriteLine("xx"+password);
+
             string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password); // Do not truncate
 
+            Console.WriteLine(hashedPassword);
 
 
             cmd.Parameters.AddWithValue("@Name", firstName + " " + lastName);
@@ -318,6 +307,8 @@ namespace Happy_Journey_Airline
                     adminCmd.ExecuteNonQuery();
 
                     Console.WriteLine("Inserted traveller for User ID: " + userId);
+
+               
                 }
 
                 catch (Exception ex)
@@ -326,6 +317,7 @@ namespace Happy_Journey_Airline
                     Console.WriteLine("Error inserting into Employer table: " + ex.Message);
                 }
             }
+
 
             // Close the connection
             DBManager.getInstance().CloseConnection();

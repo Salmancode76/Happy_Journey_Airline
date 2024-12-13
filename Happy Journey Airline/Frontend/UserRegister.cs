@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Happy_Journey_Airline
@@ -18,6 +19,8 @@ namespace Happy_Journey_Airline
         public UserRegister()
         {
             InitializeComponent();
+            txtPass.PasswordChar = '*';  
+
 
         }
 
@@ -62,12 +65,7 @@ namespace Happy_Journey_Airline
             String Dob = dateTimePicker1.Text;
                                                                  // Calculate age
             int age = referenceDate.Year - DOB.Year;
-            if (DOB > referenceDate.AddYears(-age))
-            {
-                age--;
-            }
-
-
+        
 
             String Gender = "";
 
@@ -77,46 +75,54 @@ namespace Happy_Journey_Airline
             {
                 Gender = "Female";
             }
+          
 
             String Email = emailtxt.Text;
 
             String phone = phontxt.Text;
 
-            string role = RoleCB.SelectedItem?.ToString() ?? ""; // Safely handles null if nothing is selected
+            string role = RoleCB.SelectedItem?.ToString(); 
 
             string pass = txtPass.Text;
 
             bool isNumeric = phone.All(char.IsDigit);
 
-            if (isNumeric)
-            {
-                Console.WriteLine("Phone number is valid: " + phone);
-            }
-            else
-            {
-                Console.WriteLine("Invalid phone number. Only numbers are allowed.");
-            }
-            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-
-
-          
-
-            Console.WriteLine(phone);
-
-            Console.WriteLine("THE ROLLE " + role);
-
-
-
-            if (string.IsNullOrWhiteSpace(fname) || string.IsNullOrWhiteSpace(lname) || string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(pass) || string.IsNullOrWhiteSpace(role) || age  <= 0)
+            
+            if (string.IsNullOrWhiteSpace(fname) || string.IsNullOrWhiteSpace(lname) || string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(pass) || string.IsNullOrWhiteSpace(role) || string.IsNullOrWhiteSpace(Gender))
             {
                 messagtxt.Text = "Please fill in all required fields.";
                 messagtxt.ForeColor = System.Drawing.Color.Red;
                 return;
             }
 
+            if (DOB > DateTime.Now)
+            {
+                MessageBox.Show("INCORRECT DATE OF BIRTH.",
+                                          "Error",
+                                          MessageBoxButtons.OK,
+                                          MessageBoxIcon.Error); age--;
+
+                return;
+            }
 
 
-            User u = new User();
+
+
+
+
+
+            if (!isNumeric || phone.Length!=8 )
+            {
+                MessageBox.Show("PHONE NUMBER SHOULD ONLY CONTAIN NUMBERS AND IT CAN'T BE MORE THAN 10 DIGITS",
+                                          "Error",
+                                          MessageBoxButtons.OK,
+                                          MessageBoxIcon.Error);
+                return;
+
+
+            }
+
+            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
 
             if (!Regex.IsMatch(Email, emailPattern))
             {
@@ -125,6 +131,18 @@ namespace Happy_Journey_Airline
                 return;
             }
 
+
+            Console.WriteLine(phone);
+
+            Console.WriteLine("THE ROLLE " + role);
+
+
+
+        
+
+            User u = new User();
+
+         
             
             
                 u.Register(fname, lname, age, Email, username, pass, role, phone, Gender, Dob);
@@ -231,6 +249,18 @@ namespace Happy_Journey_Airline
         private void RoleLbl_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void show_pass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (show_pass.Checked)
+            {
+                txtPass.PasswordChar = '\0';  // This will show the text (no masking)
+            }
+            else
+            {
+                txtPass.PasswordChar = '*';  // This will hide the text (with asterisks)
+            }
         }
     }
 }
