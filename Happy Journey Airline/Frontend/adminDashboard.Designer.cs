@@ -43,6 +43,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnAddAirport = new System.Windows.Forms.Button();
             this.btnAddCountry = new System.Windows.Forms.Button();
+            this.btnCity = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             // 
             this.btnusers.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnusers.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnusers.Location = new System.Drawing.Point(53, 167);
+            this.btnusers.Location = new System.Drawing.Point(53, 157);
             this.btnusers.Name = "btnusers";
             this.btnusers.Size = new System.Drawing.Size(157, 32);
             this.btnusers.TabIndex = 68;
@@ -73,7 +74,7 @@
             // 
             this.btnSub.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSub.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSub.Location = new System.Drawing.Point(306, 167);
+            this.btnSub.Location = new System.Drawing.Point(306, 157);
             this.btnSub.Name = "btnSub";
             this.btnSub.Size = new System.Drawing.Size(157, 32);
             this.btnSub.TabIndex = 69;
@@ -121,7 +122,7 @@
             // 
             this.btnservices.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnservices.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnservices.Location = new System.Drawing.Point(547, 167);
+            this.btnservices.Location = new System.Drawing.Point(547, 157);
             this.btnservices.Name = "btnservices";
             this.btnservices.Size = new System.Drawing.Size(157, 32);
             this.btnservices.TabIndex = 73;
@@ -206,12 +207,25 @@
             this.btnAddCountry.UseVisualStyleBackColor = false;
             this.btnAddCountry.Click += new System.EventHandler(this.btnAddCountry_Click);
             // 
+            // btnCity
+            // 
+            this.btnCity.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCity.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCity.Location = new System.Drawing.Point(547, 348);
+            this.btnCity.Name = "btnCity";
+            this.btnCity.Size = new System.Drawing.Size(157, 32);
+            this.btnCity.TabIndex = 97;
+            this.btnCity.Text = "Add City";
+            this.btnCity.UseVisualStyleBackColor = false;
+            this.btnCity.Click += new System.EventHandler(this.btnCity_Click);
+            // 
             // adminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCity);
             this.Controls.Add(this.btnAddCountry);
             this.Controls.Add(this.btnAddAirport);
             this.Controls.Add(this.panel2);
@@ -251,5 +265,6 @@
         private System.Windows.Forms.Button btnFlights;
         private System.Windows.Forms.Button btnAddAirport;
         private System.Windows.Forms.Button btnAddCountry;
+        private System.Windows.Forms.Button btnCity;
     }
 }

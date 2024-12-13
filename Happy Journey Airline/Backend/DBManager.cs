@@ -14,7 +14,7 @@ namespace Happy_Journey_Airline
         private SqlConnection connection;
 
 
-      private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\salma\\OneDrive\\Desktop\\Codes\\C#\\Happy Journey Airline\\Happy Journey Airline\\Happy Journey Airline\\Backend\\Database.mdf\";Integrated Security=True";
+      private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\sharm\\Downloads\\Database.mdf;Integrated Security=True";
       // private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\salma\\OneDrive\\Desktop\\Codes\\C#\\Happy Journey Airline\\Happy Journey Airline\\Happy Journey Airline\\Backend\\HJA_DB.mdf\";Integrated Security=True";
         private DBManager()
         {

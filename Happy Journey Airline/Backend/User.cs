@@ -108,7 +108,7 @@ namespace Happy_Journey_Airline
         {
             if (string.IsNullOrWhiteSpace(username))
             {
-                throw new ArgumentException("Username cannot be emoty");
+                throw new ArgumentException("Username cannot be empty");
             }
 
             if (username.StartsWith("a", StringComparison.OrdinalIgnoreCase))

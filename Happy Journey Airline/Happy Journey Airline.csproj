@@ -84,6 +84,12 @@
     <Compile Include="Frontend\AddAirport.Designer.cs">
       <DependentUpon>AddAirport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\AddCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\AddCity.Designer.cs">
+      <DependentUpon>AddCity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\AddCountry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +268,9 @@
     <EmbeddedResource Include="Frontend\AddAirport.resx">
       <DependentUpon>AddAirport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\AddCity.resx">
+      <DependentUpon>AddCity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frontend\AddCountry.resx">
       <DependentUpon>AddCountry.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,8 +378,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Backend\Database_log.ldf">
-      <DependentUpon>Database.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="Frontend\Resources\logoo1.png" />
     <Content Include="Frontend\Resources\logoo11.png" />
