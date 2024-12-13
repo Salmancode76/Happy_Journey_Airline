@@ -41,6 +41,8 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAddAirport = new System.Windows.Forms.Button();
+            this.btnAddCountry = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -180,12 +182,38 @@
             this.panel2.Size = new System.Drawing.Size(805, 10);
             this.panel2.TabIndex = 94;
             // 
+            // btnAddAirport
+            // 
+            this.btnAddAirport.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAddAirport.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAirport.Location = new System.Drawing.Point(53, 348);
+            this.btnAddAirport.Name = "btnAddAirport";
+            this.btnAddAirport.Size = new System.Drawing.Size(157, 32);
+            this.btnAddAirport.TabIndex = 95;
+            this.btnAddAirport.Text = "Add Airport";
+            this.btnAddAirport.UseVisualStyleBackColor = false;
+            this.btnAddAirport.Click += new System.EventHandler(this.btnAddAirport_Click);
+            // 
+            // btnAddCountry
+            // 
+            this.btnAddCountry.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAddCountry.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCountry.Location = new System.Drawing.Point(306, 348);
+            this.btnAddCountry.Name = "btnAddCountry";
+            this.btnAddCountry.Size = new System.Drawing.Size(157, 32);
+            this.btnAddCountry.TabIndex = 96;
+            this.btnAddCountry.Text = "Add Country";
+            this.btnAddCountry.UseVisualStyleBackColor = false;
+            this.btnAddCountry.Click += new System.EventHandler(this.btnAddCountry_Click);
+            // 
             // adminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAddCountry);
+            this.Controls.Add(this.btnAddAirport);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnservices);
@@ -221,5 +249,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnFlights;
+        private System.Windows.Forms.Button btnAddAirport;
+        private System.Windows.Forms.Button btnAddCountry;
     }
 }

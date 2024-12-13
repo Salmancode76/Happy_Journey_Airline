@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Happy_Journey_Airline.Frontend;
 
 namespace Happy_Journey_Airline
 {
@@ -68,6 +69,19 @@ namespace Happy_Journey_Airline
         {
             this.Hide();
             new AdminServices().Show();
+        }
+
+        private void btnAddAirport_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+           new AddAirport().Show();
+
+        }
+
+        private void btnAddCountry_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AddCountry().Show();
         }
     }
 }
