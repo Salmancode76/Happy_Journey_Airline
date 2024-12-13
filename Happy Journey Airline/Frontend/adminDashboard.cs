@@ -83,5 +83,11 @@ namespace Happy_Journey_Airline
             this.Hide();
             new AddCountry().Show();
         }
+
+        private void btnCity_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AddCity().Show();
+        }
     }
 }

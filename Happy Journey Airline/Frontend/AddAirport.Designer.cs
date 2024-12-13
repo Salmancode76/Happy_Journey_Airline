@@ -40,6 +40,7 @@
             this.lblAirport = new System.Windows.Forms.Label();
             this.txtAirport = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -151,12 +152,24 @@
             this.pictureBox1.TabIndex = 135;
             this.pictureBox1.TabStop = false;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAdd.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(336, 358);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(129, 38);
+            this.btnAdd.TabIndex = 138;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            // 
             // AddAirport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtAirport);
             this.Controls.Add(this.lblAirport);
             this.Controls.Add(this.comboBox1);
@@ -191,5 +204,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblAirport;
         private System.Windows.Forms.TextBox txtAirport;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
