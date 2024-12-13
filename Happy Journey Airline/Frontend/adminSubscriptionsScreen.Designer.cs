@@ -33,7 +33,6 @@
             this.SubGridView = new System.Windows.Forms.DataGridView();
             this.btncreate = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSubscriptionOffers = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
@@ -64,7 +63,7 @@
             // 
             this.btncreate.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btncreate.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncreate.Location = new System.Drawing.Point(568, 115);
+            this.btncreate.Location = new System.Drawing.Point(568, 169);
             this.btncreate.Name = "btncreate";
             this.btncreate.Size = new System.Drawing.Size(157, 32);
             this.btncreate.TabIndex = 82;
@@ -76,25 +75,13 @@
             // 
             this.btnDel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDel.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDel.Location = new System.Drawing.Point(568, 233);
+            this.btnDel.Location = new System.Drawing.Point(568, 273);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(157, 32);
             this.btnDel.TabIndex = 81;
             this.btnDel.Text = "Delete Subscription";
             this.btnDel.UseVisualStyleBackColor = false;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnUpdate.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(568, 344);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(157, 32);
-            this.btnUpdate.TabIndex = 80;
-            this.btnUpdate.Text = "Update Subscription";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // panel1
             // 
@@ -149,7 +136,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btncreate);
             this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.SubGridView);
             this.Controls.Add(this.lbldesc);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -169,7 +155,6 @@
         private System.Windows.Forms.DataGridView SubGridView;
         private System.Windows.Forms.Button btncreate;
         private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblSubscriptionOffers;
         private System.Windows.Forms.Button btnBack;

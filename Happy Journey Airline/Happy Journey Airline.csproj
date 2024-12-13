@@ -216,12 +216,6 @@
     <Compile Include="Frontend\UpdateService.Designer.cs">
       <DependentUpon>UpdateService.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frontend\UpdateSubscription.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frontend\UpdateSubscription.Designer.cs">
-      <DependentUpon>UpdateSubscription.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frontend\UpdateUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,9 +318,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\UpdateService.resx">
       <DependentUpon>UpdateService.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frontend\UpdateSubscription.resx">
-      <DependentUpon>UpdateSubscription.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\UpdateUser.resx">
       <DependentUpon>UpdateUser.cs</DependentUpon>
