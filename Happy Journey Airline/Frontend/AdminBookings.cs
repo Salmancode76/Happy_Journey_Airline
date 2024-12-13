@@ -26,7 +26,6 @@ namespace Happy_Journey_Airline
         private void btndel_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new DeleteBooking().Show();
         }
 
         private void btnupdateFlight_Click(object sender, EventArgs e)

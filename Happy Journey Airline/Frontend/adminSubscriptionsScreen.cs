@@ -37,7 +37,6 @@ namespace Happy_Journey_Airline
         private void btnDel_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new DeleteSubscription().Show();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
