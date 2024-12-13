@@ -6,8 +6,10 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Happy_Journey_Airline
 {
@@ -94,6 +96,10 @@ namespace Happy_Journey_Airline
             {
                 Console.WriteLine("Invalid phone number. Only numbers are allowed.");
             }
+            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+
+          
 
             Console.WriteLine(phone);
 
@@ -112,8 +118,15 @@ namespace Happy_Journey_Airline
 
             User u = new User();
 
-            try
+            if (!Regex.IsMatch(Email, emailPattern))
             {
+                messagtxt.Text = "Invaild Email";
+                messagtxt.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
+            
+            
                 u.Register(fname, lname, age, Email, username, pass, role, phone, Gender, Dob);
 
                 messagtxt.Text = string.Empty;
@@ -121,18 +134,8 @@ namespace Happy_Journey_Airline
                 messagtxt.Text = "YOUR ACCOUNT HAS BEEN CREATED SCUSSFULLY!!!!!!";
 
 
-            }
-            catch (SqlException sqlEx)
-            {
-                messagtxt.Text = "Database error: " + sqlEx.Message;
-                messagtxt.ForeColor = System.Drawing.Color.Red;
-            }
-            catch (Exception ex)
-            {
-                messagtxt.Text = "An error occurred: " + ex.Message;
-                messagtxt.ForeColor = System.Drawing.Color.Red;
-            }
-
+            
+        
 
         }
 

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using BCrypt.Net;
+using System.Text.RegularExpressions;
 
 namespace Happy_Journey_Airline
 {
@@ -218,6 +219,8 @@ namespace Happy_Journey_Airline
                 Console.WriteLine("One or more fields are empty or invalid.");
                 return;
             }
+
+        
 
             string stmt = "INSERT INTO [dbo].[User] (name, age, dob, email, gender, username, password, phone_no, role) " +
                           "VALUES (@Name, @Age, @Dob, @Email, @Gender, @Username, @Password, @PhoneNo, @Role); " +

@@ -18,7 +18,7 @@ namespace Happy_Journey_Airline
 
         public Airport(string airportCode, string airportName)
         {
-            this.airportId = airportId++;
+            this.airportId = airportId;
             this.airportCode = airportCode;
             this.airportName = airportName;
         }
@@ -26,6 +26,8 @@ namespace Happy_Journey_Airline
         public string AirportCode { get; set; }
 
         public string AirportName { get; set; }
+
+     
 
     }
 }
