@@ -97,7 +97,7 @@
             this.label2.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(384, 172);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 35);
+            this.label2.Size = new System.Drawing.Size(109, 28);
             this.label2.TabIndex = 84;
             this.label2.Text = "Birth Date:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -116,7 +116,7 @@
             this.phonetxt.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phonetxt.Location = new System.Drawing.Point(31, 290);
             this.phonetxt.Name = "phonetxt";
-            this.phonetxt.Size = new System.Drawing.Size(92, 35);
+            this.phonetxt.Size = new System.Drawing.Size(74, 28);
             this.phonetxt.TabIndex = 80;
             this.phonetxt.Text = "Phone:";
             this.phonetxt.Click += new System.EventHandler(this.phonetxt_Click);
@@ -127,7 +127,7 @@
             this.Femalerb.Font = new System.Drawing.Font("Sitka Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Femalerb.Location = new System.Drawing.Point(201, 244);
             this.Femalerb.Name = "Femalerb";
-            this.Femalerb.Size = new System.Drawing.Size(77, 24);
+            this.Femalerb.Size = new System.Drawing.Size(62, 20);
             this.Femalerb.TabIndex = 79;
             this.Femalerb.TabStop = true;
             this.Femalerb.Text = "Female";
@@ -140,7 +140,7 @@
             this.Malerb.Font = new System.Drawing.Font("Sitka Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Malerb.Location = new System.Drawing.Point(147, 244);
             this.Malerb.Name = "Malerb";
-            this.Malerb.Size = new System.Drawing.Size(62, 24);
+            this.Malerb.Size = new System.Drawing.Size(50, 20);
             this.Malerb.TabIndex = 78;
             this.Malerb.TabStop = true;
             this.Malerb.Text = "Male";
@@ -153,7 +153,7 @@
             this.Genderlbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Genderlbl.Location = new System.Drawing.Point(31, 237);
             this.Genderlbl.Name = "Genderlbl";
-            this.Genderlbl.Size = new System.Drawing.Size(106, 35);
+            this.Genderlbl.Size = new System.Drawing.Size(84, 28);
             this.Genderlbl.TabIndex = 77;
             this.Genderlbl.Text = "Gender:";
             this.Genderlbl.Click += new System.EventHandler(this.Genderlbl_Click);
@@ -172,7 +172,7 @@
             this.lblEmail.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(382, 232);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(89, 35);
+            this.lblEmail.Size = new System.Drawing.Size(70, 28);
             this.lblEmail.TabIndex = 75;
             this.lblEmail.Text = "Email:";
             this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
@@ -191,7 +191,7 @@
             this.lblPass.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPass.Location = new System.Drawing.Point(382, 290);
             this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(129, 35);
+            this.lblPass.Size = new System.Drawing.Size(105, 28);
             this.lblPass.TabIndex = 73;
             this.lblPass.Text = "Password:";
             this.lblPass.Click += new System.EventHandler(this.lblPass_Click);
@@ -210,7 +210,7 @@
             this.usernamelbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernamelbl.Location = new System.Drawing.Point(31, 174);
             this.usernamelbl.Name = "usernamelbl";
-            this.usernamelbl.Size = new System.Drawing.Size(139, 35);
+            this.usernamelbl.Size = new System.Drawing.Size(110, 28);
             this.usernamelbl.TabIndex = 71;
             this.usernamelbl.Text = "Username:";
             this.usernamelbl.Click += new System.EventHandler(this.usernamelbl_Click);
@@ -229,7 +229,7 @@
             this.uNamelbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uNamelbl.Location = new System.Drawing.Point(31, 120);
             this.uNamelbl.Name = "uNamelbl";
-            this.uNamelbl.Size = new System.Drawing.Size(148, 35);
+            this.uNamelbl.Size = new System.Drawing.Size(118, 28);
             this.uNamelbl.TabIndex = 69;
             this.uNamelbl.Text = "First Name:";
             this.uNamelbl.Click += new System.EventHandler(this.uNamelbl_Click);
@@ -249,9 +249,9 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblWelcome.Location = new System.Drawing.Point(3, 2);
+            this.lblWelcome.Location = new System.Drawing.Point(222, 0);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(342, 72);
+            this.lblWelcome.Size = new System.Drawing.Size(275, 58);
             this.lblWelcome.TabIndex = 3;
             this.lblWelcome.Text = "Registeration";
             // 
@@ -270,7 +270,7 @@
             this.Lnamelbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lnamelbl.Location = new System.Drawing.Point(384, 125);
             this.Lnamelbl.Name = "Lnamelbl";
-            this.Lnamelbl.Size = new System.Drawing.Size(142, 35);
+            this.Lnamelbl.Size = new System.Drawing.Size(113, 28);
             this.Lnamelbl.TabIndex = 91;
             this.Lnamelbl.Text = "Last Name:";
             this.Lnamelbl.Click += new System.EventHandler(this.Lnamelbl_Click);
@@ -289,7 +289,7 @@
             this.RoleLbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RoleLbl.Location = new System.Drawing.Point(31, 344);
             this.RoleLbl.Name = "RoleLbl";
-            this.RoleLbl.Size = new System.Drawing.Size(73, 35);
+            this.RoleLbl.Size = new System.Drawing.Size(59, 28);
             this.RoleLbl.TabIndex = 93;
             this.RoleLbl.Text = "Role:";
             this.RoleLbl.Click += new System.EventHandler(this.RoleLbl_Click);
@@ -298,7 +298,7 @@
             // 
             this.RoleCB.FormattingEnabled = true;
             this.RoleCB.Location = new System.Drawing.Point(147, 352);
-            this.RoleCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RoleCB.Margin = new System.Windows.Forms.Padding(2);
             this.RoleCB.Name = "RoleCB";
             this.RoleCB.Size = new System.Drawing.Size(114, 21);
             this.RoleCB.TabIndex = 94;
@@ -310,7 +310,7 @@
             this.messagtxt.Location = new System.Drawing.Point(388, 358);
             this.messagtxt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.messagtxt.Name = "messagtxt";
-            this.messagtxt.Size = new System.Drawing.Size(58, 15);
+            this.messagtxt.Size = new System.Drawing.Size(50, 13);
             this.messagtxt.TabIndex = 95;
             this.messagtxt.Text = "Message";
             this.messagtxt.Click += new System.EventHandler(this.label1_Click);

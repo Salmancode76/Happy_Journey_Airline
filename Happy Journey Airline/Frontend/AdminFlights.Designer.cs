@@ -48,7 +48,7 @@
             this.lblDesc.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesc.Location = new System.Drawing.Point(30, 75);
             this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(195, 35);
+            this.lblDesc.Size = new System.Drawing.Size(154, 28);
             this.lblDesc.TabIndex = 82;
             this.lblDesc.Text = "Current Flights:";
             // 
@@ -113,9 +113,9 @@
             this.lblFlights.AutoSize = true;
             this.lblFlights.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFlights.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblFlights.Location = new System.Drawing.Point(3, 0);
+            this.lblFlights.Location = new System.Drawing.Point(325, 0);
             this.lblFlights.Name = "lblFlights";
-            this.lblFlights.Size = new System.Drawing.Size(190, 72);
+            this.lblFlights.Size = new System.Drawing.Size(154, 58);
             this.lblFlights.TabIndex = 3;
             this.lblFlights.Text = "Flights";
             // 
@@ -123,7 +123,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(663, 15);
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(107, 33);
             this.btnBack.TabIndex = 25;

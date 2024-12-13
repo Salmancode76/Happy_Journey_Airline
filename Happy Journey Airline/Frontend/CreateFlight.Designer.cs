@@ -202,7 +202,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(682, 15);
+            this.btnBack.Location = new System.Drawing.Point(13, 15);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(107, 33);
             this.btnBack.TabIndex = 26;
@@ -215,7 +215,7 @@
             this.lblCreateFlight.AutoSize = true;
             this.lblCreateFlight.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreateFlight.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCreateFlight.Location = new System.Drawing.Point(3, 0);
+            this.lblCreateFlight.Location = new System.Drawing.Point(281, 0);
             this.lblCreateFlight.Name = "lblCreateFlight";
             this.lblCreateFlight.Size = new System.Drawing.Size(267, 58);
             this.lblCreateFlight.TabIndex = 3;

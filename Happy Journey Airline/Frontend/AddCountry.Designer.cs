@@ -49,7 +49,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(1, -6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(803, 72);
+            this.panel1.Size = new System.Drawing.Size(803, 66);
             this.panel1.TabIndex = 93;
             // 
             // lblFlights
@@ -57,7 +57,7 @@
             this.lblFlights.AutoSize = true;
             this.lblFlights.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFlights.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblFlights.Location = new System.Drawing.Point(3, 0);
+            this.lblFlights.Location = new System.Drawing.Point(289, 0);
             this.lblFlights.Name = "lblFlights";
             this.lblFlights.Size = new System.Drawing.Size(259, 58);
             this.lblFlights.TabIndex = 3;
@@ -67,7 +67,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(663, 15);
+            this.btnBack.Location = new System.Drawing.Point(11, 18);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(107, 33);
             this.btnBack.TabIndex = 25;
@@ -105,7 +105,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Sitka Text", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 85);
+            this.label1.Location = new System.Drawing.Point(31, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(491, 35);
             this.label1.TabIndex = 102;
@@ -115,7 +115,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
-            this.pictureBox1.Location = new System.Drawing.Point(309, 96);
+            this.pictureBox1.Location = new System.Drawing.Point(300, 108);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(256, 244);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;

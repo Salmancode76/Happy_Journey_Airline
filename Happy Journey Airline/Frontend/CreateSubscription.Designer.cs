@@ -143,7 +143,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(682, 15);
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(107, 33);
             this.btnBack.TabIndex = 26;
@@ -156,7 +156,7 @@
             this.lblCreateSub.AutoSize = true;
             this.lblCreateSub.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreateSub.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCreateSub.Location = new System.Drawing.Point(3, 0);
+            this.lblCreateSub.Location = new System.Drawing.Point(230, 0);
             this.lblCreateSub.Name = "lblCreateSub";
             this.lblCreateSub.Size = new System.Drawing.Size(392, 58);
             this.lblCreateSub.TabIndex = 3;

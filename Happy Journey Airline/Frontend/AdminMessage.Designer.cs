@@ -63,7 +63,7 @@
             this.lblEnterMessage.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnterMessage.Location = new System.Drawing.Point(44, 139);
             this.lblEnterMessage.Name = "lblEnterMessage";
-            this.lblEnterMessage.Size = new System.Drawing.Size(189, 35);
+            this.lblEnterMessage.Size = new System.Drawing.Size(149, 28);
             this.lblEnterMessage.TabIndex = 88;
             this.lblEnterMessage.Text = "Enter Message:";
             // 
@@ -73,7 +73,7 @@
             this.lblRecieve.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecieve.Location = new System.Drawing.Point(44, 88);
             this.lblRecieve.Name = "lblRecieve";
-            this.lblRecieve.Size = new System.Drawing.Size(121, 35);
+            this.lblRecieve.Size = new System.Drawing.Size(96, 28);
             this.lblRecieve.TabIndex = 89;
             this.lblRecieve.Text = "Reciever:";
             // 
@@ -101,7 +101,7 @@
             this.lblRecieved.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecieved.Location = new System.Drawing.Point(44, 279);
             this.lblRecieved.Name = "lblRecieved";
-            this.lblRecieved.Size = new System.Drawing.Size(238, 35);
+            this.lblRecieved.Size = new System.Drawing.Size(187, 28);
             this.lblRecieved.TabIndex = 93;
             this.lblRecieved.Text = "Recieved Messages:";
             // 
@@ -130,9 +130,9 @@
             this.lblMessage.AutoSize = true;
             this.lblMessage.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMessage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblMessage.Location = new System.Drawing.Point(3, 0);
+            this.lblMessage.Location = new System.Drawing.Point(300, 0);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(250, 72);
+            this.lblMessage.Size = new System.Drawing.Size(204, 58);
             this.lblMessage.TabIndex = 3;
             this.lblMessage.Text = "Messages";
             this.lblMessage.Click += new System.EventHandler(this.lblMessage_Click);
@@ -141,7 +141,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(670, 13);
+            this.btnBack.Location = new System.Drawing.Point(12, 14);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(107, 33);
             this.btnBack.TabIndex = 25;

@@ -216,7 +216,7 @@
             // 
             this.btnback.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnback.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnback.Location = new System.Drawing.Point(680, 17);
+            this.btnback.Location = new System.Drawing.Point(12, 12);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(107, 33);
             this.btnback.TabIndex = 26;
@@ -229,7 +229,7 @@
             this.lblPayment.AutoSize = true;
             this.lblPayment.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPayment.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPayment.Location = new System.Drawing.Point(3, 9);
+            this.lblPayment.Location = new System.Drawing.Point(283, 0);
             this.lblPayment.Name = "lblPayment";
             this.lblPayment.Size = new System.Drawing.Size(187, 58);
             this.lblPayment.TabIndex = 3;

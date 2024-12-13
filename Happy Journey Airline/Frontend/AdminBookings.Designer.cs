@@ -48,7 +48,7 @@
             this.lbdesc.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbdesc.Location = new System.Drawing.Point(21, 89);
             this.lbdesc.Name = "lbdesc";
-            this.lbdesc.Size = new System.Drawing.Size(219, 35);
+            this.lbdesc.Size = new System.Drawing.Size(176, 28);
             this.lbdesc.TabIndex = 89;
             this.lbdesc.Text = "Current Bookings:";
             // 
@@ -113,9 +113,9 @@
             this.lblBookings.AutoSize = true;
             this.lblBookings.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBookings.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblBookings.Location = new System.Drawing.Point(3, 0);
+            this.lblBookings.Location = new System.Drawing.Point(300, 0);
             this.lblBookings.Name = "lblBookings";
-            this.lblBookings.Size = new System.Drawing.Size(242, 72);
+            this.lblBookings.Size = new System.Drawing.Size(194, 58);
             this.lblBookings.TabIndex = 3;
             this.lblBookings.Text = "Bookings";
             this.lblBookings.Click += new System.EventHandler(this.lblBokflight_Click);
@@ -124,7 +124,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(685, 13);
+            this.btnBack.Location = new System.Drawing.Point(16, 13);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(107, 33);
             this.btnBack.TabIndex = 25;

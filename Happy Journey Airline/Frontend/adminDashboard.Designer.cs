@@ -145,7 +145,7 @@
             this.lblDashboard.AutoSize = true;
             this.lblDashboard.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDashboard.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblDashboard.Location = new System.Drawing.Point(3, 0);
+            this.lblDashboard.Location = new System.Drawing.Point(298, 2);
             this.lblDashboard.Name = "lblDashboard";
             this.lblDashboard.Size = new System.Drawing.Size(225, 58);
             this.lblDashboard.TabIndex = 3;
@@ -155,7 +155,7 @@
             // 
             this.btnLogout.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnLogout.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(670, 13);
+            this.btnLogout.Location = new System.Drawing.Point(14, 13);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(107, 33);
             this.btnLogout.TabIndex = 25;

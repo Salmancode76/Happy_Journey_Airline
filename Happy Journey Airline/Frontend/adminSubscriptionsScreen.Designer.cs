@@ -112,7 +112,7 @@
             this.lblSubscriptionOffers.AutoSize = true;
             this.lblSubscriptionOffers.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubscriptionOffers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblSubscriptionOffers.Location = new System.Drawing.Point(3, 0);
+            this.lblSubscriptionOffers.Location = new System.Drawing.Point(221, 0);
             this.lblSubscriptionOffers.Name = "lblSubscriptionOffers";
             this.lblSubscriptionOffers.Size = new System.Drawing.Size(387, 58);
             this.lblSubscriptionOffers.TabIndex = 3;
@@ -122,7 +122,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(670, 13);
+            this.btnBack.Location = new System.Drawing.Point(11, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(107, 33);
             this.btnBack.TabIndex = 25;

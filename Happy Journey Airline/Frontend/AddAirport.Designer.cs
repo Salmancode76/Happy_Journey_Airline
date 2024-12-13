@@ -60,7 +60,7 @@
             this.lblAddAirport.AutoSize = true;
             this.lblAddAirport.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddAirport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblAddAirport.Location = new System.Drawing.Point(3, 0);
+            this.lblAddAirport.Location = new System.Drawing.Point(285, 0);
             this.lblAddAirport.Name = "lblAddAirport";
             this.lblAddAirport.Size = new System.Drawing.Size(243, 58);
             this.lblAddAirport.TabIndex = 3;
@@ -70,7 +70,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(681, 12);
+            this.btnBack.Location = new System.Drawing.Point(14, 14);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(107, 33);
             this.btnBack.TabIndex = 25;

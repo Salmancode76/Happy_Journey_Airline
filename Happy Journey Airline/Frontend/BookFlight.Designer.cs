@@ -172,7 +172,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(681, 12);
+            this.btnBack.Location = new System.Drawing.Point(16, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(107, 33);
             this.btnBack.TabIndex = 25;
@@ -283,7 +283,7 @@
             this.lblBook.AutoSize = true;
             this.lblBook.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBook.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblBook.Location = new System.Drawing.Point(3, 0);
+            this.lblBook.Location = new System.Drawing.Point(283, 0);
             this.lblBook.Name = "lblBook";
             this.lblBook.Size = new System.Drawing.Size(237, 58);
             this.lblBook.TabIndex = 3;

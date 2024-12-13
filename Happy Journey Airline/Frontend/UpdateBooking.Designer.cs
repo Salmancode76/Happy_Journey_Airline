@@ -85,7 +85,7 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblWelcome.Location = new System.Drawing.Point(15, 2);
+            this.lblWelcome.Location = new System.Drawing.Point(262, 2);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(319, 58);
             this.lblWelcome.TabIndex = 3;
@@ -95,7 +95,7 @@
             // 
             this.btnbsck.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnbsck.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnbsck.Location = new System.Drawing.Point(681, 12);
+            this.btnbsck.Location = new System.Drawing.Point(25, 15);
             this.btnbsck.Name = "btnbsck";
             this.btnbsck.Size = new System.Drawing.Size(107, 33);
             this.btnbsck.TabIndex = 25;

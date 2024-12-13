@@ -125,7 +125,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(682, 15);
+            this.btnBack.Location = new System.Drawing.Point(14, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(107, 33);
             this.btnBack.TabIndex = 26;
@@ -138,7 +138,7 @@
             this.lblCreatetService.AutoSize = true;
             this.lblCreatetService.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreatetService.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCreatetService.Location = new System.Drawing.Point(3, 0);
+            this.lblCreatetService.Location = new System.Drawing.Point(264, 0);
             this.lblCreatetService.Name = "lblCreatetService";
             this.lblCreatetService.Size = new System.Drawing.Size(294, 58);
             this.lblCreatetService.TabIndex = 3;

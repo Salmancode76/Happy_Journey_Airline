@@ -48,7 +48,7 @@
             this.lblService.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblService.Location = new System.Drawing.Point(31, 89);
             this.lblService.Name = "lblService";
-            this.lblService.Size = new System.Drawing.Size(211, 35);
+            this.lblService.Size = new System.Drawing.Size(168, 28);
             this.lblService.TabIndex = 79;
             this.lblService.Text = "Current Services:";
             // 
@@ -113,9 +113,9 @@
             this.lblSrvices.AutoSize = true;
             this.lblSrvices.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSrvices.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblSrvices.Location = new System.Drawing.Point(3, 0);
+            this.lblSrvices.Location = new System.Drawing.Point(289, 0);
             this.lblSrvices.Name = "lblSrvices";
-            this.lblSrvices.Size = new System.Drawing.Size(224, 72);
+            this.lblSrvices.Size = new System.Drawing.Size(181, 58);
             this.lblSrvices.TabIndex = 3;
             this.lblSrvices.Text = "Services";
             // 
@@ -123,7 +123,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(670, 13);
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(107, 33);
             this.btnBack.TabIndex = 25;
