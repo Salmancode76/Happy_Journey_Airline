@@ -191,8 +191,6 @@ namespace Happy_Journey_Airline
             }
             return null;
         }
-
-
         public static List<User> getUsers()
         {
             List<User> usersList = new List<User>();

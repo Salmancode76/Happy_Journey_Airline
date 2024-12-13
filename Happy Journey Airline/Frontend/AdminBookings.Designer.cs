@@ -48,7 +48,7 @@
             this.lbdesc.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbdesc.Location = new System.Drawing.Point(21, 89);
             this.lbdesc.Name = "lbdesc";
-            this.lbdesc.Size = new System.Drawing.Size(176, 28);
+            this.lbdesc.Size = new System.Drawing.Size(219, 35);
             this.lbdesc.TabIndex = 89;
             this.lbdesc.Text = "Current Bookings:";
             // 
@@ -93,6 +93,7 @@
             this.gridBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridBookings.Location = new System.Drawing.Point(25, 128);
             this.gridBookings.Name = "gridBookings";
+            this.gridBookings.RowHeadersWidth = 51;
             this.gridBookings.Size = new System.Drawing.Size(510, 261);
             this.gridBookings.TabIndex = 85;
             // 
@@ -114,7 +115,7 @@
             this.lblBookings.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblBookings.Location = new System.Drawing.Point(3, 0);
             this.lblBookings.Name = "lblBookings";
-            this.lblBookings.Size = new System.Drawing.Size(194, 58);
+            this.lblBookings.Size = new System.Drawing.Size(242, 72);
             this.lblBookings.TabIndex = 3;
             this.lblBookings.Text = "Bookings";
             this.lblBookings.Click += new System.EventHandler(this.lblBokflight_Click);
@@ -156,6 +157,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminBookings";
             this.Text = "AdminBookings";
+            this.Load += new System.EventHandler(this.AdminBookings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridBookings)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

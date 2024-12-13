@@ -48,7 +48,7 @@
             this.lblService.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblService.Location = new System.Drawing.Point(31, 89);
             this.lblService.Name = "lblService";
-            this.lblService.Size = new System.Drawing.Size(168, 28);
+            this.lblService.Size = new System.Drawing.Size(211, 35);
             this.lblService.TabIndex = 79;
             this.lblService.Text = "Current Services:";
             // 
@@ -93,6 +93,7 @@
             this.SubGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.SubGridView.Location = new System.Drawing.Point(35, 116);
             this.SubGridView.Name = "SubGridView";
+            this.SubGridView.RowHeadersWidth = 51;
             this.SubGridView.Size = new System.Drawing.Size(510, 261);
             this.SubGridView.TabIndex = 83;
             // 
@@ -114,7 +115,7 @@
             this.lblSrvices.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblSrvices.Location = new System.Drawing.Point(3, 0);
             this.lblSrvices.Name = "lblSrvices";
-            this.lblSrvices.Size = new System.Drawing.Size(181, 58);
+            this.lblSrvices.Size = new System.Drawing.Size(224, 72);
             this.lblSrvices.TabIndex = 3;
             this.lblSrvices.Text = "Services";
             // 
@@ -155,6 +156,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminServices";
             this.Text = "AdminServices";
+            this.Load += new System.EventHandler(this.AdminServices_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SubGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

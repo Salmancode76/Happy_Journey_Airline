@@ -48,7 +48,7 @@
             this.lblDesc.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesc.Location = new System.Drawing.Point(30, 75);
             this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(154, 28);
+            this.lblDesc.Size = new System.Drawing.Size(195, 35);
             this.lblDesc.TabIndex = 82;
             this.lblDesc.Text = "Current Flights:";
             // 
@@ -93,6 +93,7 @@
             this.gridFlight.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridFlight.Location = new System.Drawing.Point(34, 114);
             this.gridFlight.Name = "gridFlight";
+            this.gridFlight.RowHeadersWidth = 51;
             this.gridFlight.Size = new System.Drawing.Size(510, 261);
             this.gridFlight.TabIndex = 78;
             // 
@@ -114,7 +115,7 @@
             this.lblFlights.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblFlights.Location = new System.Drawing.Point(3, 0);
             this.lblFlights.Name = "lblFlights";
-            this.lblFlights.Size = new System.Drawing.Size(154, 58);
+            this.lblFlights.Size = new System.Drawing.Size(190, 72);
             this.lblFlights.TabIndex = 3;
             this.lblFlights.Text = "Flights";
             // 
@@ -155,6 +156,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminFlights";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.AdminFlights_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridFlight)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

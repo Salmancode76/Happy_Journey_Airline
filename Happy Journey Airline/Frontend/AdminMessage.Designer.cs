@@ -63,7 +63,7 @@
             this.lblEnterMessage.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnterMessage.Location = new System.Drawing.Point(44, 139);
             this.lblEnterMessage.Name = "lblEnterMessage";
-            this.lblEnterMessage.Size = new System.Drawing.Size(149, 28);
+            this.lblEnterMessage.Size = new System.Drawing.Size(189, 35);
             this.lblEnterMessage.TabIndex = 88;
             this.lblEnterMessage.Text = "Enter Message:";
             // 
@@ -73,7 +73,7 @@
             this.lblRecieve.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecieve.Location = new System.Drawing.Point(44, 88);
             this.lblRecieve.Name = "lblRecieve";
-            this.lblRecieve.Size = new System.Drawing.Size(96, 28);
+            this.lblRecieve.Size = new System.Drawing.Size(121, 35);
             this.lblRecieve.TabIndex = 89;
             this.lblRecieve.Text = "Reciever:";
             // 
@@ -101,7 +101,7 @@
             this.lblRecieved.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecieved.Location = new System.Drawing.Point(44, 279);
             this.lblRecieved.Name = "lblRecieved";
-            this.lblRecieved.Size = new System.Drawing.Size(187, 28);
+            this.lblRecieved.Size = new System.Drawing.Size(238, 35);
             this.lblRecieved.TabIndex = 93;
             this.lblRecieved.Text = "Recieved Messages:";
             // 
@@ -110,6 +110,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(235, 279);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(320, 150);
             this.dataGridView1.TabIndex = 94;
             // 
@@ -131,9 +132,10 @@
             this.lblMessage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblMessage.Location = new System.Drawing.Point(3, 0);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(204, 58);
+            this.lblMessage.Size = new System.Drawing.Size(250, 72);
             this.lblMessage.TabIndex = 3;
             this.lblMessage.Text = "Messages";
+            this.lblMessage.Click += new System.EventHandler(this.lblMessage_Click);
             // 
             // btnBack
             // 
@@ -185,6 +187,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminMessage";
             this.Text = "AdminMessage";
+            this.Load += new System.EventHandler(this.AdminMessage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -31,17 +31,20 @@ namespace Happy_Journey_Airline
 
         private void btndel_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             this.Hide();
-=======
+
             
->>>>>>> 6b25619f8944d954116e49676f328f2d5add6133
         }
 
         private void btnupdateFlight_Click(object sender, EventArgs e)
         {
             this.Hide();
             new UpdateFlightcs().Show();
+        }
+
+        private void AdminFlights_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,5 +32,10 @@ namespace Happy_Journey_Airline
         {
 
         }
+
+        private void AdminBookFlight_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

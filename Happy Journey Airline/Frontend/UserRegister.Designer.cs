@@ -63,10 +63,9 @@
             // 
             this.backbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.backbtn.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backbtn.Location = new System.Drawing.Point(47, 540);
-            this.backbtn.Margin = new System.Windows.Forms.Padding(4);
+            this.backbtn.Location = new System.Drawing.Point(35, 439);
             this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(224, 41);
+            this.backbtn.Size = new System.Drawing.Size(168, 33);
             this.backbtn.TabIndex = 87;
             this.backbtn.Text = "Back";
             this.backbtn.UseVisualStyleBackColor = false;
@@ -76,10 +75,9 @@
             // 
             this.btnRegister.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnRegister.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(672, 540);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRegister.Location = new System.Drawing.Point(504, 439);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(217, 47);
+            this.btnRegister.Size = new System.Drawing.Size(163, 38);
             this.btnRegister.TabIndex = 86;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -87,10 +85,9 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(672, 217);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker1.Location = new System.Drawing.Point(504, 176);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(236, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(178, 20);
             this.dateTimePicker1.TabIndex = 85;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -98,8 +95,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(512, 212);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(384, 172);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 35);
             this.label2.TabIndex = 84;
@@ -108,10 +104,9 @@
             // 
             // phontxt
             // 
-            this.phontxt.Location = new System.Drawing.Point(196, 363);
-            this.phontxt.Margin = new System.Windows.Forms.Padding(4);
+            this.phontxt.Location = new System.Drawing.Point(147, 295);
             this.phontxt.Name = "phontxt";
-            this.phontxt.Size = new System.Drawing.Size(236, 22);
+            this.phontxt.Size = new System.Drawing.Size(178, 20);
             this.phontxt.TabIndex = 81;
             this.phontxt.TextChanged += new System.EventHandler(this.phontxt_TextChanged);
             // 
@@ -119,8 +114,7 @@
             // 
             this.phonetxt.AutoSize = true;
             this.phonetxt.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phonetxt.Location = new System.Drawing.Point(41, 357);
-            this.phonetxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.phonetxt.Location = new System.Drawing.Point(31, 290);
             this.phonetxt.Name = "phonetxt";
             this.phonetxt.Size = new System.Drawing.Size(92, 35);
             this.phonetxt.TabIndex = 80;
@@ -131,8 +125,7 @@
             // 
             this.Femalerb.AutoSize = true;
             this.Femalerb.Font = new System.Drawing.Font("Sitka Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Femalerb.Location = new System.Drawing.Point(268, 300);
-            this.Femalerb.Margin = new System.Windows.Forms.Padding(4);
+            this.Femalerb.Location = new System.Drawing.Point(201, 244);
             this.Femalerb.Name = "Femalerb";
             this.Femalerb.Size = new System.Drawing.Size(77, 24);
             this.Femalerb.TabIndex = 79;
@@ -145,8 +138,7 @@
             // 
             this.Malerb.AutoSize = true;
             this.Malerb.Font = new System.Drawing.Font("Sitka Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Malerb.Location = new System.Drawing.Point(196, 300);
-            this.Malerb.Margin = new System.Windows.Forms.Padding(4);
+            this.Malerb.Location = new System.Drawing.Point(147, 244);
             this.Malerb.Name = "Malerb";
             this.Malerb.Size = new System.Drawing.Size(62, 24);
             this.Malerb.TabIndex = 78;
@@ -159,8 +151,7 @@
             // 
             this.Genderlbl.AutoSize = true;
             this.Genderlbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Genderlbl.Location = new System.Drawing.Point(41, 292);
-            this.Genderlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Genderlbl.Location = new System.Drawing.Point(31, 237);
             this.Genderlbl.Name = "Genderlbl";
             this.Genderlbl.Size = new System.Drawing.Size(106, 35);
             this.Genderlbl.TabIndex = 77;
@@ -169,10 +160,9 @@
             // 
             // emailtxt
             // 
-            this.emailtxt.Location = new System.Drawing.Point(672, 292);
-            this.emailtxt.Margin = new System.Windows.Forms.Padding(4);
+            this.emailtxt.Location = new System.Drawing.Point(504, 237);
             this.emailtxt.Name = "emailtxt";
-            this.emailtxt.Size = new System.Drawing.Size(236, 22);
+            this.emailtxt.Size = new System.Drawing.Size(178, 20);
             this.emailtxt.TabIndex = 76;
             this.emailtxt.TextChanged += new System.EventHandler(this.emailtxt_TextChanged);
             // 
@@ -180,8 +170,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(509, 286);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Location = new System.Drawing.Point(382, 232);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(89, 35);
             this.lblEmail.TabIndex = 75;
@@ -190,10 +179,9 @@
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(672, 363);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPass.Location = new System.Drawing.Point(504, 295);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(236, 22);
+            this.txtPass.Size = new System.Drawing.Size(178, 20);
             this.txtPass.TabIndex = 74;
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
@@ -201,8 +189,7 @@
             // 
             this.lblPass.AutoSize = true;
             this.lblPass.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPass.Location = new System.Drawing.Point(509, 357);
-            this.lblPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPass.Location = new System.Drawing.Point(382, 290);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(129, 35);
             this.lblPass.TabIndex = 73;
@@ -211,10 +198,9 @@
             // 
             // usertxt
             // 
-            this.usertxt.Location = new System.Drawing.Point(196, 214);
-            this.usertxt.Margin = new System.Windows.Forms.Padding(4);
+            this.usertxt.Location = new System.Drawing.Point(147, 174);
             this.usertxt.Name = "usertxt";
-            this.usertxt.Size = new System.Drawing.Size(236, 22);
+            this.usertxt.Size = new System.Drawing.Size(178, 20);
             this.usertxt.TabIndex = 72;
             this.usertxt.TextChanged += new System.EventHandler(this.usertxt_TextChanged);
             // 
@@ -222,8 +208,7 @@
             // 
             this.usernamelbl.AutoSize = true;
             this.usernamelbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernamelbl.Location = new System.Drawing.Point(41, 214);
-            this.usernamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.usernamelbl.Location = new System.Drawing.Point(31, 174);
             this.usernamelbl.Name = "usernamelbl";
             this.usernamelbl.Size = new System.Drawing.Size(139, 35);
             this.usernamelbl.TabIndex = 71;
@@ -232,10 +217,9 @@
             // 
             // Fnametxt
             // 
-            this.Fnametxt.Location = new System.Drawing.Point(196, 154);
-            this.Fnametxt.Margin = new System.Windows.Forms.Padding(4);
+            this.Fnametxt.Location = new System.Drawing.Point(147, 125);
             this.Fnametxt.Name = "Fnametxt";
-            this.Fnametxt.Size = new System.Drawing.Size(236, 22);
+            this.Fnametxt.Size = new System.Drawing.Size(178, 20);
             this.Fnametxt.TabIndex = 70;
             this.Fnametxt.TextChanged += new System.EventHandler(this.Fnametxt_TextChanged);
             // 
@@ -243,8 +227,7 @@
             // 
             this.uNamelbl.AutoSize = true;
             this.uNamelbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uNamelbl.Location = new System.Drawing.Point(41, 148);
-            this.uNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uNamelbl.Location = new System.Drawing.Point(31, 120);
             this.uNamelbl.Name = "uNamelbl";
             this.uNamelbl.Size = new System.Drawing.Size(148, 35);
             this.uNamelbl.TabIndex = 69;
@@ -257,9 +240,8 @@
             this.panel1.Controls.Add(this.lblWelcome);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(970, 78);
+            this.panel1.Size = new System.Drawing.Size(728, 63);
             this.panel1.TabIndex = 88;
             // 
             // lblWelcome
@@ -267,8 +249,7 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblWelcome.Location = new System.Drawing.Point(4, 2);
-            this.lblWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWelcome.Location = new System.Drawing.Point(3, 2);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(342, 72);
             this.lblWelcome.TabIndex = 3;
@@ -278,18 +259,16 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel2.Location = new System.Drawing.Point(0, 614);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(0, 499);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(970, 12);
+            this.panel2.Size = new System.Drawing.Size(728, 10);
             this.panel2.TabIndex = 89;
             // 
             // Lnamelbl
             // 
             this.Lnamelbl.AutoSize = true;
             this.Lnamelbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lnamelbl.Location = new System.Drawing.Point(512, 154);
-            this.Lnamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lnamelbl.Location = new System.Drawing.Point(384, 125);
             this.Lnamelbl.Name = "Lnamelbl";
             this.Lnamelbl.Size = new System.Drawing.Size(142, 35);
             this.Lnamelbl.TabIndex = 91;
@@ -298,10 +277,9 @@
             // 
             // Lnametxt
             // 
-            this.Lnametxt.Location = new System.Drawing.Point(672, 167);
-            this.Lnametxt.Margin = new System.Windows.Forms.Padding(4);
+            this.Lnametxt.Location = new System.Drawing.Point(504, 136);
             this.Lnametxt.Name = "Lnametxt";
-            this.Lnametxt.Size = new System.Drawing.Size(236, 22);
+            this.Lnametxt.Size = new System.Drawing.Size(178, 20);
             this.Lnametxt.TabIndex = 92;
             this.Lnametxt.TextChanged += new System.EventHandler(this.Lnametxt_TextChanged);
             // 
@@ -309,8 +287,7 @@
             // 
             this.RoleLbl.AutoSize = true;
             this.RoleLbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RoleLbl.Location = new System.Drawing.Point(41, 423);
-            this.RoleLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.RoleLbl.Location = new System.Drawing.Point(31, 344);
             this.RoleLbl.Name = "RoleLbl";
             this.RoleLbl.Size = new System.Drawing.Size(73, 35);
             this.RoleLbl.TabIndex = 93;
@@ -320,18 +297,20 @@
             // RoleCB
             // 
             this.RoleCB.FormattingEnabled = true;
-            this.RoleCB.Location = new System.Drawing.Point(196, 433);
+            this.RoleCB.Location = new System.Drawing.Point(147, 352);
+            this.RoleCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RoleCB.Name = "RoleCB";
-            this.RoleCB.Size = new System.Drawing.Size(150, 24);
+            this.RoleCB.Size = new System.Drawing.Size(114, 21);
             this.RoleCB.TabIndex = 94;
             this.RoleCB.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // messagtxt
             // 
             this.messagtxt.AutoSize = true;
-            this.messagtxt.Location = new System.Drawing.Point(518, 441);
+            this.messagtxt.Location = new System.Drawing.Point(388, 358);
+            this.messagtxt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.messagtxt.Name = "messagtxt";
-            this.messagtxt.Size = new System.Drawing.Size(64, 16);
+            this.messagtxt.Size = new System.Drawing.Size(58, 15);
             this.messagtxt.TabIndex = 95;
             this.messagtxt.Text = "Message";
             this.messagtxt.Click += new System.EventHandler(this.label1_Click);
@@ -339,8 +318,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
-            this.pictureBox1.Location = new System.Drawing.Point(344, 129);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(258, 105);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(256, 244);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -349,10 +327,10 @@
             // 
             // UserRegister
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(967, 625);
+            this.ClientSize = new System.Drawing.Size(725, 508);
             this.Controls.Add(this.messagtxt);
             this.Controls.Add(this.RoleCB);
             this.Controls.Add(this.backbtn);
@@ -379,7 +357,6 @@
             this.Controls.Add(this.uNamelbl);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserRegister";
             this.Text = "UserRegister";
             this.Load += new System.EventHandler(this.UserRegister_Load);

@@ -27,5 +27,15 @@ namespace Happy_Journey_Airline
             this.Hide();
             new adminDashboard().Show();
         }
+
+        private void AdminMessage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblMessage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

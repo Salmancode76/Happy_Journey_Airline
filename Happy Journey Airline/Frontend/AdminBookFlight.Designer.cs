@@ -80,7 +80,7 @@
             this.lblBook.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblBook.Location = new System.Drawing.Point(3, 0);
             this.lblBook.Name = "lblBook";
-            this.lblBook.Size = new System.Drawing.Size(237, 58);
+            this.lblBook.Size = new System.Drawing.Size(297, 72);
             this.lblBook.TabIndex = 3;
             this.lblBook.Text = "Book Flight";
             // 
@@ -118,7 +118,7 @@
             this.lblTo.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTo.Location = new System.Drawing.Point(437, 241);
             this.lblTo.Name = "lblTo";
-            this.lblTo.Size = new System.Drawing.Size(35, 24);
+            this.lblTo.Size = new System.Drawing.Size(47, 32);
             this.lblTo.TabIndex = 120;
             this.lblTo.Text = "To:";
             // 
@@ -135,7 +135,7 @@
             this.lblfrom.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfrom.Location = new System.Drawing.Point(30, 241);
             this.lblfrom.Name = "lblfrom";
-            this.lblfrom.Size = new System.Drawing.Size(58, 24);
+            this.lblfrom.Size = new System.Drawing.Size(77, 32);
             this.lblfrom.TabIndex = 118;
             this.lblfrom.Text = "From:";
             // 
@@ -145,7 +145,7 @@
             this.lblStatus.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.Location = new System.Drawing.Point(437, 296);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(74, 28);
+            this.lblStatus.Size = new System.Drawing.Size(92, 35);
             this.lblStatus.TabIndex = 117;
             this.lblStatus.Text = "Status:";
             // 
@@ -169,7 +169,7 @@
             this.lbltraveler.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltraveler.Location = new System.Drawing.Point(437, 191);
             this.lbltraveler.Name = "lbltraveler";
-            this.lbltraveler.Size = new System.Drawing.Size(138, 24);
+            this.lbltraveler.Size = new System.Drawing.Size(179, 32);
             this.lbltraveler.TabIndex = 114;
             this.lbltraveler.Text = "No of Travelers:";
             // 
@@ -187,7 +187,7 @@
             this.lblFlightClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFlightClass.Location = new System.Drawing.Point(437, 135);
             this.lblFlightClass.Name = "lblFlightClass";
-            this.lblFlightClass.Size = new System.Drawing.Size(103, 20);
+            this.lblFlightClass.Size = new System.Drawing.Size(132, 26);
             this.lblFlightClass.TabIndex = 112;
             this.lblFlightClass.Text = "Flight Class:";
             // 
@@ -245,7 +245,7 @@
             this.lblSeat.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeat.Location = new System.Drawing.Point(437, 77);
             this.lblSeat.Name = "lblSeat";
-            this.lblSeat.Size = new System.Drawing.Size(77, 24);
+            this.lblSeat.Size = new System.Drawing.Size(100, 32);
             this.lblSeat.TabIndex = 105;
             this.lblSeat.Text = "Seat No:";
             // 
@@ -255,7 +255,7 @@
             this.lblFlightno.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFlightno.Location = new System.Drawing.Point(30, 81);
             this.lblFlightno.Name = "lblFlightno";
-            this.lblFlightno.Size = new System.Drawing.Size(86, 24);
+            this.lblFlightno.Size = new System.Drawing.Size(113, 32);
             this.lblFlightno.TabIndex = 104;
             this.lblFlightno.Text = "Flight no:";
             // 
@@ -265,7 +265,7 @@
             this.lblDepart.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepart.Location = new System.Drawing.Point(30, 191);
             this.lblDepart.Name = "lblDepart";
-            this.lblDepart.Size = new System.Drawing.Size(97, 24);
+            this.lblDepart.Size = new System.Drawing.Size(126, 32);
             this.lblDepart.TabIndex = 103;
             this.lblDepart.Text = "Departure:";
             // 
@@ -275,7 +275,7 @@
             this.lblDes.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDes.Location = new System.Drawing.Point(30, 135);
             this.lblDes.Name = "lblDes";
-            this.lblDes.Size = new System.Drawing.Size(107, 24);
+            this.lblDes.Size = new System.Drawing.Size(139, 32);
             this.lblDes.TabIndex = 102;
             this.lblDes.Text = "Destination:";
             // 
@@ -310,7 +310,7 @@
             this.lblUser.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.Location = new System.Drawing.Point(440, 341);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(61, 28);
+            this.lblUser.Size = new System.Drawing.Size(76, 35);
             this.lblUser.TabIndex = 123;
             this.lblUser.Text = "User:";
             this.lblUser.Click += new System.EventHandler(this.label1_Click);
@@ -357,6 +357,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminBookFlight";
             this.Text = "AdminBookFlight";
+            this.Load += new System.EventHandler(this.AdminBookFlight_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
