@@ -8,25 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Happy_Journey_Airline
+namespace Happy_Journey_Airline.Frontend
 {
-    public partial class DeleteService : Form
+    public partial class AddCountry : Form
     {
-        public DeleteService()
+        public AddCountry()
         {
             InitializeComponent();
         }
 
-        private void btnback_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new AdminServices().Show();
+
         }
 
-        private void btndel_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new AdminServices().Show();
+            new adminDashboard().Show();
         }
     }
 }

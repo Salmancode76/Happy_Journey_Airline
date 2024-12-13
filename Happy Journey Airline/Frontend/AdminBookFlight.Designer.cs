@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminBookFlight));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblBook = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
@@ -99,9 +100,9 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel3.Location = new System.Drawing.Point(1, 434);
+            this.panel3.Location = new System.Drawing.Point(1, 443);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(805, 19);
+            this.panel3.Size = new System.Drawing.Size(805, 10);
             this.panel3.TabIndex = 100;
             // 
             // dateTo
@@ -353,6 +354,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminBookFlight";
             this.Text = "AdminBookFlight";
             this.panel1.ResumeLayout(false);

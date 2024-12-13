@@ -116,5 +116,10 @@ namespace Happy_Journey_Airline
 
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

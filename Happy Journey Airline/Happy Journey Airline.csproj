@@ -78,6 +78,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frontend\AddAirport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\AddAirport.Designer.cs">
+      <DependentUpon>AddAirport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\AddCountry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\AddCountry.Designer.cs">
+      <DependentUpon>AddCountry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\AdminBookFlight.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,36 +180,6 @@
     <Compile Include="Frontend\CreateUser.Designer.cs">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frontend\DeleteBooking.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frontend\DeleteBooking.Designer.cs">
-      <DependentUpon>DeleteBooking.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frontend\deleteFlight.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frontend\deleteFlight.Designer.cs">
-      <DependentUpon>deleteFlight.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frontend\DeleteService.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frontend\DeleteService.Designer.cs">
-      <DependentUpon>DeleteService.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frontend\DeleteSubscription.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frontend\DeleteSubscription.Designer.cs">
-      <DependentUpon>DeleteSubscription.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frontend\DeleteUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frontend\DeleteUser.Designer.cs">
-      <DependentUpon>DeleteUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frontend\logincs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +259,12 @@
     <Compile Include="Frontend\UserHomeScreen.Designer.cs">
       <DependentUpon>UserHomeScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Frontend\AddAirport.resx">
+      <DependentUpon>AddAirport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\AddCountry.resx">
+      <DependentUpon>AddCountry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frontend\AdminBookFlight.resx">
       <DependentUpon>AdminBookFlight.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,21 +300,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\CreateUser.resx">
       <DependentUpon>CreateUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frontend\DeleteBooking.resx">
-      <DependentUpon>DeleteBooking.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frontend\deleteFlight.resx">
-      <DependentUpon>deleteFlight.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frontend\DeleteService.resx">
-      <DependentUpon>DeleteService.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frontend\DeleteSubscription.resx">
-      <DependentUpon>DeleteSubscription.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frontend\DeleteUser.resx">
-      <DependentUpon>DeleteUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\logincs.resx">
       <DependentUpon>logincs.cs</DependentUpon>
