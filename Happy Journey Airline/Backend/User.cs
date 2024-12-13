@@ -321,6 +321,7 @@ namespace Happy_Journey_Airline
 
                     Console.WriteLine("Inserted traveller for User ID: " + userId);
                 }
+
                 catch (Exception ex)
                 {
                     // Log or show the error for debugging
@@ -394,6 +395,7 @@ namespace Happy_Journey_Airline
 
 
         }
+
 
         public void DeleteUser(int userId, string role)
         {

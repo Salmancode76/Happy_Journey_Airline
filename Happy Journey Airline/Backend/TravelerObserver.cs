@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace Happy_Journey_Airline
 {
+
+
     public class TravelerObserver : User
     {
         private int passportNo;

@@ -11,7 +11,11 @@ namespace Happy_Journey_Airline
 
         private void Deletebtn_Click(object sender, System.EventArgs e)
         {
+<<<<<<< HEAD
             this.Hide();
+=======
+           
+>>>>>>> 6b25619f8944d954116e49676f328f2d5add6133
         }
 
         private void btnBack_Click(object sender, System.EventArgs e)
