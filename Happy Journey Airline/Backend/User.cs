@@ -632,7 +632,7 @@ namespace Happy_Journey_Airline
             email = email.Trim();
             username = username.Trim();
             password = password.Trim();
-            role = role.Trim();
+           // role = role.Trim();
             phoneNo = phoneNo.Trim();
             gender = gender.Trim();
             dob = dob.Trim();
