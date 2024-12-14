@@ -43,7 +43,6 @@ namespace Happy_Journey_Airline
 
         private void UserRegister_Load(object sender, EventArgs e)
         {
-            messagtxt.Text = string.Empty;
 
             RoleCB.Items.Add("Admin");
             RoleCB.Items.Add("Employer");
@@ -59,11 +58,12 @@ namespace Happy_Journey_Airline
             string username = usertxt.Text;
 
 
-            DateTime DOB = dateTimePicker1.Value; // Correct way to get DateTime from DateTimePicker
-            DateTime referenceDate = new DateTime(2024, 11, 29); // Reference date
+            DateTime DOB = dateTimePicker1.Value; 
+            DateTime referenceDate = new DateTime(2024, 11, 29); 
 
             String Dob = dateTimePicker1.Text;
-                                                                 // Calculate age
+
+
             int age = referenceDate.Year - DOB.Year;
         
 
@@ -85,71 +85,21 @@ namespace Happy_Journey_Airline
 
             string pass = txtPass.Text;
 
-            bool isNumeric = phone.All(char.IsDigit);
-
-            
-            if (string.IsNullOrWhiteSpace(fname) || string.IsNullOrWhiteSpace(lname) || string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(pass) || string.IsNullOrWhiteSpace(role) || string.IsNullOrWhiteSpace(Gender))
-            {
-                messagtxt.Text = "Please fill in all required fields.";
-                messagtxt.ForeColor = System.Drawing.Color.Red;
-                return;
-            }
-
-            if (DOB > DateTime.Now)
-            {
-                MessageBox.Show("INCORRECT DATE OF BIRTH.",
-                                          "Error",
-                                          MessageBoxButtons.OK,
-                                          MessageBoxIcon.Error); age--;
-
-                return;
-            }
 
 
 
+      
 
-
-
-
-            if (!isNumeric || phone.Length!=8 )
-            {
-                MessageBox.Show("PHONE NUMBER SHOULD ONLY CONTAIN NUMBERS AND IT CAN'T BE MORE THAN 10 DIGITS",
-                                          "Error",
-                                          MessageBoxButtons.OK,
-                                          MessageBoxIcon.Error);
-                return;
-
-
-            }
-
-            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-
-            if (!Regex.IsMatch(Email, emailPattern))
-            {
-                messagtxt.Text = "Invaild Email";
-                messagtxt.ForeColor = System.Drawing.Color.Red;
-                return;
-            }
-
-
-            Console.WriteLine(phone);
-
-            Console.WriteLine("THE ROLLE " + role);
-
-
-
-        
+           
 
             User u = new User();
 
          
             
             
-                u.Register(fname, lname, age, Email, username, pass, role, phone, Gender, Dob);
+         u.Register(fname, lname, age, Email, username, pass, role, phone, Gender, Dob);
 
-                messagtxt.Text = string.Empty;
-                messagtxt.ForeColor = System.Drawing.Color.Green;
-                messagtxt.Text = "YOUR ACCOUNT HAS BEEN CREATED SCUSSFULLY!!!!!!";
+              
 
 
             
@@ -255,11 +205,11 @@ namespace Happy_Journey_Airline
         {
             if (show_pass.Checked)
             {
-                txtPass.PasswordChar = '\0';  // This will show the text (no masking)
+                txtPass.PasswordChar = '\0';  
             }
             else
             {
-                txtPass.PasswordChar = '*';  // This will hide the text (with asterisks)
+                txtPass.PasswordChar = '*';  
             }
         }
     }

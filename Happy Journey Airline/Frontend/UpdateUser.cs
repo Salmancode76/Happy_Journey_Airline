@@ -13,10 +13,10 @@ namespace Happy_Journey_Airline
     public partial class UpdateUser : Form
     {
         int userID;
+        String orginalName;
         public UpdateUser(int  userid)
         {
             InitializeComponent();
-            messagtxt.Text = string.Empty;
 
 
             RoleCB.Items.Add("Admin");
@@ -29,6 +29,8 @@ namespace Happy_Journey_Airline
             Fnametxt.Text = user.FirstName;
             Lnametxt.Text = user.LastName;
             usertxt.Text = user.Username;
+
+             orginalName = user.Username;
 
             if (user.Gender == "Male")
             {
@@ -71,6 +73,9 @@ namespace Happy_Journey_Airline
         private void btncreate_Click(object sender, EventArgs e)
         {
 
+            
+
+
             User u = new User();
             DateTime dob = DateTime.Parse(dateTimePicker1.Text);
 
@@ -94,30 +99,37 @@ namespace Happy_Journey_Airline
                 gender = "Female";
             }
 
+            bool same=false;
 
 
-           bool state = u.UpdateUser(userID, Fnametxt.Text, Lnametxt.Text, age, emailtxt.Text, usertxt.Text, passtxt.Text, RoleCB.SelectedItem.ToString(), phontxt.Text, gender, dateTimePicker1.Text);
-
-            if (!state)
+            if (orginalName != null && usertxt.Text != null && orginalName.Equals(usertxt.Text,StringComparison.OrdinalIgnoreCase))
             {
-                messagtxt.Text = "Failed to update";
-                messagtxt.ForeColor = System.Drawing.Color.Red;
-
+                same = true;
             }
             else
             {
-                messagtxt.Text = "Updated";
-                messagtxt.ForeColor = System.Drawing.Color.Green;
-
-
+                same = false;
             }
 
+            Console.WriteLine(same);
+
+            Console.WriteLine("Orginal name "+orginalName);
+            Console.WriteLine("New name " + usertxt.Text);
+
+            u.UpdateUser(userID, Fnametxt.Text, Lnametxt.Text, age, emailtxt.Text, usertxt.Text, passtxt.Text, RoleCB.SelectedItem.ToString(), phontxt.Text, gender, dateTimePicker1.Text, same);
+
+         
 
 
 
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void UpdateUser_Load(object sender, EventArgs e)
         {
 
         }

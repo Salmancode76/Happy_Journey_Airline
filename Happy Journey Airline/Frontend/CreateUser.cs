@@ -31,17 +31,13 @@ namespace Happy_Journey_Airline
             string username = usertxt.Text;
 
 
-            DateTime DOB = dateTimePicker1.Value; // Correct way to get DateTime from DateTimePicker
-            DateTime referenceDate = new DateTime(2024, 11, 29); // Reference date
+            DateTime DOB = dateTimePicker1.Value;
+            DateTime referenceDate = new DateTime(2024, 11, 29);
 
             String Dob = dateTimePicker1.Text;
-            // Calculate age
-            int age = referenceDate.Year - DOB.Year;
-            if (DOB > referenceDate.AddYears(-age))
-            {
-                age--;
-            }
 
+
+            int age = referenceDate.Year - DOB.Year;
 
 
             String Gender = "";
@@ -55,62 +51,35 @@ namespace Happy_Journey_Airline
                 Gender = "Female";
             }
 
+
             String Email = emailtxt.Text;
 
             String phone = phontxt.Text;
 
-            string role = RoleCB.SelectedItem?.ToString() ?? ""; // Safely handles null if nothing is selected
+            string role = RoleCB.SelectedItem?.ToString();
 
             string pass = txtPass.Text;
 
-            bool isNumeric = phone.All(char.IsDigit);
-
-            if (isNumeric)
-            {
-                Console.WriteLine("Phone number is valid: " + phone);
-            }
-            else
-            {
-                Console.WriteLine("Invalid phone number. Only numbers are allowed.");
-            }
-
-            Console.WriteLine(phone);
-
-            Console.WriteLine("THE ROLLE " + role);
 
 
 
-            if (string.IsNullOrWhiteSpace(fname) || string.IsNullOrWhiteSpace(lname) || string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(pass) || string.IsNullOrWhiteSpace(role) || age <= 0)
-            {
-                messagtxt.Text = "Please fill in all required fields.";
-                messagtxt.ForeColor = System.Drawing.Color.Red;
-                return;
-            }
+
 
 
 
             User u = new User();
 
-            try
-            {
-                u.Register(fname, lname, age, Email, username, pass, role, phone, Gender, Dob);
-
-            }
-            catch
-            {
-                messagtxt.Text = string.Empty;
-                messagtxt.ForeColor = System.Drawing.Color.Red;
-
-                messagtxt.Text = "INVALID DATA!!!!!!!!!!!";
-
-            }
 
 
-            messagtxt.Text = string.Empty;
-            messagtxt.ForeColor = System.Drawing.Color.Green;
-            messagtxt.Text = "YOUR ACCOUNT HAS BEEN CREATED SCUSSFULLY!!!!!!";
+
+            u.Register(fname, lname, age, Email, username, pass, role, phone, Gender, Dob);
+
+
+
+
+
+
         }
-
         private void emaillbl_Click(object sender, EventArgs e)
         {
 

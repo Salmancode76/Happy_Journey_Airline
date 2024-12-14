@@ -78,6 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backend\GlobalUser.cs" />
     <Compile Include="Frontend\AddAirport.cs">
       <SubType>Form</SubType>
     </Compile>

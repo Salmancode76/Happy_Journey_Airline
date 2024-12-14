@@ -50,9 +50,10 @@
             // 
             this.uNamelbl.AutoSize = true;
             this.uNamelbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uNamelbl.Location = new System.Drawing.Point(207, 156);
+            this.uNamelbl.Location = new System.Drawing.Point(276, 192);
+            this.uNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uNamelbl.Name = "uNamelbl";
-            this.uNamelbl.Size = new System.Drawing.Size(113, 28);
+            this.uNamelbl.Size = new System.Drawing.Size(144, 35);
             this.uNamelbl.TabIndex = 49;
             this.uNamelbl.Text = "Username:";
             // 
@@ -60,33 +61,37 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(210, 241);
+            this.label1.Location = new System.Drawing.Point(280, 297);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 28);
+            this.label1.Size = new System.Drawing.Size(137, 35);
             this.label1.TabIndex = 50;
             this.label1.Text = "Password:";
             // 
             // passtxt
             // 
-            this.passtxt.Location = new System.Drawing.Point(364, 249);
+            this.passtxt.Location = new System.Drawing.Point(485, 306);
+            this.passtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.passtxt.Name = "passtxt";
-            this.passtxt.Size = new System.Drawing.Size(178, 20);
+            this.passtxt.Size = new System.Drawing.Size(236, 22);
             this.passtxt.TabIndex = 52;
             // 
             // ustxt
             // 
-            this.ustxt.Location = new System.Drawing.Point(364, 161);
+            this.ustxt.Location = new System.Drawing.Point(485, 198);
+            this.ustxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ustxt.Name = "ustxt";
-            this.ustxt.Size = new System.Drawing.Size(178, 20);
+            this.ustxt.Size = new System.Drawing.Size(236, 22);
             this.ustxt.TabIndex = 53;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Sitka Text", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(206, 71);
+            this.label2.Location = new System.Drawing.Point(275, 87);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(354, 35);
+            this.label2.Size = new System.Drawing.Size(437, 43);
             this.label2.TabIndex = 54;
             this.label2.Text = "Please Enter User Credentials";
             // 
@@ -94,9 +99,10 @@
             // 
             this.loginbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.loginbtn.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginbtn.Location = new System.Drawing.Point(590, 340);
+            this.loginbtn.Location = new System.Drawing.Point(787, 418);
+            this.loginbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.loginbtn.Name = "loginbtn";
-            this.loginbtn.Size = new System.Drawing.Size(137, 38);
+            this.loginbtn.Size = new System.Drawing.Size(183, 47);
             this.loginbtn.TabIndex = 67;
             this.loginbtn.Text = "Login";
             this.loginbtn.UseVisualStyleBackColor = false;
@@ -108,8 +114,9 @@
             this.panel1.Controls.Add(this.lblWelcome);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(-1, -1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(838, 60);
+            this.panel1.Size = new System.Drawing.Size(1117, 74);
             this.panel1.TabIndex = 68;
             // 
             // lblWelcome
@@ -117,9 +124,10 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblWelcome.Location = new System.Drawing.Point(335, 0);
+            this.lblWelcome.Location = new System.Drawing.Point(447, 0);
+            this.lblWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(129, 58);
+            this.lblWelcome.Size = new System.Drawing.Size(160, 72);
             this.lblWelcome.TabIndex = 3;
             this.lblWelcome.Text = "Login";
             // 
@@ -127,18 +135,20 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel2.Location = new System.Drawing.Point(1, 428);
+            this.panel2.Location = new System.Drawing.Point(1, 527);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(868, 10);
+            this.panel2.Size = new System.Drawing.Size(1157, 12);
             this.panel2.TabIndex = 69;
             // 
             // backbtn
             // 
             this.backbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.backbtn.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backbtn.Location = new System.Drawing.Point(46, 340);
+            this.backbtn.Location = new System.Drawing.Point(61, 418);
+            this.backbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(137, 38);
+            this.backbtn.Size = new System.Drawing.Size(183, 47);
             this.backbtn.TabIndex = 70;
             this.backbtn.Text = "Back";
             this.backbtn.UseVisualStyleBackColor = false;
@@ -147,7 +157,8 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
-            this.pictureBox1.Location = new System.Drawing.Point(262, 112);
+            this.pictureBox1.Location = new System.Drawing.Point(349, 138);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(256, 244);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -158,19 +169,17 @@
             // 
             this.messagelbl.AutoSize = true;
             this.messagelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messagelbl.Location = new System.Drawing.Point(258, 358);
-            this.messagelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.messagelbl.Location = new System.Drawing.Point(344, 441);
             this.messagelbl.Name = "messagelbl";
-            this.messagelbl.Size = new System.Drawing.Size(74, 20);
+            this.messagelbl.Size = new System.Drawing.Size(0, 25);
             this.messagelbl.TabIndex = 92;
-            this.messagelbl.Text = "Message";
             // 
             // logincs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.messagelbl);
             this.Controls.Add(this.backbtn);
             this.Controls.Add(this.panel2);
@@ -183,6 +192,7 @@
             this.Controls.Add(this.uNamelbl);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "logincs";
             this.Text = "logincs";
             this.Load += new System.EventHandler(this.logincs_Load);
