@@ -64,10 +64,10 @@
             // lblfname
             // 
             this.lblfname.AutoSize = true;
-            this.lblfname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfname.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfname.Location = new System.Drawing.Point(46, 105);
             this.lblfname.Name = "lblfname";
-            this.lblfname.Size = new System.Drawing.Size(106, 24);
+            this.lblfname.Size = new System.Drawing.Size(118, 28);
             this.lblfname.TabIndex = 5;
             this.lblfname.Text = "First Name:";
             // 
@@ -81,10 +81,10 @@
             // lblusername
             // 
             this.lblusername.AutoSize = true;
-            this.lblusername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusername.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusername.Location = new System.Drawing.Point(46, 156);
             this.lblusername.Name = "lblusername";
-            this.lblusername.Size = new System.Drawing.Size(102, 24);
+            this.lblusername.Size = new System.Drawing.Size(110, 28);
             this.lblusername.TabIndex = 30;
             this.lblusername.Text = "Username:";
             // 
@@ -98,10 +98,10 @@
             // lblpass
             // 
             this.lblpass.AutoSize = true;
-            this.lblpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpass.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblpass.Location = new System.Drawing.Point(423, 290);
             this.lblpass.Name = "lblpass";
-            this.lblpass.Size = new System.Drawing.Size(97, 24);
+            this.lblpass.Size = new System.Drawing.Size(105, 28);
             this.lblpass.TabIndex = 32;
             this.lblpass.Text = "Password:";
             this.lblpass.Click += new System.EventHandler(this.passlbl_Click);
@@ -116,10 +116,10 @@
             // lblemail
             // 
             this.lblemail.AutoSize = true;
-            this.lblemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblemail.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblemail.Location = new System.Drawing.Point(423, 248);
             this.lblemail.Name = "lblemail";
-            this.lblemail.Size = new System.Drawing.Size(62, 24);
+            this.lblemail.Size = new System.Drawing.Size(70, 28);
             this.lblemail.TabIndex = 34;
             this.lblemail.Text = "Email:";
             this.lblemail.Click += new System.EventHandler(this.emaillbl_Click);
@@ -135,10 +135,10 @@
             // lblgender
             // 
             this.lblgender.AutoSize = true;
-            this.lblgender.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblgender.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblgender.Location = new System.Drawing.Point(46, 206);
             this.lblgender.Name = "lblgender";
-            this.lblgender.Size = new System.Drawing.Size(79, 24);
+            this.lblgender.Size = new System.Drawing.Size(84, 28);
             this.lblgender.TabIndex = 36;
             this.lblgender.Text = "Gender:";
             // 
@@ -167,10 +167,10 @@
             // lblphone
             // 
             this.lblphone.AutoSize = true;
-            this.lblphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblphone.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblphone.Location = new System.Drawing.Point(46, 248);
             this.lblphone.Name = "lblphone";
-            this.lblphone.Size = new System.Drawing.Size(71, 24);
+            this.lblphone.Size = new System.Drawing.Size(74, 28);
             this.lblphone.TabIndex = 39;
             this.lblphone.Text = "Phone:";
             // 
@@ -184,10 +184,10 @@
             // lblrole
             // 
             this.lblrole.AutoSize = true;
-            this.lblrole.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblrole.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblrole.Location = new System.Drawing.Point(46, 290);
             this.lblrole.Name = "lblrole";
-            this.lblrole.Size = new System.Drawing.Size(54, 24);
+            this.lblrole.Size = new System.Drawing.Size(59, 28);
             this.lblrole.TabIndex = 41;
             this.lblrole.Text = "Role:";
             // 
@@ -203,10 +203,10 @@
             // lblbirthdate
             // 
             this.lblbirthdate.AutoSize = true;
-            this.lblbirthdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbirthdate.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblbirthdate.Location = new System.Drawing.Point(420, 156);
             this.lblbirthdate.Name = "lblbirthdate";
-            this.lblbirthdate.Size = new System.Drawing.Size(95, 24);
+            this.lblbirthdate.Size = new System.Drawing.Size(109, 28);
             this.lblbirthdate.TabIndex = 43;
             this.lblbirthdate.Text = "Birth Date:";
             this.lblbirthdate.Click += new System.EventHandler(this.lblbirthdate_Click);
@@ -222,7 +222,7 @@
             // btncreate
             // 
             this.btncreate.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btncreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncreate.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncreate.Location = new System.Drawing.Point(630, 388);
             this.btncreate.Name = "btncreate";
             this.btncreate.Size = new System.Drawing.Size(129, 38);
@@ -234,10 +234,10 @@
             // lblbalance
             // 
             this.lblbalance.AutoSize = true;
-            this.lblbalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbalance.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblbalance.Location = new System.Drawing.Point(423, 206);
             this.lblbalance.Name = "lblbalance";
-            this.lblbalance.Size = new System.Drawing.Size(83, 24);
+            this.lblbalance.Size = new System.Drawing.Size(88, 28);
             this.lblbalance.TabIndex = 66;
             this.lblbalance.Text = "Balance:";
             // 
@@ -301,10 +301,10 @@
             // lbllname
             // 
             this.lbllname.AutoSize = true;
-            this.lbllname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbllname.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbllname.Location = new System.Drawing.Point(408, 106);
             this.lbllname.Name = "lbllname";
-            this.lbllname.Size = new System.Drawing.Size(104, 24);
+            this.lbllname.Size = new System.Drawing.Size(113, 28);
             this.lbllname.TabIndex = 105;
             this.lbllname.Text = "Last Name:";
             // 
