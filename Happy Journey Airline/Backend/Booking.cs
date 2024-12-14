@@ -16,7 +16,7 @@ namespace Happy_Journey_Airline
         private int flightId;
         private int flightNo;
         private int paymentId;
-        private int seatNo;
+        private string seatNo;
         private List<Service> services;
         private string status; // cancelled, booked
         private int subscriptionId;
@@ -26,7 +26,7 @@ namespace Happy_Journey_Airline
         {
         }
 
-        public Booking(string destination, string duration, int flightClassId, int flightId, int flightNo, int paymentId, int seatNo, List<Service> services, string status, int subscriptionId, int travelerId)
+        public Booking(string destination, string duration, int flightClassId, int flightId, int flightNo, int paymentId, string seatNo, List<Service> services, string status, int subscriptionId, int travelerId)
         {
             this.bookingId = bookingId++;
             this.destination = destination;
@@ -56,11 +56,11 @@ namespace Happy_Journey_Airline
 
         public TravelerObserver Traveler { get; set; }
 
-        public int SeatNo { 
+        public string SeatNo { 
             get {  return seatNo; }
             set
             {
-                if (seatNo > 0)
+                if (seatNo !=" ")
                 {
                     this.seatNo = seatNo;
                 }
@@ -106,7 +106,7 @@ namespace Happy_Journey_Airline
                     return null;
                 }
 
-                if (seatNo == 0)
+                if (seatNo !=" " )
                 {
                     message = "Select a seat number, it cannot be empty";
                     return null;

@@ -32,7 +32,7 @@ namespace Happy_Journey_Airline
             this.administratorId = userId;
         }
 
-        public void addBooking(string destination, string duration, int seatNo, List<Service> services, string status, int flightClassId, int flightId, int flightNo, int paymentId, int subscriptionId, int travelerId)
+        public void addBooking(string destination, string duration, string seatNo, List<Service> services, string status, int flightClassId, int flightId, int flightNo, int paymentId, int subscriptionId, int travelerId)
         {
             List<Booking> bookings = new List<Booking>();
 

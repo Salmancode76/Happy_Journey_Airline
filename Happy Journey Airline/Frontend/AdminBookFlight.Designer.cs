@@ -184,10 +184,10 @@
             // lblFlightClass
             // 
             this.lblFlightClass.AutoSize = true;
-            this.lblFlightClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFlightClass.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFlightClass.Location = new System.Drawing.Point(437, 135);
             this.lblFlightClass.Name = "lblFlightClass";
-            this.lblFlightClass.Size = new System.Drawing.Size(103, 20);
+            this.lblFlightClass.Size = new System.Drawing.Size(108, 24);
             this.lblFlightClass.TabIndex = 112;
             this.lblFlightClass.Text = "Flight Class:";
             // 
@@ -327,6 +327,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lblUser);

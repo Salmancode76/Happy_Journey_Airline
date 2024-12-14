@@ -38,7 +38,7 @@
             this.txtDest = new System.Windows.Forms.TextBox();
             this.txtDepart = new System.Windows.Forms.TextBox();
             this.txtSeat = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.flightGridView = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblFlightClass = new System.Windows.Forms.Label();
@@ -47,16 +47,16 @@
             this.txtTraveler = new System.Windows.Forms.TextBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
-            this.dateTo = new System.Windows.Forms.DateTimePicker();
+            this.destDatePicker = new System.Windows.Forms.DateTimePicker();
             this.lblTo = new System.Windows.Forms.Label();
-            this.dateFrom = new System.Windows.Forms.DateTimePicker();
+            this.departDatePicker = new System.Windows.Forms.DateTimePicker();
             this.lblfrom = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblBook = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightGridView)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -146,15 +146,15 @@
             this.txtSeat.Size = new System.Drawing.Size(197, 20);
             this.txtSeat.TabIndex = 17;
             // 
-            // dataGridView1
+            // flightGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 308);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(349, 112);
-            this.dataGridView1.TabIndex = 23;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.flightGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.flightGridView.Location = new System.Drawing.Point(36, 308);
+            this.flightGridView.Name = "flightGridView";
+            this.flightGridView.RowHeadersWidth = 51;
+            this.flightGridView.Size = new System.Drawing.Size(349, 112);
+            this.flightGridView.TabIndex = 23;
+            this.flightGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnSearch
             // 
@@ -183,10 +183,10 @@
             // lblFlightClass
             // 
             this.lblFlightClass.AutoSize = true;
-            this.lblFlightClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFlightClass.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFlightClass.Location = new System.Drawing.Point(439, 142);
             this.lblFlightClass.Name = "lblFlightClass";
-            this.lblFlightClass.Size = new System.Drawing.Size(103, 20);
+            this.lblFlightClass.Size = new System.Drawing.Size(108, 24);
             this.lblFlightClass.TabIndex = 26;
             this.lblFlightClass.Text = "Flight Class:";
             // 
@@ -233,12 +233,12 @@
             this.lblStatus.TabIndex = 38;
             this.lblStatus.Text = "Status:";
             // 
-            // dateTo
+            // destDatePicker
             // 
-            this.dateTo.Location = new System.Drawing.Point(575, 250);
-            this.dateTo.Name = "dateTo";
-            this.dateTo.Size = new System.Drawing.Size(200, 20);
-            this.dateTo.TabIndex = 68;
+            this.destDatePicker.Location = new System.Drawing.Point(575, 250);
+            this.destDatePicker.Name = "destDatePicker";
+            this.destDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.destDatePicker.TabIndex = 68;
             // 
             // lblTo
             // 
@@ -250,12 +250,12 @@
             this.lblTo.TabIndex = 67;
             this.lblTo.Text = "To:";
             // 
-            // dateFrom
+            // departDatePicker
             // 
-            this.dateFrom.Location = new System.Drawing.Point(185, 250);
-            this.dateFrom.Name = "dateFrom";
-            this.dateFrom.Size = new System.Drawing.Size(200, 20);
-            this.dateFrom.TabIndex = 66;
+            this.departDatePicker.Location = new System.Drawing.Point(185, 250);
+            this.departDatePicker.Name = "departDatePicker";
+            this.departDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.departDatePicker.TabIndex = 66;
             // 
             // lblfrom
             // 
@@ -325,9 +325,9 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dateTo);
+            this.Controls.Add(this.destDatePicker);
             this.Controls.Add(this.lblTo);
-            this.Controls.Add(this.dateFrom);
+            this.Controls.Add(this.departDatePicker);
             this.Controls.Add(this.lblfrom);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.txtStatus);
@@ -336,7 +336,7 @@
             this.Controls.Add(this.cmbFlightClass);
             this.Controls.Add(this.lblFlightClass);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.flightGridView);
             this.Controls.Add(this.txtSeat);
             this.Controls.Add(this.txtDepart);
             this.Controls.Add(this.txtDest);
@@ -354,7 +354,7 @@
             this.Name = "BookFlight";
             this.Text = "BookFlight";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -373,7 +373,7 @@
         private System.Windows.Forms.TextBox txtDest;
         private System.Windows.Forms.TextBox txtDepart;
         private System.Windows.Forms.TextBox txtSeat;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView flightGridView;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblFlightClass;
@@ -382,9 +382,9 @@
         private System.Windows.Forms.TextBox txtTraveler;
         private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.DateTimePicker dateTo;
+        private System.Windows.Forms.DateTimePicker destDatePicker;
         private System.Windows.Forms.Label lblTo;
-        private System.Windows.Forms.DateTimePicker dateFrom;
+        private System.Windows.Forms.DateTimePicker departDatePicker;
         private System.Windows.Forms.Label lblfrom;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblBook;

@@ -36,8 +36,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCity = new System.Windows.Forms.Label();
-            this.txtCountry = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbCity = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -116,13 +116,6 @@
             this.lblCity.TabIndex = 141;
             this.lblCity.Text = "City:";
             // 
-            // txtCountry
-            // 
-            this.txtCountry.Location = new System.Drawing.Point(304, 213);
-            this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(197, 20);
-            this.txtCountry.TabIndex = 142;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -133,14 +126,22 @@
             this.label1.TabIndex = 143;
             this.label1.Text = "Enter a city to be added to the System";
             // 
+            // cmbCity
+            // 
+            this.cmbCity.FormattingEnabled = true;
+            this.cmbCity.Location = new System.Drawing.Point(304, 213);
+            this.cmbCity.Name = "cmbCity";
+            this.cmbCity.Size = new System.Drawing.Size(197, 21);
+            this.cmbCity.TabIndex = 144;
+            // 
             // AddCity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbCity);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCountry);
             this.Controls.Add(this.lblCity);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAdd);
@@ -166,7 +167,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblCity;
-        private System.Windows.Forms.TextBox txtCountry;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbCity;
     }
 }
