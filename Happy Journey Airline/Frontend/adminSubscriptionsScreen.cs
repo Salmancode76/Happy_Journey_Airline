@@ -40,10 +40,18 @@ namespace Happy_Journey_Airline
         
         }
 
+<<<<<<<<< Temporary merge branch 1
+       // private void btnUpdate_Click(object sender, EventArgs e)
+        //{
+           // this.Hide();
+           // new UpdateSubscription().Show();
+        //}
+=========
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new UpdateSubscription().Show();
+            //new UpdateSubscription().Show();
         }
+>>>>>>>>> Temporary merge branch 2
     }
 }

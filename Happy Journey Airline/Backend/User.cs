@@ -182,11 +182,17 @@ namespace Happy_Journey_Airline
                     Console.WriteLine(u1.username);
                     Console.WriteLine(u1.userId);
 
+
+                    Console.WriteLine($"User object created: userId={u1.userId}, username={u1.username}");
+
+                    // Set global user
                     GlobalUser.LoggedInUser = u1;
 
-                 
+                    Console.WriteLine($"GlobalUser.LoggedInUser.userId after assignment: {GlobalUser.LoggedInUser.userId}");
+                
 
-                    if (u1.role == "Admin")
+
+                if (u1.role == "Admin")
                     {
                         new adminDashboard().Show();
                     }
@@ -431,11 +437,10 @@ namespace Happy_Journey_Airline
         public void DeleteUser(int userId, string role)
         {
 
-            Console.WriteLine("dsok");
-            Console.WriteLine(GlobalUser.LoggedInUser.username);
-
-            Console.WriteLine("LoggedInUser ID: " + GlobalUser.LoggedInUser.userId);
-            Console.WriteLine("userId to delete: " + userId);
+            Console.WriteLine("DeleteUser called.");
+            Console.WriteLine($"Logged-in Username: {GlobalUser.LoggedInUser?.username ?? "No user logged in"}");
+            Console.WriteLine($"Logged-in User ID: {GlobalUser.LoggedInUser?.userId ?? 0}");
+            Console.WriteLine($"User ID to delete: {userId}");
 
             if ((long)GlobalUser.LoggedInUser.userId == (long)userId)
             {
