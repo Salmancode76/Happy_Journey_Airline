@@ -40,6 +40,8 @@ namespace Happy_Journey_Airline
             cmbFlightClass.Items.Add("First");
             cmbFlightClass.Items.Add("Buisiness");
             cmbFlightClass.Items.Add("Economy");
+            lblmsg.Text = " ";
+            lblmsg.ForeColor = Color.Red;
 
         }
 
@@ -88,34 +90,72 @@ namespace Happy_Journey_Airline
             int flightt;
             int totTraveler;
 
-
+            bool isFlightValid = int.TryParse(flight, out flightt);
+            bool isTravelerValid = int.TryParse(totalTravelers, out totTraveler);
             DateTime departDate = departDatePicker.Value;
             DateTime destDate = destDatePicker.Value;
+            string depDate = departDatePicker.Text;
+            string returnDate = destDatePicker.Text;
 
-            
-
-
-            if (string.IsNullOrEmpty(destination) || string.IsNullOrEmpty(departure) || string.IsNullOrEmpty(seatno) || string.IsNullOrEmpty(status) || !int.TryParse(flight, out flightt) || !int.TryParse(totalTravelers, out totTraveler) || cmbFlightClass.SelectedIndex == -1)
+            if (string.IsNullOrEmpty(destination) ||
+                string.IsNullOrEmpty(departure) ||
+                string.IsNullOrEmpty(seatno) ||
+                string.IsNullOrEmpty(status) ||
+                cmbFlightClass.SelectedIndex == -1 )
             {
-
-
-                MessageBox.Show("Please fill in all required fields");
+                MessageBox.Show("Please fill in all the required fields");
+                return; // Exit to allow corrections
             }
 
-            else {
-
-                MessageBox.Show("Data Added Successfully! \n\n Proceeding to Payment");
-
-                BookFlight book;
-                book = new BookFlight();
-
-                //I didnt pass any values because some parameters are not same in the booking class
-                this.Hide();
-                new PaymentScreen().Show();
-
+            if (!isFlightValid)
+            {
+                lblmsg.Text = "Flight number must be a valid number!";
+                return; // Exit to allow corrections
             }
 
+            if (!isTravelerValid)
+            {
+                lblmsg.Text = "Number of travelers must be a valid number!";
+                return; // Exit to allow corrections
+            }
+
+           
+
+            if (departDate < DateTime.Now.Date) {
+                lblmsg.Text = "Please select current or future Departure dates";
+                return;
+            }
+
+            if (destDate < DateTime.Now.Date)
+            {
+                lblmsg.Text = "Please select current or future Return dates";
+                return;
+            }
+
+           
+
+
+            lblmsg.Text = " ";
+
+                    MessageBox.Show("Data Added Successfully! \n\n Proceeding to Payment");
+            string flightClass = cmbFlightClass.SelectedItem?.ToString();
+
+                    Booking book = new Booking();
+
+
+
+            book.TravelerBook(flight, destination, departure, seatno, totalTravelers,status, depDate, returnDate, flightClass);
+            
+                    
+
+                    this.Hide();
+                    new PaymentScreen().Show();
+
+                
+
+
+            }
             
         }
     }
-}
+
