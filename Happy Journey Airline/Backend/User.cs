@@ -11,6 +11,7 @@ using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using BCrypt.Net;
 using System.Text.RegularExpressions;
+using Happy_Journey_Airline.Backend;
 
 namespace Happy_Journey_Airline
 {
@@ -125,15 +126,18 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public User login(string username1, string password)
+        public User login(string username, string password)
         {
             try
+
             {
+                username = username.Trim();
+                password = password.Trim();
 
                 string query = "SELECT * FROM [dbo].[User] WHERE username = @username";
                 SqlCommand cmd = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
-                cmd.Parameters.AddWithValue("@username", username1);
+                cmd.Parameters.AddWithValue("@username", username);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -142,9 +146,6 @@ namespace Happy_Journey_Airline
                     string storedHashedPassword = reader["password"].ToString();
 
 
-                    Console.WriteLine(storedHashedPassword);
-
-                    Console.WriteLine(password);
                     User u1;
 
                     // Verify the entered password against the stored hashed password
@@ -156,10 +157,35 @@ namespace Happy_Journey_Airline
 
                     }
 
-                    
-                     u1 = new User(this.userId, this.firstName, this.lastName, this.age, this.email, this.username = reader["username"].ToString(), this.password = reader["password"].ToString(), role = reader["role"].ToString(), this.phoneNo, this.gender, this.dob, this.balance);
+
+                    //   u1 = new User(this.userId, this.firstName, this.lastName, this.age, this.email, this.username = reader["username"].ToString(), this.password = reader["password"].ToString(), role = reader["role"].ToString(), this.phoneNo, this.gender, this.dob, this.balance);
+                     u1 = new User
+                    {
+                         userId = Convert.ToInt32(reader["user_id"]),
+                         firstName = reader["name"] != DBNull.Value ? reader["name"].ToString().Split(' ')[0] : string.Empty,
+                         lastName = reader["name"] != DBNull.Value && reader["name"].ToString().Contains(' ')
+                            ? reader["name"].ToString().Split(' ')[1]
+                            : string.Empty,
+                         age = reader["age"] != DBNull.Value ? Convert.ToInt32(reader["age"]) : 0,
+                         dob = reader["dob"] != DBNull.Value ? Convert.ToDateTime(reader["dob"]).ToString("yyyy-MM-dd") : string.Empty,
+                        email = reader["email"] != DBNull.Value ? reader["email"].ToString() : string.Empty,
+                        gender = reader["gender"] != DBNull.Value ? reader["gender"].ToString() : string.Empty,
+                        username = reader["username"] != DBNull.Value ? reader["username"].ToString() : string.Empty,
+
+                        phoneNo = reader["phone_no"] != DBNull.Value ? reader["phone_no"].ToString() : string.Empty,
+                        role = reader["role"].ToString()
+                     };
+
+
+
                     Console.WriteLine(u1.role);
                     Console.WriteLine(u1.username);
+                    Console.WriteLine(u1.userId);
+
+                    GlobalUser.LoggedInUser = u1;
+
+                 
+
                     if (u1.role == "Admin")
                     {
                         new adminDashboard().Show();
@@ -202,8 +228,16 @@ namespace Happy_Journey_Airline
         }
         public void Register(string firstName, string lastName, int age, string email, string username, string password, string role, string phoneNo, string gender, string dob)
         {
-    
-        
+       
+
+            bool valid = User.VerifyCredentials(firstName, lastName, email, username, password, role, phoneNo, gender, dob,false);
+
+            if (!valid)
+            {
+                return;
+            }
+
+
 
             string stmt = "INSERT INTO [dbo].[User] (name, age, dob, email, gender, username, password, phone_no, role) " +
                           "VALUES (@Name, @Age, @Dob, @Email, @Gender, @Username, @Password, @PhoneNo, @Role); " +
@@ -211,11 +245,9 @@ namespace Happy_Journey_Airline
 
             SqlCommand cmd = new SqlCommand(stmt, DBManager.getInstance().OpenConnection());
 
-            Console.WriteLine("xx"+password);
 
             string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password); // Do not truncate
 
-            Console.WriteLine(hashedPassword);
 
 
             cmd.Parameters.AddWithValue("@Name", firstName + " " + lastName);
@@ -316,6 +348,10 @@ namespace Happy_Journey_Airline
                     Console.WriteLine("Error inserting into Employer table: " + ex.Message);
                 }
             }
+            MessageBox.Show("ACCOUNT IS CREATED!",
+                "Success",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
 
 
             // Close the connection
@@ -324,10 +360,13 @@ namespace Happy_Journey_Airline
 
         public static bool Exists(string username)
         {
-            List<User> users = getUsers();
+            List<User> users = User.GetAllUsers();
+
+
 
             foreach (User user in users)
             {
+
                 if (user.Username.Equals(username, StringComparison.OrdinalIgnoreCase))
                 {
                     return true;
@@ -335,6 +374,8 @@ namespace Happy_Journey_Airline
             }
             return false;
         }
+
+
         public static User GetUserById(int userId)
         {
             var users = User.GetAllUsers(); 
@@ -354,6 +395,7 @@ namespace Happy_Journey_Airline
 
             return null; // Return null if no user is found
         }
+  
 
 
 
@@ -388,6 +430,22 @@ namespace Happy_Journey_Airline
 
         public void DeleteUser(int userId, string role)
         {
+
+            Console.WriteLine("dsok");
+            Console.WriteLine(GlobalUser.LoggedInUser.username);
+
+            Console.WriteLine("LoggedInUser ID: " + GlobalUser.LoggedInUser.userId);
+            Console.WriteLine("userId to delete: " + userId);
+
+            if ((long)GlobalUser.LoggedInUser.userId == (long)userId)
+            {
+                MessageBox.Show("YOU CAN'T DELETE YOUR ACCOUNT WHILE U ARE USING IT.",
+                                  "Error",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Error);
+                return;
+            }
+
             if (role == "Traveler")
             {
                 // Create the SqlConnection instance (open the connection once)
@@ -566,11 +624,144 @@ namespace Happy_Journey_Airline
             return users1;
         }
 
-        public bool UpdateUser(int userId, string firstName, string lastName, int age, string email, string username, string password, string role, string phoneNo, string gender, string dob)
+
+        public static bool VerifyCredentials(string firstName, string lastName,  string email, string username, string password, string role, string phoneNo, string gender, string dob, bool isame)
+        {
+            firstName = firstName.Trim();
+            lastName = lastName.Trim();
+            email = email.Trim();
+            username = username.Trim();
+            password = password.Trim();
+           // role = role.Trim();
+            phoneNo = phoneNo.Trim();
+            gender = gender.Trim();
+            dob = dob.Trim();
+
+            bool isNumeric = phoneNo.All(char.IsDigit);
+            DateTime referenceDate = new DateTime(2024, 11, 29);
+
+
+      
+
+            if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) || string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(role) || string.IsNullOrWhiteSpace(gender))
+            {
+                MessageBox.Show("Please fill in all required fields.",
+                      "Error",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Error);
+
+                return false;
+            }
+            // Parse the DOB string into a DateTime object
+            if (!DateTime.TryParse(dob, out DateTime DOB))
+            {
+                MessageBox.Show("Invalid Date of Birth format.",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Further validations can go here
+            if (DOB > DateTime.Now)
+            {
+                MessageBox.Show("Date of Birth cannot be in the future.",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return false;
+            }
+
+            int calculcated_age = referenceDate.Year - DOB.Year;
+
+
+
+
+
+
+
+            if (!isNumeric || phoneNo.Length !=8)
+            {
+                MessageBox.Show("PHONE NUMBER SHOULD ONLY CONTAIN NUMBERS AND SHOULD BE 8 DIGITS.",
+                                          "Error",
+                                          MessageBoxButtons.OK,
+                                          MessageBoxIcon.Error);
+                return false;
+
+
+            }
+
+            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            if (!Regex.IsMatch(email, emailPattern))
+            {
+
+                MessageBox.Show("Invaild Email",
+                                     "Error",
+                                     MessageBoxButtons.OK,
+                                     MessageBoxIcon.Error);
+                return false;
+
+
+            }
+
+            if (User.Exists(username) && !isame)
+            {
+                MessageBox.Show("Username already taken",
+                                       "Error",
+                                       MessageBoxButtons.OK,
+                                       MessageBoxIcon.Error);
+                return false;
+
+
+            }
+
+            foreach (char c in firstName)
+            {
+                if (char.IsDigit(c))
+                {
+                    MessageBox.Show("First name cannot contain numbers.",
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+
+
+            foreach (char c in lastName)
+            {
+                if (char.IsDigit(c))
+                {
+                    MessageBox.Show("Last name cannot contain numbers.",
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+
+
+            return true;
+
+        }
+
+
+
+
+        public void  UpdateUser(int userId, string firstName, string lastName, int age, string email, string username, string password, string role, string phoneNo, string gender, string dob, bool issame)
         {
             String name = firstName + " " + lastName;
 
             string stmt = "UPDATE [dbo].[User] SET [name] = @name, [age] = @age, [dob] = @dob, [email] = @email, [gender] = @gender, [username] = @username, [password] = @password, [phone_no] = @phoneNo, [role] = @role WHERE [user_id] = @userId";
+
+            bool valid = User.VerifyCredentials(firstName, lastName, email, username, password, role, phoneNo, gender, dob, issame);
+
+            if (!valid)
+            {
+                return ;
+            }
+
             try
             {
 
@@ -592,14 +783,29 @@ namespace Happy_Journey_Airline
 
                 cmd.ExecuteNonQuery();
                 DBManager.getInstance().CloseConnection();
-                return true;
+
+
+                MessageBox.Show("ACCOUNT IS Updated!",
+             "Success",
+             MessageBoxButtons.OK,
+             MessageBoxIcon.Information);
             }
             catch (Exception ex)
-            {   
-                return false;
+            {
+                MessageBox.Show("Couldn't Update this Account.",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+
             }
 
+     
+
+
         }
+
+
+
 
 
     }

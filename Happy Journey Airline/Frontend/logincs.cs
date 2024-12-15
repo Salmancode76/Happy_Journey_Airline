@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Happy_Journey_Airline.Backend;
 
 namespace Happy_Journey_Airline
 {
@@ -25,14 +26,19 @@ namespace Happy_Journey_Airline
 
          User ul =  ur.login(ustxt.Text, passtxt.Text);
 
+            GlobalUser.LoggedInUser = ur;
+
+
             if ( ul == null ){
 
-                messagelbl.Text = "Invalid username or password!"; 
-                messagelbl.ForeColor = System.Drawing.Color.Red;
+               
+                MessageBox.Show("Invalid username or password!",
+             "Error",
+             MessageBoxButtons.OK,
+             MessageBoxIcon.Error);
             }
             else
             {
-                //   this.Hide(); // Hide the current form
                 this.Hide();
             }
 
@@ -48,7 +54,6 @@ namespace Happy_Journey_Airline
 
         private void logincs_Load(object sender, EventArgs e)
         {
-            messagelbl.Text = string.Empty;
         }
     }
 }
