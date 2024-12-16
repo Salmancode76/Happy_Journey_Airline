@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -194,13 +195,10 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public void addAirport(string airportCode, string airportName)
+        public static void addAirport(int cityID,string airportName)
         {
             //Validate input parameters
-            if (string.IsNullOrWhiteSpace(airportCode))
-            {
-                throw new ArgumentException("Airport code must not be empty");
-            }
+    
 
             if (string.IsNullOrWhiteSpace(airportName))
             {
@@ -210,19 +208,25 @@ namespace Happy_Journey_Airline
             try 
             {
                 //Create new airport object
-                Airport airport = new Airport(airportCode, airportName);
+                Airport airport = new Airport( airportName,cityID);
 
-                //SQL query to insert into Airport
-                string query = "INSERT INTO Airport (airport_code, airport_name) VALUES (@airportCode, @airportName)";
+                string query = "INSERT INTO [dbo].[Airport] ([city_id], [airport_name]) VALUES (@cityId, @airportName)";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+                // Create a SQL command object
+                SqlCommand cmd = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
-                //Add parameters to the command
-                command.Parameters.AddWithValue("@airport_code", airport.AirportCode);
-                command.Parameters.AddWithValue("@airport_name", airport.AirportName);
+                // Add parameters to the command
+                cmd.Parameters.AddWithValue("@cityId", cityID); 
+                cmd.Parameters.AddWithValue("@airportName", airportName);  
 
-                //Execute the command
-                command.ExecuteNonQuery();
+                // Execute the query
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("AIRPORT ADDED SUCCESSFULLY!",
+         "Success",
+         MessageBoxButtons.OK,
+         MessageBoxIcon.Information);
+            
             }
             catch (Exception ex)
             {
@@ -235,7 +239,7 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public void addCity(string cityName)
+        public void addCity(int CountryID ,string cityName)
         {
             //Validate input parameter
             if (string.IsNullOrWhiteSpace(cityName))
@@ -246,18 +250,22 @@ namespace Happy_Journey_Airline
             try
             {
                 //Create a new city object
-                City city = new City(cityName);
+                City city = new City(CountryID, cityName);
 
                 //SQL query to insert into City table
-                string query = "INSERT INTO City (city_name) VALUES (@cityName)";
+                string query = "INSERT INTO [dbo].[City] ([country_id],[city_name])  VALUES (@CountryID,@city_name)";
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 //Add parameters to the command
+                command.Parameters.AddWithValue("@CountryID", city.CountryID);
+
                 command.Parameters.AddWithValue("@city_name", city.CityName);
 
                 //Execute the command
                 command.ExecuteNonQuery();
+
+
             }
             catch (Exception ex)
             {
@@ -272,43 +280,125 @@ namespace Happy_Journey_Airline
 
         public void addCountry(string countryName, string region)
         {
+            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+            countryName = textInfo.ToTitleCase(countryName.ToLower().Trim());
+            region = region.Trim();
+
             //Validate input parameters
             if (string.IsNullOrWhiteSpace(countryName))
             {
-                throw new ArgumentException("Country name cannot be empty");
+                MessageBox.Show("Country name cannot be empty.",
+                                  "Error",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Error);
+                return;
             }
 
             if (string.IsNullOrWhiteSpace(region))
             {
-                throw new ArgumentException("Region cannot be empty");
+                MessageBox.Show("Region name cannot be empty.",
+                                 "Error",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+                return;
             }
 
             try
             {
                 //Create a new country object
                 Country country = new Country(countryName, region);
+            
 
                 //SQL query to insert into country table
-                string query = "INSERT INTO Country (country_name, region) VALUES (@countryName, @region)";
+                string query = "INSERT INTO [dbo].[Country] ([region],[country_name]) VALUES ( @region,@countryName)";
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 //Add parameters to the command
-                command.Parameters.AddWithValue("@country_name", country.CountryName);
-                command.Parameters.AddWithValue("@region", country.Region);
+                command.Parameters.AddWithValue("@countryName", countryName);
+                command.Parameters.AddWithValue("@region", region);
 
                 //Execute the command
                 command.ExecuteNonQuery();
+                MessageBox.Show("COUNTRY ADDED SUCCESSFULLY!",
+             "Success",
+             MessageBoxButtons.OK,
+             MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                throw new Exception("An error occurred while adding new country: " + ex.Message);
+
+                MessageBox.Show("Something Bad Happend Contact Support.",
+                                                 "Error",
+                                                 MessageBoxButtons.OK,
+                                                 MessageBoxIcon.Error);
+                return;
             }
             finally
             {
                 //Ensure the database connection is closed
                 DBManager.getInstance().CloseConnection();
             }
+            
+        }
+
+        public static List<Country> GetAllCountries()
+        {
+            List<Country> countries = new List<Country>();
+
+            String stmt = "SELECT [country_id],[region] ,[country_name]  FROM [dbo].[Country]";
+
+            SqlCommand cmd = new SqlCommand(stmt, DBManager.getInstance().OpenConnection());  
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Country country = new Country
+                {
+                    CountryId = Convert.ToInt32(reader["country_id"]),
+
+                    CountryName = reader["country_name"].ToString(),
+                    Region = reader["region"].ToString(),
+
+
+                };
+                countries.Add(country);
+
+
+
+            }
+            reader.Close();
+            return countries;
+
+        }
+
+        public static List<City> GetAllcities()
+        {
+            List<City> cities = new List<City>();
+
+            String query = "SELECT [city_id] ,[country_id],[city_name] FROM [dbo].[City]";
+
+
+            SqlCommand cmd = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                City city = new City
+                (
+                    Convert.ToInt32(reader["city_id"]),
+                     Convert.ToInt32(reader["country_id"]),
+                     reader["city_name"].ToString()
+
+                );
+                cities.Add(city);
+            }
+            reader.Close();
+
+            return cities;
         }
 
         public void addMessage(string content, int receiverId)

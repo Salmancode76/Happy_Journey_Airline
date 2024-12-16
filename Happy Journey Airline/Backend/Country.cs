@@ -16,13 +16,20 @@ namespace Happy_Journey_Airline
         {
         }
 
-        public Country(string countryName, string region)
+        public Country( int countryID,string countryName, string region)
         {
-            this.countryId = countryId++;
+            this.countryId = countryID;
+            this.countryName = countryName;
+            this.region = region;
+        }
+        public Country( string countryName, string region)
+        {
             this.countryName = countryName;
             this.region = region;
         }
 
+
+        public int CountryId { get => this.countryId; set => this.countryId = value; }
         public string CountryName { get; set; }
 
         public string Region { get; set; }
