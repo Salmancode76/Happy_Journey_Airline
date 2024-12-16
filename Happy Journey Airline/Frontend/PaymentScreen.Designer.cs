@@ -55,7 +55,7 @@
             // 
             this.uNamelbl.AutoSize = true;
             this.uNamelbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uNamelbl.Location = new System.Drawing.Point(44, 104);
+            this.uNamelbl.Location = new System.Drawing.Point(44, 227);
             this.uNamelbl.Name = "uNamelbl";
             this.uNamelbl.Size = new System.Drawing.Size(109, 28);
             this.uNamelbl.TabIndex = 47;
@@ -67,7 +67,7 @@
             this.creditrb.AutoSize = true;
             this.creditrb.Checked = true;
             this.creditrb.Font = new System.Drawing.Font("Sitka Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.creditrb.Location = new System.Drawing.Point(194, 110);
+            this.creditrb.Location = new System.Drawing.Point(183, 235);
             this.creditrb.Name = "creditrb";
             this.creditrb.Size = new System.Drawing.Size(57, 20);
             this.creditrb.TabIndex = 48;
@@ -79,7 +79,7 @@
             // 
             this.debitrb.AutoSize = true;
             this.debitrb.Font = new System.Drawing.Font("Sitka Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.debitrb.Location = new System.Drawing.Point(266, 110);
+            this.debitrb.Location = new System.Drawing.Point(266, 235);
             this.debitrb.Name = "debitrb";
             this.debitrb.Size = new System.Drawing.Size(53, 20);
             this.debitrb.TabIndex = 49;
@@ -90,7 +90,7 @@
             // 
             this.cardhlbl.AutoSize = true;
             this.cardhlbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cardhlbl.Location = new System.Drawing.Point(44, 154);
+            this.cardhlbl.Location = new System.Drawing.Point(44, 118);
             this.cardhlbl.Name = "cardhlbl";
             this.cardhlbl.Size = new System.Drawing.Size(128, 28);
             this.cardhlbl.TabIndex = 50;
@@ -98,7 +98,7 @@
             // 
             // choldertxt
             // 
-            this.choldertxt.Location = new System.Drawing.Point(183, 159);
+            this.choldertxt.Location = new System.Drawing.Point(183, 118);
             this.choldertxt.Name = "choldertxt";
             this.choldertxt.Size = new System.Drawing.Size(178, 20);
             this.choldertxt.TabIndex = 51;
@@ -107,7 +107,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 207);
+            this.label1.Location = new System.Drawing.Point(44, 171);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 28);
             this.label1.TabIndex = 52;
@@ -115,7 +115,7 @@
             // 
             // cnumbertxt
             // 
-            this.cnumbertxt.Location = new System.Drawing.Point(183, 212);
+            this.cnumbertxt.Location = new System.Drawing.Point(183, 179);
             this.cnumbertxt.Name = "cnumbertxt";
             this.cnumbertxt.Size = new System.Drawing.Size(178, 20);
             this.cnumbertxt.TabIndex = 53;
@@ -124,7 +124,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(388, 207);
+            this.label2.Location = new System.Drawing.Point(388, 224);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(158, 28);
             this.label2.TabIndex = 54;
@@ -132,7 +132,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(553, 215);
+            this.dateTimePicker1.Location = new System.Drawing.Point(553, 232);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(178, 20);
             this.dateTimePicker1.TabIndex = 55;
@@ -141,7 +141,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(388, 260);
+            this.label3.Location = new System.Drawing.Point(44, 275);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 28);
             this.label3.TabIndex = 56;
@@ -149,7 +149,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(553, 268);
+            this.textBox1.Location = new System.Drawing.Point(183, 283);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(178, 20);
             this.textBox1.TabIndex = 57;
@@ -176,7 +176,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(388, 154);
+            this.label6.Location = new System.Drawing.Point(388, 171);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 28);
             this.label6.TabIndex = 63;
@@ -184,7 +184,7 @@
             // 
             // emailtxt
             // 
-            this.emailtxt.Location = new System.Drawing.Point(553, 162);
+            this.emailtxt.Location = new System.Drawing.Point(553, 179);
             this.emailtxt.Name = "emailtxt";
             this.emailtxt.Size = new System.Drawing.Size(178, 20);
             this.emailtxt.TabIndex = 64;
