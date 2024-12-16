@@ -198,7 +198,7 @@ namespace Happy_Journey_Airline
                     }
                     else if (u1.role == "Employer")
                     {
-                        new BookFlight().Show();
+                        new AdminBookFlight().Show();
                     }
                     else
                     {

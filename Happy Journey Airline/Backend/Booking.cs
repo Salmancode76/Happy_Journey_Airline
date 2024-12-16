@@ -132,24 +132,66 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public void TravelerBook(string flight, string destination, string departure, string seatno, string totalTraveler, string status, string depDate, string retDate, string flightClass ) {
+        public void TravelerBook(string flightno, string destination, string departure, string seatno, string totalTraveler, string status, string depDate, string retDate, string flightClass ) {
 
 
 
              int flightId;
-            string selectFlight = "SELECT flight_id FROM [dbo].[Flight] WHERE destination = @Destination AND departure = @Departure";
+            string selectFlight = "SELECT flight_id FROM [dbo].[Flight] WHERE destination = @Destination AND departure = @Departure AND flight_no =@flightno ";
+            // select query to get flight id by passing destination and departure
 
-         SqlCommand cmd = new SqlCommand(selectFlight, DBManager.getInstance().OpenConnection());
+            SqlCommand cmd = new SqlCommand(selectFlight, DBManager.getInstance().OpenConnection());
 
-            
 
-            string stmt = "INSERT INTO [dbo].[Booking] (flight_class_id, flight_id, seatno, status) " +
+
+
+            cmd.Parameters.AddWithValue("@Destination", destination);
+            cmd.Parameters.AddWithValue("Departure", departure);
+            cmd.Parameters.AddWithValue("@Flightno", flightno);
+
+
+            object result = cmd.ExecuteScalar();
+            flightId = result != null ? Convert.ToInt32(result) : -1;
+
+
+            //fetching flight class id
+
+            int flightClassId;
+            string selectClassQuery = "SELECT flight_class_id FROM [dbo].[FlightClass] WHERE flight_class_name = @FlightClassName";
+
+            SqlCommand cmd2 = new SqlCommand(selectClassQuery, DBManager.getInstance().OpenConnection());
+
+            cmd2.Parameters.AddWithValue("@Flight_Class_Name", flightClass);
+
+            object classResult = cmd2.ExecuteScalar();
+            flightClassId = classResult != null ? Convert.ToInt32(classResult) : -1;
+
+
+            if (flightId != -1 && flightClassId != -1)
+            {
+
+
+
+
+                string stmtInsert = "INSERT INTO [dbo].[Booking] (flight_class_id, flight_id, seatno, status) " +
                            "VALUES (@Flight_class_id, @flight_id, @seat_no, @status); " +
-                         "SELECT SCOPE_IDENTITY();"; // Return the inserted ID
+                         "SELECT SCOPE_IDENTITY();";
 
-             
-           
+                SqlCommand cmd3 = new SqlCommand(stmtInsert, DBManager.getInstance().OpenConnection());
 
+                cmd3.Parameters.AddWithValue("@flight_class_id", flightClassId);
+                cmd3.Parameters.AddWithValue("@flight_id", flightId);
+                cmd3.Parameters.AddWithValue("@seatno", seatno);
+                cmd3.Parameters.AddWithValue("@status", status);
+
+                object bookId = cmd3.ExecuteScalar();
+
+                if (bookId != null)
+                {
+                    Console.WriteLine("Inserted Booking ID: " + bookId.ToString());
+                }
+
+            }
 
         }
 
