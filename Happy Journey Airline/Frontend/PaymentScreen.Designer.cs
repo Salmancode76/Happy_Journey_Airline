@@ -48,7 +48,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnback = new System.Windows.Forms.Button();
             this.lblPayment = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // uNamelbl
@@ -235,12 +238,32 @@
             this.lblPayment.TabIndex = 3;
             this.lblPayment.Text = "Payment";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel2.Location = new System.Drawing.Point(0, 439);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(813, 14);
+            this.panel2.TabIndex = 105;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
+            this.pictureBox1.Location = new System.Drawing.Point(256, 96);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 244);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 137;
+            this.pictureBox1.TabStop = false;
+            // 
             // PaymentScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.paybtn);
             this.Controls.Add(this.emailtxt);
@@ -258,11 +281,13 @@
             this.Controls.Add(this.debitrb);
             this.Controls.Add(this.creditrb);
             this.Controls.Add(this.uNamelbl);
+            this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PaymentScreen";
             this.Text = "PaymentScreen";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,5 +313,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnback;
         private System.Windows.Forms.Label lblPayment;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
