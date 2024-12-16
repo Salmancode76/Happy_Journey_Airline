@@ -40,10 +40,18 @@ namespace Happy_Journey_Airline
         
         }
 
-       // private void btnUpdate_Click(object sender, EventArgs e)
+
+        //private void btnUpdate_Click(object sender, EventArgs e)
         //{
-           // this.Hide();
-           // new UpdateSubscription().Show();
+        //    this.Hide();
+        //    new UpdateSubscription().Show();
         //}
+
+        //private void btnUpdate_Click(object sender, EventArgs e)
+        //{
+        //    this.Hide();
+        //    //new UpdateSubscription().Show();
+        //}
+
     }
 }

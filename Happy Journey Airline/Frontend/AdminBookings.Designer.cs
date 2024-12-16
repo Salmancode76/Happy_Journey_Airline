@@ -96,6 +96,7 @@
             this.gridBookings.RowHeadersWidth = 51;
             this.gridBookings.Size = new System.Drawing.Size(510, 261);
             this.gridBookings.TabIndex = 85;
+            this.gridBookings.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridBookings_CellContentClick);
             // 
             // panel1
             // 

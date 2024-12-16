@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Happy_Journey_Airline
 {
@@ -37,7 +38,7 @@ namespace Happy_Journey_Airline
             this.paymentId = paymentId;
             this.seatNo = seatNo;
             this.services = services;
-            this.status = status;
+            this.status = status; 
             this.subscriptionId = subscriptionId;
             this.travelerId = travelerId;
         }
@@ -129,6 +130,27 @@ namespace Happy_Journey_Airline
                 MessageBox.Show("An error occured while booking: " + ex.Message);
                 return null;
             }
+        }
+
+        public void TravelerBook(string flight, string destination, string departure, string seatno, string totalTraveler, string status, string depDate, string retDate, string flightClass ) {
+
+
+
+             int flightId;
+            string selectFlight = "SELECT flight_id FROM [dbo].[Flight] WHERE destination = @Destination AND departure = @Departure";
+
+         SqlCommand cmd = new SqlCommand(selectFlight, DBManager.getInstance().OpenConnection());
+
+            
+
+            string stmt = "INSERT INTO [dbo].[Booking] (flight_class_id, flight_id, seatno, status) " +
+                           "VALUES (@Flight_class_id, @flight_id, @seat_no, @status); " +
+                         "SELECT SCOPE_IDENTITY();"; // Return the inserted ID
+
+             
+           
+
+
         }
 
     }
