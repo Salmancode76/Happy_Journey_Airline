@@ -20,11 +20,11 @@ namespace Happy_Journey_Airline
             loadBookingGrid();
         }
 
-        private void btncreate_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new AdminBookFlight().Show();
-        }
+        //private void btncreate_Click(object sender, EventArgs e)
+        //{
+        //    this.Hide();
+        //    new AdminBookFlight().Show();
+        //}
 
         private void btndel_Click(object sender, EventArgs e)
         {

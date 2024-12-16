@@ -79,7 +79,7 @@ namespace Happy_Journey_Airline
 
         private void btnBook_Click(object sender, EventArgs e)
         {
-            string flight = txtFlightno.Text;
+            string flightno = txtFlightno.Text;
             string destination = txtDest.Text;
             string departure = txtDepart.Text;
             string seatno = txtSeat.Text;
@@ -90,7 +90,7 @@ namespace Happy_Journey_Airline
             int flightt;
             int totTraveler;
 
-            bool isFlightValid = int.TryParse(flight, out flightt);
+            bool isFlightValid = int.TryParse(flightno, out flightt);
             bool isTravelerValid = int.TryParse(totalTravelers, out totTraveler);
             DateTime departDate = departDatePicker.Value;
             DateTime destDate = destDatePicker.Value;
@@ -144,7 +144,7 @@ namespace Happy_Journey_Airline
 
 
 
-            book.TravelerBook(flight, destination, departure, seatno, totalTravelers,status, depDate, returnDate, flightClass);
+            book.TravelerBook(flightno, destination, departure, seatno, totalTravelers,status, depDate, returnDate, flightClass);
             
                     
 

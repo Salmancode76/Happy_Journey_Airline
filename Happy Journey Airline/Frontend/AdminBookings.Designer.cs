@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminBookings));
             this.lbdesc = new System.Windows.Forms.Label();
-            this.btncreate = new System.Windows.Forms.Button();
             this.btndel = new System.Windows.Forms.Button();
             this.btnupdateFlight = new System.Windows.Forms.Button();
             this.gridBookings = new System.Windows.Forms.DataGridView();
@@ -52,23 +51,11 @@
             this.lbdesc.TabIndex = 89;
             this.lbdesc.Text = "Current Bookings:";
             // 
-            // btncreate
-            // 
-            this.btncreate.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btncreate.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncreate.Location = new System.Drawing.Point(554, 128);
-            this.btncreate.Name = "btncreate";
-            this.btncreate.Size = new System.Drawing.Size(157, 32);
-            this.btncreate.TabIndex = 88;
-            this.btncreate.Text = "Create Booking";
-            this.btncreate.UseVisualStyleBackColor = false;
-            this.btncreate.Click += new System.EventHandler(this.btncreate_Click);
-            // 
             // btndel
             // 
             this.btndel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btndel.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndel.Location = new System.Drawing.Point(554, 236);
+            this.btndel.Location = new System.Drawing.Point(554, 191);
             this.btndel.Name = "btndel";
             this.btndel.Size = new System.Drawing.Size(157, 32);
             this.btndel.TabIndex = 87;
@@ -80,7 +67,7 @@
             // 
             this.btnupdateFlight.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnupdateFlight.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnupdateFlight.Location = new System.Drawing.Point(554, 357);
+            this.btnupdateFlight.Location = new System.Drawing.Point(554, 332);
             this.btnupdateFlight.Name = "btnupdateFlight";
             this.btnupdateFlight.Size = new System.Drawing.Size(157, 32);
             this.btnupdateFlight.TabIndex = 86;
@@ -151,7 +138,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbdesc);
-            this.Controls.Add(this.btncreate);
             this.Controls.Add(this.btndel);
             this.Controls.Add(this.btnupdateFlight);
             this.Controls.Add(this.gridBookings);
@@ -169,7 +155,6 @@
 
         #endregion
         private System.Windows.Forms.Label lbdesc;
-        private System.Windows.Forms.Button btncreate;
         private System.Windows.Forms.Button btndel;
         private System.Windows.Forms.Button btnupdateFlight;
         private System.Windows.Forms.DataGridView gridBookings;
