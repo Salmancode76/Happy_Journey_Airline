@@ -121,14 +121,14 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public void addFlight(int flightNo, int capacity, string status, string departure, string destination, DateTime departureTime, DateTime arrivalTime, double price)
+        public void addFlight(string flightNo, int capacity, string status, int departure, int destination, DateTime departureTime, DateTime arrivalTime, DateTime departureDate, DateTime arrivalDate, double price)
         {
             try
             {
-                Flight flight = new Flight(flightNo, capacity, status, departure, destination, departureTime, arrivalTime, price);
+                Flight flight = new Flight(flightNo, capacity, status, departure, destination, departureTime, arrivalTime, departureDate, arrivalDate, price);
 
                 //SQL tquery to insert the flight
-                string query = "INSERT INTO Flight (flight_no, capacity, departure, destination, departureTime, arrivalTime, price) VALUES (@flightNo, @capacity, @departure, @destination, @departureTime, @arrivalTime, @price)";
+                string query = "INSERT INTO Flight (flight_no, capacity, departure, destination, departure_time, arrival_Time, departure_date, arrival_date, price) VALUES (@flightNo, @capacity, @departure, @destination, @departureTime, @arrivalTime, @departureDate, @arrivalDate, @price)";
                 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
                 
@@ -139,6 +139,8 @@ namespace Happy_Journey_Airline
                 command.Parameters.AddWithValue("@destination", flight.Destination);
                 command.Parameters.AddWithValue("@departure_time", departureTime);
                 command.Parameters.AddWithValue("@arrival_time", arrivalTime);
+                command.Parameters.AddWithValue("@departure_date", departureDate);
+                command.Parameters.AddWithValue("@arrival_date", arrivalDate);
                 command.Parameters.AddWithValue("@price", flight.Price);
 
                 //Execute the command
@@ -655,7 +657,7 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public void updateFlight(int flightId, int flightNo, int capacity, string status, string departure, string destination, DateTime departureTime, DateTime arrivalTime, double price)
+        public void updateFlight(int flightId, int flightNo, int capacity, string status, string departure, string destination, DateTime departureTime, DateTime arrivalTime, DateTime departureDate, DateTime arrivalDate, double price)
         {
             // Validate input parameters
             if (flightId <= 0)
@@ -693,6 +695,16 @@ namespace Happy_Journey_Airline
                 throw new ArgumentException("Arrival time must be after departure time.", nameof(arrivalTime));
             }
 
+            if (departureDate >= arrivalDate)
+            {
+                throw new ArgumentException();
+            }
+
+            if (arrivalDate <= departureDate)
+            {
+                throw new ArgumentException();
+            }
+
             if (price <= 0)
             {
                 throw new ArgumentException("Price must be greater than zero.", nameof(price));
@@ -700,7 +712,7 @@ namespace Happy_Journey_Airline
 
             try
             {
-                string query = "UPDATE Flights SET flight_no = @flightNo, capacity = @capacity, status = @status, departure = @departure, destination = @destination, departure_time = @departureTime, arrivale_time = @arrivalTime, price = @price WHERE flight_id = @flightId";
+                string query = "UPDATE Flights SET flight_no = @flightNo, capacity = @capacity, status = @status, departure = @departure, destination = @destination, departure_time = @departureTime, arrivale_time = @arrivalTime, departure_date = @departureDate, arrival_date = @arrivalDate, price = @price WHERE flight_id = @flightId";
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
                 
@@ -712,6 +724,8 @@ namespace Happy_Journey_Airline
                     command.Parameters.AddWithValue("@destination", destination);
                     command.Parameters.AddWithValue("@departure_time", departureTime);
                     command.Parameters.AddWithValue("@arrival_time", arrivalTime);
+                    command.Parameters.AddWithValue("@departure_date", departureDate);
+                    command.Parameters.AddWithValue("@arrival_date", arrivalDate);
                     command.Parameters.AddWithValue("@price", price);
 
                     int rowsAffected = command.ExecuteNonQuery();
@@ -1083,7 +1097,7 @@ namespace Happy_Journey_Airline
 
                 while(reader.Read())
                 {
-                    upcomingFlight.Add(new Flight { FlightId = reader.GetInt32(0), FlightNo = reader.GetInt32(1), Departure = reader.GetString(2), Destination = reader.GetString(3), DepartureTime = reader.GetDateTime(4), ArrivalTime = reader.GetDateTime(5) });
+                    upcomingFlight.Add(new Flight { FlightId = reader.GetInt32(0), FlightNo = reader.GetString(1), Departure = reader.GetInt32(2), Destination = reader.GetInt32(3), DepartureTime = reader.GetDateTime(4), ArrivalTime = reader.GetDateTime(5) });
                 }
 
                 data.DataSource = upcomingFlight;
