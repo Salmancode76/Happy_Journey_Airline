@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Happy_Journey_Airline.Frontend;
 
-namespace Happy_Journey_Airline
+namespace Happy_Journey_Airline.Frontend
 {
-    public partial class UserMessage : Form
+    public partial class TravellerRecievedMsg : Form
     {
-        public UserMessage()
+        public TravellerRecievedMsg()
         {
             InitializeComponent();
         }
@@ -21,14 +20,7 @@ namespace Happy_Journey_Airline
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new UserHomeScreen().Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new TravellerRecievedMsg().Show();
-
+            new UserMessage().Show();
         }
     }
 }

@@ -145,6 +145,12 @@
     <Compile Include="Frontend\AdminMessage.Designer.cs">
       <DependentUpon>AdminMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\AdminRecievedMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\AdminRecievedMessage.Designer.cs">
+      <DependentUpon>AdminRecievedMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\AdminServices.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,12 @@
     </Compile>
     <Compile Include="Frontend\PaymentScreen.Designer.cs">
       <DependentUpon>PaymentScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\TravellerRecievedMsg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\TravellerRecievedMsg.Designer.cs">
+      <DependentUpon>TravellerRecievedMsg.cs</DependentUpon>
     </Compile>
     <Compile Include="Frontend\UpdateBooking.cs">
       <SubType>Form</SubType>
@@ -284,6 +296,9 @@
     <EmbeddedResource Include="Frontend\AdminMessage.resx">
       <DependentUpon>AdminMessage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\AdminRecievedMessage.resx">
+      <DependentUpon>AdminRecievedMessage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frontend\AdminServices.resx">
       <DependentUpon>AdminServices.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\PaymentScreen.resx">
       <DependentUpon>PaymentScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\TravellerRecievedMsg.resx">
+      <DependentUpon>TravellerRecievedMsg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\UpdateBooking.resx">
       <DependentUpon>UpdateBooking.cs</DependentUpon>
