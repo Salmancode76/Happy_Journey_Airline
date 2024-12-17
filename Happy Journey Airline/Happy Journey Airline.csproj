@@ -371,7 +371,6 @@
     </Content>
     <Content Include="Backend\Database_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="Frontend\Resources\logoo1.png" />
     <Content Include="Frontend\Resources\logoo11.png" />

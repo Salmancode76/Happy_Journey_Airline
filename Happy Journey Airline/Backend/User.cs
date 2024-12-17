@@ -162,10 +162,8 @@ namespace Happy_Journey_Airline
                      u1 = new User
                     {
                          userId = Convert.ToInt32(reader["user_id"]),
-                         firstName = reader["name"] != DBNull.Value ? reader["name"].ToString().Split(' ')[0] : string.Empty,
-                         lastName = reader["name"] != DBNull.Value && reader["name"].ToString().Contains(' ')
-                            ? reader["name"].ToString().Split(' ')[1]
-                            : string.Empty,
+                         firstName = reader["first_name"].ToString(),
+                         lastName = reader["last_name"].ToString(),
                          age = reader["age"] != DBNull.Value ? Convert.ToInt32(reader["age"]) : 0,
                          dob = reader["dob"] != DBNull.Value ? Convert.ToDateTime(reader["dob"]).ToString("yyyy-MM-dd") : string.Empty,
                         email = reader["email"] != DBNull.Value ? reader["email"].ToString() : string.Empty,
@@ -245,8 +243,8 @@ namespace Happy_Journey_Airline
 
 
 
-            string stmt = "INSERT INTO [dbo].[User] (name, age, dob, email, gender, username, password, phone_no, role) " +
-                          "VALUES (@Name, @Age, @Dob, @Email, @Gender, @Username, @Password, @PhoneNo, @Role); " +
+            string stmt = "INSERT INTO [dbo].[User] (first_name,last_name, age, dob, email, gender, username, password, phone_no, role) " +
+                          "VALUES (@first_name,@last_name, @Age, @Dob, @Email, @Gender, @Username, @Password, @PhoneNo, @Role); " +
                           "SELECT SCOPE_IDENTITY();"; // Return the inserted ID
 
             SqlCommand cmd = new SqlCommand(stmt, DBManager.getInstance().OpenConnection());
@@ -256,7 +254,8 @@ namespace Happy_Journey_Airline
 
 
 
-            cmd.Parameters.AddWithValue("@Name", firstName + " " + lastName);
+            cmd.Parameters.AddWithValue("@first_name", firstName);
+            cmd.Parameters.AddWithValue("@last_name", lastName);
             cmd.Parameters.AddWithValue("@Age", age);
             cmd.Parameters.AddWithValue("@Dob", dob);
             cmd.Parameters.AddWithValue("@Email", email);
@@ -577,10 +576,8 @@ namespace Happy_Journey_Airline
                 User user = new User
                 {
                     UserId = reader["user_id"] != DBNull.Value ? Convert.ToInt32(reader["user_id"]) : 0,
-                    FirstName = reader["name"] != DBNull.Value ? reader["name"].ToString().Split(' ')[0] : string.Empty,
-                    LastName = reader["name"] != DBNull.Value && reader["name"].ToString().Contains(' ')
-                      ? reader["name"].ToString().Split(' ')[1]
-                      : string.Empty,
+                    firstName = reader["first_name"].ToString(),
+                    lastName = reader["last_name"].ToString(),
                     Age = reader["age"] != DBNull.Value ? Convert.ToInt32(reader["age"]) : 0,
                     Dob = reader["dob"] != DBNull.Value ? Convert.ToDateTime(reader["dob"]).ToString("yyyy-MM-dd") : string.Empty,
                     Email = reader["email"] != DBNull.Value ? reader["email"].ToString() : string.Empty,
@@ -756,9 +753,8 @@ namespace Happy_Journey_Airline
 
         public void  UpdateUser(int userId, string firstName, string lastName, int age, string email, string username, string password, string role, string phoneNo, string gender, string dob, bool issame)
         {
-            String name = firstName + " " + lastName;
 
-            string stmt = "UPDATE [dbo].[User] SET [name] = @name, [age] = @age, [dob] = @dob, [email] = @email, [gender] = @gender, [username] = @username, [password] = @password, [phone_no] = @phoneNo, [role] = @role WHERE [user_id] = @userId";
+            string stmt = "UPDATE [dbo].[User] SET [first_name] = @firstName, [last_name] =@lastName, [age] = @age, [dob] = @dob, [email] = @email, [gender] = @gender, [username] = @username, [password] = @password, [phone_no] = @phoneNo, [role] = @role WHERE [user_id] = @userId";
 
             bool valid = User.VerifyCredentials(firstName, lastName, email, username, password, role, phoneNo, gender, dob, issame);
 
@@ -775,7 +771,8 @@ namespace Happy_Journey_Airline
 
                 string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
 
-                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@firstName", firstName);
+                cmd.Parameters.AddWithValue("@lastName", lastName);
                 cmd.Parameters.AddWithValue("@age", age);
                 cmd.Parameters.AddWithValue("@dob", DateTime.Parse(dob)); // Assuming dob is a string in yyyy-MM-dd format
                 cmd.Parameters.AddWithValue("@email", email);
