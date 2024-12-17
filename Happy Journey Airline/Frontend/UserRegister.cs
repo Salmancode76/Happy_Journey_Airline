@@ -58,6 +58,9 @@ namespace Happy_Journey_Airline
             string username = usertxt.Text;
 
 
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "yyyy-MM-dd"; // Example: "2024-07-30"
+
             DateTime DOB = dateTimePicker1.Value; 
             DateTime referenceDate = new DateTime(2024, 11, 29); 
 
