@@ -29,38 +29,10 @@ namespace Happy_Journey_Airline
         private void btndel_Click(object sender, EventArgs e)
         {
 
-            if (gridBookings.SelectedCells.Count > 0)
-            {
-                // Get the first selected cell
-                var selectedCell = gridBookings.SelectedCells[0];
-
-                // Get the value of the first cell in the selected row 
-                var userId = gridBookings.Rows[selectedCell.RowIndex].Cells[0].Value;
-
-                var user_role = gridBookings.Rows[selectedCell.RowIndex].Cells[1].Value;
-                if (userId == null)
-                {
-                    return;
-                }
-
-                // Print the value of the selected user_id
-                Console.WriteLine($"Selected User ID: {userId + " " + user_role.ToString()}  ");
-
-                int userIdInt = Convert.ToInt32(userId);
+           
 
 
-
-                // Call the DeleteUser method with the converted integer value
-
-
-                new User().DeleteUser(userIdInt, user_role.ToString());
-
-                loadBookingGrid();
-                gridBookings.Refresh();
-
-
-
-            }
+            
         }
 
         private void btnupdateFlight_Click(object sender, EventArgs e)
@@ -68,38 +40,6 @@ namespace Happy_Journey_Airline
             
 
 
-            if (gridBookings.SelectedCells.Count > 0)
-            {
-                // Get the first selected cell
-                var selectedCell = gridBookings.SelectedCells[0];
-
-                // Get the value of the first cell in the selected row 
-                var bookingId = gridBookings.Rows[selectedCell.RowIndex].Cells[0].Value;
-
-               // var user_Id = gridBookings.Rows[selectedCell.RowIndex].Cells[9].Value;
-
-                // Print the value of the selected user_id
-                //Console.WriteLine($"Selected User ID: {userId + " " + user_role.ToString()}  ");
-
-                if (bookingId == null)
-                {
-                    return;
-                }
-
-                int userIdInt = Convert.ToInt32(bookingId);
-
-                // Call the DeleteUser method with the converted integer value
-
-
-                Booking b = new Booking();
-
-                //new UpdateBooking(bookingId).Show();
-
-
-
-
-            }
-            this.Hide();
 
         }
 

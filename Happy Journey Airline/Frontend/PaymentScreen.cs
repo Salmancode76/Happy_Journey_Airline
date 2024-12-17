@@ -24,6 +24,7 @@ namespace Happy_Journey_Airline
 
         private void paybtn_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Payment Successful \n\n Proceeding to Home");
             this.Hide();
             new UserHomeScreen().Show();
         }

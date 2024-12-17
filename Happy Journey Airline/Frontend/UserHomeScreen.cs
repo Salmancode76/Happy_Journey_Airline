@@ -34,5 +34,16 @@ namespace Happy_Journey_Airline
             this.Hide();
             new UserSubscriptionScreen().Show();
         }
+
+        private void btnMessage_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new UserMessage().Show();
+        }
+
+        private void UserHomeScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

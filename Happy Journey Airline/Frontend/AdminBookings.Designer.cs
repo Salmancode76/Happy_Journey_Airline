@@ -126,7 +126,7 @@
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(-4, 439);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(890, 17);
+            this.panel2.Size = new System.Drawing.Size(812, 17);
             this.panel2.TabIndex = 92;
             // 
             // AdminBookings

@@ -51,10 +51,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.Lnamelbl = new System.Windows.Forms.Label();
             this.Lnametxt = new System.Windows.Forms.TextBox();
-            this.RoleLbl = new System.Windows.Forms.Label();
-            this.RoleCB = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.show_pass = new System.Windows.Forms.CheckBox();
+            this.RoleLbl = new System.Windows.Forms.Label();
+            this.RoleCB = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,9 +63,9 @@
             // 
             this.backbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.backbtn.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backbtn.Location = new System.Drawing.Point(35, 439);
+            this.backbtn.Location = new System.Drawing.Point(12, 12);
             this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(168, 33);
+            this.backbtn.Size = new System.Drawing.Size(137, 33);
             this.backbtn.TabIndex = 87;
             this.backbtn.Text = "Back";
             this.backbtn.UseVisualStyleBackColor = false;
@@ -75,7 +75,7 @@
             // 
             this.btnRegister.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnRegister.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(504, 439);
+            this.btnRegister.Location = new System.Drawing.Point(629, 377);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(163, 38);
             this.btnRegister.TabIndex = 86;
@@ -238,10 +238,11 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel1.Controls.Add(this.lblWelcome);
+            this.panel1.Controls.Add(this.backbtn);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(728, 63);
+            this.panel1.Size = new System.Drawing.Size(809, 63);
             this.panel1.TabIndex = 88;
             // 
             // lblWelcome
@@ -249,7 +250,7 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblWelcome.Location = new System.Drawing.Point(222, 0);
+            this.lblWelcome.Location = new System.Drawing.Point(272, 0);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(275, 58);
             this.lblWelcome.TabIndex = 3;
@@ -259,9 +260,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel2.Location = new System.Drawing.Point(0, 499);
+            this.panel2.Location = new System.Drawing.Point(0, 421);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(728, 10);
+            this.panel2.Size = new System.Drawing.Size(805, 10);
             this.panel2.TabIndex = 89;
             // 
             // Lnamelbl
@@ -283,6 +284,27 @@
             this.Lnametxt.TabIndex = 92;
             this.Lnametxt.TextChanged += new System.EventHandler(this.Lnametxt_TextChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
+            this.pictureBox1.Location = new System.Drawing.Point(258, 105);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 244);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 90;
+            this.pictureBox1.TabStop = false;
+            // 
+            // show_pass
+            // 
+            this.show_pass.AutoSize = true;
+            this.show_pass.Location = new System.Drawing.Point(629, 321);
+            this.show_pass.Name = "show_pass";
+            this.show_pass.Size = new System.Drawing.Size(53, 17);
+            this.show_pass.TabIndex = 96;
+            this.show_pass.Text = "Show";
+            this.show_pass.UseVisualStyleBackColor = true;
+            this.show_pass.CheckedChanged += new System.EventHandler(this.show_pass_CheckedChanged);
+            // 
             // RoleLbl
             // 
             this.RoleLbl.AutoSize = true;
@@ -298,42 +320,20 @@
             // 
             this.RoleCB.FormattingEnabled = true;
             this.RoleCB.Location = new System.Drawing.Point(147, 344);
-            this.RoleCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RoleCB.Margin = new System.Windows.Forms.Padding(2);
             this.RoleCB.Name = "RoleCB";
             this.RoleCB.Size = new System.Drawing.Size(114, 21);
             this.RoleCB.TabIndex = 94;
             this.RoleCB.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
-            this.pictureBox1.Location = new System.Drawing.Point(258, 105);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(256, 244);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 90;
-            this.pictureBox1.TabStop = false;
-            // 
-            // show_pass
-            // 
-            this.show_pass.AutoSize = true;
-            this.show_pass.Location = new System.Drawing.Point(629, 334);
-            this.show_pass.Name = "show_pass";
-            this.show_pass.Size = new System.Drawing.Size(53, 17);
-            this.show_pass.TabIndex = 96;
-            this.show_pass.Text = "Show";
-            this.show_pass.UseVisualStyleBackColor = true;
-            this.show_pass.CheckedChanged += new System.EventHandler(this.show_pass_CheckedChanged);
             // 
             // UserRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(725, 508);
+            this.ClientSize = new System.Drawing.Size(800, 431);
             this.Controls.Add(this.show_pass);
             this.Controls.Add(this.RoleCB);
-            this.Controls.Add(this.backbtn);
             this.Controls.Add(this.RoleLbl);
             this.Controls.Add(this.Lnametxt);
             this.Controls.Add(this.Lnamelbl);
@@ -392,8 +392,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Lnamelbl;
         private System.Windows.Forms.TextBox Lnametxt;
+        private System.Windows.Forms.CheckBox show_pass;
         private System.Windows.Forms.Label RoleLbl;
         private System.Windows.Forms.ComboBox RoleCB;
-        private System.Windows.Forms.CheckBox show_pass;
     }
 }
