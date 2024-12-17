@@ -16,13 +16,18 @@ namespace Happy_Journey_Airline
         public Service()
         {
         }
-
         public Service(string serviceName, string description, double price)
         {
-            this.serviceId = serviceId++;
-            this.serviceName = serviceName;
-            this.description = description;
-            this.price = price;
+            ServiceName = serviceName;
+            Description = description;
+            Price = price;
+        }
+        public Service(int serviceId, string serviceName, string description, double price)
+        {
+            ServiceId = serviceId;
+            ServiceName = serviceName;
+            Description = description;
+            Price = price;
         }
 
         public int ServiceId { get; set; }
@@ -33,5 +38,7 @@ namespace Happy_Journey_Airline
 
         public double Price { get; set; }
 
+
+   
     }
 }

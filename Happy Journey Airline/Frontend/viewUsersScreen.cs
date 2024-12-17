@@ -143,5 +143,10 @@ namespace Happy_Journey_Airline
             userGridView.DataSource = dt;
 
         }
+
+        private void viewUsersScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

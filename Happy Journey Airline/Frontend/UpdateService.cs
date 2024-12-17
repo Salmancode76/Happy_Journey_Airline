@@ -12,9 +12,19 @@ namespace Happy_Journey_Airline
 {
     public partial class UpdateService : Form
     {
-        public UpdateService()
+        int ServicerID;
+        public UpdateService(int Servicerid)
         {
+             ServicerID = Servicerid;
+            Service s = Administrator.GetServiceByID(ServicerID);
+
+
+            Console.WriteLine(s.ServiceName);
             InitializeComponent();
+            servicetxt.Text = s.ServiceName;
+            descriptiontxt.Text = s.Description;
+            pricetxt.Text= s.Price.ToString();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,8 +35,18 @@ namespace Happy_Journey_Airline
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new AdminServices().Show();
+            // Validate the price input
+            if (double.TryParse(pricetxt.Text, out double price))
+            {
+                // Call the update method
+                Administrator.updateService(ServicerID, servicetxt.Text, descriptiontxt.Text, price);
+
+            }
+            else
+            {
+                MessageBox.Show("Invalid price entered. Please enter a valid number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

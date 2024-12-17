@@ -35,8 +35,7 @@ namespace Happy_Journey_Airline
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new AdminServices().Show();
+            Administrator.addService(servicetxt.Text,descriptiontxt.Text,Convert.ToDouble(pricetxt.Text));
         }
     }
 }

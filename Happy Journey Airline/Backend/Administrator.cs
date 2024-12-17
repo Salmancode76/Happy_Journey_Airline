@@ -92,10 +92,11 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public void addService(string serviceName, string description, double price)
+        public static void  addService(string serviceName, string description, double price)
         {
             try
             {
+
                 Service service = new Service(serviceName, description, price);
 
                 //SQL Query to insert the service
@@ -103,12 +104,18 @@ namespace Happy_Journey_Airline
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
-                command.Parameters.AddWithValue("@service_name", service.ServiceName);
-                command.Parameters.AddWithValue("@description", service.Description);
-                command.Parameters.AddWithValue("@price", service.Price);
+                command.Parameters.AddWithValue("@serviceName", serviceName);
+                command.Parameters.AddWithValue("@description", description);
+                command.Parameters.AddWithValue("@price", price);
 
                 //Execute the command
                 command.ExecuteNonQuery();
+
+                MessageBox.Show("SERVICE ADDED SUCCESSFULLY!",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
             }
             catch (Exception ex)
             {
@@ -606,7 +613,7 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public void updateService(int serviceId, string serviceName, string description, double price)
+        public static void updateService(int serviceId, string serviceName, string description, double price)
         {
             // Validate input parameters
             if (serviceId <= 0)
@@ -628,12 +635,13 @@ namespace Happy_Journey_Airline
 
             try
             {
-                string query = "UPDATE Services SET service_name = @serviceName, description = @description, price = @price WHERE service_id = @serviceId";
+
+                string query = "UPDATE Service SET service_name = @serviceName, description = @description, price = @price WHERE service_id = @serviceId";
 
                 using (SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection()))
                 {
-                    command.Parameters.AddWithValue("@service_id", serviceId);
-                    command.Parameters.AddWithValue("@service_name", serviceName);
+                    command.Parameters.AddWithValue("@serviceId", serviceId);
+                    command.Parameters.AddWithValue("@serviceName", serviceName);
                     command.Parameters.AddWithValue("@description", description);
                     command.Parameters.AddWithValue("@price", price);
 
@@ -643,6 +651,8 @@ namespace Happy_Journey_Airline
                     {
                         throw new Exception("No service found with the specified Service ID.");
                     }
+                    MessageBox.Show("Service updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
             }
             catch (Exception ex)
@@ -996,8 +1006,47 @@ namespace Happy_Journey_Airline
                 DBManager.getInstance().CloseConnection();
             }
         }
+        public static Service GetServiceByID(int serviceId)
+        {
 
-        public void deleteService(int serviceId)
+            string stmt = "SELECT * FROM [dbo].[Service] WHERE service_id = @service_id";
+
+            SqlCommand cmd = new SqlCommand(stmt, DBManager.getInstance().OpenConnection());
+
+            cmd.Parameters.AddWithValue("@service_id", serviceId);
+
+            Service service = null; // Initialize service to null
+
+            try
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // Create the service object from the data
+                    service = new Service(
+                        Convert.ToInt32(reader["service_id"]),
+                        reader["service_name"].ToString(),
+                        reader["description"].ToString(),
+                        Convert.ToDouble(reader["price"])
+                    );
+                }
+
+                reader.Close(); // Always close the reader after use
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                DBManager.getInstance().CloseConnection();
+            }
+
+            return service; // Return the service object (or null if not found)
+        }
+
+        public static void deleteService(int serviceId)
         {
             try
             {
@@ -1005,7 +1054,7 @@ namespace Happy_Journey_Airline
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
-                command.Parameters.AddWithValue("@service_id", serviceId);
+                command.Parameters.AddWithValue("@serviceId", serviceId);
 
                 command.ExecuteNonQuery(); 
               
