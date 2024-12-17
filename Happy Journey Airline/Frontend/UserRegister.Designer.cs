@@ -51,10 +51,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.Lnamelbl = new System.Windows.Forms.Label();
             this.Lnametxt = new System.Windows.Forms.TextBox();
-            this.RoleLbl = new System.Windows.Forms.Label();
-            this.RoleCB = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.show_pass = new System.Windows.Forms.CheckBox();
+            this.RoleLbl = new System.Windows.Forms.Label();
+            this.RoleCB = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -284,27 +284,6 @@
             this.Lnametxt.TabIndex = 92;
             this.Lnametxt.TextChanged += new System.EventHandler(this.Lnametxt_TextChanged);
             // 
-            // RoleLbl
-            // 
-            this.RoleLbl.AutoSize = true;
-            this.RoleLbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RoleLbl.Location = new System.Drawing.Point(31, 334);
-            this.RoleLbl.Name = "RoleLbl";
-            this.RoleLbl.Size = new System.Drawing.Size(59, 28);
-            this.RoleLbl.TabIndex = 93;
-            this.RoleLbl.Text = "Role:";
-            this.RoleLbl.Click += new System.EventHandler(this.RoleLbl_Click);
-            // 
-            // RoleCB
-            // 
-            this.RoleCB.FormattingEnabled = true;
-            this.RoleCB.Location = new System.Drawing.Point(147, 344);
-            this.RoleCB.Margin = new System.Windows.Forms.Padding(2);
-            this.RoleCB.Name = "RoleCB";
-            this.RoleCB.Size = new System.Drawing.Size(114, 21);
-            this.RoleCB.TabIndex = 94;
-            this.RoleCB.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
@@ -325,6 +304,27 @@
             this.show_pass.Text = "Show";
             this.show_pass.UseVisualStyleBackColor = true;
             this.show_pass.CheckedChanged += new System.EventHandler(this.show_pass_CheckedChanged);
+            // 
+            // RoleLbl
+            // 
+            this.RoleLbl.AutoSize = true;
+            this.RoleLbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RoleLbl.Location = new System.Drawing.Point(31, 334);
+            this.RoleLbl.Name = "RoleLbl";
+            this.RoleLbl.Size = new System.Drawing.Size(59, 28);
+            this.RoleLbl.TabIndex = 93;
+            this.RoleLbl.Text = "Role:";
+            this.RoleLbl.Click += new System.EventHandler(this.RoleLbl_Click);
+            // 
+            // RoleCB
+            // 
+            this.RoleCB.FormattingEnabled = true;
+            this.RoleCB.Location = new System.Drawing.Point(147, 344);
+            this.RoleCB.Margin = new System.Windows.Forms.Padding(2);
+            this.RoleCB.Name = "RoleCB";
+            this.RoleCB.Size = new System.Drawing.Size(114, 21);
+            this.RoleCB.TabIndex = 94;
+            this.RoleCB.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // UserRegister
             // 
@@ -392,8 +392,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Lnamelbl;
         private System.Windows.Forms.TextBox Lnametxt;
+        private System.Windows.Forms.CheckBox show_pass;
         private System.Windows.Forms.Label RoleLbl;
         private System.Windows.Forms.ComboBox RoleCB;
-        private System.Windows.Forms.CheckBox show_pass;
     }
 }

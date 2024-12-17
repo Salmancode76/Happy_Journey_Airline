@@ -36,6 +36,7 @@
             this.btnSubscribe = new System.Windows.Forms.Button();
             this.btnBookFlight = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnMessage = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -87,11 +88,11 @@
             // 
             this.btnSubscribe.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSubscribe.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubscribe.Location = new System.Drawing.Point(483, 263);
+            this.btnSubscribe.Location = new System.Drawing.Point(483, 218);
             this.btnSubscribe.Name = "btnSubscribe";
             this.btnSubscribe.Size = new System.Drawing.Size(155, 38);
             this.btnSubscribe.TabIndex = 28;
-            this.btnSubscribe.Text = "Subscribe";
+            this.btnSubscribe.Text = "View Subscriptions";
             this.btnSubscribe.UseVisualStyleBackColor = false;
             this.btnSubscribe.Click += new System.EventHandler(this.btnSubscribe_Click);
             // 
@@ -99,7 +100,7 @@
             // 
             this.btnBookFlight.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBookFlight.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBookFlight.Location = new System.Drawing.Point(483, 179);
+            this.btnBookFlight.Location = new System.Drawing.Point(483, 139);
             this.btnBookFlight.Name = "btnBookFlight";
             this.btnBookFlight.Size = new System.Drawing.Size(155, 38);
             this.btnBookFlight.TabIndex = 27;
@@ -116,12 +117,25 @@
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
+            // btnMessage
+            // 
+            this.btnMessage.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnMessage.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMessage.Location = new System.Drawing.Point(483, 304);
+            this.btnMessage.Name = "btnMessage";
+            this.btnMessage.Size = new System.Drawing.Size(155, 38);
+            this.btnMessage.TabIndex = 31;
+            this.btnMessage.Text = "View Messages";
+            this.btnMessage.UseVisualStyleBackColor = false;
+            this.btnMessage.Click += new System.EventHandler(this.btnMessage_Click);
+            // 
             // UserHomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnMessage);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSubscribe);
             this.Controls.Add(this.btnBookFlight);
@@ -130,6 +144,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserHomeScreen";
             this.Text = "UserHomeScreen";
+            this.Load += new System.EventHandler(this.UserHomeScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -146,5 +161,6 @@
         private System.Windows.Forms.Button btnBookFlight;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnMessage;
     }
 }

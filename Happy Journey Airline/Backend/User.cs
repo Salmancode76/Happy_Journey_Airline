@@ -202,7 +202,7 @@ namespace Happy_Journey_Airline
                     }
                     else
                     {
-                        new BookFlight().Show();  // Assuming Traveler also goes to BookFlight page
+                        new UserHomeScreen().Show();  // Assuming Traveler also goes to BookFlight page
                     }
 
                     return u1;
