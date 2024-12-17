@@ -52,7 +52,7 @@
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(-3, -2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1068, 78);
             this.panel1.TabIndex = 71;
@@ -74,7 +74,7 @@
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(19, 17);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(143, 41);
             this.btnBack.TabIndex = 25;
@@ -87,7 +87,7 @@
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(-3, 543);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1077, 16);
             this.panel2.TabIndex = 130;
@@ -107,7 +107,7 @@
             // 
             this.CityCB.FormattingEnabled = true;
             this.CityCB.Location = new System.Drawing.Point(420, 247);
-            this.CityCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CityCB.Margin = new System.Windows.Forms.Padding(4);
             this.CityCB.Name = "CityCB";
             this.CityCB.Size = new System.Drawing.Size(261, 24);
             this.CityCB.TabIndex = 132;
@@ -128,7 +128,7 @@
             // 
             this.CountryCB.FormattingEnabled = true;
             this.CountryCB.Location = new System.Drawing.Point(420, 142);
-            this.CountryCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CountryCB.Margin = new System.Windows.Forms.Padding(4);
             this.CountryCB.Name = "CountryCB";
             this.CountryCB.Size = new System.Drawing.Size(261, 24);
             this.CountryCB.TabIndex = 134;
@@ -148,7 +148,7 @@
             // txtAirport
             // 
             this.txtAirport.Location = new System.Drawing.Point(421, 351);
-            this.txtAirport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAirport.Margin = new System.Windows.Forms.Padding(4);
             this.txtAirport.Name = "txtAirport";
             this.txtAirport.Size = new System.Drawing.Size(261, 22);
             this.txtAirport.TabIndex = 137;
@@ -157,7 +157,7 @@
             // 
             this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
             this.pictureBox1.Location = new System.Drawing.Point(360, 117);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(341, 300);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -169,7 +169,7 @@
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(448, 441);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(172, 47);
             this.btnAdd.TabIndex = 138;
@@ -194,7 +194,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddAirport";
             this.Text = "AddAirport";
             this.Load += new System.EventHandler(this.AddAirport_Load);

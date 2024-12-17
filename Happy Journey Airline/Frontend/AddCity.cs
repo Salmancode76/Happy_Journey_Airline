@@ -40,11 +40,6 @@ namespace Happy_Journey_Airline.Frontend
 
         }
 
-        private void AddCity_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (CountryCB.SelectedValue == null)

@@ -115,12 +115,6 @@ namespace Happy_Journey_Airline
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        
-       
-        }
-
         private void backbtn_Click(object sender, EventArgs e)
         {
 

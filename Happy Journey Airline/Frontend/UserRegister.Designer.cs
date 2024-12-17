@@ -64,7 +64,7 @@
             this.backbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.backbtn.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backbtn.Location = new System.Drawing.Point(16, 15);
-            this.backbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backbtn.Margin = new System.Windows.Forms.Padding(4);
             this.backbtn.Name = "backbtn";
             this.backbtn.Size = new System.Drawing.Size(183, 41);
             this.backbtn.TabIndex = 87;
@@ -77,7 +77,7 @@
             this.btnRegister.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnRegister.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.Location = new System.Drawing.Point(839, 464);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(217, 47);
             this.btnRegister.TabIndex = 86;
@@ -89,7 +89,7 @@
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(672, 210);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(236, 22);
             this.dateTimePicker1.TabIndex = 85;
@@ -110,7 +110,7 @@
             // phontxt
             // 
             this.phontxt.Location = new System.Drawing.Point(196, 353);
-            this.phontxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.phontxt.Margin = new System.Windows.Forms.Padding(4);
             this.phontxt.Name = "phontxt";
             this.phontxt.Size = new System.Drawing.Size(236, 22);
             this.phontxt.TabIndex = 81;
@@ -133,7 +133,7 @@
             this.Femalerb.AutoSize = true;
             this.Femalerb.Font = new System.Drawing.Font("Sitka Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Femalerb.Location = new System.Drawing.Point(271, 292);
-            this.Femalerb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Femalerb.Margin = new System.Windows.Forms.Padding(4);
             this.Femalerb.Name = "Femalerb";
             this.Femalerb.Size = new System.Drawing.Size(77, 24);
             this.Femalerb.TabIndex = 79;
@@ -147,7 +147,7 @@
             this.Malerb.AutoSize = true;
             this.Malerb.Font = new System.Drawing.Font("Sitka Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Malerb.Location = new System.Drawing.Point(196, 292);
-            this.Malerb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Malerb.Margin = new System.Windows.Forms.Padding(4);
             this.Malerb.Name = "Malerb";
             this.Malerb.Size = new System.Drawing.Size(62, 24);
             this.Malerb.TabIndex = 78;
@@ -171,7 +171,7 @@
             // emailtxt
             // 
             this.emailtxt.Location = new System.Drawing.Point(672, 292);
-            this.emailtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailtxt.Margin = new System.Windows.Forms.Padding(4);
             this.emailtxt.Name = "emailtxt";
             this.emailtxt.Size = new System.Drawing.Size(236, 22);
             this.emailtxt.TabIndex = 76;
@@ -192,7 +192,7 @@
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(672, 363);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(236, 22);
             this.txtPass.TabIndex = 74;
@@ -213,7 +213,7 @@
             // usertxt
             // 
             this.usertxt.Location = new System.Drawing.Point(196, 214);
-            this.usertxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.usertxt.Margin = new System.Windows.Forms.Padding(4);
             this.usertxt.Name = "usertxt";
             this.usertxt.Size = new System.Drawing.Size(236, 22);
             this.usertxt.TabIndex = 72;
@@ -234,7 +234,7 @@
             // Fnametxt
             // 
             this.Fnametxt.Location = new System.Drawing.Point(196, 154);
-            this.Fnametxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Fnametxt.Margin = new System.Windows.Forms.Padding(4);
             this.Fnametxt.Name = "Fnametxt";
             this.Fnametxt.Size = new System.Drawing.Size(236, 22);
             this.Fnametxt.TabIndex = 70;
@@ -259,7 +259,7 @@
             this.panel1.Controls.Add(this.backbtn);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1079, 78);
             this.panel1.TabIndex = 88;
@@ -281,7 +281,7 @@
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(0, 518);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1073, 12);
             this.panel2.TabIndex = 89;
@@ -301,7 +301,7 @@
             // Lnametxt
             // 
             this.Lnametxt.Location = new System.Drawing.Point(672, 154);
-            this.Lnametxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Lnametxt.Margin = new System.Windows.Forms.Padding(4);
             this.Lnametxt.Name = "Lnametxt";
             this.Lnametxt.Size = new System.Drawing.Size(236, 22);
             this.Lnametxt.TabIndex = 92;
@@ -311,7 +311,7 @@
             // 
             this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
             this.pictureBox1.Location = new System.Drawing.Point(344, 129);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(256, 244);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -322,7 +322,7 @@
             // 
             this.show_pass.AutoSize = true;
             this.show_pass.Location = new System.Drawing.Point(839, 395);
-            this.show_pass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.show_pass.Margin = new System.Windows.Forms.Padding(4);
             this.show_pass.Name = "show_pass";
             this.show_pass.Size = new System.Drawing.Size(62, 20);
             this.show_pass.TabIndex = 96;
@@ -350,7 +350,6 @@
             this.RoleCB.Name = "RoleCB";
             this.RoleCB.Size = new System.Drawing.Size(151, 24);
             this.RoleCB.TabIndex = 94;
-            this.RoleCB.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // UserRegister
             // 
@@ -383,7 +382,7 @@
             this.Controls.Add(this.uNamelbl);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserRegister";
             this.Text = "UserRegister";
             this.Load += new System.EventHandler(this.UserRegister_Load);

@@ -11,22 +11,24 @@ namespace Happy_Journey_Airline
     public class Flight
     {
         private int flightId;
-        private int flightNo;
+        private string flightNo;
         private int capacity;
         private string status; // available, booked
-        private string departure;
-        private string destination;
+        private int departure;
+        private int destination;
         private DateTime departureTime;
-        public DateTime arrivalTime;
+        private DateTime arrivalTime;
+        private DateTime departureDate;
+        private DateTime arrivalDate;
         private double price;
 
         public Flight()
         {
         }
 
-        public Flight(int flightNo, int capacity, string status, string departure, string destination, DateTime departureTime, DateTime arrivalTime, double price)
+        public Flight(string flightNo, int capacity, string status, int departure, int destination, DateTime departureTime, DateTime arrivalTime, DateTime departureDate, DateTime arrivalDate, double price)
         {
-            this.flightId = flightId++;
+            this.flightId = flightId;
             this.flightNo = flightNo;
             this.capacity = capacity;
             this.status = status;
@@ -34,16 +36,18 @@ namespace Happy_Journey_Airline
             this.destination = destination;
             this.departureTime = departureTime; 
             this.arrivalTime = arrivalTime;
+            this.departureDate = departureDate;
+            this.arrivalDate = arrivalDate;
             this.price = price;
         }
 
         public int FlightId { get; set; }
 
-        public int FlightNo { 
+        public string FlightNo { 
             get {  return flightNo; }
             set
             {
-                if (flightNo > 0)
+                if (flightNo.Length == 0)
                 {
                     this.flightNo = value;
                 }
@@ -67,13 +71,17 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public string Departure { get; set; }
+        public int Departure { get; set; }
 
-        public string Destination { get; set; }
+        public int Destination { get; set; }
 
         public DateTime DepartureTime { get; set; }
 
         public DateTime ArrivalTime { get; set; }
+
+        public DateTime DepartureDate { get; set; }
+
+        public DateTime ArrivalDate { get; set; }
 
         public double Price { 
             get { return price; }
