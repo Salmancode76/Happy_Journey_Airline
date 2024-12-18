@@ -19,13 +19,26 @@ namespace Happy_Journey_Airline
         private List<(int airportId, string displayName)> destinationAirport = new List<(int, string)>();
         private List<(int flightId, string flightNo)> flights = new List<(int, string)>();
 
+        public List<Country> Countries = new List<Country>();
+        public List<Country> Countries2 = new List<Country>();
+
+        public List<City> cities;
+        public List <Airport> Airports;
+
+
+
         public CreateFlight()
         {
             InitializeComponent();
-            populateDepartureCombo();
-            populateDestinationCombo();
+            populateListCombos();
             populateStatusCombo();
+
+
+
+
+
         }
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -103,95 +116,7 @@ namespace Happy_Journey_Airline
             }
         }
 
-        private void populateDepartureCombo()
-        {
-            try
-            {
-                string query = "SELECT a.airport_id, a.airport_name, c.city_name FROM AIRPORT a INNER JOIN CITY c ON a.city_id = c.city_id";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                //Clear the list before adding new items
-                departureAirport.Clear();
-
-                while (reader.Read())
-                {
-                    int airportId = Convert.ToInt32(reader["airport_id"]);
-                    string airportName = reader["airport_name"].ToString();
-                    string cityName = reader["city_name"].ToString();
-
-                    //Add a tuple with airport ID and concatenated airport name and city name
-                    departureAirport.Add((airportId, $"{airportName}, {cityName}"));
-                }
-
-                //Check if the list is populated
-                if (departureAirport.Count > 0)
-                {
-                    cmbDeparture.DataSource = departureAirport;
-                    cmbDeparture.DisplayMember = "Item2"; //Use Item2 for airport name and city name
-                    cmbDeparture.ValueMember = "Item1"; //Use Item1 for airport ID
-                }
-                else 
-                {
-                    lblErrorMessage.Text = "No airports found";
-                }
-            }
-            catch (Exception ex)
-            {
-                //lblErrorMessage.Text = ex.Message;
-            }
-            finally
-            {
-                DBManager.getInstance().CloseConnection();
-            }
-        }
-
-        private void populateDestinationCombo()
-        {
-            try
-            {
-                string query = "SELECT a.airport_id, a.airport_name, c.city_name FROM AIRPORT a INNER JOIN CITY c ON a.city_id = c.city_id";
-
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                //Clear the list before adding new items
-                destinationAirport.Clear();
-
-                while (reader.Read())
-                {
-                    int airportId = Convert.ToInt32(reader["airport_id"]);
-                    string airportName = reader["airport_name"].ToString();
-                    string cityName = reader["city_name"].ToString();
-
-                    //Add a tuple with airport ID and concatenated airport name and city name
-                    destinationAirport.Add((airportId, $"{airportName}, {cityName}"));
-                }
-
-                //Check if the list is populated
-                if (destinationAirport.Count > 0)
-                {
-                    cmbDestination.DataSource = destinationAirport;
-                    cmbDestination.DisplayMember = "Item2"; //Use Item2 for airport name and city name
-                    cmbDestination.ValueMember = "Item1"; //Use Item1 for airport ID
-                }
-                else 
-                {
-                    lblErrorMessage.Text = "No destination airports find";
-                }
-            }
-            catch (Exception ex)
-            {
-                //lblErrorMessage.Text = ex.Message;
-            }
-            finally
-            {
-                DBManager.getInstance().CloseConnection();
-            }
-        }
 
         private void populateStatusCombo()
         {
@@ -216,6 +141,144 @@ namespace Happy_Journey_Airline
                 a.addFlight(flightNo, capacity, Convert.ToString(cmbStatus.SelectedItem), departure, destination, departureTime, arrivalTime, departureDate, arrivalDate, price);
             }
         }
+   
 
+    
+
+   
+
+        private void CreateFlight_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void populateListCombos()
+        {
+            Countries = Administrator.GetAllCountries();
+
+            cities = Administrator.GetAllcities();
+            Airports = Administrator.GetAllAirports();
+
+            CountryDepartureCMB.DataSource = Countries.ToList();
+            CountryDepartureCMB.DisplayMember = "CountryName";
+            CountryDepartureCMB.ValueMember = "CountryId";
+
+            CountryDistCMD.DataSource = Countries.ToList();
+            CountryDistCMD.DisplayMember = "CountryName";
+            CountryDistCMD.ValueMember = "CountryId";
+
+      
+
+        }
+
+        private List<Airport> filteredAirports(Country selectedCountry)
+        {
+            List<City> filteredCities = new List<City>();
+
+
+
+                filteredCities = new List<City>();
+
+                foreach (City city in cities)
+                {
+                    if (city.CountryID == selectedCountry.CountryId)
+                    {
+                        filteredCities.Add(city);
+                    }
+                }
+
+                List<Airport> filteredAirport = new List<Airport>();
+
+                for (int i = 0; i < filteredCities.Count; i++)
+                {
+                    for (int j = 0; j < Airports.Count; j++)
+                    {
+
+                        if (filteredCities[i].CityId == Airports[j].CityID)
+                        {
+                            filteredAirport.Add(Airports[j]);
+                        }
+
+                    }
+
+                }
+
+                List<Airport> displayList = new List<Airport>();
+
+                for (int i = 0; i < filteredCities.Count; i++)
+                {
+                    for (int j = 0; j < Airports.Count; j++)
+                    {
+                        if (Airports[j].CityID == filteredCities[i].CityId)
+                        {
+                            string displayName = $"{Airports[j].AirportName} ({filteredCities[i].CityName})";
+                            Airport displayAirport = new Airport(Airports[j].AirportId, Airports[j].AirportName, filteredCities[i].CityName);
+
+                            displayList.Add(displayAirport);
+                        }
+                    }
+                }
+                return displayList;
+
+
+
+            
+
+        }
+
+
+
+
+
+
+
+   
+
+
+        private void CountryDistCMD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (CountryDistCMD.SelectedItem == null)
+                return;
+
+            cmbDestination.DataSource = null;
+
+            Country selectedCountry = (Country)CountryDistCMD.SelectedItem;
+
+            List<Airport> displayList = filteredAirports(selectedCountry);
+
+            // Bind the display list to cmbDestination
+            cmbDestination.DataSource = displayList.ToList();
+            cmbDestination.DisplayMember = "DisplayName";
+            cmbDestination.ValueMember = "AirportId";
+        }
+
+        private void CountryDepartureCMB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CountryDepartureCMB.SelectedItem == null)
+                return;
+
+            cmbDeparture.DataSource = null;
+
+            Country selectedCountry = (Country)CountryDepartureCMB.SelectedItem;
+
+            List<Airport> displayList = filteredAirports(selectedCountry);
+
+            // Bind the display list to cmbDestination
+            cmbDeparture.DataSource = displayList.ToList();
+            cmbDeparture.DisplayMember = "DisplayName";
+            cmbDeparture.ValueMember = "AirportId";
+
+
+
+
+        }
+
+        private void cmbDeparture_SelectedIndexChanged(object sender, EventArgs e)
+        {
+       
+        }
     }
 }
+
+
+

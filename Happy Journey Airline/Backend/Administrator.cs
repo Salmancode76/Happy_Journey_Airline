@@ -381,7 +381,32 @@ namespace Happy_Journey_Airline
             return countries;
 
         }
+        public static List<Airport> GetAllAirports()
+        {
+            List<Airport> airports = new List<Airport>();
 
+            String query = "SELECT * FROM [dbo].[Airport]";
+
+            SqlCommand cmd = new SqlCommand(query, DBManager.getInstance().OpenConnection()); 
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+
+            while (reader.Read())
+            {
+                Airport ap = new Airport(
+                    Convert.ToInt32(reader["airport_id"]),
+                    reader["airport_name"].ToString(),
+                    Convert.ToInt32(reader["city_id"])
+                );
+
+                airports.Add(ap);
+            }
+            reader.Close();
+            return airports;
+            
+
+        }
         public static List<City> GetAllcities()
         {
             List<City> cities = new List<City>();
@@ -1059,6 +1084,8 @@ namespace Happy_Journey_Airline
 
             return service; // Return the service object (or null if not found)
         }
+
+      
 
         public static void deleteService(int serviceId)
         {

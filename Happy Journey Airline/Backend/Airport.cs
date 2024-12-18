@@ -1,35 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Happy_Journey_Airline
+﻿public class Airport
 {
-    public class Airport
+    public int AirportId { get; set; } 
+    public int CityID { get; set; }   
+    public string AirportName { get; set; }
+
+    public string DisplayName { get; set; } // Display name will contain both airport and city names
+
+    public Airport() { }
+
+    public Airport(string airportName, int cityID)
     {
-        private int airportId;
-        private int cityID;
-        private string airportName;
-
-        public Airport()
-        {
-        }
-        public Airport( string airportName, int cityID)
-        {
-            this.airportName = airportName;
-            this.cityID = cityID;
-        }
-        public Airport(int airportId, string airportName,int cityID)
-        {
-            this.airportId = airportId;
-            this.airportName = airportName;
-            this.cityID = cityID;
-        }
-
-        public string AirportCode { get; set; }
-
-        public string AirportName { get; set; }
-        public int CityID { get => cityID; set => cityID = value; }
+        this.AirportName = airportName;
+        this.CityID = cityID;
     }
+    public Airport(int airportId, string airportName, string cityName)
+    {
+        AirportId = airportId;
+        DisplayName = $"{airportName} ({cityName})"; 
+    }
+
+    public Airport(int airportId, string airportName, int cityID)
+    {
+        this.AirportId = airportId;
+        this.AirportName = airportName;
+        this.CityID = cityID;
+    }
+
+ 
 }
