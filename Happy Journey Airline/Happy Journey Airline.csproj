@@ -211,11 +211,29 @@
     <Compile Include="Frontend\TravellerRecievedMsg.Designer.cs">
       <DependentUpon>TravellerRecievedMsg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\UpdateAirport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\UpdateAirport.Designer.cs">
+      <DependentUpon>UpdateAirport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\UpdateBooking.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frontend\UpdateBooking.Designer.cs">
       <DependentUpon>UpdateBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\UpdateCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\UpdateCity.Designer.cs">
+      <DependentUpon>UpdateCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\UpdateCountry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\UpdateCountry.Designer.cs">
+      <DependentUpon>UpdateCountry.cs</DependentUpon>
     </Compile>
     <Compile Include="Frontend\UpdateFlightcs.cs">
       <SubType>Form</SubType>
@@ -252,6 +270,24 @@
     </Compile>
     <Compile Include="Frontend\UserSubscriptionScreen.Designer.cs">
       <DependentUpon>UserSubscriptionScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\viewAirports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\viewAirports.Designer.cs">
+      <DependentUpon>viewAirports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\viewCities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\viewCities.Designer.cs">
+      <DependentUpon>viewCities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\viewCountries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\viewCountries.Designer.cs">
+      <DependentUpon>viewCountries.cs</DependentUpon>
     </Compile>
     <Compile Include="Frontend\viewUsersScreen.cs">
       <SubType>Form</SubType>
@@ -329,8 +365,17 @@
     <EmbeddedResource Include="Frontend\TravellerRecievedMsg.resx">
       <DependentUpon>TravellerRecievedMsg.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\UpdateAirport.resx">
+      <DependentUpon>UpdateAirport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frontend\UpdateBooking.resx">
       <DependentUpon>UpdateBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\UpdateCity.resx">
+      <DependentUpon>UpdateCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\UpdateCountry.resx">
+      <DependentUpon>UpdateCountry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\UpdateFlightcs.resx">
       <DependentUpon>UpdateFlightcs.cs</DependentUpon>
@@ -349,6 +394,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\UserSubscriptionScreen.resx">
       <DependentUpon>UserSubscriptionScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\viewAirports.resx">
+      <DependentUpon>viewAirports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\viewCities.resx">
+      <DependentUpon>viewCities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\viewCountries.resx">
+      <DependentUpon>viewCountries.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\viewUsersScreen.resx">
       <DependentUpon>viewUsersScreen.cs</DependentUpon>

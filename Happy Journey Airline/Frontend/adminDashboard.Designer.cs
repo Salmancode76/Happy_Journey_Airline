@@ -191,7 +191,7 @@
             this.btnAddAirport.Name = "btnAddAirport";
             this.btnAddAirport.Size = new System.Drawing.Size(157, 32);
             this.btnAddAirport.TabIndex = 95;
-            this.btnAddAirport.Text = "Add Airport";
+            this.btnAddAirport.Text = "View Airports";
             this.btnAddAirport.UseVisualStyleBackColor = false;
             this.btnAddAirport.Click += new System.EventHandler(this.btnAddAirport_Click);
             // 
@@ -203,7 +203,7 @@
             this.btnAddCountry.Name = "btnAddCountry";
             this.btnAddCountry.Size = new System.Drawing.Size(157, 32);
             this.btnAddCountry.TabIndex = 96;
-            this.btnAddCountry.Text = "Add Country";
+            this.btnAddCountry.Text = "View Countries";
             this.btnAddCountry.UseVisualStyleBackColor = false;
             this.btnAddCountry.Click += new System.EventHandler(this.btnAddCountry_Click);
             // 
@@ -215,7 +215,7 @@
             this.btnCity.Name = "btnCity";
             this.btnCity.Size = new System.Drawing.Size(157, 32);
             this.btnCity.TabIndex = 97;
-            this.btnCity.Text = "Add City";
+            this.btnCity.Text = "View Cities";
             this.btnCity.UseVisualStyleBackColor = false;
             this.btnCity.Click += new System.EventHandler(this.btnCity_Click);
             // 

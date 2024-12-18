@@ -64,9 +64,9 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel3.Location = new System.Drawing.Point(-13, 439);
+            this.panel3.Location = new System.Drawing.Point(-13, 443);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(821, 14);
+            this.panel3.Size = new System.Drawing.Size(821, 10);
             this.panel3.TabIndex = 123;
             // 
             // panel1

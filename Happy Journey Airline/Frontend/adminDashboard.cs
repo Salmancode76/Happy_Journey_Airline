@@ -77,20 +77,20 @@ namespace Happy_Journey_Airline
         private void btnAddAirport_Click(object sender, EventArgs e)
         {
             this.Hide();
-           new AddAirport().Show();
+           new viewAirports().Show();
 
         }
 
         private void btnAddCountry_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new AddCountry().Show();
+            new viewCities().Show();
         }
 
         private void btnCity_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new AddCity().Show();
+            new viewCities().Show();
         }
     }
 }
