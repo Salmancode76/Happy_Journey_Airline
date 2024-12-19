@@ -335,6 +335,7 @@
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(261, 24);
             this.cmbStatus.TabIndex = 112;
+            this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             // 
             // countydeparttxt
             // 
