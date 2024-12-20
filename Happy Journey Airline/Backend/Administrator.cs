@@ -1112,7 +1112,7 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public void deleteFlight(int flightId)
+        public static void deleteFlight(int flightId)
         {
             try
             {
@@ -1120,7 +1120,7 @@ namespace Happy_Journey_Airline
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
-                command.Parameters.AddWithValue("@flight_id", flightId);
+                command.Parameters.AddWithValue("@flightId", flightId);
 
                 command.ExecuteNonQuery();
 
@@ -1289,6 +1289,11 @@ namespace Happy_Journey_Airline
             {
                 DBManager.getInstance().CloseConnection();
             }
+        }
+        public void deleteCountry(string country)
+        {
+
+
         }
 
         public void deleteServiceOffers(int serviceId)
