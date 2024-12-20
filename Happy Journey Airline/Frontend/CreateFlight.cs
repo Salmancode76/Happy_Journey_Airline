@@ -48,83 +48,133 @@ namespace Happy_Journey_Airline
 
         private void validateFlightCreation()
         {
-            int capacity = Convert.ToInt32(txtCapacity.Text);
-            DateTime departureTime = dateDepartureTime.Value;
-            DateTime arrivalTime = dateArrivalTime.Value;
-            int price = Convert.ToInt32(txtPrice.Text);
-            DateTime departureDate = dateDepartureDate.Value;
-            DateTime arrivalDate = dateArrivalDate.Value;
-
-            if (textBox1.Text.Length == 0)
+         
+            try
             {
-                throw new ArgumentException("Flight No cannot be empty");
+                decimal price;
+                if (!decimal.TryParse(txtPrice.Text, out price))
+                {
+                    MessageBox.Show("Please enter a valid price (numeric value with decimals).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+                // Collect input data
+                int capacity = Convert.ToInt32(txtCapacity.Text);
+                DateTime departureTime = dateDepartureTime.Value;
+                DateTime arrivalTime = dateArrivalTime.Value;
+                DateTime departureDate = dateDepartureDate.Value;
+                DateTime arrivalDate = dateArrivalDate.Value;
+
+                // Validate Flight No
+                if (string.IsNullOrWhiteSpace(textBox1.Text))
+                {
+                    MessageBox.Show("Flight No cannot be empty", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+
+                // Validate Capacity
+                if (capacity < 0)
+                {
+                    MessageBox.Show("Capacity cannot be negative", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (departureTime >= arrivalTime)
+                {
+                    MessageBox.Show("Departure time must be before arrival time", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (cmbDeparture.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Please select a departure airport", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (cmbDestination.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Please select a destination airport", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validate Price
+                if (price <= 0)
+                {
+                    MessageBox.Show("Price must be greater than 0", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validate Status
+                if (cmbStatus.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Status cannot be empty", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validate Departure and Arrival Date
+                if (departureDate >= arrivalDate)
+                {
+                    MessageBox.Show("Departure date must be before the arrival date", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
-
-            if (capacity < 0)
+            catch (Exception ex)
             {
-                throw new ArgumentException("Capacity cannot be negative");
-            }
-
-            if (departureTime == null)
-            {
-                throw new ArgumentException("Departure time cannot be empty");
-            }
-
-            if (arrivalTime == null)
-            {
-                throw new ArgumentException();
-            }
-
-            if (departureTime >= arrivalTime)
-            {
-                throw new ArgumentException("Departure time must be before arrival time");
-            }
-
-            if (cmbDeparture.SelectedIndex == -1)
-            {
-                throw new ArgumentException();
-            }
-
-            if (cmbDestination.SelectedIndex == -1)
-            {
-                throw new ArgumentException();
-            }
-
-            if (price < 0 || price == 0)
-            {
-                throw new ArgumentException();
-            }
-
-            if (cmbStatus.SelectedIndex == -1)
-            {
-                throw new ArgumentException("Status cannot be empty");
-            }
-
-            if (departureDate == null)
-            {
-
-            }
-
-            if (arrivalDate == null)
-            {
-
-            }
-
-            if (departureDate >= arrivalDate)
-            {
-                throw new ArgumentException("Departure date must be before the arrival date");
+                MessageBox.Show($"An error occurred during validation: {ex.Message}", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
 
         private void populateStatusCombo()
         {
             cmbStatus.Items.Add("Available");
+            cmbStatus.Items.Add("Ongoing");
+            cmbStatus.Items.Add("Completed");
+            cmbStatus.Items.Add("Full");
+            cmbStatus.Items.Add("Under Maintenance");
+
+
+
+
+        }
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != 8)
+            {
+                e.Handled = true; // Block any invalid key
+            }
+
+            if (e.KeyChar == '.' && txtPrice.Text.Contains("."))
+            {
+                e.Handled = true; // Block another decimal point
+            }
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrWhiteSpace(txtCapacity.Text) ||
+              string.IsNullOrWhiteSpace(txtPrice.Text) ||
+              dateDepartureTime.Value == null || dateArrivalTime.Value == null ||
+              dateDepartureDate.Value == null || dateArrivalDate.Value == null ||
+              cmbDeparture.SelectedIndex == -1 ||
+              cmbDestination.SelectedIndex == -1 ||
+              cmbStatus.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            decimal price;
+            if (!decimal.TryParse(txtPrice.Text, out price))
+            {
+                MessageBox.Show("Please enter a valid price (numeric value with decimals).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             validateFlightCreation();
 
             string flightNo = textBox1.Text;
@@ -133,13 +183,22 @@ namespace Happy_Journey_Airline
             DateTime arrivalTime = dateArrivalTime.Value;
             DateTime departureDate = dateDepartureDate.Value;
             DateTime arrivalDate = dateArrivalDate.Value;
-            double price = Convert.ToDouble(txtPrice.Text);
 
-            if (cmbDeparture.SelectedValue is int departure && cmbDestination.SelectedValue is int destination)
+            int departure = Convert.ToInt32(cmbDeparture.SelectedValue);
+            int destination = Convert.ToInt32(cmbDestination.SelectedValue);
+
+
+            if (departure == destination)
             {
-                Administrator a = new Administrator();
-                a.addFlight(flightNo, capacity, Convert.ToString(cmbStatus.SelectedItem), departure, destination, departureTime, arrivalTime, departureDate, arrivalDate, price);
+                MessageBox.Show("YOU CAN'T TRAVEL TO DESTINATION", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+               
+
+            Administrator.addFlight(flightNo, capacity, Convert.ToString(cmbStatus.SelectedItem), departure, destination, departureTime, arrivalTime, departureDate, arrivalDate, price);
+            
+
+
         }
    
 
@@ -276,6 +335,11 @@ namespace Happy_Journey_Airline
         private void cmbDeparture_SelectedIndexChanged(object sender, EventArgs e)
         {
        
+        }
+
+        private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

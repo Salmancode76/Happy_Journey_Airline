@@ -20,13 +20,13 @@ namespace Happy_Journey_Airline
         private DateTime arrivalTime;
         private DateTime departureDate;
         private DateTime arrivalDate;
-        private double price;
+        private decimal price;
 
         public Flight()
         {
         }
 
-        public Flight(string flightNo, int capacity, string status, int departure, int destination, DateTime departureTime, DateTime arrivalTime, DateTime departureDate, DateTime arrivalDate, double price)
+        public Flight(string flightNo, int capacity, string status, int departure, int destination, DateTime departureTime, DateTime arrivalTime, DateTime departureDate, DateTime arrivalDate, decimal price)
         {
             this.flightId = flightId;
             this.flightNo = flightNo;
@@ -56,13 +56,14 @@ namespace Happy_Journey_Airline
 
         public int Capacity { get; set; }
 
+        /*
         public string Status { 
-            get {  return status; }
+            get {  return Status1; }
             set
             {
                 if (value.Equals("available", StringComparison.OrdinalIgnoreCase) || value.Equals("booked", StringComparison.OrdinalIgnoreCase))
                 {
-                    this.status = value;
+                    this.Status1 = value;
                 }
                 else
                 {
@@ -70,10 +71,16 @@ namespace Happy_Journey_Airline
                 }
             }
         }
+        */
+        public int Departure
+        {
+            get { return departure; }
+            set { departure = value; }
+        }
 
-        public int Departure { get; set; }
+        public string Status { get { return status; } set { status = value; } }
 
-        public int Destination { get; set; }
+        public int Destination { get { return destination; } set { destination = value; } }
 
         public DateTime DepartureTime { get; set; }
 
@@ -83,7 +90,7 @@ namespace Happy_Journey_Airline
 
         public DateTime ArrivalDate { get; set; }
 
-        public double Price { 
+        public decimal Price { 
             get { return price; }
             set 
             {
@@ -93,6 +100,7 @@ namespace Happy_Journey_Airline
                 }
             }
         }
+
 
         public static Flight getFlightId(int flightId)
         {

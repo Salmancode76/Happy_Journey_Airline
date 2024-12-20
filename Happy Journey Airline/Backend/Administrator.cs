@@ -128,30 +128,32 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public void addFlight(string flightNo, int capacity, string status, int departure, int destination, DateTime departureTime, DateTime arrivalTime, DateTime departureDate, DateTime arrivalDate, double price)
+        public static void addFlight(string flightNo, int capacity, string status, int departure, int destination, DateTime departureTime, DateTime arrivalTime, DateTime departureDate, DateTime arrivalDate, decimal price)
         {
             try
             {
                 Flight flight = new Flight(flightNo, capacity, status, departure, destination, departureTime, arrivalTime, departureDate, arrivalDate, price);
 
                 //SQL tquery to insert the flight
-                string query = "INSERT INTO Flight (flight_no, capacity, departure, destination, departure_time, arrival_Time, departure_date, arrival_date, price) VALUES (@flightNo, @capacity, @departure, @destination, @departureTime, @arrivalTime, @departureDate, @arrivalDate, @price)";
+                string query = "INSERT INTO Flight (flight_no, capacity,status, departure, destination, departure_time, arrival_Time, departure_date, arrival_date, price) VALUES (@flightNo, @capacity, @status,@departure, @destination, @departureTime, @arrivalTime, @departureDate, @arrivalDate, @price)";
                 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
                 
-                command.Parameters.AddWithValue("@flight_no", flight.FlightNo);
+                command.Parameters.AddWithValue("@flightNo", flight.FlightNo);
                 command.Parameters.AddWithValue("@capacity", flight.Capacity);
                 command.Parameters.AddWithValue("@status", flight.Status);
                 command.Parameters.AddWithValue("@departure", flight.Departure);
                 command.Parameters.AddWithValue("@destination", flight.Destination);
-                command.Parameters.AddWithValue("@departure_time", departureTime);
-                command.Parameters.AddWithValue("@arrival_time", arrivalTime);
-                command.Parameters.AddWithValue("@departure_date", departureDate);
-                command.Parameters.AddWithValue("@arrival_date", arrivalDate);
+                command.Parameters.AddWithValue("@departureTime", departureTime);
+                command.Parameters.AddWithValue("@arrivalTime", arrivalTime);
+                command.Parameters.AddWithValue("@departureDate", departureDate);
+                command.Parameters.AddWithValue("@arrivalDate", arrivalDate);
                 command.Parameters.AddWithValue("@price", flight.Price);
 
                 //Execute the command
                 command.ExecuteNonQuery();
+                MessageBox.Show("Flight created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             catch (Exception ex)
             {
