@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Happy_Journey_Airline
 {
@@ -35,11 +36,11 @@ namespace Happy_Journey_Airline
             
 
 
-            int cardNo;
+            long cardNo;
           
             int pinORcvv;
 
-            bool isCardNumValid = int.TryParse(cardNum, out cardNo);
+            bool isCardNumValid = long.TryParse(cardNum, out cardNo);
           
             bool isPin_cvvValid = int.TryParse(pin_Cvv, out pinORcvv);
             
@@ -53,7 +54,7 @@ namespace Happy_Journey_Airline
                 return;
             }
 
-            if (!isCardNumValid || cardNum.Length <16 || cardNum.Length >16) {
+            if (!isCardNumValid || cardNum.Length !=16 || cardNo <1000000000000000 || cardNo > 9999999999999999 ) {
 
                 lblmsg.Text = "Invalid Card Number, must be 16 digits";
                 return;
@@ -61,12 +62,6 @@ namespace Happy_Journey_Airline
             }
 
            
-            if (!isPin_cvvValid || pin_Cvv.Length < 3 || pin_Cvv.Length > 3)
-            {
-
-                lblmsg.Text = "Invalid Input, must be 3 digits";
-                return;
-            }
 
             if (expDate <= DateTime.Now.Date)
             {
@@ -82,7 +77,15 @@ namespace Happy_Journey_Airline
             {
 
                 selectionCardType = rbCredit.Text;
+
+                if (!isPin_cvvValid || pin_Cvv.Length != 3 || pinORcvv < 100 || pinORcvv > 999)
+                {
+
+                    lblmsg.Text = "Invalid cvv, must be 3 digits";
+                    return;
+                }
                 CreditCard creditCard = new CreditCard();
+                creditCard.InsertCardDetails(cardHolder, cardNum, expDate, Convert.ToInt32(pin_Cvv));
 
 
 
@@ -92,6 +95,14 @@ namespace Happy_Journey_Airline
             {
 
                 selectionCardType = rbDebit.Text;
+                if (!isPin_cvvValid || pin_Cvv.Length != 4 || pinORcvv < 1000 || pinORcvv > 9999)
+                {
+
+                    lblmsg.Text = "Invalid pin, must be 4 digits";
+                    return;
+                }
+                DebitCard debitCard = new DebitCard();
+                debitCard.InsertCardDetails(cardHolder, cardNum, expDate, Convert.ToInt32(pin_Cvv));
             }
 
             else {
@@ -99,7 +110,7 @@ namespace Happy_Journey_Airline
                 return;
             }
 
-            MessageBox.Show("Payment Successful \n\n Proceeding to Home");
+            
             this.Hide();
             new UserHomeScreen().Show();
         }

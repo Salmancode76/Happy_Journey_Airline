@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Happy_Journey_Airline
 {
@@ -60,10 +62,38 @@ namespace Happy_Journey_Airline
             }
             if (pin <= 0 || pin.ToString().Length != 4)
             {
-                throw new Exception("Invalid cvv. Must be 4 digits");
+                throw new Exception("Invalid pin. Must be 4 digits");
             }
 
             base.makePayment(amount, userId);
+        }
+
+        public void InsertCardDetails(string cardHolder, string cardNumber, DateTime expirationDate, int pin)
+        {
+            try
+            {
+                string CreditCardInsert = "INSERT INTO [dbo].[Debit Card] (card_number, card_holder, expiration_date, pin) VALUES(@cardNumber, @cardHolder, @expirationDate, @pin)";
+                SqlCommand cmd = new SqlCommand(CreditCardInsert, DBManager.getInstance().OpenConnection());
+                cmd.Parameters.AddWithValue("@cardNumber", cardNumber);
+                cmd.Parameters.AddWithValue("@cardHolder", cardHolder);
+                cmd.Parameters.AddWithValue("@expirationDate", expirationDate);
+                cmd.Parameters.AddWithValue("@pin", pin);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Payment Successful \n\n Proceeding to Home");
+            }
+
+            catch (Exception ex)
+            {
+
+                throw new Exception("An error occurred while adding Debit Card Details: " + ex.Message);
+            }
+            finally
+            {
+
+                DBManager.getInstance().CloseConnection();
+
+            }
         }
     }
 }
