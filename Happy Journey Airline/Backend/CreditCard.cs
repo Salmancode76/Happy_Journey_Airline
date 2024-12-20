@@ -65,5 +65,10 @@ namespace Happy_Journey_Airline
            
             base.makePayment(amount, userId);
         }
+
+        public void InsertCardDetails(string cardHolder, int cardNumber, DateTime expirationDate, int cvv) {
+        
+        
+        }
     }
 }
