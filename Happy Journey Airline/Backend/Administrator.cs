@@ -694,75 +694,26 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public void updateFlight(int flightId, int flightNo, int capacity, string status, string departure, string destination, DateTime departureTime, DateTime arrivalTime, DateTime departureDate, DateTime arrivalDate, double price)
+        public static void updateFlight(int flightId, String flightNo, int capacity, string status, string departure, string destination, DateTime departureTime, DateTime arrivalTime, DateTime departureDate, DateTime arrivalDate, decimal price)
         {
-            // Validate input parameters
-            if (flightId <= 0)
-            {
-                throw new ArgumentException("Flight ID must be greater than zero.", nameof(flightId));
-            }
-            if (flightNo <= 0)
-            {
-                throw new ArgumentException("Flight number must be greater than zero.", nameof(flightNo));
-            }
-            if (capacity <= 0)
-            {
-                throw new ArgumentException("Capacity must be greater than zero.", nameof(capacity));
-            }
-            if (string.IsNullOrWhiteSpace(status))
-            {
-                throw new ArgumentException("Flight status cannot be empty.", nameof(status));
-            }
-            if (string.IsNullOrWhiteSpace(departure))
-            {
-                throw new ArgumentException("Departure cannot be empty.", nameof(departure));
-            }
-            if (string.IsNullOrWhiteSpace(destination))
-            {
-                throw new ArgumentException("Destination cannot be empty.", nameof(destination));
-            }
-
-            if (departureTime <= DateTime.Now)
-            {
-                throw new ArgumentException("Departure time must be in the future.", nameof(departureTime));
-            }
-
-            if (arrivalTime <= departureTime)
-            {
-                throw new ArgumentException("Arrival time must be after departure time.", nameof(arrivalTime));
-            }
-
-            if (departureDate >= arrivalDate)
-            {
-                throw new ArgumentException();
-            }
-
-            if (arrivalDate <= departureDate)
-            {
-                throw new ArgumentException();
-            }
-
-            if (price <= 0)
-            {
-                throw new ArgumentException("Price must be greater than zero.", nameof(price));
-            }
+ 
 
             try
             {
-                string query = "UPDATE Flights SET flight_no = @flightNo, capacity = @capacity, status = @status, departure = @departure, destination = @destination, departure_time = @departureTime, arrivale_time = @arrivalTime, departure_date = @departureDate, arrival_date = @arrivalDate, price = @price WHERE flight_id = @flightId";
+                string query = "UPDATE Flight SET flight_no = @flightNo, capacity = @capacity, status = @status, departure = @departure, destination = @destination, departure_time = @departureTime, arrival_time = @arrivalTime, departure_date = @departureDate, arrival_date = @arrivalDate, price = @price WHERE flight_id = @flightId";
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
                 
-                    command.Parameters.AddWithValue("@flight_id", flightId);
-                    command.Parameters.AddWithValue("@flight_no", flightNo);
+                    command.Parameters.AddWithValue("@flightId", flightId);
+                    command.Parameters.AddWithValue("@flightNo", flightNo);
                     command.Parameters.AddWithValue("@capacity", capacity);
                     command.Parameters.AddWithValue("@status", status);
                     command.Parameters.AddWithValue("@departure", departure);
                     command.Parameters.AddWithValue("@destination", destination);
-                    command.Parameters.AddWithValue("@departure_time", departureTime);
-                    command.Parameters.AddWithValue("@arrival_time", arrivalTime);
-                    command.Parameters.AddWithValue("@departure_date", departureDate);
-                    command.Parameters.AddWithValue("@arrival_date", arrivalDate);
+                    command.Parameters.AddWithValue("@departureTime", departureTime);
+                    command.Parameters.AddWithValue("@arrivalTime", arrivalTime);
+                    command.Parameters.AddWithValue("@departureDate", departureDate);
+                    command.Parameters.AddWithValue("@arrivalDate", arrivalDate);
                     command.Parameters.AddWithValue("@price", price);
 
                     int rowsAffected = command.ExecuteNonQuery();
@@ -770,7 +721,13 @@ namespace Happy_Journey_Airline
                     if (rowsAffected == 0)
                     {
                         throw new Exception("No flight found with the specified Flight ID.");
-                    }
+                }
+                else
+                {
+                    MessageBox.Show("Flight Updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+
             }
             catch (Exception ex)
             {
@@ -1290,12 +1247,7 @@ namespace Happy_Journey_Airline
                 DBManager.getInstance().CloseConnection();
             }
         }
-        public void deleteCountry(string country)
-        {
-
-
-        }
-
+    
         public void deleteServiceOffers(int serviceId)
         {
             try

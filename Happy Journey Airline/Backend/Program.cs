@@ -21,7 +21,7 @@ namespace Happy_Journey_Airline
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new  PaymentScreen());
+                Application.Run(new  AdminFlights());
             }
         }
     }

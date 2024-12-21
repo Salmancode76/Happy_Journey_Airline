@@ -60,8 +60,35 @@ namespace Happy_Journey_Airline
 
         private void btnupdateFlight_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new UpdateFlightcs().Show();
+            if (gridFlight.SelectedCells.Count > 0)
+            {
+                var selectedCell = gridFlight.SelectedCells[0];
+
+                int rowIndex = selectedCell.RowIndex;
+
+                int flightID = Convert.ToInt32(gridFlight.Rows[rowIndex].Cells["flight_id"].Value);
+                string departure = gridFlight.Rows[rowIndex].Cells["departure"].Value.ToString();
+                string destination = gridFlight.Rows[rowIndex].Cells["destination"].Value.ToString();
+                String flightNo = gridFlight.Rows[rowIndex].Cells["flight_no"].Value.ToString();
+                int capacity = Convert.ToInt32(gridFlight.Rows[rowIndex].Cells["capacity"].Value);
+                decimal price = Convert.ToDecimal(gridFlight.Rows[rowIndex].Cells["price"].Value);
+                string status = gridFlight.Rows[rowIndex].Cells["status"].Value.ToString();
+                DateTime departureTime = Convert.ToDateTime(gridFlight.Rows[rowIndex].Cells["departure_time"].Value);
+                DateTime arrivalTime = Convert.ToDateTime(gridFlight.Rows[rowIndex].Cells["arrival_time"].Value);
+                DateTime departureDate = Convert.ToDateTime(gridFlight.Rows[rowIndex].Cells["departure_date"].Value);
+                DateTime arrivalDate = Convert.ToDateTime(gridFlight.Rows[rowIndex].Cells["arrival_date"].Value);
+
+                var updateFlightForm = new UpdateFlightcs(
+                    flightID, flightNo, capacity, status, departure, destination,
+                    departureTime, arrivalTime, departureDate, arrivalDate, price);
+
+                updateFlightForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Please select a flight to update.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void AdminFlights_Load(object sender, EventArgs e)

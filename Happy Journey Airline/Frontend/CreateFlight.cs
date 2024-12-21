@@ -23,7 +23,7 @@ namespace Happy_Journey_Airline
         public List<Country> Countries2 = new List<Country>();
 
         public List<City> cities;
-        public List <Airport> Airports;
+        public List<Airport> Airports;
 
 
 
@@ -48,7 +48,7 @@ namespace Happy_Journey_Airline
 
         private void validateFlightCreation()
         {
-         
+
             try
             {
                 decimal price;
@@ -154,57 +154,91 @@ namespace Happy_Journey_Airline
                 e.Handled = true; // Block another decimal point
             }
         }
-
         private void btnCreate_Click(object sender, EventArgs e)
         {
-
+            // Validate required fields
             if (string.IsNullOrWhiteSpace(txtCapacity.Text) ||
-              string.IsNullOrWhiteSpace(txtPrice.Text) ||
-              dateDepartureTime.Value == null || dateArrivalTime.Value == null ||
-              dateDepartureDate.Value == null || dateArrivalDate.Value == null ||
-              cmbDeparture.SelectedIndex == -1 ||
-              cmbDestination.SelectedIndex == -1 ||
-              cmbStatus.SelectedIndex == -1)
+                string.IsNullOrWhiteSpace(txtPrice.Text) ||
+                dateDepartureTime.Value == null || dateArrivalTime.Value == null ||
+                dateDepartureDate.Value == null || dateArrivalDate.Value == null ||
+                cmbDeparture.SelectedIndex == -1 ||
+                cmbDestination.SelectedIndex == -1 ||
+                cmbStatus.SelectedIndex == -1)
             {
                 MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            // Validate price
             decimal price;
-            if (!decimal.TryParse(txtPrice.Text, out price))
+            if (!decimal.TryParse(txtPrice.Text, out price) || price <= 0)
             {
-                MessageBox.Show("Please enter a valid price (numeric value with decimals).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter a valid price (numeric value greater than 0).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            validateFlightCreation();
 
-            string flightNo = textBox1.Text;
-            int capacity = Convert.ToInt32(txtCapacity.Text);
+            // Validate capacity
+            int capacity;
+            if (!int.TryParse(txtCapacity.Text, out capacity) || capacity < 0)
+            {
+                MessageBox.Show("Capacity cannot be negative.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validate flight number
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Flight No cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validate time and date
             DateTime departureTime = dateDepartureTime.Value;
             DateTime arrivalTime = dateArrivalTime.Value;
             DateTime departureDate = dateDepartureDate.Value;
             DateTime arrivalDate = dateArrivalDate.Value;
 
+            if (departureTime >= arrivalTime)
+            {
+                MessageBox.Show("Departure time must be before arrival time.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (departureDate >= arrivalDate)
+            {
+                MessageBox.Show("Departure date must be before the arrival date.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validate departure and destination airports
             int departure = Convert.ToInt32(cmbDeparture.SelectedValue);
             int destination = Convert.ToInt32(cmbDestination.SelectedValue);
 
-
             if (departure == destination)
             {
-                MessageBox.Show("YOU CAN'T TRAVEL TO DESTINATION", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You can't travel to the same destination.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-               
+
+            // Validate status
+            if (cmbStatus.SelectedIndex == -1)
+            {
+                MessageBox.Show("Status cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string flightNo = textBox1.Text;
 
             Administrator.addFlight(flightNo, capacity, Convert.ToString(cmbStatus.SelectedItem), departure, destination, departureTime, arrivalTime, departureDate, arrivalDate, price);
-            
-
 
         }
-   
-
     
 
-   
+
+
+
+
+
 
         private void CreateFlight_Load(object sender, EventArgs e)
         {
