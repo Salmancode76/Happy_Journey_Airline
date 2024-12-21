@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Collections;
+using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace Happy_Journey_Airline
 {
@@ -64,6 +68,33 @@ namespace Happy_Journey_Airline
             }
            
             base.makePayment(amount, userId);
+        }
+
+        public void InsertCardDetails(string cardHolder, string cardNumber, DateTime expirationDate, int cvv) {
+
+            try
+            {
+                string CreditCardInsert = "INSERT INTO [dbo].[Credit Card] (card_number, card_holder, expiration_date, cvv) VALUES(@cardNumber, @cardHolder, @expirationDate, @cvv)";
+                SqlCommand cmd = new SqlCommand(CreditCardInsert, DBManager.getInstance().OpenConnection());
+                cmd.Parameters.AddWithValue("@cardNumber", cardNumber);
+                cmd.Parameters.AddWithValue("@cardHolder", cardHolder);
+                cmd.Parameters.AddWithValue("@expirationDate", expirationDate);
+                cmd.Parameters.AddWithValue("@cvv", cvv);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Payment Successfull! \n\n Proceeding to Home");
+            }
+
+            catch (Exception ex) {
+
+                throw new Exception("An error occurred while adding Credit Card Details: " + ex.Message);
+            }
+            finally
+            {
+                
+                DBManager.getInstance().CloseConnection();
+            }
+
         }
     }
 }

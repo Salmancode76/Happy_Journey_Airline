@@ -115,6 +115,7 @@ namespace Happy_Journey_Airline
                 
                 bookings = new Booking(this.destination, this.duration, this.flightClassId, this.flightId, this.flightNo, this.paymentId, this.seatNo, this.services, this.status, this.subscriptionId, this.travelerId);
                 Flight f = Flight.getFlightId(this.flightId);
+                /*
                 if (f != null) 
                 {
                     f.Status = "Booked";
@@ -122,7 +123,7 @@ namespace Happy_Journey_Airline
                 else
                 {
                     MessageBox.Show("Flight not found");
-                }
+                }*/
                 return bookings;
             }
             catch (Exception ex)

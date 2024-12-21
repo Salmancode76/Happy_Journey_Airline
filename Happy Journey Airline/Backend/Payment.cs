@@ -12,6 +12,7 @@ namespace Happy_Journey_Airline
         protected int paymentId;
         protected double amount;
         protected DateTime date;
+        
 
         public Payment()
         {

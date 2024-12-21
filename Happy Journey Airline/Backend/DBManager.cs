@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -16,18 +16,18 @@ namespace Happy_Journey_Airline
 
 
 
-        // private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\sharm\\Downloads\\Database.mdf;Integrated Security = True";
 
+       // private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\sharm\\Documents\\GitHub\\Happy_Journey_Airline\\Happy Journey Airline\\Backend\\Database (1).mdf\";Integrated Security=True";
         //Layla
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\HP\\Documents\\GitHub\\Happy_Journey_Airline\\Happy Journey Airline\\Backend\\Database.mdf\";Integrated Security=True";
+        //private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\HP\\Documents\\GitHub\\Happy_Journey_Airline\\Happy Journey Airline\\Backend\\Database.mdf\";Integrated Security=True";
 
 
         //FOR THE LOVE OF GOD DON'T OVERWRITE OR DELETE ANYONE CONNECTION STRING JUST COMMENT IT
 
         //Salman Conn
-        //private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\salma\\OneDrive\\Desktop\\Codes\\C#\\Happy Journey Airline\\Happy Journey Airline\\Happy Journey Airline\\Backend\\Database.mdf;Integrated Security=True";
-   
-        
+       private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\salma\\OneDrive\\Desktop\\Codes\\C#\\Happy Journey Airline\\Happy Journey Airline\\Happy Journey Airline\\Backend\\Database.mdf;Integrated Security=True";
+
+
 
 
         private DBManager()
