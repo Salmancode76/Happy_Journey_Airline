@@ -94,6 +94,8 @@ namespace Happy_Journey_Airline
 
         public string Role { get; set; }
 
+        public bool IsAdmin => role.Equals("Admin", StringComparison.OrdinalIgnoreCase);
+
         public double Balance {
             get { return balance; }
             set

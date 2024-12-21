@@ -83,7 +83,7 @@
             this.lblDes.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDes.Location = new System.Drawing.Point(32, 142);
             this.lblDes.Name = "lblDes";
-            this.lblDes.Size = new System.Drawing.Size(107, 24);
+            this.lblDes.Size = new System.Drawing.Size(139, 32);
             this.lblDes.TabIndex = 2;
             this.lblDes.Text = "Destination:";
             // 
@@ -93,7 +93,7 @@
             this.lblDepart.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepart.Location = new System.Drawing.Point(32, 198);
             this.lblDepart.Name = "lblDepart";
-            this.lblDepart.Size = new System.Drawing.Size(97, 24);
+            this.lblDepart.Size = new System.Drawing.Size(126, 32);
             this.lblDepart.TabIndex = 4;
             this.lblDepart.Text = "Departure:";
             // 
@@ -103,7 +103,7 @@
             this.lblFlightno.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFlightno.Location = new System.Drawing.Point(32, 88);
             this.lblFlightno.Name = "lblFlightno";
-            this.lblFlightno.Size = new System.Drawing.Size(86, 24);
+            this.lblFlightno.Size = new System.Drawing.Size(113, 32);
             this.lblFlightno.TabIndex = 6;
             this.lblFlightno.Text = "Flight no:";
             this.lblFlightno.Click += new System.EventHandler(this.label6_Click);
@@ -114,7 +114,7 @@
             this.lblSeat.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeat.Location = new System.Drawing.Point(439, 84);
             this.lblSeat.Name = "lblSeat";
-            this.lblSeat.Size = new System.Drawing.Size(77, 24);
+            this.lblSeat.Size = new System.Drawing.Size(100, 32);
             this.lblSeat.TabIndex = 8;
             this.lblSeat.Text = "Seat No:";
             this.lblSeat.Click += new System.EventHandler(this.label8_Click);
@@ -123,28 +123,28 @@
             // 
             this.txtFlightno.Location = new System.Drawing.Point(185, 88);
             this.txtFlightno.Name = "txtFlightno";
-            this.txtFlightno.Size = new System.Drawing.Size(197, 20);
+            this.txtFlightno.Size = new System.Drawing.Size(197, 23);
             this.txtFlightno.TabIndex = 10;
             // 
             // txtDest
             // 
             this.txtDest.Location = new System.Drawing.Point(185, 144);
             this.txtDest.Name = "txtDest";
-            this.txtDest.Size = new System.Drawing.Size(197, 20);
+            this.txtDest.Size = new System.Drawing.Size(197, 23);
             this.txtDest.TabIndex = 13;
             // 
             // txtDepart
             // 
             this.txtDepart.Location = new System.Drawing.Point(185, 196);
             this.txtDepart.Name = "txtDepart";
-            this.txtDepart.Size = new System.Drawing.Size(197, 20);
+            this.txtDepart.Size = new System.Drawing.Size(197, 23);
             this.txtDepart.TabIndex = 15;
             // 
             // txtSeat
             // 
             this.txtSeat.Location = new System.Drawing.Point(578, 86);
             this.txtSeat.Name = "txtSeat";
-            this.txtSeat.Size = new System.Drawing.Size(197, 20);
+            this.txtSeat.Size = new System.Drawing.Size(197, 23);
             this.txtSeat.TabIndex = 17;
             // 
             // flightGridView
@@ -187,7 +187,7 @@
             this.lblFlightClass.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFlightClass.Location = new System.Drawing.Point(439, 142);
             this.lblFlightClass.Name = "lblFlightClass";
-            this.lblFlightClass.Size = new System.Drawing.Size(108, 24);
+            this.lblFlightClass.Size = new System.Drawing.Size(141, 32);
             this.lblFlightClass.TabIndex = 26;
             this.lblFlightClass.Text = "Flight Class:";
             // 
@@ -196,7 +196,7 @@
             this.cmbFlightClass.FormattingEnabled = true;
             this.cmbFlightClass.Location = new System.Drawing.Point(578, 144);
             this.cmbFlightClass.Name = "cmbFlightClass";
-            this.cmbFlightClass.Size = new System.Drawing.Size(197, 21);
+            this.cmbFlightClass.Size = new System.Drawing.Size(197, 24);
             this.cmbFlightClass.TabIndex = 27;
             // 
             // lbltraveler
@@ -205,7 +205,7 @@
             this.lbltraveler.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltraveler.Location = new System.Drawing.Point(439, 198);
             this.lbltraveler.Name = "lbltraveler";
-            this.lbltraveler.Size = new System.Drawing.Size(138, 24);
+            this.lbltraveler.Size = new System.Drawing.Size(179, 32);
             this.lbltraveler.TabIndex = 28;
             this.lbltraveler.Text = "No of Travelers:";
             this.lbltraveler.Click += new System.EventHandler(this.label5_Click);
@@ -214,14 +214,14 @@
             // 
             this.txtTraveler.Location = new System.Drawing.Point(578, 200);
             this.txtTraveler.Name = "txtTraveler";
-            this.txtTraveler.Size = new System.Drawing.Size(197, 20);
+            this.txtTraveler.Size = new System.Drawing.Size(197, 23);
             this.txtTraveler.TabIndex = 29;
             // 
             // txtStatus
             // 
             this.txtStatus.Location = new System.Drawing.Point(578, 303);
             this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(197, 20);
+            this.txtStatus.Size = new System.Drawing.Size(197, 23);
             this.txtStatus.TabIndex = 37;
             // 
             // lblStatus
@@ -230,7 +230,7 @@
             this.lblStatus.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.Location = new System.Drawing.Point(439, 303);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(74, 28);
+            this.lblStatus.Size = new System.Drawing.Size(92, 35);
             this.lblStatus.TabIndex = 38;
             this.lblStatus.Text = "Status:";
             // 
@@ -238,7 +238,7 @@
             // 
             this.destDatePicker.Location = new System.Drawing.Point(575, 250);
             this.destDatePicker.Name = "destDatePicker";
-            this.destDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.destDatePicker.Size = new System.Drawing.Size(200, 23);
             this.destDatePicker.TabIndex = 68;
             // 
             // lblTo
@@ -247,7 +247,7 @@
             this.lblTo.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTo.Location = new System.Drawing.Point(439, 248);
             this.lblTo.Name = "lblTo";
-            this.lblTo.Size = new System.Drawing.Size(35, 24);
+            this.lblTo.Size = new System.Drawing.Size(47, 32);
             this.lblTo.TabIndex = 67;
             this.lblTo.Text = "To:";
             // 
@@ -255,7 +255,7 @@
             // 
             this.departDatePicker.Location = new System.Drawing.Point(185, 250);
             this.departDatePicker.Name = "departDatePicker";
-            this.departDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.departDatePicker.Size = new System.Drawing.Size(200, 23);
             this.departDatePicker.TabIndex = 66;
             // 
             // lblfrom
@@ -264,7 +264,7 @@
             this.lblfrom.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfrom.Location = new System.Drawing.Point(32, 248);
             this.lblfrom.Name = "lblfrom";
-            this.lblfrom.Size = new System.Drawing.Size(58, 24);
+            this.lblfrom.Size = new System.Drawing.Size(77, 32);
             this.lblfrom.TabIndex = 65;
             this.lblfrom.Text = "From:";
             // 
@@ -286,7 +286,7 @@
             this.lblBook.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblBook.Location = new System.Drawing.Point(283, 0);
             this.lblBook.Name = "lblBook";
-            this.lblBook.Size = new System.Drawing.Size(237, 58);
+            this.lblBook.Size = new System.Drawing.Size(297, 72);
             this.lblBook.TabIndex = 3;
             this.lblBook.Text = "Book Flight";
             // 
@@ -323,7 +323,7 @@
             this.lblmsg.AutoSize = true;
             this.lblmsg.Location = new System.Drawing.Point(588, 348);
             this.lblmsg.Name = "lblmsg";
-            this.lblmsg.Size = new System.Drawing.Size(49, 13);
+            this.lblmsg.Size = new System.Drawing.Size(65, 17);
             this.lblmsg.TabIndex = 101;
             this.lblmsg.Text = "message";
             // 

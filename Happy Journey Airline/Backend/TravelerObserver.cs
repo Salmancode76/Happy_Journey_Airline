@@ -15,6 +15,7 @@ namespace Happy_Journey_Airline
     public class TravelerObserver : User
     {
         private int passportNo;
+        private string fullName;
         private string dbConnection;
         private List<Booking> bookingHistory = new List<Booking>();
 
@@ -33,6 +34,13 @@ namespace Happy_Journey_Airline
         }
 
         public int PassportNo { get; set; }
+
+        public string FullName => $"{firstName} {lastName}";
+
+        public override string ToString()
+        {
+            return FullName;
+        }
 
         public void bookFlight(Booking booking)
         {

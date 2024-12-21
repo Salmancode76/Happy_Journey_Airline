@@ -23,12 +23,19 @@ namespace Happy_Journey_Airline
         {
         }
 
+        public Administrator(int userId, string firstName, string lastName)
+        {
+            this.userId = userId;
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
         public Administrator(Subscription subscription)
         {
             this.subscription = subscription;
         }
 
-        public Administrator(int userId, string firstName, string lastName, int age, string email, string username, string password, string role, string phoneNo, string gender, string dob, double balance) : base(userId, firstName, lastName, age, email, username, password, role, phoneNo, gender, dob, balance)
+        public Administrator(int userId, string firstName, string lastName, int age, string email, string username, string password, string role, string phoneNo, string gender, string dob, double balance) : base(userId, firstName, lastName, age, email, username, password, "Admin", phoneNo, gender, dob, balance)
         {
             this.administratorId = userId;
         }
@@ -1310,6 +1317,35 @@ namespace Happy_Journey_Airline
             {
                 DBManager.getInstance().CloseConnection();
             }
+        }
+
+        public void SendMessageToAllAdmins(string content)
+        {
+            List<Administrator> admins = GetAllAdmins(); 
+            foreach (var admin in admins)
+            {
+                Message message = new Message(content, this.userId, admin.UserId);
+                message.saveMessage();
+            }
+        }
+
+        private List<Administrator> GetAllAdmins()
+        {
+            List<Administrator> admins = new List<Administrator>();
+            // retrieve all admins from the database
+            string query = "SELECT user_id, first_name, last_name FROM Users WHERE role = 'Admin'";
+            SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+            
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int userId = reader.GetInt32(0);
+                string firstName = reader.GetString(1);
+                string lastName = reader.GetString(2);
+                admins.Add(new Administrator(userId, firstName, lastName));
+            }
+            
+            return admins;
         }
     }
 }
