@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Happy_Journey_Airline
 {
@@ -74,7 +75,7 @@ namespace Happy_Journey_Airline
             string m1;
             try
             {
-                string query = "INSERT INTO Message (content, dender_id, receiver_id, timestamp) VALUES (@content, @senderId, @receiverId, @timestamp)";
+                string query = "INSERT INTO Message (content, sender_id, receiver_id, timestamp) VALUES (@content, @senderId, @receiverId, @timestamp)";
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
@@ -123,5 +124,32 @@ namespace Happy_Journey_Airline
             }
             return table;
         }
+
+        public static DataTable getMessagesForAdmin(int adminId)
+        {
+            DataTable table = new DataTable();
+            try
+            {
+                string query = "SELECT * FROM MESSAGE WHERE receiver_id = @adminId";
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+                
+                command.Parameters.AddWithValue("@adminId", adminId);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                adapter.Fill(table);
+                
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Error retrieving messages: " + ex.Message);
+            }
+            finally
+            {
+                DBManager.getInstance().CloseConnection();
+            }
+            return table;
+        }
     }
 }
+
