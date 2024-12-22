@@ -11,7 +11,10 @@ namespace Happy_Journey_Airline
         private int serviceId;
         private string serviceName;
         private string description;
-        private double price;
+        public double price;
+
+
+
 
         public Service()
         {
@@ -36,9 +39,18 @@ namespace Happy_Journey_Airline
 
         public string Description { get; set; }
 
-        public double Price { get; set; }
+        public double Price
+        {
+            get { return price; }
+            set
+            {
+                if (value < 0)
+                    throw new ArgumentException("Price cannot be negative.");
+                price = value;
+            }
+        }
 
 
-   
+
     }
 }

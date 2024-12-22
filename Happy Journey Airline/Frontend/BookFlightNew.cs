@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Happy_Journey_Airline.Backend;
 
 namespace Happy_Journey_Airline.Frontend
 {
@@ -19,12 +20,16 @@ namespace Happy_Journey_Airline.Frontend
         public List<Country> Countries2 = new List<Country>();
         public List<City> cities;
         public List<Airport> Airports;
+        public List <User> List_users;
         public BookFlightNew() { }
         public BookFlightNew(int flightId, String flightNo, int capacity, string status, string departure, string destination, DateTime departureTime, DateTime arrivalTime, DateTime departureDate, DateTime arrivalDate, decimal price)
         {
+
             InitializeComponent();
             populateStatusCombo();
             populateListCombos();
+            PopulateCheckboxes();
+            Class_Load();
             flightID = flightId;
 
             textBox1.Text = flightNo.ToString();
@@ -93,7 +98,58 @@ namespace Happy_Journey_Airline.Frontend
             cmbDestination.ValueMember = "AirportId";
 
 
+
+            List_users = User.GetAllUsers();
+
+            userComboxUser.DataSource = List_users;
+            userComboxUser.DisplayMember = "DisplayText"; 
+            userComboxUser.ValueMember = "UserId";
+
+
         }
+
+
+
+        private void Class_Load()
+        {
+            cmbFlightClass.Items.Add("Economy");
+            cmbFlightClass.Items.Add("Buisiness");
+            cmbFlightClass.Items.Add("First");
+
+
+        }
+        private void PopulateCheckboxes()
+        {
+
+
+
+            List<Service> services = new List<Service>();
+
+
+            services = new Administrator().GetAllService();
+
+
+
+            CheckedListBox checkedListBoxService = this.checkedListBoxService;  // Existing CheckedListBox
+
+            checkedListBoxService.Items.Clear();
+
+
+            foreach (var service in services)
+            {
+                checkedListBoxService.Items.Add(service.ServiceName);
+            }
+
+        }
+
+
+
+        private void populateUsersCombo()
+        {
+            
+        }
+
+
 
         private void populateStatusCombo()
         {
@@ -102,6 +158,7 @@ namespace Happy_Journey_Airline.Frontend
             cmbStatus.Items.Add("Completed");
             cmbStatus.Items.Add("Full");
             cmbStatus.Items.Add("Under Maintenance");
+
 
 
 
@@ -115,7 +172,7 @@ namespace Happy_Journey_Airline.Frontend
             cities = Administrator.GetAllcities();
             Airports = Administrator.GetAllAirports();
 
-        
+
 
             CountryDepartureCMB.DataSource = Countries.ToList();
             CountryDepartureCMB.DisplayMember = "CountryName";
@@ -126,11 +183,9 @@ namespace Happy_Journey_Airline.Frontend
             CountryDistCMD.ValueMember = "CountryId";
 
 
-
-
         }
 
-   
+
         private List<Airport> filteredAirports(Country selectedCountry)
         {
             List<City> filteredCities = new List<City>();
@@ -186,22 +241,11 @@ namespace Happy_Journey_Airline.Frontend
 
         }
 
-
-      
-          
-
-
-        
-
-       
-
-          
-        
-
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
+
+        
 
         private void cmbDeparture_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -219,6 +263,11 @@ namespace Happy_Journey_Airline.Frontend
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

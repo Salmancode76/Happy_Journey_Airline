@@ -34,5 +34,10 @@ namespace Happy_Journey_Airline.Frontend
         {
 
         }
+
+        private void UpdateAirport_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

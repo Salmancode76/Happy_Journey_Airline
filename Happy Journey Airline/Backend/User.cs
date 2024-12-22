@@ -32,6 +32,7 @@ namespace Happy_Journey_Airline
         protected double balance;
         protected static List<User> users = new List<User>();
 
+   
         public User()
         {
         }
@@ -50,6 +51,11 @@ namespace Happy_Journey_Airline
             this.gender = gender;
             this.dob = dob;
             this.balance = balance;
+
+        }
+        public string DisplayText
+        {
+            get { return $"{UserId} - {Username}"; }
         }
 
         public int UserId { get; set; }
@@ -815,12 +821,14 @@ namespace Happy_Journey_Airline
 
         }
 
+    
 
 
 
 
     }
-   
+
+
 
 }
 
