@@ -193,6 +193,18 @@
     <Compile Include="Frontend\CreateUser.Designer.cs">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\BookFlightNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\BookFlightNew.Designer.cs">
+      <DependentUpon>BookFlightNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\ViewBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\ViewBooking.Designer.cs">
+      <DependentUpon>ViewBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\logincs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,6 +368,12 @@
     <EmbeddedResource Include="Frontend\CreateUser.resx">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\BookFlightNew.resx">
+      <DependentUpon>BookFlightNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\ViewBooking.resx">
+      <DependentUpon>ViewBooking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frontend\logincs.resx">
       <DependentUpon>logincs.cs</DependentUpon>
     </EmbeddedResource>
@@ -438,6 +456,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Backend\Database.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Backend\Database_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Frontend\Resources\logoo1.png" />
     <Content Include="Frontend\Resources\logoo11.png" />
     <None Include="Resources\Screenshot 2024-12-04 004028.png" />

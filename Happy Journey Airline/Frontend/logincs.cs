@@ -29,7 +29,6 @@ namespace Happy_Journey_Airline
          User ul =  ur.login(ustxt.Text, passtxt.Text);
 
 
-
             if ( ul == null ){
 
                

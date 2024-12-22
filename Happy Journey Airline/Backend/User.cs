@@ -92,7 +92,12 @@ namespace Happy_Journey_Airline
 
         public string PhoneNo { get; set; }
 
-        public string Role { get; set; }
+        public string Role
+        {
+            get { return role; } 
+            set { role = value; } 
+        }
+
 
         public double Balance {
             get { return balance; }
@@ -196,7 +201,7 @@ namespace Happy_Journey_Airline
                     }
                     else if (u1.role == "Employer")
                     {
-                        new AdminBookFlight().Show();
+                        new BookFlight().Show();
                     }
                     else
                     {
@@ -300,6 +305,7 @@ namespace Happy_Journey_Airline
                     // Log or show the error for debugging
                     Console.WriteLine("Error inserting into Employer table: " + ex.Message);
                 }
+
 
             } else if (role == "Admin")
             {

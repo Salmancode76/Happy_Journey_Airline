@@ -35,7 +35,21 @@ namespace Happy_Journey_Airline
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            Administrator.addService(servicetxt.Text,descriptiontxt.Text,Convert.ToDouble(pricetxt.Text));
+
+            if (string.IsNullOrWhiteSpace(servicetxt.Text) || string.IsNullOrWhiteSpace(descriptiontxt.Text) || string.IsNullOrWhiteSpace(pricetxt.Text))
+            {
+                MessageBox.Show("All fields are required. Please fill in all the details.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (double.TryParse(pricetxt.Text, out double price))
+            {
+                Administrator.addService(servicetxt.Text, descriptiontxt.Text, price);
+            }
+            else
+            {
+                MessageBox.Show("Invalid price entered. Please enter a valid number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
