@@ -12,6 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using BCrypt.Net;
 using System.Text.RegularExpressions;
 using Happy_Journey_Airline.Backend;
+using Happy_Journey_Airline.Frontend;
 
 namespace Happy_Journey_Airline
 {
@@ -203,7 +204,7 @@ namespace Happy_Journey_Airline
                     }
                     else if (u1.role == "Employer")
                     {
-                        new BookFlight().Show();
+                        new EmployeeDashboard().Show();
                     }
                     else
                     {

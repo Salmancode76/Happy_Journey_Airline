@@ -19,6 +19,7 @@ namespace Happy_Journey_Airline.Frontend
         public List<Country> Countries2 = new List<Country>();
         public List<City> cities;
         public List<Airport> Airports;
+        public BookFlightNew() { }
         public BookFlightNew(int flightId, String flightNo, int capacity, string status, string departure, string destination, DateTime departureTime, DateTime arrivalTime, DateTime departureDate, DateTime arrivalDate, decimal price)
         {
             InitializeComponent();
@@ -215,6 +216,11 @@ namespace Happy_Journey_Airline.Frontend
         {
             new ViewBookFlight().Show();
             this.Close();
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
