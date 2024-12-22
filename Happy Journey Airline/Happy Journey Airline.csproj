@@ -205,6 +205,12 @@
     <Compile Include="Frontend\EmployeeDashboard.Designer.cs">
       <DependentUpon>EmployeeDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\SearchFlights.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\SearchFlights.Designer.cs">
+      <DependentUpon>SearchFlights.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\ViewBooking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,6 +380,9 @@
     <EmbeddedResource Include="Frontend\EmployeeDashboard.resx">
       <DependentUpon>EmployeeDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\SearchFlights.resx">
+      <DependentUpon>SearchFlights.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frontend\ViewBooking.resx">
       <DependentUpon>ViewBooking.cs</DependentUpon>
     </EmbeddedResource>
@@ -456,12 +465,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Backend\Database.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Backend\Database_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Frontend\Resources\logoo1.png" />
     <Content Include="Frontend\Resources\logoo11.png" />
     <None Include="Resources\Screenshot 2024-12-04 004028.png" />
