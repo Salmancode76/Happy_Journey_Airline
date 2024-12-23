@@ -126,5 +126,10 @@ namespace Happy_Journey_Airline.Frontend
             this.Hide();
             new AdminBookings().Show();
         }
+
+        private void lblFlights_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
