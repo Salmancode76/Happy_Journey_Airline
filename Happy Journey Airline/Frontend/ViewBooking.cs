@@ -96,5 +96,10 @@ namespace Happy_Journey_Airline.Frontend
                 MessageBox.Show("Please select a flight to update.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void lblFlights_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

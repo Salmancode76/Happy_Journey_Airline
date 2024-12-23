@@ -22,7 +22,7 @@ namespace Happy_Journey_Airline
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new  ViewBookFlight());
+                Application.Run(new  SearchFlights());
             }
         }
     }

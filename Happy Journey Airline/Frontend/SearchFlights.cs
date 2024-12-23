@@ -65,20 +65,51 @@ namespace Happy_Journey_Airline.Frontend
                 return;
             }
 
+            string status = cmbStatus.SelectedItem?.ToString();
+            double price = Convert.ToDouble(txtPrice.Text);
+            try
+            {
+                string query = "SELECT * FROM Flight WHERE destination = @destination OR departure = @departure Or price = @price or status =@status or departure_date=@from or arrival_date=@to";
+
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+
+                command.Parameters.AddWithValue("@destination", destinationA);
+                command.Parameters.AddWithValue("@status", status);
+                command.Parameters.AddWithValue("@departure", departureA);
+                command.Parameters.AddWithValue("@price", price);
+                command.Parameters.AddWithValue("@from", from);
+                command.Parameters.AddWithValue("@to", to);
 
 
-            string stmt = "SELECT*  FROM [dbo].[Flight]";
+                SqlDataAdapter da = new SqlDataAdapter(command);
 
-            DBManager con = DBManager.getInstance();
-            SqlCommand cmd = new SqlCommand(stmt, con.OpenConnection());
+                DataTable dataTable = new DataTable();
+                da.Fill(dataTable);
+
+                // check if any rows were returned
+                if (dataTable.Rows.Count > 0)
+                {
+                    FlightGridView.DataSource = dataTable;
+                }
+                else
+                {
+                    if (dataTable.Rows.Count == 0)
+                    {
+                        MessageBox.Show("No flights found matching the criteria.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+
+            }
+            finally {
+                DBManager.getInstance().CloseConnection();
+
+            }
 
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-
-            //Excute the command
-            da.Fill(dt);
-            FlightGridView.DataSource = dt;
         }
 
         private void SearchFlights_Load(object sender, EventArgs e)
