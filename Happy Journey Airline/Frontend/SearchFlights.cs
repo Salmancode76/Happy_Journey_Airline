@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,12 +26,71 @@ namespace Happy_Journey_Airline.Frontend
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            
+
+            DateTime from = dateTimePickerFrom.Value;
+            DateTime to = dateTimePickerTo.Value;
+
+
+
+            if (string.IsNullOrWhiteSpace(txtPrice.Text) ||
+
+            from == null || to == null ||
+            CountryDepartureCMB.SelectedIndex == -1 ||
+            CountryDestCMD.SelectedIndex == -1 ||
+
+            cmbDepartureA.SelectedIndex == -1 ||
+           cmbDestinationA.SelectedIndex == -1 ||
+           cmbStatus.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            if (from == to)
+            {
+
+                lblmsg.Text = " Departure and Arrival dates cannot be same";
+
+            }
+
+            int departureA = Convert.ToInt32(cmbDepartureA.SelectedValue);
+            int destinationA = Convert.ToInt32(cmbDestinationA.SelectedValue);
+            //int CountryDeparture = Convert.ToInt32(CountryDepartureCMB.SelectedValue);
+            //int CountryDestination = Convert.ToInt32(CountryDestCMD.SelectedValue);
+
+            if (departureA == destinationA)
+            {
+                MessageBox.Show("You can't travel to the same destination.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+
+            string stmt = "SELECT*  FROM [dbo].[Flight]";
+
+            DBManager con = DBManager.getInstance();
+            SqlCommand cmd = new SqlCommand(stmt, con.OpenConnection());
+
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            //Excute the command
+            da.Fill(dt);
+            FlightGridView.DataSource = dt;
         }
 
         private void SearchFlights_Load(object sender, EventArgs e)
         {
+            cmbStatus.Items.Add("Available");
+            cmbStatus.Items.Add("Ongoing");
+            cmbStatus.Items.Add("Completed");
+            cmbStatus.Items.Add("Full");
+            cmbStatus.Items.Add("Under Maintenance");
 
+            lblmsg.Text = " ";
+            lblmsg.ForeColor = Color.Red;
         }
 
 
@@ -46,9 +106,9 @@ namespace Happy_Journey_Airline.Frontend
             CountryDepartureCMB.DisplayMember = "CountryName";
             CountryDepartureCMB.ValueMember = "CountryId";
 
-            CountryDistCMD.DataSource = Countries.ToList();
-            CountryDistCMD.DisplayMember = "CountryName";
-            CountryDistCMD.ValueMember = "CountryId";
+            CountryDestCMD.DataSource = Countries.ToList();
+            CountryDestCMD.DisplayMember = "CountryName";
+            CountryDestCMD.ValueMember = "CountryId";
 
 
 
@@ -112,19 +172,19 @@ namespace Happy_Journey_Airline.Frontend
         private void CountryDistCMD_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (CountryDistCMD.SelectedItem == null)
+            if (CountryDestCMD.SelectedItem == null)
                 return;
 
-            cmbDestination.DataSource = null;
+            cmbDestinationA.DataSource = null;
 
-            Country selectedCountry = (Country)CountryDistCMD.SelectedItem;
+            Country selectedCountry = (Country)CountryDestCMD.SelectedItem;
 
             List<Airport> displayList = filteredAirports(selectedCountry);
 
             // Bind the display list to cmbDestination
-            cmbDestination.DataSource = displayList.ToList();
-            cmbDestination.DisplayMember = "DisplayName";
-            cmbDestination.ValueMember = "AirportId";
+            cmbDestinationA.DataSource = displayList.ToList();
+            cmbDestinationA.DisplayMember = "DisplayName";
+            cmbDestinationA.ValueMember = "AirportId";
         }
 
         private void CountryDepartureCMB_SelectedIndexChanged(object sender, EventArgs e)
@@ -132,16 +192,16 @@ namespace Happy_Journey_Airline.Frontend
             if (CountryDepartureCMB.SelectedItem == null)
                 return;
 
-            cmbDeparture.DataSource = null;
+            cmbDepartureA.DataSource = null;
 
             Country selectedCountry = (Country)CountryDepartureCMB.SelectedItem;
 
             List<Airport> displayList = filteredAirports(selectedCountry);
 
             // Bind the display list to cmbDestination
-            cmbDeparture.DataSource = displayList.ToList();
-            cmbDeparture.DisplayMember = "DisplayName";
-            cmbDeparture.ValueMember = "AirportId";
+            cmbDepartureA.DataSource = displayList.ToList();
+            cmbDepartureA.DisplayMember = "DisplayName";
+            cmbDepartureA.ValueMember = "AirportId";
 
 
 
