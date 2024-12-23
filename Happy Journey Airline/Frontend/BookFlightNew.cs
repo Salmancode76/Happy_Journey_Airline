@@ -20,7 +20,7 @@ namespace Happy_Journey_Airline.Frontend
         public List<Country> Countries2 = new List<Country>();
         public List<City> cities;
         public List<Airport> Airports;
-        public List <User> List_users;
+        public List <TravelerObserver> List_users;
         public BookFlightNew() { }
         public BookFlightNew(int flightId, String flightNo, int capacity, string status, string departure, string destination, DateTime departureTime, DateTime arrivalTime, DateTime departureDate, DateTime arrivalDate, decimal price)
         {
@@ -99,11 +99,11 @@ namespace Happy_Journey_Airline.Frontend
 
 
 
-            List_users = User.GetAllUsers();
+            List_users = User.GetAllTraveler();
 
             userComboxUser.DataSource = List_users;
-            userComboxUser.DisplayMember = "DisplayText"; 
-            userComboxUser.ValueMember = "UserId";
+            userComboxUser.DisplayMember = "Traveler_id"; 
+            userComboxUser.ValueMember = "Traveler_id";
 
 
         }
@@ -112,11 +112,9 @@ namespace Happy_Journey_Airline.Frontend
 
         private void Class_Load()
         {
-            cmbFlightClass.Items.Add("Economy");
-            cmbFlightClass.Items.Add("Buisiness");
-            cmbFlightClass.Items.Add("First");
-
-
+            cmbFlightClass.Items.Add("Economy");    
+            cmbFlightClass.Items.Add("Business");  
+            cmbFlightClass.Items.Add("First");     
         }
         private void PopulateCheckboxes()
         {
@@ -279,7 +277,8 @@ namespace Happy_Journey_Airline.Frontend
             }
 
             string status = cmbStatus.SelectedItem.ToString();
-            int flightClassId = cmbFlightClass.SelectedIndex; // Assuming index maps to a valid ID
+            int flightClassId = cmbFlightClass.SelectedIndex + 1; // Add 1 since ComboBox indexes usually start at 0, but your IDs seem to start at 1
+
             int flightId = this.flightID; // Already set in the constructor
             String flightNo = (textBox1.Text); // Flight number from the form
                                                      //int paymentId = int.Parse(txtPaymentId.Text); // Payment ID from a text box

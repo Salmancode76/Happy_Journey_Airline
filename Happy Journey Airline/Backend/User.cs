@@ -612,9 +612,9 @@ namespace Happy_Journey_Airline
                 return users;
             }
 
-        public static List<User> GetAllTraveler()
+        public static List<TravelerObserver> GetAllTraveler()
         {
-            List<User> users = new List<User>();
+            List<TravelerObserver> users = new List<TravelerObserver>();
 
             string stmt = "SELECT * FROM [dbo].[Traveler]";
             SqlConnection connection = DBManager.getInstance().OpenConnection();
@@ -625,12 +625,11 @@ namespace Happy_Journey_Airline
             while (reader.Read())
             {
 
-                string[] name = reader.GetString(1).Split(' ');
 
                 TravelerObserver travelerObserver = new TravelerObserver
                 {
                     UserId = reader["user_id"] != DBNull.Value ? Convert.ToInt32(reader["user_id"]) : 0,
-                    //TravelId = reader["user_id"] != DBNull.Value ? Convert.ToInt32(reader["user_id"]) : 0,
+                    traveler_id = reader["traveler_id"] != DBNull.Value ? Convert.ToInt32(reader["traveler_id"]) : 0,
 
                 };
 

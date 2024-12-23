@@ -45,7 +45,7 @@ namespace Happy_Journey_Airline
         {
             List<Booking> bookings = new List<Booking>();
 
-            int bookingId;
+           // var bookingId = -1;
             Console.WriteLine($"FlightClassId: {flightClassId}, FlightId: {flightId}, SeatNo: {seatNo}, Status: {status}, TravelerId: {travelerId}");
 
             try
@@ -58,7 +58,7 @@ namespace Happy_Journey_Airline
             INSERT INTO [dbo].[Booking]
                        ([flight_class_id], [flight_id], [seat_no], [status], [traveler_id])
                  VALUES
-                       (@FlightClassId, @FlightId, @SeatNo, @Status, @TravelerId)";
+                       (@FlightClassId, @FlightId, @SeatNo, @Status, @TravelerId) SELECT SCOPE_IDENTITY();";
 
                 // Log the query for debugging
                 Console.WriteLine("Executing SQL Query: " + query);
@@ -82,7 +82,7 @@ namespace Happy_Journey_Airline
                 command.Parameters.AddWithValue("@TravelerId", travelerId);
 
                 // Execute the command and get the newly created booking id
-                bookingId = (int)command.ExecuteScalar(); // Using Execute Scalar to get the booking id
+               var  bookingId = command.ExecuteScalar(); // Using Execute Scalar to get the booking id
 
                 Console.WriteLine($"Booking created successfully with ID: {bookingId}");
 
@@ -91,7 +91,9 @@ namespace Happy_Journey_Airline
                 {
                     foreach (var service in services)
                     {
-                        string serviceQuery = "INSERT INTO [dbo].[ServiceBooking] (service_id, booking_id) VALUES (@ServiceId, @BookingId)";
+                        string serviceQuery = "INSERT INTO [dbo].[Service Booking] (service_id, booking_id) VALUES (@ServiceId, @BookingId)";
+
+                        Console.WriteLine(service.ServiceName);
 
                         SqlCommand serviceCmd = new SqlCommand(serviceQuery, DBManager.getInstance().OpenConnection());
                         serviceCmd.Parameters.AddWithValue("@BookingId", bookingId);

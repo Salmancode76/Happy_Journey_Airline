@@ -15,6 +15,9 @@ namespace Happy_Journey_Airline
     public class TravelerObserver : User
     {
         private int passportNo;
+        public int traveler_id;
+        private int user_id;
+
         private string fullName;
         private string dbConnection;
         private List<Booking> bookingHistory = new List<Booking>();
@@ -22,10 +25,22 @@ namespace Happy_Journey_Airline
         public TravelerObserver()
         {
         }
+        public int Traveler_id
+        {
+            get { return traveler_id; }
+            set { traveler_id = value; }
+        }
+
 
         public TravelerObserver(string dbConnection)
         {
             this.dbConnection = dbConnection;
+        }
+
+        public TravelerObserver(int traveler_id, int userId)
+        {
+                this.userId = userId;
+            this.traveler_id = traveler_id;
         }
 
         public TravelerObserver(int userId, string firstName, string lastName, int age, string email, string username, string password, string role, string phoneNo, string gender, string dob, double balance, int passportNo) : base(userId, firstName, lastName, age, email, username, password, role, phoneNo, gender, dob, balance)
