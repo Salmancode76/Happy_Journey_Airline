@@ -40,62 +40,73 @@ namespace Happy_Journey_Airline
             this.administratorId = userId;
         }
 
-        public void addBooking(string destination, string duration, string seatNo, List<Service> services, string status, int flightClassId, int flightId, int flightNo, int paymentId, int subscriptionId, int travelerId)
+
+        public static void addBooking(string destination, string duration, string seatNo, List<Service> services, string status, int flightClassId, int flightId, string flightNo, int travelerId)
         {
             List<Booking> bookings = new List<Booking>();
 
-            int bookingId = 0; //To store the newly created Booking ID
+            int bookingId;
+            Console.WriteLine($"FlightClassId: {flightClassId}, FlightId: {flightId}, SeatNo: {seatNo}, Status: {status}, TravelerId: {travelerId}");
 
             try
             {
-                Booking booking = new Booking(destination, duration, flightClassId, flightId, flightNo, paymentId, seatNo, services, status, subscriptionId, travelerId);
-
+                Booking booking = new Booking(destination, duration, flightClassId, flightId, flightNo, seatNo, services, status, travelerId);
                 bookings.Add(booking);
 
-                //SQL query to insert into booking and get the booking id
-                string query = "INSERT INTO Booking (destination, duration, flight_class_id, flight_id, flight_no, payment_id, seat_no, status, subscription_id, traveler_id) " +
-                               "OUTPUT INSERTED.booking_id VALUES (@Destination, @Duration, @FlightClassId, @FlightId, @FlightNo, @PaymentId, @SeatNo, @Status, @SubscriptionId, @TravelerId)";
+                // SQL query to insert into booking and get the booking id
+                string query = @"
+            INSERT INTO [dbo].[Booking]
+                       ([flight_class_id], [flight_id], [seat_no], [status], [traveler_id])
+                 VALUES
+                       (@FlightClassId, @FlightId, @SeatNo, @Status, @TravelerId)";
+
+                // Log the query for debugging
+                Console.WriteLine("Executing SQL Query: " + query);
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
-                command.Parameters.AddWithValue("@destination", booking.Destination);
-                command.Parameters.AddWithValue("@duration", booking.Duration);
-                command.Parameters.AddWithValue("@flight_class_id", booking.FlightClass.FlightClassId);
-                command.Parameters.AddWithValue("@flight_id", booking.Flight.FlightId);
-                command.Parameters.AddWithValue("@flight_no", booking.Flight.FlightNo);
-                command.Parameters.AddWithValue("@payment_id", booking.Payment.PaymentId);
-                command.Parameters.AddWithValue("@seat_no", booking.SeatNo);
-                command.Parameters.AddWithValue("@status", booking.Status);
-                command.Parameters.AddWithValue("@suscription_id", booking.Subscription.SubscriptionId);
-                command.Parameters.AddWithValue("@traveler_id", booking.Traveler.UserId);
+                // Log parameter values before adding them
+                Console.WriteLine($"Adding Parameter - FlightClassId: {flightClassId}");
+                command.Parameters.AddWithValue("@FlightClassId", flightClassId);
 
-                //Execute the command and get the newly created booking id
-                bookingId = (int)command.ExecuteScalar(); //Using Execute Scalar to get the booking id
+                Console.WriteLine($"Adding Parameter - FlightId: {flightId}");
+                command.Parameters.AddWithValue("@FlightId", flightId);
 
-                //Insert into Services into the bookingService table
+                Console.WriteLine($"Adding Parameter - SeatNo: {seatNo}");
+                command.Parameters.AddWithValue("@SeatNo", seatNo);
+
+                Console.WriteLine($"Adding Parameter - Status: {status}");
+                command.Parameters.AddWithValue("@Status", status);
+
+                Console.WriteLine($"Adding Parameter - TravelerId: {travelerId}");
+                command.Parameters.AddWithValue("@TravelerId", travelerId);
+
+                // Execute the command and get the newly created booking id
+                bookingId = (int)command.ExecuteScalar(); // Using Execute Scalar to get the booking id
+
+                Console.WriteLine($"Booking created successfully with ID: {bookingId}");
+
+                // Insert services if any
                 if (services != null && services.Count > 0)
                 {
                     foreach (var service in services)
                     {
-                        string serviceQuery = "INSERT INTO BookingService (booking_id, service_id) VALUES (@bookingId, @serviceId)";
+                        string serviceQuery = "INSERT INTO [dbo].[ServiceBooking] (service_id, booking_id) VALUES (@ServiceId, @BookingId)";
 
-                        SqlCommand cmd = new SqlCommand(serviceQuery, DBManager.getInstance().OpenConnection());
+                        SqlCommand serviceCmd = new SqlCommand(serviceQuery, DBManager.getInstance().OpenConnection());
+                        serviceCmd.Parameters.AddWithValue("@BookingId", bookingId);
+                        serviceCmd.Parameters.AddWithValue("@ServiceId", service.ServiceId);
 
-                        cmd.Parameters.AddWithValue("@booking_id", bookingId);
-                        cmd.Parameters.AddWithValue("@service_id", service.ServiceId);
-
-                        cmd.ExecuteNonQuery();
+                        serviceCmd.ExecuteNonQuery();
                     }
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                throw new Exception("An error occurred while adding new booking: " + ex.Message);
-            }
-            finally
-            {
-                //Ensure the database connection is closed
-                DBManager.getInstance().CloseConnection();
+                Console.WriteLine($"SQL Error: {ex.Message}");
+                // Optionally log ex.StackTrace to get more details about the error
+                Console.WriteLine(ex.StackTrace);
+                throw;
             }
         }
 

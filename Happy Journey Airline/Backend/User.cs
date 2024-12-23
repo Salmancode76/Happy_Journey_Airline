@@ -612,6 +612,38 @@ namespace Happy_Journey_Airline
                 return users;
             }
 
+        public static List<User> GetAllTraveler()
+        {
+            List<User> users = new List<User>();
+
+            string stmt = "SELECT * FROM [dbo].[Traveler]";
+            SqlConnection connection = DBManager.getInstance().OpenConnection();
+            SqlCommand cmd = new SqlCommand(stmt, connection);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                string[] name = reader.GetString(1).Split(' ');
+
+                TravelerObserver travelerObserver = new TravelerObserver
+                {
+                    UserId = reader["user_id"] != DBNull.Value ? Convert.ToInt32(reader["user_id"]) : 0,
+                    //TravelId = reader["user_id"] != DBNull.Value ? Convert.ToInt32(reader["user_id"]) : 0,
+
+                };
+
+  
+
+
+                users.Add(travelerObserver);
+            }
+
+            connection.Close();
+
+            return users;
+        }
 
         public static List<User> GetAvailableUsers()
         {

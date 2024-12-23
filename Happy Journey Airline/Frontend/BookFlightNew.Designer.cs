@@ -62,7 +62,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkedListBoxService = new System.Windows.Forms.CheckedListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.seatnotxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbFlightClass = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -125,7 +125,7 @@
             // 
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Location = new System.Drawing.Point(649, 318);
-            this.cmbStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbStatus.Margin = new System.Windows.Forms.Padding(4);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(261, 24);
             this.cmbStatus.TabIndex = 143;
@@ -133,7 +133,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(203, 255);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(221, 22);
             this.textBox1.TabIndex = 142;
@@ -225,7 +225,7 @@
             this.panel1.Controls.Add(this.lblCreateFlight);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(-5, -4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1113, 79);
             this.panel1.TabIndex = 132;
@@ -235,7 +235,7 @@
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(17, 18);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(143, 41);
             this.btnBack.TabIndex = 26;
@@ -271,7 +271,7 @@
             this.cmbDeparture.DropDownWidth = 221;
             this.cmbDeparture.FormattingEnabled = true;
             this.cmbDeparture.Location = new System.Drawing.Point(203, 135);
-            this.cmbDeparture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbDeparture.Margin = new System.Windows.Forms.Padding(4);
             this.cmbDeparture.Name = "cmbDeparture";
             this.cmbDeparture.Size = new System.Drawing.Size(275, 24);
             this.cmbDeparture.TabIndex = 130;
@@ -293,7 +293,7 @@
             this.btnCreate.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnCreate.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.Location = new System.Drawing.Point(887, 720);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(172, 47);
             this.btnCreate.TabIndex = 128;
@@ -304,7 +304,7 @@
             // txtPrice
             // 
             this.txtPrice.Location = new System.Drawing.Point(235, 331);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(221, 22);
             this.txtPrice.TabIndex = 127;
@@ -345,7 +345,7 @@
             // txtCapacity
             // 
             this.txtCapacity.Location = new System.Drawing.Point(653, 254);
-            this.txtCapacity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCapacity.Margin = new System.Windows.Forms.Padding(4);
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(224, 22);
             this.txtCapacity.TabIndex = 123;
@@ -377,7 +377,7 @@
             this.panel3.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel3.Location = new System.Drawing.Point(-5, 789);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1113, 12);
             this.panel3.TabIndex = 149;
@@ -386,7 +386,7 @@
             // 
             this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
             this.pictureBox1.Location = new System.Drawing.Point(344, 198);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(256, 244);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -412,12 +412,12 @@
             this.label2.TabIndex = 151;
             this.label2.Text = "Seat:";
             // 
-            // textBox2
+            // seatnotxt
             // 
-            this.textBox2.Location = new System.Drawing.Point(633, 579);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(244, 22);
-            this.textBox2.TabIndex = 152;
+            this.seatnotxt.Location = new System.Drawing.Point(633, 579);
+            this.seatnotxt.Name = "seatnotxt";
+            this.seatnotxt.Size = new System.Drawing.Size(244, 22);
+            this.seatnotxt.TabIndex = 152;
             // 
             // label3
             // 
@@ -468,7 +468,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbFlightClass);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.seatnotxt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.checkedListBoxService);
             this.Controls.Add(this.panel3);
@@ -548,7 +548,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.CheckedListBox checkedListBoxService;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox seatnotxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbFlightClass;
         private System.Windows.Forms.Label label4;

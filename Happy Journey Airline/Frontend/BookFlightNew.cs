@@ -265,7 +265,36 @@ namespace Happy_Journey_Airline.Frontend
         private void btnCreate_Click(object sender, EventArgs e)
         {
 
+            // Collect data from the form
+            string destination = cmbDestination.SelectedValue.ToString();
+            string duration = $"{dateDepartureDate.Value} - {dateArrivalDate.Value}";
+            string seatNo = seatnotxt.Text;
+
+            // Collect selected services
+            List<Service> selectedServices = new List<Service>();
+            foreach (var checkedItem in checkedListBoxService.CheckedItems)
+            {
+                Service service = new Service { ServiceName = checkedItem.ToString() };
+                selectedServices.Add(service);
+            }
+
+            string status = cmbStatus.SelectedItem.ToString();
+            int flightClassId = cmbFlightClass.SelectedIndex; // Assuming index maps to a valid ID
+            int flightId = this.flightID; // Already set in the constructor
+            String flightNo = (textBox1.Text); // Flight number from the form
+                                                     //int paymentId = int.Parse(txtPaymentId.Text); // Payment ID from a text box
+                                                     //  int subscriptionId = int.Parse(txtSubscriptionId.Text); // Subscription ID from a text box
+            int travelerId = (int)userComboxUser.SelectedValue; // Traveler ID from the combo box
+
+            // Call the static method to add the booking
+            Administrator.addBooking(destination, duration, seatNo, selectedServices, status, flightClassId, flightId, flightNo, travelerId);
+
+
+
+        
+    
         }
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
