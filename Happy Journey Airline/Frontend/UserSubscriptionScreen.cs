@@ -26,7 +26,7 @@ namespace Happy_Journey_Airline
         private void paybtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new PaymentScreen().Show();
+            //new PaymentScreen().Show();
         }
     }
 }

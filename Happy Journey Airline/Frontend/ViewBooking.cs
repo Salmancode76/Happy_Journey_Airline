@@ -17,6 +17,12 @@ namespace Happy_Journey_Airline.Frontend
         public ViewBookFlight()
         {
             InitializeComponent();
+
+            if (GlobalUser.LoggedInUser.Role == "Traveler")
+            {
+                btnFilterFlights.Hide();
+
+            }
             loadGridFlight();
         }
 
@@ -33,7 +39,21 @@ namespace Happy_Journey_Airline.Frontend
             {
                 this.Hide();
                 new adminDashboard().Show();
-           }
+            }
+            else if (GlobalUser.LoggedInUser.Role == "Employer")
+            {
+                this.Hide();
+                new EmployeeDashboard().Show();
+            }
+            else
+            {
+
+                this.Hide();
+                new UserHomeScreen().Show();
+            }
+
+
+            
         }
 
         private void ViewBookFlight_Load(object sender, EventArgs e)
@@ -66,6 +86,7 @@ namespace Happy_Journey_Airline.Frontend
 
         private void btnBook_Click(object sender, EventArgs e)
         {
+            
             if (gridFlight.SelectedCells.Count > 0)
             {
                 var selectedCell = gridFlight.SelectedCells[0];
@@ -87,14 +108,23 @@ namespace Happy_Journey_Airline.Frontend
                 var updateFlightForm = new BookFlightNew(
                     flightID, flightNo, capacity, status, departure, destination,
                     departureTime, arrivalTime, departureDate, arrivalDate, price);
+               
 
                 updateFlightForm.Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Please select a flight to update.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a flight.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+             
+        }
+
+        private void btnFilterFlights_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            new AdminBookings().Show();
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Happy_Journey_Airline
 {
     public class User
     {
-        protected int userId;
+        public int userId;
         protected string firstName;
         protected string lastName;
         protected int age;
@@ -214,7 +214,7 @@ namespace Happy_Journey_Airline
                     }
                     else
                     {
-                        new UserHomeScreen().Show();  // Assuming Traveler also goes to BookFlight page
+                        new UserHomeScreen().Show();  
                     }
 
                     return u1;

@@ -163,12 +163,6 @@
     <Compile Include="Frontend\adminSubscriptionsScreen.Designer.cs">
       <DependentUpon>adminSubscriptionsScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frontend\BookFlight.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frontend\BookFlight.Designer.cs">
-      <DependentUpon>BookFlight.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frontend\CreateFlight.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +198,12 @@
     </Compile>
     <Compile Include="Frontend\EmployeeDashboard.Designer.cs">
       <DependentUpon>EmployeeDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\UpdateBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\UpdateBooking.Designer.cs">
+      <DependentUpon>UpdateBooking.cs</DependentUpon>
     </Compile>
     <Compile Include="Frontend\SearchFlights.cs">
       <SubType>Form</SubType>
@@ -359,9 +359,6 @@
     <EmbeddedResource Include="Frontend\adminSubscriptionsScreen.resx">
       <DependentUpon>adminSubscriptionsScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frontend\BookFlight.resx">
-      <DependentUpon>BookFlight.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frontend\CreateFlight.resx">
       <DependentUpon>CreateFlight.cs</DependentUpon>
     </EmbeddedResource>
@@ -379,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\EmployeeDashboard.resx">
       <DependentUpon>EmployeeDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\UpdateBooking.resx">
+      <DependentUpon>UpdateBooking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\SearchFlights.resx">
       <DependentUpon>SearchFlights.cs</DependentUpon>

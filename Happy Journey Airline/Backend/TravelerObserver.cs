@@ -30,6 +30,12 @@ namespace Happy_Journey_Airline
             get { return traveler_id; }
             set { traveler_id = value; }
         }
+        public int User_id
+        {
+            get { return user_id; }
+            set { user_id = value; }
+        }
+     
 
 
         public TravelerObserver(string dbConnection)
@@ -51,6 +57,7 @@ namespace Happy_Journey_Airline
         public int PassportNo { get; set; }
 
         public string FullName => $"{firstName} {lastName}";
+
 
         public override string ToString()
         {
