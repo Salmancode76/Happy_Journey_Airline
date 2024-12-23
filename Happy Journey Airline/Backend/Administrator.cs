@@ -1306,5 +1306,37 @@ namespace Happy_Journey_Airline
             
             return admins;
         }
+
+        public  List<Service> GetAllService()
+        {
+            List<Service> services = new List<Service>();
+            string query = "SELECT * FROM Service";
+            SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Service service = new Service()
+                {
+                    ServiceId = reader.GetInt32(0),
+                    ServiceName = reader.GetString(1),
+                   // price = reader.GetDouble(2),
+                   // Description = reader.GetString(3),
+
+                };   
+
+
+                services.Add(service);
+            }
+            DBManager.getInstance().CloseConnection();
+
+
+
+
+            return services;
+
+
+        }
+
     }
 }

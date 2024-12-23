@@ -32,7 +32,7 @@ namespace Happy_Journey_Airline
         private void bookingbtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new AdminBookings().Show();
+            new ViewBookFlight().Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

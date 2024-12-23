@@ -64,7 +64,7 @@
             // Lnametxt
             // 
             this.Lnametxt.Location = new System.Drawing.Point(739, 134);
-            this.Lnametxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Lnametxt.Margin = new System.Windows.Forms.Padding(4);
             this.Lnametxt.Name = "Lnametxt";
             this.Lnametxt.Size = new System.Drawing.Size(236, 22);
             this.Lnametxt.TabIndex = 131;
@@ -85,7 +85,7 @@
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(1, 543);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1077, 16);
             this.panel2.TabIndex = 129;
@@ -97,7 +97,7 @@
             this.panel1.Controls.Add(this.lblcreate);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(0, -6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1079, 79);
             this.panel1.TabIndex = 128;
@@ -108,7 +108,7 @@
             this.btnback.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnback.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnback.Location = new System.Drawing.Point(21, 21);
-            this.btnback.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnback.Margin = new System.Windows.Forms.Padding(4);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(143, 41);
             this.btnback.TabIndex = 26;
@@ -131,7 +131,7 @@
             // txtbalance
             // 
             this.txtbalance.Location = new System.Drawing.Point(731, 258);
-            this.txtbalance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbalance.Margin = new System.Windows.Forms.Padding(4);
             this.txtbalance.Name = "txtbalance";
             this.txtbalance.Size = new System.Drawing.Size(236, 22);
             this.txtbalance.TabIndex = 127;
@@ -152,7 +152,7 @@
             this.btnSave.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSave.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(864, 478);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(172, 47);
             this.btnSave.TabIndex = 125;
@@ -162,8 +162,9 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(739, 204);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(236, 22);
             this.dateTimePicker1.TabIndex = 124;
@@ -183,7 +184,7 @@
             // 
             this.RoleCB.FormattingEnabled = true;
             this.RoleCB.Location = new System.Drawing.Point(248, 395);
-            this.RoleCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RoleCB.Margin = new System.Windows.Forms.Padding(4);
             this.RoleCB.Name = "RoleCB";
             this.RoleCB.Size = new System.Drawing.Size(236, 24);
             this.RoleCB.TabIndex = 122;
@@ -203,7 +204,7 @@
             // phontxt
             // 
             this.phontxt.Location = new System.Drawing.Point(248, 334);
-            this.phontxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.phontxt.Margin = new System.Windows.Forms.Padding(4);
             this.phontxt.Name = "phontxt";
             this.phontxt.Size = new System.Drawing.Size(236, 22);
             this.phontxt.TabIndex = 120;
@@ -224,7 +225,7 @@
             this.Femalerb.AutoSize = true;
             this.Femalerb.Font = new System.Drawing.Font("Sitka Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Femalerb.Location = new System.Drawing.Point(321, 265);
-            this.Femalerb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Femalerb.Margin = new System.Windows.Forms.Padding(4);
             this.Femalerb.Name = "Femalerb";
             this.Femalerb.Size = new System.Drawing.Size(77, 24);
             this.Femalerb.TabIndex = 118;
@@ -237,7 +238,7 @@
             this.Malerb.AutoSize = true;
             this.Malerb.Font = new System.Drawing.Font("Sitka Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Malerb.Location = new System.Drawing.Point(248, 265);
-            this.Malerb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Malerb.Margin = new System.Windows.Forms.Padding(4);
             this.Malerb.Name = "Malerb";
             this.Malerb.Size = new System.Drawing.Size(62, 24);
             this.Malerb.TabIndex = 117;
@@ -259,7 +260,7 @@
             // emailtxt
             // 
             this.emailtxt.Location = new System.Drawing.Point(731, 334);
-            this.emailtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailtxt.Margin = new System.Windows.Forms.Padding(4);
             this.emailtxt.Name = "emailtxt";
             this.emailtxt.Size = new System.Drawing.Size(236, 22);
             this.emailtxt.TabIndex = 115;
@@ -278,7 +279,7 @@
             // passtxt
             // 
             this.passtxt.Location = new System.Drawing.Point(731, 384);
-            this.passtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passtxt.Margin = new System.Windows.Forms.Padding(4);
             this.passtxt.Name = "passtxt";
             this.passtxt.Size = new System.Drawing.Size(236, 22);
             this.passtxt.TabIndex = 113;
@@ -297,7 +298,7 @@
             // usertxt
             // 
             this.usertxt.Location = new System.Drawing.Point(259, 203);
-            this.usertxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.usertxt.Margin = new System.Windows.Forms.Padding(4);
             this.usertxt.Name = "usertxt";
             this.usertxt.Size = new System.Drawing.Size(236, 22);
             this.usertxt.TabIndex = 111;
@@ -316,7 +317,7 @@
             // Fnametxt
             // 
             this.Fnametxt.Location = new System.Drawing.Point(248, 134);
-            this.Fnametxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Fnametxt.Margin = new System.Windows.Forms.Padding(4);
             this.Fnametxt.Name = "Fnametxt";
             this.Fnametxt.Size = new System.Drawing.Size(236, 22);
             this.Fnametxt.TabIndex = 109;
@@ -336,7 +337,7 @@
             // 
             this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
             this.pictureBox1.Location = new System.Drawing.Point(387, 127);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(256, 244);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -384,7 +385,7 @@
             this.Controls.Add(this.lblfname);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UpdateUser";
             this.Text = "UpdateUser";
             this.Load += new System.EventHandler(this.UpdateUser_Load);

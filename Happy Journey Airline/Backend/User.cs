@@ -12,6 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using BCrypt.Net;
 using System.Text.RegularExpressions;
 using Happy_Journey_Airline.Backend;
+using Happy_Journey_Airline.Frontend;
 
 namespace Happy_Journey_Airline
 {
@@ -31,6 +32,7 @@ namespace Happy_Journey_Airline
         protected double balance;
         protected static List<User> users = new List<User>();
 
+   
         public User()
         {
         }
@@ -49,6 +51,11 @@ namespace Happy_Journey_Airline
             this.gender = gender;
             this.dob = dob;
             this.balance = balance;
+
+        }
+        public string DisplayText
+        {
+            get { return $"{UserId} - {Username}"; }
         }
 
         public int UserId { get; set; }
@@ -92,7 +99,12 @@ namespace Happy_Journey_Airline
 
         public string PhoneNo { get; set; }
 
-        public string Role { get; set; }
+        public string Role
+        {
+            get { return role; } 
+            set { role = value; } 
+        }
+
 
         public bool IsAdmin => role.Equals("Admin", StringComparison.OrdinalIgnoreCase);
 
@@ -198,7 +210,7 @@ namespace Happy_Journey_Airline
                     }
                     else if (u1.role == "Employer")
                     {
-                        new AdminBookFlight().Show();
+                        new EmployeeDashboard().Show();
                     }
                     else
                     {
@@ -302,6 +314,7 @@ namespace Happy_Journey_Airline
                     // Log or show the error for debugging
                     Console.WriteLine("Error inserting into Employer table: " + ex.Message);
                 }
+
 
             } else if (role == "Admin")
             {
@@ -808,12 +821,14 @@ namespace Happy_Journey_Airline
 
         }
 
+    
 
 
 
 
     }
-   
+
+
 
 }
 

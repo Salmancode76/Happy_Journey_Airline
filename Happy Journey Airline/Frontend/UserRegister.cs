@@ -97,13 +97,13 @@ namespace Happy_Journey_Airline
 
             User u = new User();
 
+
+          
+
+                u.Register(fname, lname, age, Email, username, pass, role, phone, Gender, Dob);
+         
          
             
-            
-         u.Register(fname, lname, age, Email, username, pass, role, phone, Gender, Dob);
-
-            this.Hide();
-            new UserHomeScreen().Show();
 
 
             
