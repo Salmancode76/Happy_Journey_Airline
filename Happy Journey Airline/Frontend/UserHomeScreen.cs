@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Happy_Journey_Airline.Backend;
+using Happy_Journey_Airline.Frontend;
 
 namespace Happy_Journey_Airline
 {
@@ -19,6 +21,7 @@ namespace Happy_Journey_Airline
 
         private void btnback_Click(object sender, EventArgs e)
         {
+           // GlobalUser.LoggedInUser = null;
             this.Hide();
             new logincs().Show();
         }
@@ -26,7 +29,7 @@ namespace Happy_Journey_Airline
         private void btnBookFlight_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new BookFlight().Show();
+            new ViewBookFlight().Show();
         }
 
         private void btnSubscribe_Click(object sender, EventArgs e)

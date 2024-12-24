@@ -40,66 +40,103 @@ namespace Happy_Journey_Airline
             this.administratorId = userId;
         }
 
-        public void addBooking(string destination, string duration, string seatNo, List<Service> services, string status, int flightClassId, int flightId, int flightNo, int paymentId, int subscriptionId, int travelerId)
+
+        public static void addBooking(string destination, string duration, string seatNo, List<Service> services, string status, int flightClassId, int flightId, string flightNo, int travelerId, string passportNo, int? paymentId = null)
         {
             List<Booking> bookings = new List<Booking>();
 
-            int bookingId = 0; //To store the newly created Booking ID
+            // Log input parameters for debugging
+            Console.WriteLine($"FlightClassId: {flightClassId}, FlightId: {flightId}, SeatNo: {seatNo}, Status: {status}, TravelerId: {travelerId}");
+
+            SqlConnection connection = null;
+            SqlTransaction transaction = null;
 
             try
             {
-                Booking booking = new Booking(destination, duration, flightClassId, flightId, flightNo, paymentId, seatNo, services, status, subscriptionId, travelerId);
+                // Open the database connection
+                connection = DBManager.getInstance().OpenConnection();
+                transaction = connection.BeginTransaction();
 
+                // Create a new booking object
+                Booking booking = new Booking(destination, duration, flightClassId, flightId, flightNo, seatNo, services, status, travelerId);
                 bookings.Add(booking);
 
-                //SQL query to insert into booking and get the booking id
-                string query = "INSERT INTO Booking (destination, duration, flight_class_id, flight_id, flight_no, payment_id, seat_no, status, subscription_id, traveler_id) " +
-                               "OUTPUT INSERTED.booking_id VALUES (@Destination, @Duration, @FlightClassId, @FlightId, @FlightNo, @PaymentId, @SeatNo, @Status, @SubscriptionId, @TravelerId)";
+                // SQL query to insert into booking and get the booking id
+                string query = @"
+            INSERT INTO [dbo].[Booking]
+            ([flight_class_id], [flight_id], [seat_no], [traveler_id], [passportNo])
+            VALUES
+            (@FlightClassId, @FlightId, @SeatNo, @TravelerId,@passportNo);
+            SELECT SCOPE_IDENTITY();";  // This will return the ID of the newly inserted booking
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+                // Log the query for debugging
+                Console.WriteLine("Executing SQL Query: " + query);
 
-                command.Parameters.AddWithValue("@destination", booking.Destination);
-                command.Parameters.AddWithValue("@duration", booking.Duration);
-                command.Parameters.AddWithValue("@flight_class_id", booking.FlightClass.FlightClassId);
-                command.Parameters.AddWithValue("@flight_id", booking.Flight.FlightId);
-                command.Parameters.AddWithValue("@flight_no", booking.Flight.FlightNo);
-                command.Parameters.AddWithValue("@payment_id", booking.Payment.PaymentId);
-                command.Parameters.AddWithValue("@seat_no", booking.SeatNo);
-                command.Parameters.AddWithValue("@status", booking.Status);
-                command.Parameters.AddWithValue("@suscription_id", booking.Subscription.SubscriptionId);
-                command.Parameters.AddWithValue("@traveler_id", booking.Traveler.UserId);
+                SqlCommand command = new SqlCommand(query, connection, transaction);
 
-                //Execute the command and get the newly created booking id
-                bookingId = (int)command.ExecuteScalar(); //Using Execute Scalar to get the booking id
+                // Add parameters for the booking
+                command.Parameters.AddWithValue("@FlightClassId", flightClassId);
+                command.Parameters.AddWithValue("@FlightId", flightId);
+                command.Parameters.AddWithValue("@SeatNo", seatNo);
+                command.Parameters.AddWithValue("@TravelerId", travelerId);
+                command.Parameters.AddWithValue("@passportNo", passportNo);
 
-                //Insert into Services into the bookingService table
+                // Use DBNull.Value for null paymentId if provided
+
+                // Execute the command and get the newly created booking id
+                var bookingId = command.ExecuteScalar();
+
+                Console.WriteLine($"Booking created successfully with ID: {bookingId}");
+
+                // Insert services if any
                 if (services != null && services.Count > 0)
                 {
                     foreach (var service in services)
                     {
-                        string serviceQuery = "INSERT INTO BookingService (booking_id, service_id) VALUES (@bookingId, @serviceId)";
+                        string serviceQuery = "INSERT INTO [dbo].[Service Booking] (service_id, booking_id) VALUES (@ServiceId, @BookingId)";
 
-                        SqlCommand cmd = new SqlCommand(serviceQuery, DBManager.getInstance().OpenConnection());
+                        Console.WriteLine(service.ServiceName);
 
-                        cmd.Parameters.AddWithValue("@booking_id", bookingId);
-                        cmd.Parameters.AddWithValue("@service_id", service.ServiceId);
+                        SqlCommand serviceCmd = new SqlCommand(serviceQuery, connection, transaction);
+                        serviceCmd.Parameters.AddWithValue("@BookingId", bookingId);
+                        serviceCmd.Parameters.AddWithValue("@ServiceId", service.ServiceId);
 
-                        cmd.ExecuteNonQuery();
+                        serviceCmd.ExecuteNonQuery();
                     }
                 }
+
+                // Commit the transaction
+                MessageBox.Show("BOOKED SUCCESSFULLY!",
+                   "Success",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Information);
+                transaction.Commit();
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                throw new Exception("An error occurred while adding new booking: " + ex.Message);
+                // Log SQL errors and roll back the transaction if something goes wrong
+                Console.WriteLine($"SQL Error: {ex.Message}");
+                Console.WriteLine(ex.StackTrace);
+
+                // Rollback the transaction if an error occurs
+                if (transaction != null)
+                {
+                    transaction.Rollback();
+                }
+
+                throw;
             }
             finally
             {
-                //Ensure the database connection is closed
-                DBManager.getInstance().CloseConnection();
+                // Ensure the connection is closed properly
+                if (connection != null)
+                {
+                    connection.Close();
+                }
             }
         }
 
-        public static void  addService(string serviceName, string description, double price)
+        public static void addService(string serviceName, string description, double price)
         {
             try
             {
@@ -143,9 +180,9 @@ namespace Happy_Journey_Airline
 
                 //SQL tquery to insert the flight
                 string query = "INSERT INTO Flight (flight_no, capacity,status, departure, destination, departure_time, arrival_Time, departure_date, arrival_date, price) VALUES (@flightNo, @capacity, @status,@departure, @destination, @departureTime, @arrivalTime, @departureDate, @arrivalDate, @price)";
-                
+
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
-                
+
                 command.Parameters.AddWithValue("@flightNo", flight.FlightNo);
                 command.Parameters.AddWithValue("@capacity", flight.Capacity);
                 command.Parameters.AddWithValue("@status", flight.Status);
@@ -213,20 +250,20 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public static void addAirport(int cityID,string airportName)
+        public static void addAirport(int cityID, string airportName)
         {
             //Validate input parameters
-    
+
 
             if (string.IsNullOrWhiteSpace(airportName))
             {
                 throw new ArgumentException("Airport name must not be empty");
             }
 
-            try 
+            try
             {
                 //Create new airport object
-                Airport airport = new Airport( airportName,cityID);
+                Airport airport = new Airport(airportName, cityID);
 
                 string query = "INSERT INTO [dbo].[Airport] ([city_id], [airport_name]) VALUES (@cityId, @airportName)";
 
@@ -234,8 +271,8 @@ namespace Happy_Journey_Airline
                 SqlCommand cmd = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
                 // Add parameters to the command
-                cmd.Parameters.AddWithValue("@cityId", cityID); 
-                cmd.Parameters.AddWithValue("@airportName", airportName);  
+                cmd.Parameters.AddWithValue("@cityId", cityID);
+                cmd.Parameters.AddWithValue("@airportName", airportName);
 
                 // Execute the query
                 cmd.ExecuteNonQuery();
@@ -244,7 +281,7 @@ namespace Happy_Journey_Airline
          "Success",
          MessageBoxButtons.OK,
          MessageBoxIcon.Information);
-            
+
             }
             catch (Exception ex)
             {
@@ -257,7 +294,7 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public void addCity(int CountryID ,string cityName)
+        public void addCity(int CountryID, string cityName)
         {
             //Validate input parameter
             if (string.IsNullOrWhiteSpace(cityName))
@@ -325,7 +362,7 @@ namespace Happy_Journey_Airline
             {
                 //Create a new country object
                 Country country = new Country(countryName, region);
-            
+
 
                 //SQL query to insert into country table
                 string query = "INSERT INTO [dbo].[Country] ([region],[country_name]) VALUES ( @region,@countryName)";
@@ -357,7 +394,7 @@ namespace Happy_Journey_Airline
                 //Ensure the database connection is closed
                 DBManager.getInstance().CloseConnection();
             }
-            
+
         }
 
         public static List<Country> GetAllCountries()
@@ -366,7 +403,7 @@ namespace Happy_Journey_Airline
 
             String stmt = "SELECT [country_id],[region] ,[country_name]  FROM [dbo].[Country]";
 
-            SqlCommand cmd = new SqlCommand(stmt, DBManager.getInstance().OpenConnection());  
+            SqlCommand cmd = new SqlCommand(stmt, DBManager.getInstance().OpenConnection());
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -396,7 +433,7 @@ namespace Happy_Journey_Airline
 
             String query = "SELECT * FROM [dbo].[Airport]";
 
-            SqlCommand cmd = new SqlCommand(query, DBManager.getInstance().OpenConnection()); 
+            SqlCommand cmd = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -413,7 +450,7 @@ namespace Happy_Journey_Airline
             }
             reader.Close();
             return airports;
-            
+
 
         }
         public static List<City> GetAllcities()
@@ -543,8 +580,8 @@ namespace Happy_Journey_Airline
                 var emailAddress = new System.Net.Mail.MailAddress(email);
                 return emailAddress.Address == email;
             }
-            catch 
-            { 
+            catch
+            {
                 return false;
             }
         }
@@ -561,8 +598,8 @@ namespace Happy_Journey_Airline
                 throw new ArgumentException("First name cannot be empty.");
             }
 
-            if(string.IsNullOrWhiteSpace(lastName))
-            { 
+            if (string.IsNullOrWhiteSpace(lastName))
+            {
                 throw new ArgumentException("Last name cannot be empty.");
             }
 
@@ -571,13 +608,13 @@ namespace Happy_Journey_Airline
                 throw new ArgumentException("Age must be positive.", nameof(age));
             }
 
-            if (string.IsNullOrWhiteSpace (email) || !isValidEmail(email))
+            if (string.IsNullOrWhiteSpace(email) || !isValidEmail(email))
             {
                 throw new ArgumentException("Invalid email address.", nameof(email));
             }
 
             if (string.IsNullOrWhiteSpace(username))
-            { 
+            {
                 throw new ArgumentException("Username cannot be empty.", nameof(username));
             }
 
@@ -611,7 +648,7 @@ namespace Happy_Journey_Airline
         {
             //Invoke user input validation method
             userInputValidation(userId, firstName, lastName, age, email, username, password, role, phoneNo, gender, dob, balance);
-            
+
             try
             {
                 string query = "UPDATE Users SET FirstName = @FirstName, LastName = @LastName, Age = @Age, Email = @Email, Username = @Username, Password = @Password, Role = @Role, PhoneNo = @PhoneNo, Gender = @Gender, DOB = @DOB, Balance = @Balance WHERE UserId = @User Id";
@@ -624,7 +661,7 @@ namespace Happy_Journey_Airline
                     command.Parameters.AddWithValue("@Age", age);
                     command.Parameters.AddWithValue("@Email", email);
                     command.Parameters.AddWithValue("@Username", username);
-                    command.Parameters.AddWithValue("@Password", password); 
+                    command.Parameters.AddWithValue("@Password", password);
                     command.Parameters.AddWithValue("@Role", role);
                     command.Parameters.AddWithValue("@PhoneNo", phoneNo);
                     command.Parameters.AddWithValue("@Gender", gender);
@@ -703,31 +740,31 @@ namespace Happy_Journey_Airline
 
         public static void updateFlight(int flightId, String flightNo, int capacity, string status, string departure, string destination, DateTime departureTime, DateTime arrivalTime, DateTime departureDate, DateTime arrivalDate, decimal price)
         {
- 
+
 
             try
             {
                 string query = "UPDATE Flight SET flight_no = @flightNo, capacity = @capacity, status = @status, departure = @departure, destination = @destination, departure_time = @departureTime, arrival_time = @arrivalTime, departure_date = @departureDate, arrival_date = @arrivalDate, price = @price WHERE flight_id = @flightId";
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
-                
-                    command.Parameters.AddWithValue("@flightId", flightId);
-                    command.Parameters.AddWithValue("@flightNo", flightNo);
-                    command.Parameters.AddWithValue("@capacity", capacity);
-                    command.Parameters.AddWithValue("@status", status);
-                    command.Parameters.AddWithValue("@departure", departure);
-                    command.Parameters.AddWithValue("@destination", destination);
-                    command.Parameters.AddWithValue("@departureTime", departureTime);
-                    command.Parameters.AddWithValue("@arrivalTime", arrivalTime);
-                    command.Parameters.AddWithValue("@departureDate", departureDate);
-                    command.Parameters.AddWithValue("@arrivalDate", arrivalDate);
-                    command.Parameters.AddWithValue("@price", price);
 
-                    int rowsAffected = command.ExecuteNonQuery();
+                command.Parameters.AddWithValue("@flightId", flightId);
+                command.Parameters.AddWithValue("@flightNo", flightNo);
+                command.Parameters.AddWithValue("@capacity", capacity);
+                command.Parameters.AddWithValue("@status", status);
+                command.Parameters.AddWithValue("@departure", departure);
+                command.Parameters.AddWithValue("@destination", destination);
+                command.Parameters.AddWithValue("@departureTime", departureTime);
+                command.Parameters.AddWithValue("@arrivalTime", arrivalTime);
+                command.Parameters.AddWithValue("@departureDate", departureDate);
+                command.Parameters.AddWithValue("@arrivalDate", arrivalDate);
+                command.Parameters.AddWithValue("@price", price);
 
-                    if (rowsAffected == 0)
-                    {
-                        throw new Exception("No flight found with the specified Flight ID.");
+                int rowsAffected = command.ExecuteNonQuery();
+
+                if (rowsAffected == 0)
+                {
+                    throw new Exception("No flight found with the specified Flight ID.");
                 }
                 else
                 {
@@ -745,7 +782,7 @@ namespace Happy_Journey_Airline
                 DBManager.getInstance().CloseConnection();
             }
         }
-        
+
         public void bookingValidation(int bookingId, string destination, string duration, int seatNo, string status, int flightClassId, int flightId, int flightNo, int paymentId, int subscriptionId, int travelerId)
         {
             //Validate input Parameter
@@ -871,7 +908,7 @@ namespace Happy_Journey_Airline
 
         public void updateAirport(int airportId, string airportCode, string airportName)
         {
-            if(airportId <= 0)
+            if (airportId <= 0)
             {
                 throw new ArgumentException();
             }
@@ -954,8 +991,8 @@ namespace Happy_Journey_Airline
                 throw new ArgumentException("Country ID must be positive");
             }*/
 
-            if (string.IsNullOrWhiteSpace (countryName))
-            { 
+            if (string.IsNullOrWhiteSpace(countryName))
+            {
                 throw new ArgumentException("Country name cannot be emoty");
             }
 
@@ -974,7 +1011,7 @@ namespace Happy_Journey_Airline
                 //command.Parameters.AddWithValue("@country_id", countryId);
                 command.Parameters.AddWithValue("@country_name", countryName);
                 command.Parameters.AddWithValue("@region", region);
-                
+
                 command.ExecuteNonQuery();
 
             }
@@ -1051,7 +1088,7 @@ namespace Happy_Journey_Airline
             return service; // Return the service object (or null if not found)
         }
 
-      
+
 
         public static void deleteService(int serviceId)
         {
@@ -1063,8 +1100,8 @@ namespace Happy_Journey_Airline
 
                 command.Parameters.AddWithValue("@serviceId", serviceId);
 
-                command.ExecuteNonQuery(); 
-              
+                command.ExecuteNonQuery();
+
             }
             catch (Exception ex)
             {
@@ -1099,15 +1136,15 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public void deleteBooking(int bookingId)
+        public static void deleteBooking(int bookingId)
         {
             try
             {
-                string query = "DELETE FROM Booking WHERE booking_id = @bookingId";
+                string query = "DELETE FROM [dbo].[Booking] WHERE booking_id = @bookingId";
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
-                command.Parameters.AddWithValue("@booking_id", bookingId);
+                command.Parameters.AddWithValue("@bookingId", bookingId);
 
                 command.ExecuteNonQuery();
 
@@ -1120,6 +1157,30 @@ namespace Happy_Journey_Airline
             {
                 DBManager.getInstance().CloseConnection();
             }
+        }
+        public static void DeleteBookingService(int bookingId)
+        {
+            try
+            {
+                string query = "DELETE FROM [dbo].[Service Booking] WHERE booking_id = @bookingId";
+                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+
+                command.Parameters.AddWithValue("@bookingId", bookingId);
+
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while deleting the booking: " + ex.Message);
+            }
+            finally
+            {
+                DBManager.getInstance().CloseConnection();
+            }
+
+        
+    
         }
 
         public void postDetailsForUpcomingFlights(DataGridView data)
@@ -1306,6 +1367,7 @@ namespace Happy_Journey_Airline
             
             return admins;
         }
+
 
         public  List<Service> GetAllService()
         {

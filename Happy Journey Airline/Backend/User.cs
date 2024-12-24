@@ -18,7 +18,7 @@ namespace Happy_Journey_Airline
 {
     public class User
     {
-        protected int userId;
+        public int userId;
         protected string firstName;
         protected string lastName;
         protected int age;
@@ -214,7 +214,7 @@ namespace Happy_Journey_Airline
                     }
                     else
                     {
-                        new UserHomeScreen().Show();  // Assuming Traveler also goes to BookFlight page
+                        new UserHomeScreen().Show();  
                     }
 
                     return u1;
@@ -612,6 +612,37 @@ namespace Happy_Journey_Airline
                 return users;
             }
 
+        public static List<TravelerObserver> GetAllTraveler()
+        {
+            List<TravelerObserver> users = new List<TravelerObserver>();
+
+            string stmt = "SELECT * FROM [dbo].[Traveler]";
+            SqlConnection connection = DBManager.getInstance().OpenConnection();
+            SqlCommand cmd = new SqlCommand(stmt, connection);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+
+                TravelerObserver travelerObserver = new TravelerObserver
+                {
+                    UserId = reader["user_id"] != DBNull.Value ? Convert.ToInt32(reader["user_id"]) : 0,
+                    traveler_id = reader["traveler_id"] != DBNull.Value ? Convert.ToInt32(reader["traveler_id"]) : 0,
+
+                };
+
+  
+
+
+                users.Add(travelerObserver);
+            }
+
+            connection.Close();
+
+            return users;
+        }
 
         public static List<User> GetAvailableUsers()
         {

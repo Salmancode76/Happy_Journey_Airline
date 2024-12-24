@@ -118,10 +118,11 @@
             this.btnFilterFlights.Location = new System.Drawing.Point(719, 280);
             this.btnFilterFlights.Margin = new System.Windows.Forms.Padding(4);
             this.btnFilterFlights.Name = "btnFilterFlights";
-            this.btnFilterFlights.Size = new System.Drawing.Size(209, 39);
+            this.btnFilterFlights.Size = new System.Drawing.Size(220, 40);
             this.btnFilterFlights.TabIndex = 96;
-            this.btnFilterFlights.Text = "Delete Flight";
+            this.btnFilterFlights.Text = "Delete/Update Booking";
             this.btnFilterFlights.UseVisualStyleBackColor = false;
+            this.btnFilterFlights.Click += new System.EventHandler(this.btnFilterFlights_Click);
             // 
             // gridFlight
             // 

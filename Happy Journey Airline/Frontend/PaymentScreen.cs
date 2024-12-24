@@ -8,16 +8,46 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Happy_Journey_Airline.Backend;
+
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Happy_Journey_Airline.Frontend;
 
 namespace Happy_Journey_Airline
 {
     public partial class PaymentScreen : Form
     {
-        public PaymentScreen()
+        private string destination;
+        private string duration;
+        private string seatNo;
+        private List<Service> services;
+        private string status;
+        private int flightClassId;
+        private int flightId;
+        private string flightNo;
+        private int travelerId;
+        private string passportNo;
+        public PaymentScreen(string destination, string duration, string seatNo, List<Service> services, string status, int flightClassId, int flightId, string flightNo, int travelerId, string passportNo, int? paymentId = null)
         {
             InitializeComponent();
             lblmsg.Text = " ";
             lblmsg.ForeColor = Color.Red;
+
+
+
+
+
+
+            this.destination = destination;
+            this.duration = duration;
+            this.seatNo = seatNo;
+            this.services = services;
+            this.status = status;
+            this.flightClassId = flightClassId;
+            this.flightId = flightId;
+            this.flightNo = flightNo;
+            this.travelerId = travelerId;
+            this.passportNo = passportNo;
         }
 
         private void uNamelbl_Click(object sender, EventArgs e)
@@ -85,7 +115,6 @@ namespace Happy_Journey_Airline
                     return;
                 }
                 CreditCard creditCard = new CreditCard();
-                creditCard.InsertCardDetails(cardHolder, cardNum, expDate, Convert.ToInt32(pin_Cvv));
 
 
 
@@ -102,17 +131,22 @@ namespace Happy_Journey_Airline
                     return;
                 }
                 DebitCard debitCard = new DebitCard();
-                debitCard.InsertCardDetails(cardHolder, cardNum, expDate, Convert.ToInt32(pin_Cvv));
-            }
 
-            else {
+            }
+            if (rbCredit.Checked || rbDebit.Checked)
+            {
+                Administrator.addBooking(destination, duration, seatNo, services, status, flightClassId, flightId, flightNo, travelerId, passportNo);
+
+            }
+            else
+            {
                 lblmsg.Text = "Please select a Card Type";
                 return;
             }
 
             
-            this.Hide();
-            new UserHomeScreen().Show();
+           // this.Hide();
+           // new UserHomeScreen().Show();
         }
 
         private void acctxt_TextChanged(object sender, EventArgs e)
@@ -123,7 +157,7 @@ namespace Happy_Journey_Airline
         private void btnback_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new BookFlight().Show();
+            new ViewBookFlight().Show();
         }
 
         private void rbCredit_CheckedChanged(object sender, EventArgs e)
@@ -134,6 +168,11 @@ namespace Happy_Journey_Airline
         private void rbDebit_CheckedChanged(object sender, EventArgs e)
         {
             lbl.Text = "Pin:";
+        }
+
+        private void PaymentScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

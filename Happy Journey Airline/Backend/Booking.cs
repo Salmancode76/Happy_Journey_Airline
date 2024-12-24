@@ -15,7 +15,7 @@ namespace Happy_Journey_Airline
         private string duration;
         private int flightClassId;
         private int flightId;
-        private int flightNo;
+        private String flightNo;
         private int paymentId;
         private string seatNo;
         private List<Service> services;
@@ -27,7 +27,7 @@ namespace Happy_Journey_Airline
         {
         }
 
-        public Booking(string destination, string duration, int flightClassId, int flightId, int flightNo, int paymentId, string seatNo, List<Service> services, string status, int subscriptionId, int travelerId)
+        public Booking(string destination, string duration, int flightClassId, int flightId, String flightNo, int paymentId, string seatNo, List<Service> services, string status, int subscriptionId, int travelerId)
         {
             this.bookingId = bookingId++;
             this.destination = destination;
@@ -42,6 +42,20 @@ namespace Happy_Journey_Airline
             this.subscriptionId = subscriptionId;
             this.travelerId = travelerId;
         }
+        public Booking(string destination, string duration, int flightClassId, int flightId, String flightNo, string seatNo, List<Service> services, string status, int travelerId)
+        {
+            this.bookingId = bookingId++;
+            this.destination = destination;
+            this.duration = duration;
+            this.flightClassId = flightClassId;
+            this.flightId = flightId;
+            this.flightNo = flightNo;
+            this.seatNo = seatNo;
+            this.services = services;
+            this.status = status;
+            this.travelerId = travelerId;
+        }
+
 
         public string Destination { get; set; }
 
@@ -94,11 +108,7 @@ namespace Happy_Journey_Airline
             Booking bookings;
             try
             { 
-                if (this.flightNo == 0)
-                {
-                    message = "Please select a flight before booking.";
-                    return null;
-                }
+             
 
                 FlightClass flightClass = FlightClass.getFlightClassById(this.flightClassId);
                 if (flightClass == null)

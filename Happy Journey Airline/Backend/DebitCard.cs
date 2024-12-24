@@ -72,7 +72,10 @@ namespace Happy_Journey_Airline
         {
             try
             {
-                string CreditCardInsert = "INSERT INTO [dbo].[Debit Card] (card_number, card_holder, expiration_date, pin) VALUES(@cardNumber, @cardHolder, @expirationDate, @pin)";
+                string CreditCardInsert = @"
+                                            INSERT INTO [dbo].[Debit Card] (card_number, card_holder, expiration_date, pin)
+                                            VALUES (@cardNumber, @cardHolder, @expirationDate, @pin);
+                                            SELECT SCOPE_IDENTITY();"; 
                 SqlCommand cmd = new SqlCommand(CreditCardInsert, DBManager.getInstance().OpenConnection());
                 cmd.Parameters.AddWithValue("@cardNumber", cardNumber);
                 cmd.Parameters.AddWithValue("@cardHolder", cardHolder);

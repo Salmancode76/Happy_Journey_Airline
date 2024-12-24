@@ -28,7 +28,6 @@ namespace Happy_Journey_Airline
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
 

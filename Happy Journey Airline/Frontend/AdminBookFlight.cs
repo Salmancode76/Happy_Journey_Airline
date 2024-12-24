@@ -97,12 +97,12 @@ namespace Happy_Journey_Airline
 
             MessageBox.Show("Data Added Successfully! \n\n Proceeding to Payment");
 
-            BookFlight book;
-            book = new BookFlight();
+            //BookFlight book;
+            //book = new BookFlight();
 
             //I didnt pass any values because some parameters are not same in the booking class
             this.Hide();
-            new PaymentScreen().Show();
+            //new PaymentScreen().Show();
 
         }
 
