@@ -18,11 +18,11 @@ namespace Happy_Journey_Airline.Frontend
         {
             InitializeComponent();
 
-            if (GlobalUser.LoggedInUser.Role == "Traveler")
-            {
-                btnFilterFlights.Hide();
+           // if (GlobalUser.LoggedInUser.Role == "Traveler" || GlobalUser.LoggedInUser == null)
+            //{
+               // btnFilterFlights.Hide();
 
-            }
+            //}
             loadGridFlight();
         }
 

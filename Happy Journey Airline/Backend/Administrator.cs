@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
@@ -89,8 +90,7 @@ namespace Happy_Journey_Airline
                 Console.WriteLine($"Booking created successfully with ID: {bookingId}");
 
                 // Insert services if any
-                if (services != null && services.Count > 0)
-                {
+                
                     foreach (var service in services)
                     {
                         string serviceQuery = "INSERT INTO [dbo].[Service Booking] (service_id, booking_id) VALUES (@ServiceId, @BookingId)";
@@ -103,7 +103,8 @@ namespace Happy_Journey_Airline
 
                         serviceCmd.ExecuteNonQuery();
                     }
-                }
+                
+
 
                 // Commit the transaction
                 MessageBox.Show("BOOKED SUCCESSFULLY!",
@@ -842,69 +843,104 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public void updateBooking(int bookingId, string destination, string duration, int seatNo, List<Service> services, string status, int flightClassId, int flightId, int flightNo, int paymentId, int subscriptionId, int travelerId)
+        public static void updateBooking(int bookingId, string destination, string duration, string seatNo, List<Service> services, string status, int flightClassId, int flightId, string flightNo, int travelerId, string passportNo, int? paymentId = null)
         {
-            //Invoke booking fields validation
-            bookingValidation(bookingId, destination, duration, seatNo, status, flightClassId, flightId, flightNo, paymentId, subscriptionId, travelerId);
+            SqlConnection connection = null;
+            SqlTransaction transaction = null;
+            SqlCommand updateCommand = null;
+            SqlCommand deleteCommand = null;
+            SqlCommand serviceCmd = null;
 
             try
             {
-                //Update the booking details
-                string query = "UPDATE Booking SET destination = @destination, duration = @duration, seat_no = @seatNo, status = @status, flight_class_id = @flightClassId, flight_id = @flightId, payment_id = @paymentId, subscription_id = @subscriptionId, traveler_id = @travelerId WHERE booking_id = @bookingId";
+                // Open the database connection
+                connection = DBManager.getInstance().OpenConnection();
+                transaction = connection.BeginTransaction();
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+                // Update the booking details (adding destination, duration, etc.)
+                string updateQuery = @"UPDATE [dbo].[Booking]
+                              SET [seat_no] = @seatNo,
+                                  [flight_class_id] = @flightClassId,
+                                  [traveler_id] = @travelerId,
+                                  [passportNo] = @passportNo
+                              WHERE [booking_id] = @booking_id";
 
-                command.Parameters.AddWithValue("@booking_id", bookingId);
-                command.Parameters.AddWithValue("@destination", destination);
-                command.Parameters.AddWithValue("@duration", duration);
-                command.Parameters.AddWithValue("@seat_no", seatNo);
-                command.Parameters.AddWithValue("@status", status);
-                command.Parameters.AddWithValue("@flight_class_id", flightClassId);
-                command.Parameters.AddWithValue("@flight_id", flightId);
-                command.Parameters.AddWithValue("@payment_id", paymentId);
-                command.Parameters.AddWithValue("@subsription_id", subscriptionId);
-                command.Parameters.AddWithValue("@traveler_id", travelerId);
+                updateCommand = new SqlCommand(updateQuery, connection, transaction);
+                updateCommand.Parameters.AddWithValue("@booking_id", bookingId);
+                updateCommand.Parameters.AddWithValue("@seatNo", seatNo);
+                updateCommand.Parameters.AddWithValue("@flightClassId", flightClassId);
+                updateCommand.Parameters.AddWithValue("@travelerId", travelerId);
+                updateCommand.Parameters.AddWithValue("@passportNo", passportNo);
 
-                int affectedRow = command.ExecuteNonQuery();
+                int affectedRow = updateCommand.ExecuteNonQuery();
 
                 if (affectedRow == 0)
                 {
                     throw new Exception("No booking found with the specified booking ID.");
                 }
 
-                //Update the booking service table
-                string deleteQuery = "DELETE FROM BookingService WHERE booking_id = @bookingId";
-
-                SqlCommand deleteCommand = new SqlCommand(deleteQuery, DBManager.getInstance().OpenConnection());
-
-                deleteCommand.Parameters.AddWithValue("@booking_id", bookingId);
-
+                // Delete old services before inserting new ones
+                string deleteQuery = "DELETE FROM [dbo].[Service Booking] WHERE booking_id = @bookingId";
+                deleteCommand = new SqlCommand(deleteQuery, connection, transaction);
+                deleteCommand.Parameters.AddWithValue("@bookingId", bookingId);
                 deleteCommand.ExecuteNonQuery();
 
-                //Insert new service
-                string insertQuery = "INSERT INTO BookingService () VALUES ()";
-
-
-                foreach (Service service in services)
+                // Insert new services
+                foreach (var service in services)
                 {
+                    string serviceQuery = "INSERT INTO [dbo].[Service Booking] (service_id, booking_id) VALUES (@ServiceId, @BookingId)";
+                    serviceCmd = new SqlCommand(serviceQuery, connection, transaction);
+                    serviceCmd.Parameters.AddWithValue("@BookingId", bookingId);
+                    serviceCmd.Parameters.AddWithValue("@ServiceId", service.ServiceId);
 
-                    SqlCommand insertCommand = new SqlCommand(insertQuery, DBManager.getInstance().OpenConnection());
-
-                    insertCommand.Parameters.AddWithValue("@booking_id", bookingId);
-                    insertCommand.Parameters.AddWithValue("@service_id", service.ServiceId);
-
-                    insertCommand.ExecuteNonQuery();
+                    serviceCmd.ExecuteNonQuery();
                 }
+
+                // Commit the transaction if everything goes well
+                transaction.Commit();
             }
             catch (Exception ex)
             {
-                throw new Exception("An error occurred while updating the booking: " + ex.Message); ;
+                // If an error occurs, roll back the transaction
+                if (transaction != null && transaction.Connection != null)
+                {
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch (Exception rollbackEx)
+                    {
+                        // Handle rollback failure (log, rethrow, etc.)
+                        throw new Exception("An error occurred during transaction rollback: " + rollbackEx.Message);
+                    }
+                }
+
+                throw new Exception("An error occurred while updating the booking: " + ex.Message);
             }
             finally
             {
-                DBManager.getInstance().CloseConnection();
+                // Ensure that the connection and commands are properly closed/disposed
+                if (serviceCmd != null)
+                {
+                    serviceCmd.Dispose();
+                }
+                if (deleteCommand != null)
+                {
+                    deleteCommand.Dispose();
+                }
+                if (updateCommand != null)
+                {
+                    updateCommand.Dispose();
+                }
+                if (connection != null)
+                {
+                    DBManager.getInstance().CloseConnection();
+                }
             }
         }
+
+
+
 
         public void updateAirport(int airportId, string airportCode, string airportName)
         {
@@ -1398,6 +1434,78 @@ namespace Happy_Journey_Airline
             return services;
 
 
+        }
+        public static List<Flight> GetAllFlights()
+        {
+            List <Flight> flights = new List<Flight>();
+
+
+
+            string stmt = "SELECT*  FROM[dbo].[Flight]";
+
+            DBManager con = DBManager.getInstance();
+            SqlCommand cmd = new SqlCommand(stmt, con.OpenConnection());
+
+
+            SqlDataReader reader = (cmd.ExecuteReader());
+
+
+            while (reader.Read())
+            {
+                Flight flight = new Flight
+                {
+                    FlightId = reader.GetInt32(0),
+                    Departure = reader.GetInt32(1),
+                    Destination = reader.GetInt32(2),
+                    FlightNo = reader.GetString(3),
+                    Capacity = reader.GetInt32(4),
+                    Price = reader.GetDecimal(reader.GetOrdinal("Price")), // Adjusted to GetDecimal
+                    Status = reader.GetString(6),
+                    DepartureTime = reader.GetDateTime(7),
+                    ArrivalTime = reader.GetDateTime(8),
+                    DepartureDate = reader.GetDateTime(9),
+                    ArrivalDate = reader.GetDateTime(10)
+                };
+
+
+
+
+                flights.Add(flight);
+            }
+
+            con.CloseConnection();
+            return flights;
+        }
+        public static List<Service> GetAllServiceByBooking(int bookingID)
+        {
+            List<Service> services = new List<Service>();
+
+            string query = @"SELECT s.service_id, s.service_name, s.description, s.price 
+                     FROM [Service Booking] sb
+                     JOIN [Service] s ON s.service_id = sb.service_id
+                     WHERE sb.booking_id = @bookingID";
+
+            SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+            command.Parameters.AddWithValue("@bookingID", bookingID);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Service service = new Service()
+                {
+                    ServiceId = reader.GetInt32(0),
+                    ServiceName = reader.GetString(1),  
+                    //Description = reader.GetString(2) ,  
+                   // Price = reader.GetDouble(3)      
+                };
+
+                services.Add(service);
+            }
+
+            DBManager.getInstance().CloseConnection();
+
+            return services;
         }
 
     }

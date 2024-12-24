@@ -321,6 +321,7 @@
             this.btnBack.TabIndex = 26;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
             // 
             // lblCreateFlight
             // 
@@ -375,8 +376,9 @@
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(172, 47);
             this.btnCreate.TabIndex = 166;
-            this.btnCreate.Text = "Book";
+            this.btnCreate.Text = "Save";
             this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // txtPrice
             // 
