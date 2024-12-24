@@ -92,5 +92,11 @@ namespace Happy_Journey_Airline
             this.Hide();
             new viewCities().Show();
         }
+
+        private void subscribersScreen_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminSubscribersSubscription().Show();
+        }
     }
 }

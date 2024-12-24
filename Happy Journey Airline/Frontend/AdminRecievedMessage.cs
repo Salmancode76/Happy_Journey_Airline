@@ -39,10 +39,7 @@ namespace Happy_Journey_Airline.Frontend
                     };
                     messages.Add(message);
                 }
-
-
                 RmsgGrid.DataSource = messages;
-
             }
             catch (Exception ex)
             {

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Happy_Journey_Airline.Backend;
 using Happy_Journey_Airline.Frontend;
 
 namespace Happy_Journey_Airline
@@ -19,15 +20,13 @@ namespace Happy_Journey_Airline
         public AdminMessage()
         {
             InitializeComponent();
-            this.currentUser = currentUser;
-            LoadTravelers();
+            this.currentUser = GlobalUser.LoggedInUser ?? throw new ArgumentNullException(nameof(currentUser), "Current user cannot be null");
         }
 
         public AdminMessage(User currentUser)
         {
             InitializeComponent();
-            this.currentUser = currentUser;
-            LoadTravelers();
+            this.currentUser = GlobalUser.LoggedInUser ?? throw new ArgumentNullException(nameof(currentUser), "Current user cannot be null");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -43,7 +42,7 @@ namespace Happy_Journey_Airline
 
         private void AdminMessage_Load(object sender, EventArgs e)
         {
-
+            LoadTravelers();
         }
 
         private void lblMessage_Click(object sender, EventArgs e)
@@ -60,9 +59,9 @@ namespace Happy_Journey_Airline
 
         private void LoadTravelers()
         {
-            List<TravelerObserver> travelers = getTravelers();
+            List<User> travelers = getTravelers();
 
-            if (travelers.Count > 0)
+            if (travelers != null && travelers.Count > 0)
             {
                 cmbReceiver.DataSource = travelers;
                 cmbReceiver.DisplayMember = "FullName";
@@ -74,12 +73,12 @@ namespace Happy_Journey_Airline
             }
         }
 
-        private List<TravelerObserver> getTravelers()
+        private List<User> getTravelers()
         {
-            List<TravelerObserver> travelers = new List<TravelerObserver>();
+            List<User> travelers = new List<User>();
             try
             {
-                string query = "SELECT [user_id], [first_name] + ' ' + [last_name] AS FullName FROM [dbo].[User] WHERE [role]='Traveler'";
+                string query = "SELECT [user_id], [first_name], [last_name] FROM [dbo].[User] WHERE [role]='Traveler'";
                 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
@@ -87,7 +86,7 @@ namespace Happy_Journey_Airline
 
                 while(reader.Read())
                 {
-                    TravelerObserver traveler = new TravelerObserver
+                    User traveler = new User
                     {
                         UserId = Convert.ToInt32(reader["user_id"]),
                         FirstName = reader["first_name"].ToString(),
@@ -112,42 +111,69 @@ namespace Happy_Journey_Airline
             return travelers;
         }
 
+
         private int GetCurrentAdminById()
         {
-            if (currentUser != null && currentUser.Role == "Admin")
+            if (currentUser.Role == "Admin")
             {
-                //return the admin's id
-                return currentUser.UserId;
+                return currentUser.UserId; // Return the admin's ID
             }
-            else
-            {
-                throw new UnauthorizedAccessException("The current user isn't an admin");
-            }
+
+            throw new UnauthorizedAccessException("The current user isn't an admin.");
         }
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            int receiverID = (int)cmbReceiver.SelectedValue;
-            string messageContent = txtMessage.Text;
+            // Validate receiver selection and message input
+            if (cmbReceiver.SelectedValue == null)
+            {
+                MessageBox.Show("Please select a receiver.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtMessage.Text))
+            {
+                MessageBox.Show("Please enter a message.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Retrieve values
+            int receiverID;
+            string messageContent = txtMessage.Text.Trim();
 
             try
             {
-                //get the current admin id 
+                receiverID = (int)cmbReceiver.SelectedValue;
+            }
+            catch
+            {
+                MessageBox.Show("Invalid receiver selected.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                // Get the current admin ID
                 int adminId = GetCurrentAdminById();
 
+                // Create a new Message object and send the message
                 Message message = new Message();
+                message.sendMessage(messageContent, receiverID);
 
-                message.sendMessage(messageContent, adminId, receiverID);
+                // Show success message
+                MessageBox.Show("Message sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                MessageBox.Show("Message  sent successfully");
+                // Clear the input fields
+                txtMessage.Clear();
+                cmbReceiver.SelectedIndex = -1;
             }
             catch (UnauthorizedAccessException ex)
             {
-                //"Error" + ex.Message
+                MessageBox.Show($"Error: {ex.Message}", "Authorization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                // "Error: " + ex.Message
+                MessageBox.Show($"Error: {ex.Message}", "Unexpected Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

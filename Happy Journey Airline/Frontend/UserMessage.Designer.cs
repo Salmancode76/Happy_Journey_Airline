@@ -47,7 +47,7 @@
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(-3, 542);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1073, 16);
             this.panel2.TabIndex = 107;
@@ -59,7 +59,7 @@
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(-3, -4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1071, 75);
             this.panel1.TabIndex = 106;
@@ -81,7 +81,7 @@
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(44, 18);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(143, 41);
             this.btnBack.TabIndex = 25;
@@ -94,7 +94,7 @@
             this.btnsend.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnsend.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsend.Location = new System.Drawing.Point(689, 460);
-            this.btnsend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnsend.Margin = new System.Windows.Forms.Padding(4);
             this.btnsend.Name = "btnsend";
             this.btnsend.Size = new System.Drawing.Size(147, 39);
             this.btnsend.TabIndex = 102;
@@ -127,7 +127,7 @@
             // txtMessage
             // 
             this.txtMessage.Location = new System.Drawing.Point(285, 206);
-            this.txtMessage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMessage.Margin = new System.Windows.Forms.Padding(4);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(549, 235);
@@ -138,7 +138,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(285, 460);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(236, 39);
             this.button1.TabIndex = 108;
@@ -169,9 +169,10 @@
             this.Controls.Add(this.lblEnter);
             this.Controls.Add(this.txtMessage);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserMessage";
             this.Text = "UserMessage";
+            this.Load += new System.EventHandler(this.UserMessage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

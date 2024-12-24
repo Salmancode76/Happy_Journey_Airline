@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Happy_Journey_Airline.Backend;
 
 namespace Happy_Journey_Airline
 {
@@ -38,13 +39,17 @@ namespace Happy_Journey_Airline
 
         public DateTime Timestamp { get; set; }
 
-        public void sendMessage(string content, int senderId, int receiverId)
+        public void sendMessage(string content, int receiverId)
         {
             //Validate input parameters
             if (string.IsNullOrWhiteSpace(content))
             {
                 throw new ArgumentException("Messqage cannot be empty", nameof(content));
             }
+
+            // Get sender ID from the logged-in user
+            //this.senderId = Convert.ToInt32(User.(GlobalUser.LoggedInUser.UserId));
+            //MessageBox.Show(senderId.ToString());
 
             if (senderId <= 0)
             {
@@ -61,6 +66,8 @@ namespace Happy_Journey_Airline
                 //Create new message object
                 Message message = new Message(content, senderId, receiverId);
 
+                
+
                 //Save the message to the database
                 message.saveMessage();
             }
@@ -75,14 +82,14 @@ namespace Happy_Journey_Airline
             string m1;
             try
             {
-                string query = "INSERT INTO Message (content, sender_id, receiver_id, timestamp) VALUES (@content, @senderId, @receiverId, @timestamp)";
+                string query = "INSERT INTO Message (content, sender_id, receiver_id, timestamp) VALUES (@content, @sender_id, @receiver_id, @timestamp)";
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
-                command.Parameters.AddWithValue("@content", content);
-                command.Parameters.AddWithValue("@sender_id", senderId);
-                command.Parameters.AddWithValue("@receiver_id", receiverId);
-                command.Parameters.AddWithValue("@timestamp", timestamp);
+                command.Parameters.AddWithValue("@content", this.content);
+                command.Parameters.AddWithValue("@sender_id", this.senderId);
+                command.Parameters.AddWithValue("@receiver_id", this.receiverId);
+                command.Parameters.AddWithValue("@timestamp", DateTime.Now);
 
                 command.ExecuteNonQuery();
             }

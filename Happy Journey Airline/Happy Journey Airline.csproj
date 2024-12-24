@@ -157,6 +157,12 @@
     <Compile Include="Frontend\AdminServices.Designer.cs">
       <DependentUpon>AdminServices.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\AdminSubscribersSubscription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\AdminSubscribersSubscription.Designer.cs">
+      <DependentUpon>AdminSubscribersSubscription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\adminSubscriptionsScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\AdminServices.resx">
       <DependentUpon>AdminServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\AdminSubscribersSubscription.resx">
+      <DependentUpon>AdminSubscribersSubscription.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\adminSubscriptionsScreen.resx">
       <DependentUpon>adminSubscriptionsScreen.cs</DependentUpon>
