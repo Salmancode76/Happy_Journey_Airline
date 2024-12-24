@@ -69,7 +69,7 @@ namespace Happy_Journey_Airline
             // Check if a subscription is selected
             if (GlobalUser.IsLoggedIn)
             {
-                int travelerId = GlobalUser.LoggedInUser.UserId; // Use the logged-in user's ID
+                int travelerId = GlobalUser.LoggedInUser.userId; // Use the logged-in user's ID
                 int subscriptionId = GetSelectedSubscriptionId();
 
                 bool success = SaveSubscriberSubscription(travelerId, subscriptionId);
@@ -101,7 +101,7 @@ namespace Happy_Journey_Airline
         {
             try
             {
-                travelerId = GlobalUser.LoggedInUser.UserId;
+                travelerId = GlobalUser.LoggedInUser.userId;
 
                 if (subscriptionGrid.SelectedCells.Count == 0)
                 {
@@ -119,34 +119,6 @@ namespace Happy_Journey_Airline
 
                 // Retrieve the SubscriptionId from the selected row
                 subscriptionId = Convert.ToInt32(subscriptionGrid.Rows[selectedRowIndex].Cells["subscription_id"].Value);
-
-                string userQuery = "SELECT COUNT(*) FROM [dbo].[USER] WHERE user_id = @user_id AND role = 'Traveler'";
-
-                SqlCommand userCommand = new SqlCommand(userQuery, DBManager.getInstance().OpenConnection());
-
-                userCommand.Parameters.AddWithValue("@user_id", travelerId);
-
-                int userExists = (int)userCommand.ExecuteScalar();
-
-                if (userExists == 0)
-                {
-                    MessageBox.Show("The specified traveler ID does not exist.");
-                    return false;
-                }
-
-
-                string subscriptionQuery = "SELECT COUNT(*) FROM [dbo].[SUBSCRIPTION] WHERE subscription_id = @subscriptionId";
-
-                SqlCommand subCommand = new SqlCommand(subscriptionQuery, DBManager.getInstance().OpenConnection());
-
-                int subscriptionExists = (int)subCommand.ExecuteScalar();
-
-                if (subscriptionExists == 0)
-                {
-                    MessageBox.Show("The specified subscription ID does not exist.");
-                    return false;
-                }
-
 
                 string query = "INSERT INTO [dbo].[Subscriber Subscription] (subscriber_id, subscription_id) VALUES (@subscriber_id, @subscription_id)";
 

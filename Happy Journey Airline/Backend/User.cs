@@ -99,6 +99,8 @@ namespace Happy_Journey_Airline
 
         public string PhoneNo { get; set; }
 
+        public string FullName => $"{UserId}, {FirstName} {LastName}";
+
         public string Role
         {
             get { return role; } 

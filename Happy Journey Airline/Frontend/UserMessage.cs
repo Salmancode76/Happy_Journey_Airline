@@ -89,7 +89,7 @@ namespace Happy_Journey_Airline
         {
             if (string.Equals(currentUser.Role, "Traveler", StringComparison.OrdinalIgnoreCase))
             {
-                return GlobalUser.LoggedInUser.UserId; // Return the user's ID
+                return GlobalUser.LoggedInUser.userId; // Return the user's ID
             }
             else
             {
@@ -155,8 +155,6 @@ namespace Happy_Journey_Airline
         private void UserMessage_Load(object sender, EventArgs e)
         {
             LoadTravelers();
-            Message message = new Message();
-            MessageBox.Show(message.SenderId.ToString());
         }
     }
 }
