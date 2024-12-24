@@ -42,9 +42,6 @@ namespace Happy_Journey_Airline.Frontend
 
                 subscribersGrid.DataSource = dataTable;
 
-                //int selectedRowIndex = subscribersGrid.SelectedCells[0].RowIndex;
-                //int subscriptionId = Convert.ToInt32(subscribersGrid.Rows[selectedRowIndex].Cells["subscription_id"].Value);
-                //saveData(travelerId, subscriptionId);
             }
             catch (Exception ex)
             {
