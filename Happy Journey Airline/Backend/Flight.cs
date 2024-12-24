@@ -47,10 +47,9 @@ namespace Happy_Journey_Airline
             get {  return flightNo; }
             set
             {
-                if (flightNo.Length == 0)
-                {
+               
                     this.flightNo = value;
-                }
+                
             }
         }
 
@@ -98,10 +97,9 @@ namespace Happy_Journey_Airline
             get { return price; }
             set 
             {
-                if (price > 0)
-                {
+               
                     this.price = value;
-                }
+                
             }
         }
 

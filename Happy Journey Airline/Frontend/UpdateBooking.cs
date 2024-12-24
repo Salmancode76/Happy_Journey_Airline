@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Happy_Journey_Airline.Backend;
 
 namespace Happy_Journey_Airline.Frontend
 {
@@ -18,13 +20,25 @@ namespace Happy_Journey_Airline.Frontend
         public List<City> cities;
         public List<Airport> Airports;
         public List<TravelerObserver> List_users;
-        public UpdateBooking(int flightId, String flightNo, int capacity, string status, string departure, string destination, DateTime departureTime, DateTime arrivalTime, DateTime departureDate, DateTime arrivalDate, decimal price)
+        int bookID;
+
+        public UpdateBooking(int flightId, String flightNo, int capacity, string status, string departure, string destination, 
+            DateTime departureTime, DateTime arrivalTime, DateTime departureDate, DateTime arrivalDate,
+            decimal price,int bookingID,int flightClassID, int flightID, string seatNo, int travelerID, string passportNo)
         {
+            Console.WriteLine("in updaet booking "+ bookingID);
             InitializeComponent();
             populateStatusCombo();
             populateListCombos();
-            PopulateCheckboxes();
             Class_Load();
+            this.bookID = bookingID;
+            PopulateCheckboxes(bookID);
+
+            seatnotxt.Text = seatNo;
+            txtpassport.Text = passportNo;
+            userComboxUser.SelectedItem = travelerID;
+            cmbFlightClass.SelectedIndex = (flightClassID)-1;
+
             flightID = flightId;
 
             textBox1.Text = flightNo.ToString();
@@ -111,23 +125,45 @@ namespace Happy_Journey_Airline.Frontend
             cmbFlightClass.Items.Add("Business");
             cmbFlightClass.Items.Add("First");
         }
-        private void PopulateCheckboxes()
+        private void PopulateCheckboxes(int bookID)
         {
-            List<Service> services = new List<Service>();
+            List<Service> Selectedservices = Administrator.GetAllServiceByBooking(bookID);
 
-            services = new Administrator().GetAllService();
+                CheckedListBox checkedListBoxService = this.checkedListBoxService;
+                checkedListBoxService.Items.Clear();
 
-            CheckedListBox checkedListBoxService = this.checkedListBoxService;  // Existing CheckedListBox
-            checkedListBoxService.Items.Clear();
+                List<Service> services = new List<Service>();
 
-            // Add service names to the CheckedListBox
-            foreach (var service in services)
-            {
-                checkedListBoxService.Items.Add(service.ServiceName);  // Only adding ServiceName here
-            }
-        }
+                services = new Administrator().GetAllService();
+
+                checkedListBoxService.Items.Clear();
+
+                foreach (var service in services)
+                {
+                    checkedListBoxService.Items.Add(service.ServiceName);  
+                }
+
+                        List<Service> SelectedservicesOld = Administrator.GetAllServiceByBooking(bookID);
+                        for (int i = 0; i < checkedListBoxService.Items.Count; i++)
+                        {
+                            string serviceName = checkedListBoxService.Items[i].ToString(); 
+
+                            bool isSelected = Selectedservices.Exists(s => s.ServiceName == serviceName);
+
+                            if (isSelected)
+                            {
+                                checkedListBoxService.SetItemChecked(i, true);
+                            }
+                            else
+                            {
+                                checkedListBoxService.SetItemChecked(i, false);
+                            }
+                        }
 
 
+
+            Console.WriteLine("PopulateCheckboxes method completed.");
+}
 
 
         private void populateUsersCombo()
@@ -248,24 +284,36 @@ namespace Happy_Journey_Airline.Frontend
             this.Close();
         }
 
+       
+    
+
+    
+
+        private void UpdateBooking_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            new AdminBookings().Show();
+            this.Hide();
+        }
+
         private void btnCreate_Click(object sender, EventArgs e)
         {
 
-            // Collect data from the form
             string destination = cmbDestination.SelectedValue.ToString();
             string duration = $"{dateDepartureDate.Value} - {dateArrivalDate.Value}";
             string seatNo = seatnotxt.Text;
-
             List<Service> selectedServices = new List<Service>();
 
-            // Get the list of services (assuming you have them stored somewhere)
             List<Service> allServices = new Administrator().GetAllService();
 
-            // Iterate through the checked items in the CheckedListBox
             foreach (var checkedItem in checkedListBoxService.CheckedItems)
             {
                 // Find the full service object by name
-                Service service = allServices.FirstOrDefault(s => s.ServiceId.ToString() == checkedItem.ToString());
+                Service service = allServices.FirstOrDefault(s => s.ToString() == checkedItem.ToString());
 
                 if (service != null)
                 {
@@ -275,15 +323,14 @@ namespace Happy_Journey_Airline.Frontend
 
 
             string status = cmbStatus.SelectedItem.ToString();
-            int flightClassId = cmbFlightClass.SelectedIndex + 1; // Add 1 since ComboBox indexes usually start at 0, but your IDs seem to start at 1
+            int flightClassId = cmbFlightClass.SelectedIndex + 1; 
 
-            int flightId = this.flightID; // Already set in the constructor
-            String flightNo = (textBox1.Text); // Flight number from the form
-            int travelerId = (int)userComboxUser.SelectedValue; // Traveler ID from the combo box
+            int flightId = this.flightID; 
+            String flightNo = (textBox1.Text); 
+            int travelerId = (int)userComboxUser.SelectedValue; 
 
             string passportno = txtpassport.Text;
-            // Call the static method to add the booking
-            // Check for empty fields and validate data
+            
             if (string.IsNullOrEmpty(passportno) || string.IsNullOrEmpty(seatNo) || (cmbFlightClass.SelectedIndex < 0) || (userComboxUser.SelectedIndex < 0))
             {
                 MessageBox.Show("All fields must be filled out.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -296,23 +343,8 @@ namespace Happy_Journey_Airline.Frontend
                 return;
             }
 
+            Administrator.updateBooking(bookID, destination, duration, seatNo, selectedServices, status, flightClassId, flightId, flightNo, travelerId, passportno);
 
-            // Administrator.addBooking(destination, duration, seatNo, selectedServices, status, flightClassId, flightId, flightNo, travelerId, passportno);
-
-            this.Hide();
-
-            new PaymentScreen(destination, duration, seatNo, selectedServices, status, flightClassId, flightId, flightNo, travelerId, passportno).Show();
-
-
-
-
-        }
-    
-
-    
-
-        private void UpdateBooking_Load(object sender, EventArgs e)
-        {
 
         }
     }

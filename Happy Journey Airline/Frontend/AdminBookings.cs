@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Happy_Journey_Airline.Frontend;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Happy_Journey_Airline
 {
@@ -64,15 +66,14 @@ namespace Happy_Journey_Airline
 
         private void btnupdateFlight_Click(object sender, EventArgs e)
         {
-            /*
+            
             if (gridBookings.SelectedCells.Count > 0)
             {
                 // Retrieve the first selected cell's row index
                 var selectedCell = gridBookings.SelectedCells[0];
                 int rowIndex = selectedCell.RowIndex;
 
-                try
-                {
+                
                     int bookingID = Convert.ToInt32(gridBookings.Rows[rowIndex].Cells["booking_id"].Value);
                     int flightClassID = Convert.ToInt32(gridBookings.Rows[rowIndex].Cells["flight_class_id"].Value);
                     int flightID = Convert.ToInt32(gridBookings.Rows[rowIndex].Cells["flight_id"].Value);
@@ -80,31 +81,44 @@ namespace Happy_Journey_Airline
                     int travelerID = Convert.ToInt32(gridBookings.Rows[rowIndex].Cells["traveler_id"].Value);
                     string passportNo = gridBookings.Rows[rowIndex].Cells["passportNo"].Value?.ToString();
 
-                    // Instantiate the UpdateBooking form and pass data to it
-                    var updateBookForm = new UpdateBooking(
-                        bookingID, flightClassID, flightID, seatNo, travelerID, passportNo);
 
-                    // Instantiate the UpdateBooking form and pass data to it
-                    var updateBookForm = new UpdateBooking(
-                        flightID, flightNo, capacity, status, departure, destination,
-                        departureTime, arrivalTime, departureDate, arrivalDate, price);
+                  List<Flight> f=  Administrator.GetAllFlights();
 
-                    // Show the UpdateBooking form
-                    updateBookForm.Show();
-                    this.Hide();
+                    for (int i = 0; i < f.Count; i++)
+                    {
+                    Console.WriteLine($"Checking flightID: {flightID} against flight {f[i].FlightId}");
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    if (f[i].FlightId == flightID)
+                        {
+                        Console.WriteLine(bookingID);
+                            var updateBookForm = new UpdateBooking(
+                flightID, f[i].FlightNo, f[i].Capacity, f[i].Status, (f[i].Departure).ToString(), (f[i].Destination).ToString(),
+                f[i].DepartureTime, f[i].ArrivalTime, f[i].DepartureDate, f[i].ArrivalDate, f[i].Price, bookingID, flightClassID,flightID,seatNo
+                ,travelerID,passportNo);
+
+
+                            updateBookForm.Show();
+                            this.Hide();
+
+                        }
+
+
+
+                        // Instantiate the UpdateBooking form and pass data to it
+
+
+                        // Show the UpdateBooking form
+
+                    }
+                    
+              
             }
             else
             {
                 MessageBox.Show("Please select a flight.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            */
+            
 
         }
 

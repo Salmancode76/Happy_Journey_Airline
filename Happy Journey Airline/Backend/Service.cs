@@ -49,6 +49,11 @@ namespace Happy_Journey_Airline
                 price = value;
             }
         }
+        public override string ToString()
+        {
+            return ServiceName;
+        }
+
 
 
 

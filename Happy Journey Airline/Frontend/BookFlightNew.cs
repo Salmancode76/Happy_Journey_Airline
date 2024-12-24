@@ -32,7 +32,12 @@ namespace Happy_Journey_Airline.Frontend
             populateListCombos();
             PopulateCheckboxes();
             Class_Load();
+            if (GlobalUser.LoggedInUser == null)
+            {
+                MessageBox.Show("Something bad happened contact support.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                return;
+            }
             if (GlobalUser.LoggedInUser.Role == "Traveler")
             {
                 userComboxUser.Items.Clear();
@@ -52,7 +57,7 @@ namespace Happy_Journey_Airline.Frontend
                         }
                     }
                 }
-
+              
                 userComboxUser.Items.Add(userID);
 
                 userComboxUser.SelectedItem = userID;
@@ -67,7 +72,9 @@ namespace Happy_Journey_Airline.Frontend
          
             else
             {
-                userComboxUser.DataSource = List_users;
+                List<TravelerObserver> travelers = Administrator.GetAllTraveler();
+
+                userComboxUser.DataSource = travelers;
                 userComboxUser.DisplayMember = "Traveler_id";
                 userComboxUser.ValueMember = "Traveler_id";
 
@@ -309,7 +316,7 @@ namespace Happy_Journey_Airline.Frontend
     foreach (var checkedItem in checkedListBoxService.CheckedItems)
     {
         // Find the full service object by name
-        Service service = allServices.FirstOrDefault(s => s.ServiceId.ToString() == checkedItem.ToString());
+        Service service = allServices.FirstOrDefault(s => s.ToString() == checkedItem.ToString());
 
         if (service != null)
         {
