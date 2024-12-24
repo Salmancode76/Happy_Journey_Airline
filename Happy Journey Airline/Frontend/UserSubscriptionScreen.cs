@@ -61,7 +61,7 @@ namespace Happy_Journey_Airline
         private void UserSubscriptionScreen_Load(object sender, EventArgs e)
         {
             LoadGrid();
-            AdminSubscribersSubscription admin = new AdminSubscribersSubscription();
+            //AdminSubscribersSubscription admin = new AdminSubscribersSubscription();
         }
 
         private void subscribeBttn_Click(object sender, EventArgs e)

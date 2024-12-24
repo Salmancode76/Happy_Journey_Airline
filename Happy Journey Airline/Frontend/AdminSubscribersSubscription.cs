@@ -53,60 +53,6 @@ namespace Happy_Journey_Airline.Frontend
             }
         }
 
-        public void saveData(int travelerId, int subscriptionId)
-        {
-            try
-            {
-                if (GlobalUser.IsLoggedIn)
-                {
-                    travelerId = GlobalUser.LoggedInUser.UserId; // Use the logged-in user's ID
-
-                    // Check if a cell is selected
-                    if (subscribersGrid.SelectedCells.Count > 0)
-                    {
-                        // Get the index of the selected row
-                        int selectedRowIndex = subscribersGrid.SelectedCells[0].RowIndex;
-
-                        // Retrieve the SubscriptionId from the selected row
-                        subscriptionId = Convert.ToInt32(subscribersGrid.Rows[selectedRowIndex].Cells["subscription_id"].Value);
-
-
-                        DateTime start = (DateTime)subscribersGrid.Rows[selectedRowIndex].Cells["start_date"].Value;
-
-
-                        DateTime end = (DateTime)subscribersGrid.Rows[selectedRowIndex].Cells["end_date"].Value;
-
-
-                        string desc = Convert.ToString(subscribersGrid.Rows[selectedRowIndex].Cells["description"].Value);
-
-
-                        string subName = Convert.ToString(subscribersGrid.Rows[selectedRowIndex].Cells["subscription_name"].Value);
-
-                        string query = "INSERT INTO [dbo].[SUBSCRIBER SUBSCRIPTION] (subscription_id, subscriber_id) VALUES (@subscription_id, @traveler_id)";
-
-                        SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
-
-                        command.Parameters.AddWithValue("@subscription_id", subscriptionId);
-                        command.Parameters.AddWithValue("@subscriber_id", travelerId);
-
-
-                        command.ExecuteNonQuery();
-
-                        // Now you can use the subscriberId and subscriptionId as needed
-                        MessageBox.Show($"Traveler ID: {travelerId}, Selected Subscription ID: {subscriptionId}");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            finally
-            {
-                DBManager.getInstance().CloseConnection();
-            }
-        }
-
         private void AdminSubscribersSubscription_Load(object sender, EventArgs e)
         {
             LoadGrid(GlobalUser.LoggedInUser.UserId);
@@ -115,7 +61,6 @@ namespace Happy_Journey_Airline.Frontend
             {
                 LoadGrid(GlobalUser.LoggedInUser.UserId);
             }
-            //saveData();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

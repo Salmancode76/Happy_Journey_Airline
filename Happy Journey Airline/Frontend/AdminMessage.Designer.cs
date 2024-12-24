@@ -41,13 +41,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.cmbReceiver = new System.Windows.Forms.ComboBox();
+            this.errlbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtMessage
             // 
             this.txtMessage.Location = new System.Drawing.Point(288, 218);
-            this.txtMessage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMessage.Margin = new System.Windows.Forms.Padding(4);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(525, 213);
@@ -81,7 +82,7 @@
             this.btnSend.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSend.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSend.Location = new System.Drawing.Point(640, 460);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(4);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(175, 39);
             this.btnSend.TabIndex = 91;
@@ -96,7 +97,7 @@
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(0, -2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1071, 75);
             this.panel1.TabIndex = 96;
@@ -119,7 +120,7 @@
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(16, 17);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(143, 41);
             this.btnBack.TabIndex = 25;
@@ -132,7 +133,7 @@
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(0, 543);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1073, 16);
             this.panel2.TabIndex = 97;
@@ -142,7 +143,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(288, 460);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(236, 39);
             this.button1.TabIndex = 99;
@@ -158,12 +159,22 @@
             this.cmbReceiver.Size = new System.Drawing.Size(525, 24);
             this.cmbReceiver.TabIndex = 100;
             // 
+            // errlbl
+            // 
+            this.errlbl.AutoSize = true;
+            this.errlbl.ForeColor = System.Drawing.Color.Red;
+            this.errlbl.Location = new System.Drawing.Point(122, 507);
+            this.errlbl.Name = "errlbl";
+            this.errlbl.Size = new System.Drawing.Size(0, 16);
+            this.errlbl.TabIndex = 111;
+            // 
             // AdminMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.errlbl);
             this.Controls.Add(this.cmbReceiver);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
@@ -173,7 +184,7 @@
             this.Controls.Add(this.lblEnterMessage);
             this.Controls.Add(this.txtMessage);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminMessage";
             this.Text = "AdminMessage";
             this.Load += new System.EventHandler(this.AdminMessage_Load);
@@ -196,5 +207,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cmbReceiver;
+        private System.Windows.Forms.Label errlbl;
     }
 }

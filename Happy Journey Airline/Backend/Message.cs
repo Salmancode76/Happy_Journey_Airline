@@ -48,7 +48,11 @@ namespace Happy_Journey_Airline
             }
 
             // Get sender ID from the logged-in user
-            //this.senderId = Convert.ToInt32(User.(GlobalUser.LoggedInUser.UserId));
+            if (GlobalUser.IsLoggedIn)
+            {
+                this.senderId = Convert.ToInt32(GlobalUser.LoggedInUser.userId);
+            }
+            
             //MessageBox.Show(senderId.ToString());
 
             if (senderId <= 0)
@@ -66,8 +70,6 @@ namespace Happy_Journey_Airline
                 //Create new message object
                 Message message = new Message(content, senderId, receiverId);
 
-                
-
                 //Save the message to the database
                 message.saveMessage();
             }
@@ -82,7 +84,7 @@ namespace Happy_Journey_Airline
             string m1;
             try
             {
-                string query = "INSERT INTO Message (content, sender_id, receiver_id, timestamp) VALUES (@content, @sender_id, @receiver_id, @timestamp)";
+                string query = "INSERT INTO [dbo].[Message] (content, sender_id, receiver_id, timestamp) VALUES (@content, @sender_id, @receiver_id, @timestamp)";
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 

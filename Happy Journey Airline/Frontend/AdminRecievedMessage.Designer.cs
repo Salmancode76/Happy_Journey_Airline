@@ -44,9 +44,10 @@
             this.panel1.Controls.Add(this.lblFlights);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel1.Location = new System.Drawing.Point(1, -3);
+            this.panel1.Location = new System.Drawing.Point(1, -4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(803, 70);
+            this.panel1.Size = new System.Drawing.Size(1071, 86);
             this.panel1.TabIndex = 93;
             // 
             // lblFlights
@@ -54,9 +55,10 @@
             this.lblFlights.AutoSize = true;
             this.lblFlights.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFlights.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblFlights.Location = new System.Drawing.Point(220, 4);
+            this.lblFlights.Location = new System.Drawing.Point(293, 5);
+            this.lblFlights.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFlights.Name = "lblFlights";
-            this.lblFlights.Size = new System.Drawing.Size(381, 58);
+            this.lblFlights.Size = new System.Drawing.Size(471, 72);
             this.lblFlights.TabIndex = 3;
             this.lblFlights.Text = "Recieved Messages";
             // 
@@ -64,9 +66,10 @@
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Location = new System.Drawing.Point(16, 15);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(107, 33);
+            this.btnBack.Size = new System.Drawing.Size(143, 41);
             this.btnBack.TabIndex = 25;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -76,33 +79,37 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel2.Location = new System.Drawing.Point(1, 439);
+            this.panel2.Location = new System.Drawing.Point(1, 540);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(805, 15);
+            this.panel2.Size = new System.Drawing.Size(1073, 18);
             this.panel2.TabIndex = 94;
             // 
             // RmsgGrid
             // 
             this.RmsgGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.RmsgGrid.Location = new System.Drawing.Point(70, 110);
+            this.RmsgGrid.Location = new System.Drawing.Point(93, 135);
+            this.RmsgGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RmsgGrid.Name = "RmsgGrid";
             this.RmsgGrid.RowHeadersWidth = 51;
-            this.RmsgGrid.Size = new System.Drawing.Size(670, 272);
+            this.RmsgGrid.Size = new System.Drawing.Size(893, 335);
             this.RmsgGrid.TabIndex = 95;
             this.RmsgGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // AdminRecievedMessage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.RmsgGrid);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdminRecievedMessage";
             this.Text = "AdminRecievedMessage";
+            this.Load += new System.EventHandler(this.AdminRecievedMessage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RmsgGrid)).EndInit();

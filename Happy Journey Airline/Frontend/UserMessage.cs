@@ -21,12 +21,14 @@ namespace Happy_Journey_Airline
         {
             InitializeComponent();
             this.currentUser = GlobalUser.LoggedInUser ?? throw new ArgumentNullException(nameof(currentUser), "Current user cannot be null");
+            LoadAdmins();
         }
 
         public UserMessage(User currentUser)
         {
             InitializeComponent();
             this.currentUser = GlobalUser.LoggedInUser ?? throw new ArgumentNullException(nameof(currentUser), "Current user cannot be null");
+            LoadAdmins();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -42,7 +44,7 @@ namespace Happy_Journey_Airline
 
         }
 
-        private void LoadTravelers()
+        private void LoadAdmins()
         {
             List<User> admins = getAdmin();
 
@@ -76,7 +78,7 @@ namespace Happy_Journey_Airline
             }
             catch (Exception ex)
             {
-                //error label "Error retrieving travelers: " + ex.Message 
+                errlbl.Text = "Error retrieving travelers: " + ex.Message;
             }
             finally
             {
@@ -87,7 +89,7 @@ namespace Happy_Journey_Airline
 
         private int GetCurrentTravelerById()
         {
-            if (string.Equals(currentUser.Role, "Traveler", StringComparison.OrdinalIgnoreCase))
+            if (currentUser.Role == "Traveler")
             {
                 return GlobalUser.LoggedInUser.userId; // Return the user's ID
             }
@@ -154,7 +156,7 @@ namespace Happy_Journey_Airline
 
         private void UserMessage_Load(object sender, EventArgs e)
         {
-            LoadTravelers();
+            LoadAdmins();
         }
     }
 }

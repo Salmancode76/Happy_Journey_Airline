@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Happy_Journey_Airline.Backend;
 
 namespace Happy_Journey_Airline.Frontend
 {
@@ -26,35 +27,60 @@ namespace Happy_Journey_Airline.Frontend
 
         private void RmsgGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            List<Message> messages = new List<Message>();
+            
+        }
+
+        private void LoadMessages()
+        {
+            List<dynamic> messages = new List<dynamic>();
             try
             {
-                string query = "SELECT content, sender_id, receiver_id FROM [dbo].[MESSAGE] INNER JOIN [dbo].[USER] ON u.user_id = u.sender_id AND u.role = 'Admin'";
+                string query = "SELECT m.[sender_id], u.[role], u.[first_name], u.[last_name], m.[content], m.[receiver_id] FROM [dbo].[MESSAGE] m INNER JOIN [dbo].[USER] u ON m.[sender_id] = u.[user_id] WHERE u.[role] = 'Admin' AND m.[receiver_id] = @receiver_id";
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+
+                if (GlobalUser.IsLoggedIn)
+                {
+                    command.Parameters.AddWithValue("@receiver_id", GlobalUser.LoggedInUser.userId);
+                }
 
                 SqlDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    Message message = new Message
+                    var message = new 
                     {
-                        Content = reader["content"].ToString(),
                         SenderId = Convert.ToInt32(reader["sender_id"]),
+                        Role = reader["role"].ToString(),
+                        FirstName = reader["first_name"].ToString(),
+                        LastName = reader["last_name"].ToString(),
+                        Content = reader["content"].ToString(),
                         ReceiverId = Convert.ToInt32(reader["receiver_id"])
                     };
                     messages.Add(message);
                 }
-                RmsgGrid.DataSource = messages;
+                if (messages.Count == 0)
+                {
+                    MessageBox.Show("No messages found for this traveler.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    RmsgGrid.DataSource = messages;
+                }
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-
+                DBManager.getInstance().CloseConnection();
             }
+        }
+
+        private void TravellerRecievedMsg_Load(object sender, EventArgs e)
+        {
+            LoadMessages();
         }
     }
 }

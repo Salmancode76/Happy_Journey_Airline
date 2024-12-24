@@ -21,12 +21,14 @@ namespace Happy_Journey_Airline
         {
             InitializeComponent();
             this.currentUser = GlobalUser.LoggedInUser ?? throw new ArgumentNullException(nameof(currentUser), "Current user cannot be null");
+            LoadTravelers();
         }
 
         public AdminMessage(User currentUser)
         {
             InitializeComponent();
             this.currentUser = GlobalUser.LoggedInUser ?? throw new ArgumentNullException(nameof(currentUser), "Current user cannot be null");
+            LoadTravelers();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -61,16 +63,9 @@ namespace Happy_Journey_Airline
         {
             List<User> travelers = getTravelers();
 
-            if (travelers != null && travelers.Count > 0)
-            {
-                cmbReceiver.DataSource = travelers;
-                cmbReceiver.DisplayMember = "FullName";
-                cmbReceiver.ValueMember = "UserId";
-            }
-            else
-            {
-                //No travelers found.
-            }
+            cmbReceiver.DataSource = travelers;
+            cmbReceiver.DisplayMember = "FullName";
+            cmbReceiver.ValueMember = "UserId";
         }
 
         private List<User> getTravelers()
@@ -102,7 +97,7 @@ namespace Happy_Journey_Airline
             }
             catch (Exception ex)
             {
-                //error label "Error retrieving travelers: " + ex.Message 
+                errlbl.Text = "Error retrieving travelers: " + ex.Message;
             }
             finally
             {
@@ -116,7 +111,7 @@ namespace Happy_Journey_Airline
         {
             if (currentUser.Role == "Admin")
             {
-                return currentUser.UserId; // Return the admin's ID
+                return currentUser.userId; // Return the admin's ID
             }
 
             throw new UnauthorizedAccessException("The current user isn't an admin.");

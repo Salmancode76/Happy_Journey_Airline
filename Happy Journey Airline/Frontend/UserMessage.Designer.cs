@@ -39,6 +39,7 @@
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.comboReceiver = new System.Windows.Forms.ComboBox();
+            this.errlbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,12 +155,22 @@
             this.comboReceiver.Size = new System.Drawing.Size(551, 24);
             this.comboReceiver.TabIndex = 109;
             // 
+            // errlbl
+            // 
+            this.errlbl.AutoSize = true;
+            this.errlbl.ForeColor = System.Drawing.Color.Red;
+            this.errlbl.Location = new System.Drawing.Point(113, 511);
+            this.errlbl.Name = "errlbl";
+            this.errlbl.Size = new System.Drawing.Size(0, 16);
+            this.errlbl.TabIndex = 110;
+            // 
             // UserMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.errlbl);
             this.Controls.Add(this.comboReceiver);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
@@ -192,5 +203,6 @@
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboReceiver;
+        private System.Windows.Forms.Label errlbl;
     }
 }
