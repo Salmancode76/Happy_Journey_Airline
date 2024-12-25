@@ -34,6 +34,7 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.RmsgGrid = new System.Windows.Forms.DataGridView();
+            this.msglbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RmsgGrid)).BeginInit();
             this.SuspendLayout();
@@ -96,12 +97,23 @@
             this.RmsgGrid.TabIndex = 98;
             this.RmsgGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RmsgGrid_CellContentClick);
             // 
+            // msglbl
+            // 
+            this.msglbl.AutoSize = true;
+            this.msglbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msglbl.ForeColor = System.Drawing.Color.Red;
+            this.msglbl.Location = new System.Drawing.Point(430, 107);
+            this.msglbl.Name = "msglbl";
+            this.msglbl.Size = new System.Drawing.Size(0, 25);
+            this.msglbl.TabIndex = 99;
+            // 
             // TravellerRecievedMsg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.msglbl);
             this.Controls.Add(this.RmsgGrid);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -114,6 +126,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RmsgGrid)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -124,5 +137,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView RmsgGrid;
+        private System.Windows.Forms.Label msglbl;
     }
 }
