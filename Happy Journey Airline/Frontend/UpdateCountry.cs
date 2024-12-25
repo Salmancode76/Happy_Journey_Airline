@@ -12,9 +12,24 @@ namespace Happy_Journey_Airline.Frontend
 {
     public partial class UpdateCountry : Form
     {
-        public UpdateCountry()
+        int CID;
+        string CountryName;
+        string Region;
+    
+        public UpdateCountry(int countryID, string countryName, string Region)
         {
             InitializeComponent();
+            this.CID = countryID;
+            this.CountryName = countryName;
+            this.Region = Region;
+            regionCB.Items.Add("Asia");
+            regionCB.Items.Add("Africa");
+            regionCB.Items.Add("North America");
+            regionCB.Items.Add("South America");
+            regionCB.Items.Add("Europe");
+            regionCB.Items.Add("Australia");
+            txtCountry.Text = countryName;
+            regionCB.SelectedItem = Region;
         }
 
         private void btnback_Click(object sender, EventArgs e)
@@ -26,9 +41,10 @@ namespace Happy_Journey_Airline.Frontend
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            string updatedCountryName = txtCountry.Text.Trim();
+            string updatedRegion = regionCB.SelectedItem?.ToString();
 
-
-
+             Administrator.updateCountry(CID, updatedCountryName, updatedRegion);
 
             MessageBox.Show("Country Updated Successfully!");
         }

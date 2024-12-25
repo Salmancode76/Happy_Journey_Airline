@@ -94,7 +94,8 @@ namespace Happy_Journey_Airline
             }
 
             // If no row is selected, return -1 or throw an exception
-            throw new InvalidOperationException("No subscription is selected.");
+            // throw new InvalidOperationException("No subscription is selected.");
+            return -1;
         }
 
         private bool SaveSubscriberSubscription(int travelerId, int subscriptionId)

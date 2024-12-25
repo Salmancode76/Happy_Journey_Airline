@@ -12,9 +12,16 @@ namespace Happy_Journey_Airline.Frontend
 {
     public partial class UpdateAirport : Form
     {
-        public UpdateAirport()
+        int IDa;
+        public UpdateAirport(int id, string name)
         {
+
+            this.IDa = id;
+
+
             InitializeComponent();
+
+            txtAirport.Text = name;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -26,8 +33,8 @@ namespace Happy_Journey_Airline.Frontend
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
-
-            MessageBox.Show("Airport Successfully Updated!");
+            string name = txtAirport.Text.Trim();
+             Administrator.updateAirport(IDa, name);
         }
 
         private void lblAddAirport_Click(object sender, EventArgs e)
