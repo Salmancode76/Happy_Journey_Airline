@@ -898,6 +898,8 @@ namespace Happy_Journey_Airline
 
                 // Commit the transaction if everything goes well
                 transaction.Commit();
+                MessageBox.Show("Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             catch (Exception ex)
             {
@@ -911,10 +913,16 @@ namespace Happy_Journey_Airline
                     catch (Exception rollbackEx)
                     {
                         // Handle rollback failure (log, rethrow, etc.)
-                        throw new Exception("An error occurred during transaction rollback: " + rollbackEx.Message);
+                        MessageBox.Show("An error occurred during transaction rollback: " + ex.Message,
+                                                   "Error",
+                                                   MessageBoxButtons.OK,
+                                                   MessageBoxIcon.Error);
                     }
                 }
-
+                MessageBox.Show("An error occurred while updating the booking: " + ex.Message,
+                           "Error",
+                           MessageBoxButtons.OK,
+                           MessageBoxIcon.Error);
                 throw new Exception("An error occurred while updating the booking: " + ex.Message);
             }
             finally
@@ -942,17 +950,11 @@ namespace Happy_Journey_Airline
 
 
 
-        public void updateAirport(int airportId, string airportCode, string airportName)
+        public  static void updateAirport(int airportId, string airportName)
         {
-            if (airportId <= 0)
-            {
-                throw new ArgumentException();
-            }
+     
 
-            if (string.IsNullOrWhiteSpace(airportCode))
-            {
-                throw new ArgumentException();
-            }
+       
 
             if (string.IsNullOrWhiteSpace(airportName))
             {
@@ -962,15 +964,15 @@ namespace Happy_Journey_Airline
             try
             {
                 //SQL query to update the airport details
-                string query = "UPDATE Airport SET airport_name = @airportName, airport_code = @airportCode WHERE airport_id = @airportId";
+                string query = "UPDATE Airport SET airport_name = @airportName WHERE airport_id = @airportId";
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
-                command.Parameters.AddWithValue("@airport_id", airportId);
-                command.Parameters.AddWithValue("@airport_code", airportCode);
-                command.Parameters.AddWithValue("@airport_name", airportName);
+                command.Parameters.AddWithValue("@airportId", airportId);
+                command.Parameters.AddWithValue("@airportName", airportName);
 
                 command.ExecuteNonQuery();
+                MessageBox.Show("Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
@@ -1003,10 +1005,11 @@ namespace Happy_Journey_Airline
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
-                command.Parameters.AddWithValue("@city_id", cityId);
-                command.Parameters.AddWithValue("@city_name", cityName);
+                command.Parameters.AddWithValue("@cityId", cityId);
+                command.Parameters.AddWithValue("@cityName", cityName);
 
                 command.ExecuteNonQuery();
+                MessageBox.Show("City Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
@@ -1019,13 +1022,9 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public void updateCountry(int countryId, string countryName, string region)
+        public static void updateCountry(int countryId, string countryName, string region)
         {
-            //Validate country input
-            /*if (countryId <= 0)
-            {
-                throw new ArgumentException("Country ID must be positive");
-            }*/
+         
 
             if (string.IsNullOrWhiteSpace(countryName))
             {
@@ -1044,8 +1043,8 @@ namespace Happy_Journey_Airline
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
 
-                //command.Parameters.AddWithValue("@country_id", countryId);
-                command.Parameters.AddWithValue("@country_name", countryName);
+                command.Parameters.AddWithValue("@countryId", countryId);
+                command.Parameters.AddWithValue("@countryName", countryName);
                 command.Parameters.AddWithValue("@region", region);
 
                 command.ExecuteNonQuery();
@@ -1061,29 +1060,50 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public void deleteAirport(int airportId)
+        public static void deleteAirport(int airportId)
         {
             try
             {
-                //SQL query for deleting an airport
-                string query = "DELETE FROM Airport WHERE airport_id = @aiportId";
+                // SQL query for deleting an airport
+                string query = "DELETE FROM Airport WHERE airport_id = @airportId";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+                using (SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection()))
+                {
+                    command.Parameters.AddWithValue("@airportId", airportId);
 
-                command.Parameters.AddWithValue("@airport_id", airportId);
+                    int rowsAffected = command.ExecuteNonQuery();
 
-                command.ExecuteNonQuery();
+                    if (rowsAffected == 0)
+                    {
+                        MessageBox.Show("No airport found with the provided ID.", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
 
+                    MessageBox.Show("Airport deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (SqlException sqlEx) when (sqlEx.Number == 547)
+            {
+                // Handling foreign key constraint violation error
+                MessageBox.Show("Cannot delete this airport because it is referenced by other records.", "Constraint Violation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (SqlException sqlEx)
+            {
+                // Handling other SQL exceptions
+                MessageBox.Show("An error occurred while deleting the airport: " + sqlEx.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                throw new Exception("An error occurred while deleting the airport: " + ex.Message);
+                // Handling general exceptions
+                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Unexpected Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
+                // Ensure connection is closed after the operation
                 DBManager.getInstance().CloseConnection();
             }
         }
+
         public static Service GetServiceByID(int serviceId)
         {
 
@@ -1164,8 +1184,26 @@ namespace Happy_Journey_Airline
             }
             catch (Exception ex)
             {
-                throw new Exception("An error occurred while deleting the flight: " + ex.Message);
+
+                // Check if the exception is related to a foreign key constraint
+                if (ex is SqlException sqlEx && sqlEx.Number == 547) // Foreign key constraint violation
+                {
+                    MessageBox.Show("Cannot delete the flight because it is referenced in bookings. Please delete the related bookings first.",
+                                    "Constraint Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    // Handle other SQL exceptions
+                    MessageBox.Show("An error occurred while deleting the flight: " + ex.Message,
+                                    "Database Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                }
             }
+                
+            
             finally
             {
                 DBManager.getInstance().CloseConnection();
@@ -1459,7 +1497,9 @@ namespace Happy_Journey_Airline
                     Destination = reader.GetInt32(2),
                     FlightNo = reader.GetString(3),
                     Capacity = reader.GetInt32(4),
-                    Price = reader.GetDecimal(reader.GetOrdinal("Price")), // Adjusted to GetDecimal
+                    Price = reader.IsDBNull(reader.GetOrdinal("Price"))
+                ? 0.0M
+                : Convert.ToDecimal(reader.GetValue(reader.GetOrdinal("Price"))),
                     Status = reader.GetString(6),
                     DepartureTime = reader.GetDateTime(7),
                     ArrivalTime = reader.GetDateTime(8),
@@ -1507,6 +1547,110 @@ namespace Happy_Journey_Airline
 
             return services;
         }
+
+        public static void DeleteCountry(int CountryID)
+        {
+            SqlCommand cmd = null;
+            try
+            {
+                // SQL query to delete a country
+                string query = "DELETE FROM [dbo].[Country] WHERE country_id = @CountryID";
+
+                // Create and configure the command
+                cmd = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+                cmd.Parameters.AddWithValue("@CountryID", CountryID);
+
+                // Execute the query
+                cmd.ExecuteNonQuery();
+
+                // Show success message
+                MessageBox.Show("Country deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (SqlException ex) when (ex.Number == 547) // Foreign key constraint violation
+            {
+                MessageBox.Show("Cannot delete the country because it is referenced by other records.",
+                                "Foreign Key Constraint",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("A database error occurred: " + ex.Message,
+                                "Database Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred: " + ex.Message,
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Ensure the command object is disposed of properly
+                if (cmd != null)
+                {
+                    cmd.Dispose();
+                }
+
+                // Ensure the database connection is closed
+                DBManager.getInstance().CloseConnection();
+            }
+        }
+        public static void DeleteCity(int City)
+        {
+            SqlCommand cmd = null;
+            try
+            {
+                // SQL query to delete a country
+                string query = "DELETE FROM [dbo].[City] WHERE city_id = @CityID";
+
+                // Create and configure the command
+                cmd = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+                cmd.Parameters.AddWithValue("@CityID", City);
+
+                // Execute the query
+                cmd.ExecuteNonQuery();
+
+                // Show success message
+                MessageBox.Show("City deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (SqlException ex) when (ex.Number == 547) // Foreign key constraint violation
+            {
+                MessageBox.Show("Cannot delete the City because it is referenced by other records.",
+                                "Foreign Key Constraint",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("A database error occurred: " + ex.Message,
+                                "Database Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred: " + ex.Message,
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Ensure the command object is disposed of properly
+                if (cmd != null)
+                {
+                    cmd.Dispose();
+                }
+
+                // Ensure the database connection is closed
+                DBManager.getInstance().CloseConnection();
+            }
+        }
+
 
     }
 }

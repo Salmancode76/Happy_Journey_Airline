@@ -36,10 +36,6 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtAirport = new System.Windows.Forms.TextBox();
             this.lblAirport = new System.Windows.Forms.Label();
-            this.CountryCB = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.CityCB = new System.Windows.Forms.ComboBox();
-            this.lblFlightno = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,7 +48,7 @@
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(-5, -2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1077, 81);
             this.panel1.TabIndex = 72;
@@ -75,7 +71,7 @@
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(19, 17);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(143, 41);
             this.btnBack.TabIndex = 25;
@@ -88,7 +84,7 @@
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(-5, 542);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1077, 12);
             this.panel2.TabIndex = 131;
@@ -98,7 +94,7 @@
             this.btnUpdate.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnUpdate.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(476, 452);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(172, 47);
             this.btnUpdate.TabIndex = 146;
@@ -108,8 +104,8 @@
             // 
             // txtAirport
             // 
-            this.txtAirport.Location = new System.Drawing.Point(449, 362);
-            this.txtAirport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAirport.Location = new System.Drawing.Point(448, 274);
+            this.txtAirport.Margin = new System.Windows.Forms.Padding(4);
             this.txtAirport.Name = "txtAirport";
             this.txtAirport.Size = new System.Drawing.Size(261, 22);
             this.txtAirport.TabIndex = 145;
@@ -118,58 +114,18 @@
             // 
             this.lblAirport.AutoSize = true;
             this.lblAirport.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAirport.Location = new System.Drawing.Point(248, 356);
+            this.lblAirport.Location = new System.Drawing.Point(228, 264);
             this.lblAirport.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAirport.Name = "lblAirport";
             this.lblAirport.Size = new System.Drawing.Size(162, 32);
             this.lblAirport.TabIndex = 144;
             this.lblAirport.Text = "Airport Name:";
             // 
-            // CountryCB
-            // 
-            this.CountryCB.FormattingEnabled = true;
-            this.CountryCB.Location = new System.Drawing.Point(448, 153);
-            this.CountryCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.CountryCB.Name = "CountryCB";
-            this.CountryCB.Size = new System.Drawing.Size(261, 24);
-            this.CountryCB.TabIndex = 142;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(248, 153);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 32);
-            this.label1.TabIndex = 141;
-            this.label1.Text = "Country:";
-            // 
-            // CityCB
-            // 
-            this.CityCB.FormattingEnabled = true;
-            this.CityCB.Location = new System.Drawing.Point(448, 258);
-            this.CityCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.CityCB.Name = "CityCB";
-            this.CityCB.Size = new System.Drawing.Size(261, 24);
-            this.CityCB.TabIndex = 140;
-            // 
-            // lblFlightno
-            // 
-            this.lblFlightno.AutoSize = true;
-            this.lblFlightno.Font = new System.Drawing.Font("Sitka Text", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFlightno.Location = new System.Drawing.Point(239, 250);
-            this.lblFlightno.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFlightno.Name = "lblFlightno";
-            this.lblFlightno.Size = new System.Drawing.Size(141, 32);
-            this.lblFlightno.TabIndex = 139;
-            this.lblFlightno.Text = "Choose City:";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
             this.pictureBox1.Location = new System.Drawing.Point(388, 128);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(341, 300);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -185,15 +141,11 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtAirport);
             this.Controls.Add(this.lblAirport);
-            this.Controls.Add(this.CountryCB);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.CityCB);
-            this.Controls.Add(this.lblFlightno);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UpdateAirport";
             this.Text = "UpdateAirport";
             this.Load += new System.EventHandler(this.UpdateAirport_Load);
@@ -214,10 +166,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox txtAirport;
         private System.Windows.Forms.Label lblAirport;
-        private System.Windows.Forms.ComboBox CountryCB;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox CityCB;
-        private System.Windows.Forms.Label lblFlightno;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

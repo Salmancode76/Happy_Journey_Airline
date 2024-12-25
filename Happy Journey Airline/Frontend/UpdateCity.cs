@@ -12,9 +12,14 @@ namespace Happy_Journey_Airline.Frontend
 {
     public partial class UpdateCity : Form
     {
-        public UpdateCity()
+        int IDc;
+        string City;
+        public UpdateCity(int ID, string name)
         {
             InitializeComponent();
+            this.IDc = ID;
+            this.City = name;
+            Citytxt.Text = name;
         }
 
         private void backbtn_Click(object sender, EventArgs e)
@@ -25,10 +30,16 @@ namespace Happy_Journey_Airline.Frontend
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            String cityname = Citytxt.Text.Trim();
+            new Administrator().updateCity(IDc, cityname);
 
 
 
-            MessageBox.Show("City Successfully Updated!");
+        }
+
+        private void UpdateCity_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

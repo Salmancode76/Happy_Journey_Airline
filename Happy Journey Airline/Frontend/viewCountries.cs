@@ -33,8 +33,32 @@ namespace Happy_Journey_Airline.Frontend
 
         private void btnupdateFlight_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new UpdateCountry().Show();
+            if (gridCountries.SelectedCells.Count > 0)
+            {
+                // Get the first selected cell
+                var selectedCell = gridCountries.SelectedCells[0];
+
+                // Get the value of the first cell in the selected row 
+                var countryid = gridCountries.Rows[selectedCell.RowIndex].Cells[0].Value;
+                string countryName = (gridCountries.Rows[selectedCell.RowIndex].Cells[1].Value).ToString();
+                string Region = (gridCountries.Rows[selectedCell.RowIndex].Cells[2].Value).ToString();
+
+
+
+                // Print the value of the selected user_id
+
+                int countryID = Convert.ToInt32(countryid);
+
+               new UpdateCountry(countryID, countryName, Region).Show();
+                this.Hide() ;
+
+
+                loadGrid();
+
+                gridCountries.Refresh();
+
+
+            }
         }
 
         private void viewCountries_Load(object sender, EventArgs e)
@@ -78,8 +102,14 @@ namespace Happy_Journey_Airline.Frontend
 
                 int countryID = Convert.ToInt32(countryid);
 
+                Administrator.DeleteCountry(countryID);
 
-              
+
+                loadGrid();
+
+                gridCountries.Refresh();
+
+
             }
         }
     }
