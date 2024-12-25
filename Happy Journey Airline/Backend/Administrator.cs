@@ -1290,28 +1290,81 @@ namespace Happy_Journey_Airline
         }
 
         public void performDbBackup(string backupFilePath)
-        {                           //create a file to save all the db in it and copy its path - eg: backupFilePath = @"C:\Backups\YourDatabaseBackup.bak"
-            string message;
+        {
+            if (string.IsNullOrWhiteSpace(backupFilePath))
+            {
+                throw new ArgumentException("Backup file path cannot be null or empty.", nameof(backupFilePath));
+            }
+
+            
+
             try
-            {                                    //keep the actual database name
-                string query = $"BACKUP DATABASE [DATABASE NAME] TO DISK = @backupFilePath WITH FORMAT, INIT";
+            {
+                string query = $@"BACKUP DATABASE [DATABASE_NAME] TO DISK = @backupFilePath WITH FORMAT, INIT";
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+                
+                    command.Parameters.AddWithValue("@backupFilePath", backupFilePath);
+                   
+                    command.ExecuteNonQuery();
+                
 
-                command.Parameters.AddWithValue("@backupFilePath", backupFilePath);
-
-                command.ExecuteNonQuery();
-
-                message = "Database Backup Completed Successfully";
+                MessageBox.Show("Database backup completed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                throw new Exception("An error occurred while performing DataBase Backup: " + ex.Message);
+                MessageBox.Show($"An error occurred while performing the database backup: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 DBManager.getInstance().CloseConnection();
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //create a file to save all the db in it and copy its path - eg: backupFilePath = @"C:\Backups\YourDatabaseBackup.bak"
+        //    string message;
+        //    try
+        //    {                                    //keep the actual database name
+        //        string query = $"BACKUP DATABASE [DATABASE NAME] TO DISK = @backupFilePath WITH FORMAT, INIT";
+
+        //        SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
+
+        //        command.Parameters.AddWithValue("@backupFilePath", backupFilePath);
+
+        //        command.ExecuteNonQuery();
+
+        //        message = "Database Backup Completed Successfully";
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception("An error occurred while performing DataBase Backup: " + ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        DBManager.getInstance().CloseConnection();
+        //    }
         }
 
         public void addServiceOffers(string serviceName, string description, double price)

@@ -56,30 +56,27 @@
             // 
             // destxt
             // 
-            this.destxt.Location = new System.Drawing.Point(307, 373);
-            this.destxt.Margin = new System.Windows.Forms.Padding(4);
+            this.destxt.Location = new System.Drawing.Point(230, 303);
             this.destxt.Multiline = true;
             this.destxt.Name = "destxt";
-            this.destxt.Size = new System.Drawing.Size(432, 131);
+            this.destxt.Size = new System.Drawing.Size(325, 107);
             this.destxt.TabIndex = 94;
             // 
             // deslbl
             // 
             this.deslbl.AutoSize = true;
             this.deslbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deslbl.Location = new System.Drawing.Point(48, 361);
-            this.deslbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.deslbl.Location = new System.Drawing.Point(36, 293);
             this.deslbl.Name = "deslbl";
-            this.deslbl.Size = new System.Drawing.Size(153, 35);
+            this.deslbl.Size = new System.Drawing.Size(122, 28);
             this.deslbl.TabIndex = 93;
             this.deslbl.Text = "Description:";
             // 
             // subPricetxt
             // 
-            this.subPricetxt.Location = new System.Drawing.Point(307, 194);
-            this.subPricetxt.Margin = new System.Windows.Forms.Padding(4);
+            this.subPricetxt.Location = new System.Drawing.Point(230, 158);
             this.subPricetxt.Name = "subPricetxt";
-            this.subPricetxt.Size = new System.Drawing.Size(261, 22);
+            this.subPricetxt.Size = new System.Drawing.Size(197, 20);
             this.subPricetxt.TabIndex = 92;
             this.subPricetxt.TextChanged += new System.EventHandler(this.subPricetxt_TextChanged);
             // 
@@ -87,29 +84,26 @@
             // 
             this.subPricelbl.AutoSize = true;
             this.subPricelbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subPricelbl.Location = new System.Drawing.Point(48, 182);
-            this.subPricelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.subPricelbl.Location = new System.Drawing.Point(36, 148);
             this.subPricelbl.Name = "subPricelbl";
-            this.subPricelbl.Size = new System.Drawing.Size(228, 35);
+            this.subPricelbl.Size = new System.Drawing.Size(182, 28);
             this.subPricelbl.TabIndex = 91;
             this.subPricelbl.Text = "Subscription Price:";
             // 
             // subNametxt
             // 
-            this.subNametxt.Location = new System.Drawing.Point(307, 124);
-            this.subNametxt.Margin = new System.Windows.Forms.Padding(4);
+            this.subNametxt.Location = new System.Drawing.Point(230, 101);
             this.subNametxt.Name = "subNametxt";
-            this.subNametxt.Size = new System.Drawing.Size(261, 22);
+            this.subNametxt.Size = new System.Drawing.Size(197, 20);
             this.subNametxt.TabIndex = 88;
             // 
             // subnamelbl
             // 
             this.subnamelbl.AutoSize = true;
             this.subnamelbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subnamelbl.Location = new System.Drawing.Point(48, 112);
-            this.subnamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.subnamelbl.Location = new System.Drawing.Point(36, 91);
             this.subnamelbl.Name = "subnamelbl";
-            this.subnamelbl.Size = new System.Drawing.Size(236, 35);
+            this.subnamelbl.Size = new System.Drawing.Size(189, 28);
             this.subnamelbl.TabIndex = 87;
             this.subnamelbl.Text = "Subscription Name:";
             // 
@@ -117,10 +111,9 @@
             // 
             this.btnCreate.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnCreate.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.Location = new System.Drawing.Point(851, 476);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreate.Location = new System.Drawing.Point(638, 387);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(172, 47);
+            this.btnCreate.Size = new System.Drawing.Size(129, 38);
             this.btnCreate.TabIndex = 95;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = false;
@@ -133,19 +126,17 @@
             this.panel1.Controls.Add(this.lblCreateSub);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1072, 79);
+            this.panel1.Size = new System.Drawing.Size(804, 64);
             this.panel1.TabIndex = 97;
             // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(16, 15);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(143, 41);
+            this.btnBack.Size = new System.Drawing.Size(107, 33);
             this.btnBack.TabIndex = 26;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -156,10 +147,9 @@
             this.lblCreateSub.AutoSize = true;
             this.lblCreateSub.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreateSub.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCreateSub.Location = new System.Drawing.Point(307, 0);
-            this.lblCreateSub.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCreateSub.Location = new System.Drawing.Point(230, 0);
             this.lblCreateSub.Name = "lblCreateSub";
-            this.lblCreateSub.Size = new System.Drawing.Size(491, 72);
+            this.lblCreateSub.Size = new System.Drawing.Size(392, 58);
             this.lblCreateSub.TabIndex = 3;
             this.lblCreateSub.Text = "Create Subscription";
             // 
@@ -167,20 +157,18 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel2.Location = new System.Drawing.Point(0, 544);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(0, 442);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1073, 12);
+            this.panel2.Size = new System.Drawing.Size(805, 10);
             this.panel2.TabIndex = 103;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(48, 306);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(36, 249);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 35);
+            this.label1.Size = new System.Drawing.Size(99, 28);
             this.label1.TabIndex = 104;
             this.label1.Text = "End Date:";
             // 
@@ -188,79 +176,84 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(48, 245);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(36, 199);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 35);
+            this.label2.Size = new System.Drawing.Size(108, 28);
             this.label2.TabIndex = 105;
             this.label2.Text = "Start Date:";
             // 
             // datestart
             // 
             this.datestart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datestart.Location = new System.Drawing.Point(307, 257);
+            this.datestart.Location = new System.Drawing.Point(230, 209);
+            this.datestart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.datestart.Name = "datestart";
-            this.datestart.Size = new System.Drawing.Size(261, 22);
+            this.datestart.Size = new System.Drawing.Size(197, 20);
             this.datestart.TabIndex = 106;
             // 
             // dateEnd
             // 
             this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateEnd.Location = new System.Drawing.Point(307, 319);
+            this.dateEnd.Location = new System.Drawing.Point(230, 259);
+            this.dateEnd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateEnd.Name = "dateEnd";
-            this.dateEnd.Size = new System.Drawing.Size(261, 22);
+            this.dateEnd.Size = new System.Drawing.Size(197, 20);
             this.dateEnd.TabIndex = 107;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.ForeColor = System.Drawing.Color.Red;
-            this.lblName.Location = new System.Drawing.Point(307, 154);
+            this.lblName.Location = new System.Drawing.Point(230, 125);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(0, 16);
+            this.lblName.Size = new System.Drawing.Size(0, 13);
             this.lblName.TabIndex = 108;
             // 
             // lblEnd
             // 
             this.lblEnd.AutoSize = true;
             this.lblEnd.ForeColor = System.Drawing.Color.Red;
-            this.lblEnd.Location = new System.Drawing.Point(307, 348);
+            this.lblEnd.Location = new System.Drawing.Point(230, 283);
+            this.lblEnd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEnd.Name = "lblEnd";
-            this.lblEnd.Size = new System.Drawing.Size(0, 16);
+            this.lblEnd.Size = new System.Drawing.Size(0, 13);
             this.lblEnd.TabIndex = 109;
             // 
             // lblStart
             // 
             this.lblStart.AutoSize = true;
             this.lblStart.ForeColor = System.Drawing.Color.Red;
-            this.lblStart.Location = new System.Drawing.Point(307, 291);
+            this.lblStart.Location = new System.Drawing.Point(230, 236);
+            this.lblStart.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStart.Name = "lblStart";
-            this.lblStart.Size = new System.Drawing.Size(0, 16);
+            this.lblStart.Size = new System.Drawing.Size(0, 13);
             this.lblStart.TabIndex = 110;
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.ForeColor = System.Drawing.Color.Red;
-            this.lblPrice.Location = new System.Drawing.Point(307, 225);
+            this.lblPrice.Location = new System.Drawing.Point(230, 183);
+            this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(0, 16);
+            this.lblPrice.Size = new System.Drawing.Size(0, 13);
             this.lblPrice.TabIndex = 111;
             // 
             // lblDesc
             // 
             this.lblDesc.AutoSize = true;
             this.lblDesc.ForeColor = System.Drawing.Color.Red;
-            this.lblDesc.Location = new System.Drawing.Point(304, 510);
+            this.lblDesc.Location = new System.Drawing.Point(228, 414);
+            this.lblDesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(0, 16);
+            this.lblDesc.Size = new System.Drawing.Size(0, 13);
             this.lblDesc.TabIndex = 112;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
-            this.pictureBox1.Location = new System.Drawing.Point(366, 135);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(274, 110);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(256, 244);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -269,10 +262,10 @@
             // 
             // CreateSubscription
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblStart);
@@ -293,9 +286,8 @@
             this.Controls.Add(this.subnamelbl);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CreateSubscription";
-            this.Text = "CreateSubscription";
+            this.Text = "D";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -98,5 +98,13 @@ namespace Happy_Journey_Airline
             this.Hide();
             new AdminSubscribersSubscription().Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Administrator ad = new Administrator();
+            //ad.performDbBackup(); 
+            //create a file to save all the db in it and copy its path - eg: backupFilePath = @"C:\Backups\YourDatabaseBackup.bak"
+            ;
+        }
     }
 }

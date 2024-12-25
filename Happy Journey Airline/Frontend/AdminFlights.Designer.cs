@@ -97,6 +97,7 @@
             this.gridFlight.RowHeadersWidth = 51;
             this.gridFlight.Size = new System.Drawing.Size(510, 261);
             this.gridFlight.TabIndex = 78;
+            this.gridFlight.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridFlight_CellContentClick);
             // 
             // panel1
             // 

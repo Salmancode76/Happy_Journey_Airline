@@ -90,6 +90,7 @@
             this.backbtn.TabIndex = 87;
             this.backbtn.Text = "Back";
             this.backbtn.UseVisualStyleBackColor = false;
+            this.backbtn.Click += new System.EventHandler(this.backbtn_Click);
             // 
             // panel2
             // 
@@ -175,7 +176,7 @@
             // 
             this.dateTimePickerFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerFrom.Location = new System.Drawing.Point(782, 370);
-            this.dateTimePickerFrom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerFrom.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(110, 20);
             this.dateTimePickerFrom.TabIndex = 119;
@@ -184,7 +185,7 @@
             // 
             this.dateTimePickerTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerTo.Location = new System.Drawing.Point(974, 370);
-            this.dateTimePickerTo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerTo.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(115, 20);
             this.dateTimePickerTo.TabIndex = 120;
@@ -292,7 +293,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(1098, 626);
             this.Controls.Add(this.lblmsg);
             this.Controls.Add(this.CountryDepartureCMB);
             this.Controls.Add(this.cmbDepartureA);

@@ -69,6 +69,7 @@
             this.userComboxUser = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtpassport = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -76,28 +77,28 @@
             // CountryDepartureCMB
             // 
             this.CountryDepartureCMB.FormattingEnabled = true;
-            this.CountryDepartureCMB.Location = new System.Drawing.Point(807, 135);
-            this.CountryDepartureCMB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CountryDepartureCMB.Location = new System.Drawing.Point(615, 110);
+            this.CountryDepartureCMB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CountryDepartureCMB.Name = "CountryDepartureCMB";
-            this.CountryDepartureCMB.Size = new System.Drawing.Size(223, 24);
+            this.CountryDepartureCMB.Size = new System.Drawing.Size(168, 21);
             this.CountryDepartureCMB.TabIndex = 148;
             // 
             // CountryDistCMD
             // 
             this.CountryDistCMD.FormattingEnabled = true;
-            this.CountryDistCMD.Location = new System.Drawing.Point(807, 193);
-            this.CountryDistCMD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CountryDistCMD.Location = new System.Drawing.Point(615, 156);
+            this.CountryDistCMD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CountryDistCMD.Name = "CountryDistCMD";
-            this.CountryDistCMD.Size = new System.Drawing.Size(223, 24);
+            this.CountryDistCMD.Size = new System.Drawing.Size(168, 21);
             this.CountryDistCMD.TabIndex = 147;
             // 
             // cmbDestination
             // 
             this.cmbDestination.FormattingEnabled = true;
-            this.cmbDestination.Location = new System.Drawing.Point(203, 193);
-            this.cmbDestination.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDestination.Location = new System.Drawing.Point(176, 157);
+            this.cmbDestination.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbDestination.Name = "cmbDestination";
-            this.cmbDestination.Size = new System.Drawing.Size(275, 24);
+            this.cmbDestination.Size = new System.Drawing.Size(183, 21);
             this.cmbDestination.TabIndex = 146;
             this.cmbDestination.SelectedIndexChanged += new System.EventHandler(this.cmbDestination_SelectedIndexChanged);
             // 
@@ -105,10 +106,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(535, 183);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(401, 149);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(275, 35);
+            this.label1.Size = new System.Drawing.Size(218, 28);
             this.label1.TabIndex = 145;
             this.label1.Text = "Country of Distination:";
             // 
@@ -116,28 +116,25 @@
             // 
             this.countydeparttxt.AutoSize = true;
             this.countydeparttxt.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.countydeparttxt.Location = new System.Drawing.Point(535, 126);
-            this.countydeparttxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.countydeparttxt.Location = new System.Drawing.Point(401, 102);
             this.countydeparttxt.Name = "countydeparttxt";
-            this.countydeparttxt.Size = new System.Drawing.Size(264, 35);
+            this.countydeparttxt.Size = new System.Drawing.Size(209, 28);
             this.countydeparttxt.TabIndex = 144;
             this.countydeparttxt.Text = "Country of Departure:";
             // 
             // cmbStatus
             // 
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(649, 318);
-            this.cmbStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbStatus.Location = new System.Drawing.Point(615, 257);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(261, 24);
+            this.cmbStatus.Size = new System.Drawing.Size(169, 21);
             this.cmbStatus.TabIndex = 143;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(203, 255);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(176, 206);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(221, 22);
+            this.textBox1.Size = new System.Drawing.Size(183, 20);
             this.textBox1.TabIndex = 142;
             // 
             // lblErrorMessage
@@ -145,56 +142,54 @@
             this.lblErrorMessage.AutoSize = true;
             this.lblErrorMessage.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorMessage.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorMessage.Location = new System.Drawing.Point(-99, 430);
-            this.lblErrorMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblErrorMessage.Location = new System.Drawing.Point(-74, 349);
             this.lblErrorMessage.Name = "lblErrorMessage";
-            this.lblErrorMessage.Size = new System.Drawing.Size(0, 35);
+            this.lblErrorMessage.Size = new System.Drawing.Size(0, 28);
             this.lblErrorMessage.TabIndex = 141;
             // 
             // dateDepartureTime
             // 
             this.dateDepartureTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateDepartureTime.Location = new System.Drawing.Point(745, 414);
-            this.dateDepartureTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateDepartureTime.Location = new System.Drawing.Point(615, 310);
+            this.dateDepartureTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateDepartureTime.Name = "dateDepartureTime";
-            this.dateDepartureTime.Size = new System.Drawing.Size(221, 22);
+            this.dateDepartureTime.Size = new System.Drawing.Size(167, 20);
             this.dateDepartureTime.TabIndex = 140;
             // 
             // dateDepartureDate
             // 
             this.dateDepartureDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateDepartureDate.Location = new System.Drawing.Point(235, 416);
-            this.dateDepartureDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateDepartureDate.Location = new System.Drawing.Point(176, 310);
+            this.dateDepartureDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateDepartureDate.Name = "dateDepartureDate";
-            this.dateDepartureDate.Size = new System.Drawing.Size(261, 22);
+            this.dateDepartureDate.Size = new System.Drawing.Size(183, 20);
             this.dateDepartureDate.TabIndex = 139;
             // 
             // dateArrivalDate
             // 
             this.dateArrivalDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateArrivalDate.Location = new System.Drawing.Point(235, 505);
-            this.dateArrivalDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateArrivalDate.Location = new System.Drawing.Point(176, 370);
+            this.dateArrivalDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateArrivalDate.Name = "dateArrivalDate";
-            this.dateArrivalDate.Size = new System.Drawing.Size(223, 22);
+            this.dateArrivalDate.Size = new System.Drawing.Size(183, 20);
             this.dateArrivalDate.TabIndex = 138;
             // 
             // dateArrivalTime
             // 
             this.dateArrivalTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateArrivalTime.Location = new System.Drawing.Point(736, 517);
-            this.dateArrivalTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateArrivalTime.Location = new System.Drawing.Point(616, 373);
+            this.dateArrivalTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateArrivalTime.Name = "dateArrivalTime";
-            this.dateArrivalTime.Size = new System.Drawing.Size(223, 22);
+            this.dateArrivalTime.Size = new System.Drawing.Size(168, 20);
             this.dateArrivalTime.TabIndex = 137;
             // 
             // lblDepartureDate
             // 
             this.lblDepartureDate.AutoSize = true;
             this.lblDepartureDate.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDepartureDate.Location = new System.Drawing.Point(36, 406);
-            this.lblDepartureDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDepartureDate.Location = new System.Drawing.Point(17, 310);
             this.lblDepartureDate.Name = "lblDepartureDate";
-            this.lblDepartureDate.Size = new System.Drawing.Size(197, 35);
+            this.lblDepartureDate.Size = new System.Drawing.Size(154, 28);
             this.lblDepartureDate.TabIndex = 136;
             this.lblDepartureDate.Text = "Departure Date:";
             // 
@@ -202,10 +197,9 @@
             // 
             this.lblArrivalDate.AutoSize = true;
             this.lblArrivalDate.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArrivalDate.Location = new System.Drawing.Point(31, 494);
-            this.lblArrivalDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblArrivalDate.Location = new System.Drawing.Point(23, 362);
             this.lblArrivalDate.Name = "lblArrivalDate";
-            this.lblArrivalDate.Size = new System.Drawing.Size(161, 35);
+            this.lblArrivalDate.Size = new System.Drawing.Size(126, 28);
             this.lblArrivalDate.TabIndex = 135;
             this.lblArrivalDate.Text = "Arrival Date:";
             // 
@@ -213,10 +207,9 @@
             // 
             this.lblArrivalTime.AutoSize = true;
             this.lblArrivalTime.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArrivalTime.Location = new System.Drawing.Point(535, 505);
-            this.lblArrivalTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblArrivalTime.Location = new System.Drawing.Point(411, 365);
             this.lblArrivalTime.Name = "lblArrivalTime";
-            this.lblArrivalTime.Size = new System.Drawing.Size(167, 35);
+            this.lblArrivalTime.Size = new System.Drawing.Size(131, 28);
             this.lblArrivalTime.TabIndex = 134;
             this.lblArrivalTime.Text = "Arrival Time:";
             // 
@@ -226,20 +219,18 @@
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.lblCreateFlight);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel1.Location = new System.Drawing.Point(-5, -4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(-4, -3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1186, 79);
+            this.panel1.Size = new System.Drawing.Size(916, 64);
             this.panel1.TabIndex = 132;
             // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(17, 18);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Location = new System.Drawing.Point(13, 15);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(143, 41);
+            this.btnBack.Size = new System.Drawing.Size(107, 33);
             this.btnBack.TabIndex = 26;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -250,10 +241,9 @@
             this.lblCreateFlight.AutoSize = true;
             this.lblCreateFlight.Font = new System.Drawing.Font("Sitka Text", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreateFlight.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCreateFlight.Location = new System.Drawing.Point(375, 0);
-            this.lblCreateFlight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCreateFlight.Location = new System.Drawing.Point(281, 0);
             this.lblCreateFlight.Name = "lblCreateFlight";
-            this.lblCreateFlight.Size = new System.Drawing.Size(297, 72);
+            this.lblCreateFlight.Size = new System.Drawing.Size(237, 58);
             this.lblCreateFlight.TabIndex = 3;
             this.lblCreateFlight.Text = "Book Flight";
             // 
@@ -261,10 +251,9 @@
             // 
             this.statuslbl.AutoSize = true;
             this.statuslbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statuslbl.Location = new System.Drawing.Point(535, 306);
-            this.statuslbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.statuslbl.Location = new System.Drawing.Point(401, 249);
             this.statuslbl.Name = "statuslbl";
-            this.statuslbl.Size = new System.Drawing.Size(92, 35);
+            this.statuslbl.Size = new System.Drawing.Size(74, 28);
             this.statuslbl.TabIndex = 131;
             this.statuslbl.Text = "Status:";
             // 
@@ -272,10 +261,9 @@
             // 
             this.cmbDeparture.DropDownWidth = 221;
             this.cmbDeparture.FormattingEnabled = true;
-            this.cmbDeparture.Location = new System.Drawing.Point(203, 135);
-            this.cmbDeparture.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbDeparture.Location = new System.Drawing.Point(176, 110);
             this.cmbDeparture.Name = "cmbDeparture";
-            this.cmbDeparture.Size = new System.Drawing.Size(275, 24);
+            this.cmbDeparture.Size = new System.Drawing.Size(183, 21);
             this.cmbDeparture.TabIndex = 130;
             this.cmbDeparture.SelectedIndexChanged += new System.EventHandler(this.cmbDeparture_SelectedIndexChanged);
             // 
@@ -283,10 +271,9 @@
             // 
             this.lblDepartureTime.AutoSize = true;
             this.lblDepartureTime.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDepartureTime.Location = new System.Drawing.Point(535, 402);
-            this.lblDepartureTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDepartureTime.Location = new System.Drawing.Point(411, 310);
             this.lblDepartureTime.Name = "lblDepartureTime";
-            this.lblDepartureTime.Size = new System.Drawing.Size(203, 35);
+            this.lblDepartureTime.Size = new System.Drawing.Size(159, 28);
             this.lblDepartureTime.TabIndex = 129;
             this.lblDepartureTime.Text = "Departure Time:";
             // 
@@ -294,10 +281,9 @@
             // 
             this.btnCreate.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnCreate.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.Location = new System.Drawing.Point(974, 751);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreate.Location = new System.Drawing.Point(699, 583);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(172, 47);
+            this.btnCreate.Size = new System.Drawing.Size(129, 38);
             this.btnCreate.TabIndex = 128;
             this.btnCreate.Text = "Book";
             this.btnCreate.UseVisualStyleBackColor = false;
@@ -305,20 +291,18 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(235, 331);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrice.Location = new System.Drawing.Point(176, 258);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(221, 22);
+            this.txtPrice.Size = new System.Drawing.Size(183, 20);
             this.txtPrice.TabIndex = 127;
             // 
             // pricelbl
             // 
             this.pricelbl.AutoSize = true;
             this.pricelbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pricelbl.Location = new System.Drawing.Point(36, 318);
-            this.pricelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.pricelbl.Location = new System.Drawing.Point(26, 250);
             this.pricelbl.Name = "pricelbl";
-            this.pricelbl.Size = new System.Drawing.Size(153, 35);
+            this.pricelbl.Size = new System.Drawing.Size(120, 28);
             this.pricelbl.TabIndex = 126;
             this.pricelbl.Text = "Flight Price:";
             // 
@@ -326,10 +310,9 @@
             // 
             this.Deptlbl.AutoSize = true;
             this.Deptlbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Deptlbl.Location = new System.Drawing.Point(31, 135);
-            this.Deptlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Deptlbl.Location = new System.Drawing.Point(23, 110);
             this.Deptlbl.Name = "Deptlbl";
-            this.Deptlbl.Size = new System.Drawing.Size(138, 35);
+            this.Deptlbl.Size = new System.Drawing.Size(109, 28);
             this.Deptlbl.TabIndex = 125;
             this.Deptlbl.Text = "Departure:";
             // 
@@ -337,29 +320,26 @@
             // 
             this.destlbl.AutoSize = true;
             this.destlbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.destlbl.Location = new System.Drawing.Point(31, 183);
-            this.destlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.destlbl.Location = new System.Drawing.Point(23, 149);
             this.destlbl.Name = "destlbl";
-            this.destlbl.Size = new System.Drawing.Size(154, 35);
+            this.destlbl.Size = new System.Drawing.Size(122, 28);
             this.destlbl.TabIndex = 124;
             this.destlbl.Text = "Destination:";
             // 
             // txtCapacity
             // 
-            this.txtCapacity.Location = new System.Drawing.Point(653, 254);
-            this.txtCapacity.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCapacity.Location = new System.Drawing.Point(615, 214);
             this.txtCapacity.Name = "txtCapacity";
-            this.txtCapacity.Size = new System.Drawing.Size(224, 22);
+            this.txtCapacity.Size = new System.Drawing.Size(169, 20);
             this.txtCapacity.TabIndex = 123;
             // 
             // capacitylbl
             // 
             this.capacitylbl.AutoSize = true;
             this.capacitylbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.capacitylbl.Location = new System.Drawing.Point(535, 241);
-            this.capacitylbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.capacitylbl.Location = new System.Drawing.Point(401, 196);
             this.capacitylbl.Name = "capacitylbl";
-            this.capacitylbl.Size = new System.Drawing.Size(119, 35);
+            this.capacitylbl.Size = new System.Drawing.Size(94, 28);
             this.capacitylbl.TabIndex = 122;
             this.capacitylbl.Text = "Capacity:";
             // 
@@ -367,10 +347,9 @@
             // 
             this.FlightNolbl.AutoSize = true;
             this.FlightNolbl.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FlightNolbl.Location = new System.Drawing.Point(36, 254);
-            this.FlightNolbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.FlightNolbl.Location = new System.Drawing.Point(27, 196);
             this.FlightNolbl.Name = "FlightNolbl";
-            this.FlightNolbl.Size = new System.Drawing.Size(127, 35);
+            this.FlightNolbl.Size = new System.Drawing.Size(101, 28);
             this.FlightNolbl.TabIndex = 121;
             this.FlightNolbl.Text = "Flight No:";
             // 
@@ -378,17 +357,15 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel3.Location = new System.Drawing.Point(-5, 833);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(-4, 677);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1186, 12);
+            this.panel3.Size = new System.Drawing.Size(890, 10);
             this.panel3.TabIndex = 149;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
-            this.pictureBox1.Location = new System.Drawing.Point(344, 198);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(258, 161);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(256, 244);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -398,65 +375,66 @@
             // checkedListBoxService
             // 
             this.checkedListBoxService.FormattingEnabled = true;
-            this.checkedListBoxService.Location = new System.Drawing.Point(42, 586);
+            this.checkedListBoxService.Location = new System.Drawing.Point(32, 476);
+            this.checkedListBoxService.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkedListBoxService.Name = "checkedListBoxService";
-            this.checkedListBoxService.Size = new System.Drawing.Size(421, 140);
+            this.checkedListBoxService.Size = new System.Drawing.Size(317, 109);
             this.checkedListBoxService.TabIndex = 150;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(535, 567);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(27, 405);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 35);
+            this.label2.Size = new System.Drawing.Size(57, 28);
             this.label2.TabIndex = 151;
             this.label2.Text = "Seat:";
             // 
             // seatnotxt
             // 
-            this.seatnotxt.Location = new System.Drawing.Point(633, 579);
+            this.seatnotxt.Location = new System.Drawing.Point(180, 413);
+            this.seatnotxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.seatnotxt.Name = "seatnotxt";
-            this.seatnotxt.Size = new System.Drawing.Size(244, 22);
+            this.seatnotxt.Size = new System.Drawing.Size(179, 20);
             this.seatnotxt.TabIndex = 152;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(535, 618);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(410, 413);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 35);
+            this.label3.Size = new System.Drawing.Size(65, 28);
             this.label3.TabIndex = 153;
             this.label3.Text = "Class:";
             // 
             // cmbFlightClass
             // 
             this.cmbFlightClass.FormattingEnabled = true;
-            this.cmbFlightClass.Location = new System.Drawing.Point(633, 630);
+            this.cmbFlightClass.Location = new System.Drawing.Point(614, 421);
+            this.cmbFlightClass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbFlightClass.Name = "cmbFlightClass";
-            this.cmbFlightClass.Size = new System.Drawing.Size(244, 24);
+            this.cmbFlightClass.Size = new System.Drawing.Size(168, 21);
             this.cmbFlightClass.TabIndex = 154;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(535, 681);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(414, 459);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 35);
+            this.label4.Size = new System.Drawing.Size(61, 28);
             this.label4.TabIndex = 155;
             this.label4.Text = "User:";
             // 
             // userComboxUser
             // 
             this.userComboxUser.FormattingEnabled = true;
-            this.userComboxUser.Location = new System.Drawing.Point(633, 693);
+            this.userComboxUser.Location = new System.Drawing.Point(614, 467);
+            this.userComboxUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userComboxUser.Name = "userComboxUser";
-            this.userComboxUser.Size = new System.Drawing.Size(244, 24);
+            this.userComboxUser.Size = new System.Drawing.Size(167, 21);
             this.userComboxUser.TabIndex = 156;
             this.userComboxUser.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -464,26 +442,36 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(535, 739);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(414, 512);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 35);
+            this.label5.Size = new System.Drawing.Size(122, 28);
             this.label5.TabIndex = 157;
             this.label5.Text = "PassportNo:";
             // 
             // txtpassport
             // 
-            this.txtpassport.Location = new System.Drawing.Point(693, 751);
+            this.txtpassport.Location = new System.Drawing.Point(614, 520);
+            this.txtpassport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtpassport.Name = "txtpassport";
-            this.txtpassport.Size = new System.Drawing.Size(217, 22);
+            this.txtpassport.Size = new System.Drawing.Size(167, 20);
             this.txtpassport.TabIndex = 158;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel2.Location = new System.Drawing.Point(-4, 649);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(916, 12);
+            this.panel2.TabIndex = 103;
             // 
             // BookFlightNew
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1182, 845);
+            this.ClientSize = new System.Drawing.Size(913, 658);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtpassport);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.userComboxUser);
@@ -523,7 +511,7 @@
             this.Controls.Add(this.FlightNolbl);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BookFlightNew";
             this.Text = "BookFlight";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -577,5 +565,6 @@
         private System.Windows.Forms.ComboBox userComboxUser;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtpassport;
+        private System.Windows.Forms.Panel panel2;
     }
 }

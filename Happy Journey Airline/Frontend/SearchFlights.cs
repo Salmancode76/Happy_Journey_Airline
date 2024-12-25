@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Happy_Journey_Airline.Backend;
 
 namespace Happy_Journey_Airline.Frontend
 {
@@ -30,34 +31,25 @@ namespace Happy_Journey_Airline.Frontend
             DateTime from = dateTimePickerFrom.Value;
             DateTime to = dateTimePickerTo.Value;
 
-
-
             if (string.IsNullOrWhiteSpace(txtPrice.Text) ||
-
-            from == null || to == null ||
-            CountryDepartureCMB.SelectedIndex == -1 ||
-            CountryDestCMD.SelectedIndex == -1 ||
-
-            cmbDepartureA.SelectedIndex == -1 ||
-           cmbDestinationA.SelectedIndex == -1 ||
-           cmbStatus.SelectedIndex == -1)
+                CountryDepartureCMB.SelectedIndex == -1 ||
+                CountryDestCMD.SelectedIndex == -1 ||
+                cmbDepartureA.SelectedIndex == -1 ||
+                cmbDestinationA.SelectedIndex == -1 ||
+                cmbStatus.SelectedIndex == -1)
             {
                 MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-
-            if (from == to)
+            if (from.Date >= to.Date)
             {
-
-                lblmsg.Text = " Departure and Arrival dates cannot be same";
-
+                lblmsg.Text = "Departure date must be earlier than Arrival date.";
+                return;
             }
 
             int departureA = Convert.ToInt32(cmbDepartureA.SelectedValue);
             int destinationA = Convert.ToInt32(cmbDestinationA.SelectedValue);
-            //int CountryDeparture = Convert.ToInt32(CountryDepartureCMB.SelectedValue);
-            //int CountryDestination = Convert.ToInt32(CountryDestCMD.SelectedValue);
 
             if (departureA == destinationA)
             {
@@ -66,34 +58,40 @@ namespace Happy_Journey_Airline.Frontend
             }
 
             string status = cmbStatus.SelectedItem?.ToString();
-            double price = Convert.ToDouble(txtPrice.Text);
+            if (!double.TryParse(txtPrice.Text, out double price))
+            {
+                MessageBox.Show("Invalid price format.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             try
             {
-                string query = "SELECT * FROM Flight WHERE destination = @destination OR departure = @departure Or price = @price or status =@status or departure_date=@from or arrival_date=@to";
+                string query = @"SELECT * FROM Flight
+                         WHERE destination = @destination AND 
+                               departure = @departure AND 
+                               price = @price AND 
+                               status = @status AND 
+                               departure_date >= @from AND 
+                               arrival_date <= @to";
 
-                SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
-
-                command.Parameters.AddWithValue("@destination", destinationA);
-                command.Parameters.AddWithValue("@status", status);
-                command.Parameters.AddWithValue("@departure", departureA);
-                command.Parameters.AddWithValue("@price", price);
-                command.Parameters.AddWithValue("@from", from);
-                command.Parameters.AddWithValue("@to", to);
-
-
-                SqlDataAdapter da = new SqlDataAdapter(command);
-
-                DataTable dataTable = new DataTable();
-                da.Fill(dataTable);
-
-                // check if any rows were returned
-                if (dataTable.Rows.Count > 0)
+                using (SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection()))
                 {
-                    FlightGridView.DataSource = dataTable;
-                }
-                else
-                {
-                    if (dataTable.Rows.Count == 0)
+                    command.Parameters.AddWithValue("@destination", destinationA);
+                    command.Parameters.AddWithValue("@departure", departureA);
+                    command.Parameters.AddWithValue("@price", price);
+                    command.Parameters.AddWithValue("@status", status);
+                    command.Parameters.AddWithValue("@from", from);
+                    command.Parameters.AddWithValue("@to", to);
+
+                    SqlDataAdapter da = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    da.Fill(dataTable);
+
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        FlightGridView.DataSource = dataTable;
+                    }
+                    else
                     {
                         MessageBox.Show("No flights found matching the criteria.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -101,12 +99,11 @@ namespace Happy_Journey_Airline.Frontend
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
-
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally {
+            finally
+            {
                 DBManager.getInstance().CloseConnection();
-
             }
 
 
@@ -237,6 +234,33 @@ namespace Happy_Journey_Airline.Frontend
 
 
 
+        }
+
+        private void backbtn_Click(object sender, EventArgs e)
+        {
+
+            if (GlobalUser.LoggedInUser == null)
+            {
+                MessageBox.Show("No user is logged in. Please log in first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            Console.WriteLine(GlobalUser.LoggedInUser.Role);
+            if (GlobalUser.LoggedInUser.Role == "Admin")
+            {
+                this.Hide();
+                new AdminFlights().Show();
+            }
+            else if (GlobalUser.LoggedInUser.Role == "Employer")
+            {
+                this.Hide();
+                new EmployeeDashboard().Show();
+            }
+            else
+            {
+
+                this.Hide();
+                new UserHomeScreen().Show();
+            }
         }
     }
 }
