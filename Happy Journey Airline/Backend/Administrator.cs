@@ -1289,8 +1289,11 @@ namespace Happy_Journey_Airline
             }
         }
 
-        public void performDbBackup(string backupFilePath)
+        public void performDbBackup()
         {
+
+            string databaseName = "HappyJourneyDatabase";
+            string backupFilePath = "C:\\Users\\salma\\OneDrive\\Desktop\\Codes\\C#\\Happy Journey Airline\\Happy Journey Airline\\Happy Journey Airline\\BackupDB";
             if (string.IsNullOrWhiteSpace(backupFilePath))
             {
                 throw new ArgumentException("Backup file path cannot be null or empty.", nameof(backupFilePath));
@@ -1300,7 +1303,7 @@ namespace Happy_Journey_Airline
 
             try
             {
-                string query = $@"BACKUP DATABASE [DATABASE_NAME] TO DISK = @backupFilePath WITH FORMAT, INIT";
+                string query = $@"BACKUP DATABASE [{databaseName}] TO DISK = @backupFilePath WITH FORMAT, INIT";
 
                 SqlCommand command = new SqlCommand(query, DBManager.getInstance().OpenConnection());
                 
