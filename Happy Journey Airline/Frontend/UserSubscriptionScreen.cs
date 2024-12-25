@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -61,7 +61,6 @@ namespace Happy_Journey_Airline
         private void UserSubscriptionScreen_Load(object sender, EventArgs e)
         {
             LoadGrid();
-            //AdminSubscribersSubscription admin = new AdminSubscribersSubscription();
         }
 
         private void subscribeBttn_Click(object sender, EventArgs e)
@@ -93,9 +92,8 @@ namespace Happy_Journey_Airline
                 return Convert.ToInt32(subscriptionGrid.CurrentRow.Cells["subscription_id"].Value);
             }
         
-            // If no row is selected, return -1 or throw an exception
-            // throw new InvalidOperationException("No subscription is selected.");
-            return -1;
+            // If no row is selected, throw an exception
+            throw new InvalidOperationException("No subscription is selected.");
         }
 
         private bool SaveSubscriberSubscription(int travelerId, int subscriptionId)

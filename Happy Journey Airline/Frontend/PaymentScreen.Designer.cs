@@ -69,7 +69,7 @@
             this.rbCredit.Checked = true;
             this.rbCredit.Font = new System.Drawing.Font("Sitka Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbCredit.Location = new System.Drawing.Point(749, 234);
-            this.rbCredit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbCredit.Margin = new System.Windows.Forms.Padding(4);
             this.rbCredit.Name = "rbCredit";
             this.rbCredit.Size = new System.Drawing.Size(70, 24);
             this.rbCredit.TabIndex = 48;
@@ -83,7 +83,7 @@
             this.rbDebit.AutoSize = true;
             this.rbDebit.Font = new System.Drawing.Font("Sitka Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbDebit.Location = new System.Drawing.Point(863, 234);
-            this.rbDebit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbDebit.Margin = new System.Windows.Forms.Padding(4);
             this.rbDebit.Name = "rbDebit";
             this.rbDebit.Size = new System.Drawing.Size(65, 24);
             this.rbDebit.TabIndex = 49;
@@ -105,7 +105,7 @@
             // txtCholder
             // 
             this.txtCholder.Location = new System.Drawing.Point(244, 155);
-            this.txtCholder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCholder.Margin = new System.Windows.Forms.Padding(4);
             this.txtCholder.Name = "txtCholder";
             this.txtCholder.Size = new System.Drawing.Size(236, 22);
             this.txtCholder.TabIndex = 51;
@@ -124,7 +124,7 @@
             // txtcnum
             // 
             this.txtcnum.Location = new System.Drawing.Point(244, 244);
-            this.txtcnum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtcnum.Margin = new System.Windows.Forms.Padding(4);
             this.txtcnum.Name = "txtcnum";
             this.txtcnum.Size = new System.Drawing.Size(236, 22);
             this.txtcnum.TabIndex = 53;
@@ -142,8 +142,9 @@
             // 
             // expDatePicker
             // 
+            this.expDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.expDatePicker.Location = new System.Drawing.Point(749, 155);
-            this.expDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.expDatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.expDatePicker.Name = "expDatePicker";
             this.expDatePicker.Size = new System.Drawing.Size(236, 22);
             this.expDatePicker.TabIndex = 55;
@@ -162,7 +163,7 @@
             // txtCode
             // 
             this.txtCode.Location = new System.Drawing.Point(749, 310);
-            this.txtCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(236, 22);
             this.txtCode.TabIndex = 57;
@@ -172,7 +173,7 @@
             this.paybtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.paybtn.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.paybtn.Location = new System.Drawing.Point(803, 449);
-            this.paybtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.paybtn.Margin = new System.Windows.Forms.Padding(4);
             this.paybtn.Name = "paybtn";
             this.paybtn.Size = new System.Drawing.Size(172, 47);
             this.paybtn.TabIndex = 66;
@@ -187,7 +188,7 @@
             this.panel1.Controls.Add(this.lblPayment);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1084, 84);
             this.panel1.TabIndex = 104;
@@ -197,7 +198,7 @@
             this.btnback.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnback.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnback.Location = new System.Drawing.Point(16, 15);
-            this.btnback.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnback.Margin = new System.Windows.Forms.Padding(4);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(143, 41);
             this.btnback.TabIndex = 26;
@@ -222,7 +223,7 @@
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(0, 540);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1084, 17);
             this.panel2.TabIndex = 105;
@@ -231,7 +232,7 @@
             // 
             this.pictureBox1.Image = global::Happy_Journey_Airline.Properties.Resources.Screenshot_2024_12_04_004028;
             this.pictureBox1.Location = new System.Drawing.Point(341, 118);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(341, 300);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -271,7 +272,7 @@
             this.Controls.Add(this.lblCardType);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PaymentScreen";
             this.Text = "PaymentScreen";
             this.Load += new System.EventHandler(this.PaymentScreen_Load);
