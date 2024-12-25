@@ -55,7 +55,7 @@ namespace Happy_Journey_Airline.Frontend
                 }
                 if (messages.Count == 0)
                 {
-                    MessageBox.Show("No messages found for this traveler.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    msglbl.Text = "No messages received.";
                 }
                 else
                 {

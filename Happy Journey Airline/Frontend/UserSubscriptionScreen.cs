@@ -92,7 +92,7 @@ namespace Happy_Journey_Airline
                 // Retrieve the SubscriptionId from the selected row
                 return Convert.ToInt32(subscriptionGrid.CurrentRow.Cells["subscription_id"].Value);
             }
-
+        
             // If no row is selected, return -1 or throw an exception
             throw new InvalidOperationException("No subscription is selected.");
         }
@@ -117,13 +117,14 @@ namespace Happy_Journey_Airline
                     return false;
                 }
 
+              
                 // Retrieve the SubscriptionId from the selected row
                 subscriptionId = Convert.ToInt32(subscriptionGrid.Rows[selectedRowIndex].Cells["subscription_id"].Value);
 
                 string query = "INSERT INTO [dbo].[Subscriber Subscription] (subscriber_id, subscription_id) VALUES (@subscriber_id, @subscription_id)";
 
                 SqlCommand cmd = new SqlCommand(query, DBManager.getInstance().OpenConnection());
-                
+
                 cmd.Parameters.AddWithValue("@subscriber_id", travelerId);
                 cmd.Parameters.AddWithValue("@subscription_id", subscriptionId);
 
@@ -133,7 +134,7 @@ namespace Happy_Journey_Airline
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}");
+                MessageBox.Show("No subscription is selected.");
                 return false;
             }
             finally
