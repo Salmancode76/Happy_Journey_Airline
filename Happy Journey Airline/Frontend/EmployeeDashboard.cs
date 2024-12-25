@@ -28,5 +28,11 @@ namespace Happy_Journey_Airline.Frontend
             this.Hide();
             new ViewBookFlight().Show();
         }
+
+        private void btnSearchFlight_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new SearchFlights().Show();
+        }
     }
 }

@@ -38,6 +38,7 @@
             this.lblFlights = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSearchFlight = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridFlight)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +69,7 @@
             // 
             this.btndel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btndel.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndel.Location = new System.Drawing.Point(563, 232);
+            this.btndel.Location = new System.Drawing.Point(563, 194);
             this.btndel.Name = "btndel";
             this.btndel.Size = new System.Drawing.Size(157, 32);
             this.btndel.TabIndex = 80;
@@ -140,12 +141,25 @@
             this.panel2.Size = new System.Drawing.Size(805, 10);
             this.panel2.TabIndex = 93;
             // 
+            // btnSearchFlight
+            // 
+            this.btnSearchFlight.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSearchFlight.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchFlight.Location = new System.Drawing.Point(565, 266);
+            this.btnSearchFlight.Name = "btnSearchFlight";
+            this.btnSearchFlight.Size = new System.Drawing.Size(155, 38);
+            this.btnSearchFlight.TabIndex = 94;
+            this.btnSearchFlight.Text = "Search Flights";
+            this.btnSearchFlight.UseVisualStyleBackColor = false;
+            this.btnSearchFlight.Click += new System.EventHandler(this.btnSearchFlight_Click);
+            // 
             // AdminFlights
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSearchFlight);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblDesc);
@@ -175,5 +189,6 @@
         private System.Windows.Forms.Label lblFlights;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnSearchFlight;
     }
 }

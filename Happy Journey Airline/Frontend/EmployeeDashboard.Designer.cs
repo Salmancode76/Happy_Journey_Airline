@@ -94,6 +94,7 @@
             this.btnSearchFlight.TabIndex = 35;
             this.btnSearchFlight.Text = "Search Flights";
             this.btnSearchFlight.UseVisualStyleBackColor = false;
+            this.btnSearchFlight.Click += new System.EventHandler(this.btnSearchFlight_Click);
             // 
             // pictureBox1
             // 

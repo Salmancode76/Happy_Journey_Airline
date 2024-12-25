@@ -37,6 +37,7 @@
             this.btnBookFlight = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMessage = new System.Windows.Forms.Button();
+            this.btnSearchFlight = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -89,7 +90,7 @@
             // 
             this.btnSubscribe.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSubscribe.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubscribe.Location = new System.Drawing.Point(483, 218);
+            this.btnSubscribe.Location = new System.Drawing.Point(483, 185);
             this.btnSubscribe.Name = "btnSubscribe";
             this.btnSubscribe.Size = new System.Drawing.Size(155, 38);
             this.btnSubscribe.TabIndex = 28;
@@ -101,7 +102,7 @@
             // 
             this.btnBookFlight.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBookFlight.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBookFlight.Location = new System.Drawing.Point(483, 139);
+            this.btnBookFlight.Location = new System.Drawing.Point(483, 124);
             this.btnBookFlight.Name = "btnBookFlight";
             this.btnBookFlight.Size = new System.Drawing.Size(155, 38);
             this.btnBookFlight.TabIndex = 27;
@@ -130,12 +131,25 @@
             this.btnMessage.UseVisualStyleBackColor = false;
             this.btnMessage.Click += new System.EventHandler(this.btnMessage_Click);
             // 
+            // btnSearchFlight
+            // 
+            this.btnSearchFlight.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSearchFlight.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchFlight.Location = new System.Drawing.Point(483, 245);
+            this.btnSearchFlight.Name = "btnSearchFlight";
+            this.btnSearchFlight.Size = new System.Drawing.Size(155, 38);
+            this.btnSearchFlight.TabIndex = 36;
+            this.btnSearchFlight.Text = "Search Flights";
+            this.btnSearchFlight.UseVisualStyleBackColor = false;
+            this.btnSearchFlight.Click += new System.EventHandler(this.btnSearchFlight_Click);
+            // 
             // UserHomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSearchFlight);
             this.Controls.Add(this.btnMessage);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSubscribe);
@@ -163,5 +177,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnMessage;
+        private System.Windows.Forms.Button btnSearchFlight;
     }
 }

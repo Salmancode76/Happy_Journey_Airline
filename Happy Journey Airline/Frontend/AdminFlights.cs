@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Happy_Journey_Airline.Frontend;
 
 namespace Happy_Journey_Airline
 {
@@ -112,6 +113,12 @@ namespace Happy_Journey_Airline
             da.Fill(dt);
             gridFlight.DataSource = dt;
 
+        }
+
+        private void btnSearchFlight_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new SearchFlights().Show();
         }
     }
 }

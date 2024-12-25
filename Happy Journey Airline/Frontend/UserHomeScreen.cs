@@ -53,5 +53,11 @@ namespace Happy_Journey_Airline
         {
 
         }
+
+        private void btnSearchFlight_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new SearchFlights().Show();
+        }
     }
 }
